@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="cnn_sw_3x3.cpp" path="D:\School\Project\repo\HLS\sliding_window_block\cnn_sw_3x3.cpp"/>
+    <originFiles name="cnn_sw_3x3.h" path="D:\School\Project\repo\HLS\sliding_window_block\cnn_sw_3x3.h"/>
+  </source>
+  <testbench>
+    <originFiles name="cnn_sw_3x3_tb.cpp" path="D:\School\Project\repo\HLS\sliding_window_block\cnn_sw_3x3_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

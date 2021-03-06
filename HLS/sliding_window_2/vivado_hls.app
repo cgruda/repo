@@ -1,0 +1,22 @@
+<project xmlns="com.autoesl.autopilot.project" name="sliding_window_2" top="my_filter_buffer">
+    <files>
+        <file name="sliding_window_2/sliding_window.cpp" sc="0" tb="false" cflags=""/>
+        <file name="sliding_window_2/sliding_window.h" sc="0" tb="false" cflags=""/>
+        <file name="../cnn.c" sc="0" tb="1" cflags=""/>
+        <file name="../cnn.h" sc="0" tb="1" cflags=""/>
+        <file name="../main.c" sc="0" tb="1" cflags=""/>
+        <file name="../main.h" sc="0" tb="1" cflags=""/>
+        <file name="../sliding_window_tb.cpp" sc="0" tb="1" cflags=""/>
+        <file name="../tasks.c" sc="0" tb="1" cflags=""/>
+        <file name="../tasks.h" sc="0" tb="1" cflags=""/>
+    </files>
+    <includePaths/>
+    <libraryPaths/>
+    <Simulation>
+        <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
+    </Simulation>
+    <solutions xmlns="">
+        <solution name="solution1" status="active"/>
+    </solutions>
+</project>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="sliding_window.cpp" path="D:\School\Project\repo\HLS\sliding_window_2\sliding_window.cpp"/>
+    <originFiles name="sliding_window.h" path="D:\School\Project\repo\HLS\sliding_window_2\sliding_window.h"/>
+  </source>
+  <testbench>
+    <originFiles name="sliding_window_tb.cpp" path="D:\School\Project\repo\HLS\sliding_window_2\sliding_window_tb.cpp"/>
+    <originFiles name="cnn.c" path="D:\School\Project\repo\HLS\sliding_window_2\cnn.c"/>
+    <originFiles name="cnn.h" path="D:\School\Project\repo\HLS\sliding_window_2\cnn.h"/>
+    <originFiles name="tasks.h" path="D:\School\Project\repo\HLS\sliding_window_2\tasks.h"/>
+    <originFiles name="tasks.c" path="D:\School\Project\repo\HLS\sliding_window_2\tasks.c"/>
+    <originFiles name="main.c" path="D:\School\Project\repo\HLS\sliding_window_2\main.c"/>
+    <originFiles name="main.h" path="D:\School\Project\repo\HLS\sliding_window_2\main.h"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

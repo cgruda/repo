@@ -1,0 +1,1067 @@
+
+
+================================================================
+== Vivado HLS Report for 'my_filter_buffer'
+================================================================
+* Date:           Fri Jan 29 23:15:36 2021
+
+* Version:        2016.4 (Build 1756540 on Mon Jan 23 19:31:01 MST 2017)
+* Project:        sliding_window_2
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.69|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  262676|  262676|  262677|  262677|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+--------+--------+----------+-----------+-----------+--------+----------+
+        |          |     Latency     | Iteration|  Initiation Interval  |  Trip  |          |
+        | Loop Name|   min  |   max  |  Latency |  achieved |   target  |  Count | Pipelined|
+        +----------+--------+--------+----------+-----------+-----------+--------+----------+
+        |- Loop 1  |       2|       2|         2|          1|          1|       2|    yes   |
+        |- Loop 2  |     512|     512|         2|          1|          1|     512|    yes   |
+        |- Loop 3  |       4|       4|         2|          1|          1|       4|    yes   |
+        |- Loop 4  |  262150|  262150|         8|          1|          1|  262144|    yes   |
+        +----------+--------+--------+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+  * Pipeline-2: initiation interval (II) = 1, depth = 2
+  * Pipeline-3: initiation interval (II) = 1, depth = 8
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 19
+* Pipeline: 4
+  Pipeline-0: II = 1, D = 2, States = { 2 3 }
+  Pipeline-1: II = 1, D = 2, States = { 5 6 }
+  Pipeline-2: II = 1, D = 2, States = { 8 9 }
+  Pipeline-3: II = 1, D = 8, States = { 11 12 13 14 15 16 17 18 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	4  / (exitcond1)
+	3  / (!exitcond1)
+3 --> 
+	2  / true
+4 --> 
+	5  / true
+5 --> 
+	7  / (exitcond4)
+	6  / (!exitcond4)
+6 --> 
+	5  / true
+7 --> 
+	8  / true
+8 --> 
+	10  / (exitcond_flatten)
+	9  / (!exitcond_flatten)
+9 --> 
+	8  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	19  / (exitcond_flatten8)
+	14  / (!exitcond_flatten8)
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	11  / true
+19 --> 
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: StgValue_20 (24)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap(i8* %kernel_8), !map !52
+
+ST_1: StgValue_21 (25)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i8* %kernel_7), !map !58
+
+ST_1: StgValue_22 (26)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i8* %kernel_6), !map !64
+
+ST_1: StgValue_23 (27)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i8* %kernel_5), !map !70
+
+ST_1: StgValue_24 (28)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap(i8* %kernel_4), !map !76
+
+ST_1: StgValue_25 (29)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i8* %kernel_3), !map !82
+
+ST_1: StgValue_26 (30)  [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap(i8* %kernel_2), !map !88
+
+ST_1: StgValue_27 (31)  [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecBitsMap(i8* %kernel_1), !map !94
+
+ST_1: StgValue_28 (32)  [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecBitsMap(i8* %kernel_0), !map !100
+
+ST_1: StgValue_29 (33)  [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecBitsMap(i32* %in_stream_V_data_V), !map !106
+
+ST_1: StgValue_30 (34)  [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecBitsMap(i4* %in_stream_V_keep_V), !map !110
+
+ST_1: StgValue_31 (35)  [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_SpecBitsMap(i4* %in_stream_V_strb_V), !map !114
+
+ST_1: StgValue_32 (36)  [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_SpecBitsMap(i2* %in_stream_V_user_V), !map !118
+
+ST_1: StgValue_33 (37)  [1/1] 0.00ns
+:13  call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream_V_last_V), !map !122
+
+ST_1: StgValue_34 (38)  [1/1] 0.00ns
+:14  call void (...)* @_ssdm_op_SpecBitsMap(i5* %in_stream_V_id_V), !map !126
+
+ST_1: StgValue_35 (39)  [1/1] 0.00ns
+:15  call void (...)* @_ssdm_op_SpecBitsMap(i6* %in_stream_V_dest_V), !map !130
+
+ST_1: StgValue_36 (40)  [1/1] 0.00ns
+:16  call void (...)* @_ssdm_op_SpecBitsMap(i32* %out_stream_V_data_V), !map !134
+
+ST_1: StgValue_37 (41)  [1/1] 0.00ns
+:17  call void (...)* @_ssdm_op_SpecBitsMap(i4* %out_stream_V_keep_V), !map !138
+
+ST_1: StgValue_38 (42)  [1/1] 0.00ns
+:18  call void (...)* @_ssdm_op_SpecBitsMap(i4* %out_stream_V_strb_V), !map !142
+
+ST_1: StgValue_39 (43)  [1/1] 0.00ns
+:19  call void (...)* @_ssdm_op_SpecBitsMap(i2* %out_stream_V_user_V), !map !146
+
+ST_1: StgValue_40 (44)  [1/1] 0.00ns
+:20  call void (...)* @_ssdm_op_SpecBitsMap(i1* %out_stream_V_last_V), !map !150
+
+ST_1: StgValue_41 (45)  [1/1] 0.00ns
+:21  call void (...)* @_ssdm_op_SpecBitsMap(i5* %out_stream_V_id_V), !map !154
+
+ST_1: StgValue_42 (46)  [1/1] 0.00ns
+:22  call void (...)* @_ssdm_op_SpecBitsMap(i6* %out_stream_V_dest_V), !map !158
+
+ST_1: StgValue_43 (47)  [1/1] 0.00ns
+:23  call void (...)* @_ssdm_op_SpecTopModule([17 x i8]* @my_filter_buffer_str) nounwind
+
+ST_1: line_buf_0 (48)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:46
+:24  %line_buf_0 = alloca [512 x i32], align 4
+
+ST_1: line_buf_1 (49)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:46
+:25  %line_buf_1 = alloca [512 x i32], align 4
+
+ST_1: StgValue_46 (50)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:37
+:26  call void (...)* @_ssdm_op_SpecInterface(i32* %out_stream_V_data_V, i4* %out_stream_V_keep_V, i4* %out_stream_V_strb_V, i2* %out_stream_V_user_V, i1* %out_stream_V_last_V, i5* %out_stream_V_id_V, i6* %out_stream_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_47 (51)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:38
+:27  call void (...)* @_ssdm_op_SpecInterface(i32* %in_stream_V_data_V, i4* %in_stream_V_keep_V, i4* %in_stream_V_strb_V, i2* %in_stream_V_user_V, i1* %in_stream_V_last_V, i5* %in_stream_V_id_V, i6* %in_stream_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_48 (52)  [1/1] 0.00ns
+:28  call void (...)* @_ssdm_op_SpecInterface(i8* %kernel_0, i8* %kernel_1, i8* %kernel_2, i8* %kernel_3, i8* %kernel_4, i8* %kernel_5, i8* %kernel_6, i8* %kernel_7, i8* %kernel_8, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [11 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_49 (53)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:40
+:29  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str5, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_50 (54)  [1/1] 1.57ns  loc: sliding_window_2/sliding_window.cpp:58
+:30  br label %1
+
+
+ <State 2>: 3.44ns
+ST_2: x (56)  [1/1] 0.00ns
+:0  %x = phi i10 [ 510, %0 ], [ %x_1, %2 ]
+
+ST_2: exitcond1 (57)  [1/1] 2.07ns  loc: sliding_window_2/sliding_window.cpp:58
+:1  %exitcond1 = icmp eq i10 %x, -512
+
+ST_2: StgValue_53 (58)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:58
+:2  br i1 %exitcond1, label %.preheader75.0.preheader, label %2
+
+ST_2: empty_5 (64)  [2/2] 0.00ns  loc: sliding_window_2/sliding_window.cpp:61
+:4  %empty_5 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %in_stream_V_data_V, i4* %in_stream_V_keep_V, i4* %in_stream_V_strb_V, i2* %in_stream_V_user_V, i1* %in_stream_V_last_V, i5* %in_stream_V_id_V, i6* %in_stream_V_dest_V)
+
+ST_2: x_1 (69)  [1/1] 1.84ns  loc: sliding_window_2/sliding_window.cpp:58
+:9  %x_1 = add i10 %x, 1
+
+
+ <State 3>: 2.71ns
+ST_3: x_cast7 (60)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:58
+:0  %x_cast7 = zext i10 %x to i32
+
+ST_3: empty (61)  [1/1] 0.00ns
+:1  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)
+
+ST_3: tmp (62)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:59
+:2  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str7)
+
+ST_3: StgValue_59 (63)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:60
+:3  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_3: empty_5 (64)  [1/2] 0.00ns  loc: sliding_window_2/sliding_window.cpp:61
+:4  %empty_5 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %in_stream_V_data_V, i4* %in_stream_V_keep_V, i4* %in_stream_V_strb_V, i2* %in_stream_V_user_V, i1* %in_stream_V_last_V, i5* %in_stream_V_id_V, i6* %in_stream_V_dest_V)
+
+ST_3: tmp_data_V (65)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:61
+:5  %tmp_data_V = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_5, 0
+
+ST_3: line_buf_0_addr (66)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:58
+:6  %line_buf_0_addr = getelementptr [512 x i32]* %line_buf_0, i32 0, i32 %x_cast7
+
+ST_3: StgValue_63 (67)  [1/1] 2.71ns  loc: sliding_window_2/sliding_window.cpp:62
+:7  store i32 %tmp_data_V, i32* %line_buf_0_addr, align 4
+
+ST_3: empty_6 (68)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:63
+:8  %empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str7, i32 %tmp)
+
+ST_3: StgValue_65 (70)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:58
+:10  br label %1
+
+
+ <State 4>: 1.57ns
+ST_4: StgValue_66 (72)  [1/1] 1.57ns  loc: sliding_window_2/sliding_window.cpp:67
+.preheader75.0.preheader:0  br label %.preheader75.0
+
+
+ <State 5>: 3.44ns
+ST_5: x1 (74)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:67
+.preheader75.0:0  %x1 = phi i10 [ %x_2, %3 ], [ 0, %.preheader75.0.preheader ]
+
+ST_5: exitcond4 (75)  [1/1] 2.07ns  loc: sliding_window_2/sliding_window.cpp:67
+.preheader75.0:1  %exitcond4 = icmp eq i10 %x1, -512
+
+ST_5: x_2 (76)  [1/1] 1.84ns  loc: sliding_window_2/sliding_window.cpp:67
+.preheader75.0:2  %x_2 = add i10 %x1, 1
+
+ST_5: StgValue_70 (77)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:67
+.preheader75.0:3  br i1 %exitcond4, label %.preheader73.preheader, label %3
+
+ST_5: empty_8 (83)  [2/2] 0.00ns  loc: sliding_window_2/sliding_window.cpp:70
+:4  %empty_8 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %in_stream_V_data_V, i4* %in_stream_V_keep_V, i4* %in_stream_V_strb_V, i2* %in_stream_V_user_V, i1* %in_stream_V_last_V, i5* %in_stream_V_id_V, i6* %in_stream_V_dest_V)
+
+
+ <State 6>: 2.71ns
+ST_6: x1_cast6 (79)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:67
+:0  %x1_cast6 = zext i10 %x1 to i32
+
+ST_6: empty_7 (80)  [1/1] 0.00ns
+:1  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)
+
+ST_6: tmp_2 (81)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:68
+:2  %tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str8)
+
+ST_6: StgValue_75 (82)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:69
+:3  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_6: empty_8 (83)  [1/2] 0.00ns  loc: sliding_window_2/sliding_window.cpp:70
+:4  %empty_8 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %in_stream_V_data_V, i4* %in_stream_V_keep_V, i4* %in_stream_V_strb_V, i2* %in_stream_V_user_V, i1* %in_stream_V_last_V, i5* %in_stream_V_id_V, i6* %in_stream_V_dest_V)
+
+ST_6: tmp_data_V_1 (84)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:70
+:5  %tmp_data_V_1 = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_8, 0
+
+ST_6: line_buf_1_addr (85)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:67
+:6  %line_buf_1_addr = getelementptr [512 x i32]* %line_buf_1, i32 0, i32 %x1_cast6
+
+ST_6: StgValue_79 (86)  [1/1] 2.71ns  loc: sliding_window_2/sliding_window.cpp:71
+:7  store i32 %tmp_data_V_1, i32* %line_buf_1_addr, align 4
+
+ST_6: empty_9 (87)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:72
+:8  %empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str8, i32 %tmp_2)
+
+ST_6: StgValue_81 (88)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:67
+:9  br label %.preheader75.0
+
+
+ <State 7>: 1.57ns
+ST_7: StgValue_82 (90)  [1/1] 1.57ns
+.preheader73.preheader:0  br label %.preheader73
+
+
+ <State 8>: 6.24ns
+ST_8: indvar_flatten (92)  [1/1] 0.00ns
+.preheader73:0  %indvar_flatten = phi i3 [ %indvar_flatten_next, %.preheader74 ], [ 0, %.preheader73.preheader ]
+
+ST_8: y2 (93)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader73:1  %y2 = phi i2 [ %tmp_3_mid2_v, %.preheader74 ], [ 1, %.preheader73.preheader ]
+
+ST_8: window_2_2_1 (94)  [1/1] 0.00ns
+.preheader73:2  %window_2_2_1 = phi i32 [ %window_2_2_6, %.preheader74 ], [ undef, %.preheader73.preheader ]
+
+ST_8: window_2_1_1 (95)  [1/1] 0.00ns
+.preheader73:3  %window_2_1_1 = phi i32 [ %window_2_2_7, %.preheader74 ], [ undef, %.preheader73.preheader ]
+
+ST_8: window_1_2_1 (96)  [1/1] 0.00ns
+.preheader73:4  %window_1_2_1 = phi i32 [ %window_2_2_8, %.preheader74 ], [ undef, %.preheader73.preheader ]
+
+ST_8: window_1_1_1 (97)  [1/1] 0.00ns
+.preheader73:5  %window_1_1_1 = phi i32 [ %window_2_2_9, %.preheader74 ], [ undef, %.preheader73.preheader ]
+
+ST_8: x3 (98)  [1/1] 0.00ns
+.preheader73:6  %x3 = phi i2 [ %x_3, %.preheader74 ], [ 1, %.preheader73.preheader ]
+
+ST_8: exitcond_flatten (99)  [1/1] 1.62ns
+.preheader73:7  %exitcond_flatten = icmp eq i3 %indvar_flatten, -4
+
+ST_8: indvar_flatten_next (100)  [1/1] 0.80ns
+.preheader73:8  %indvar_flatten_next = add i3 %indvar_flatten, 1
+
+ST_8: StgValue_92 (101)  [1/1] 0.00ns
+.preheader73:9  br i1 %exitcond_flatten, label %.preheader71.preheader, label %.preheader74
+
+ST_8: exitcond (104)  [1/1] 1.36ns  loc: sliding_window_2/sliding_window.cpp:78
+.preheader74:1  %exitcond = icmp eq i2 %x3, -1
+
+ST_8: x3_mid2 (105)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:78
+.preheader74:2  %x3_mid2 = select i1 %exitcond, i2 1, i2 %x3
+
+ST_8: y9 (106)  [1/1] 0.80ns  loc: sliding_window_2/sliding_window.cpp:76
+.preheader74:3  %y9 = add i2 1, %y2
+
+ST_8: tmp_3_mid2_v (107)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:4  %tmp_3_mid2_v = select i1 %exitcond, i2 %y9, i2 %y2
+
+ST_8: tmp_1 (108)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:5  %tmp_1 = trunc i2 %tmp_3_mid2_v to i1
+
+ST_8: cond_mid1 (109)  [1/1] 1.36ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:6  %cond_mid1 = icmp eq i2 %y2, 0
+
+ST_8: cond (110)  [1/1] 1.36ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:7  %cond = icmp eq i2 %y2, 1
+
+ST_8: cond_mid2 (111)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:8  %cond_mid2 = select i1 %exitcond, i1 %cond_mid1, i1 %cond
+
+ST_8: x3_cast4_cast (112)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:78
+.preheader74:9  %x3_cast4_cast = zext i2 %x3_mid2 to i3
+
+ST_8: tmp_s (115)  [1/1] 0.80ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:12  %tmp_s = add i3 -3, %x3_cast4_cast
+
+ST_8: tmp_cast8 (116)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:13  %tmp_cast8 = sext i3 %tmp_s to i9
+
+ST_8: tmp_cast (117)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:14  %tmp_cast = zext i9 %tmp_cast8 to i32
+
+ST_8: line_buf_0_addr_2 (118)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:15  %line_buf_0_addr_2 = getelementptr [512 x i32]* %line_buf_0, i32 0, i32 %tmp_cast
+
+ST_8: line_buf_1_addr_2 (119)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:16  %line_buf_1_addr_2 = getelementptr [512 x i32]* %line_buf_1, i32 0, i32 %tmp_cast
+
+ST_8: line_buf_0_load (120)  [2/2] 2.71ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:17  %line_buf_0_load = load i32* %line_buf_0_addr_2, align 4
+
+ST_8: line_buf_1_load (121)  [2/2] 2.71ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:18  %line_buf_1_load = load i32* %line_buf_1_addr_2, align 4
+
+ST_8: cond1 (123)  [1/1] 1.36ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:20  %cond1 = icmp eq i2 %x3_mid2, 1
+
+ST_8: x_3 (133)  [1/1] 0.80ns  loc: sliding_window_2/sliding_window.cpp:78
+.preheader74:30  %x_3 = add i2 1, %x3_mid2
+
+
+ <State 9>: 5.45ns
+ST_9: empty_10 (103)  [1/1] 0.00ns
+.preheader74:0  %empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)
+
+ST_9: tmp_6 (113)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:79
+.preheader74:10  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str9)
+
+ST_9: StgValue_113 (114)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:80
+.preheader74:11  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_9: line_buf_0_load (120)  [1/2] 2.71ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:17  %line_buf_0_load = load i32* %line_buf_0_addr_2, align 4
+
+ST_9: line_buf_1_load (121)  [1/2] 2.71ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:18  %line_buf_1_load = load i32* %line_buf_1_addr_2, align 4
+
+ST_9: window_1_1_2 (122)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:81
+.preheader74:19  %window_1_1_2 = select i1 %tmp_1, i32 %line_buf_0_load, i32 %line_buf_1_load
+
+ST_9: window_2_2_1_11 (124)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:81 (grouped into LUT with out node window_2_2_8)
+.preheader74:21  %window_2_2_1_11 = select i1 %cond1, i32 %window_1_2_1, i32 %window_1_1_2
+
+ST_9: window_2_2_2 (125)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:81 (grouped into LUT with out node window_2_2_9)
+.preheader74:22  %window_2_2_2 = select i1 %cond1, i32 %window_1_1_2, i32 %window_1_1_1
+
+ST_9: window_2_2_4 (126)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:81 (grouped into LUT with out node window_2_2_6)
+.preheader74:23  %window_2_2_4 = select i1 %cond1, i32 %window_2_2_1, i32 %window_1_1_2
+
+ST_9: window_2_2_5 (127)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:81 (grouped into LUT with out node window_2_2_7)
+.preheader74:24  %window_2_2_5 = select i1 %cond1, i32 %window_1_1_2, i32 %window_2_1_1
+
+ST_9: window_2_2_6 (128)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:81 (out node of the LUT)
+.preheader74:25  %window_2_2_6 = select i1 %cond_mid2, i32 %window_2_2_1, i32 %window_2_2_4
+
+ST_9: window_2_2_7 (129)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:81 (out node of the LUT)
+.preheader74:26  %window_2_2_7 = select i1 %cond_mid2, i32 %window_2_1_1, i32 %window_2_2_5
+
+ST_9: window_2_2_8 (130)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:81 (out node of the LUT)
+.preheader74:27  %window_2_2_8 = select i1 %cond_mid2, i32 %window_2_2_1_11, i32 %window_1_2_1
+
+ST_9: window_2_2_9 (131)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:81 (out node of the LUT)
+.preheader74:28  %window_2_2_9 = select i1 %cond_mid2, i32 %window_2_2_2, i32 %window_1_1_1
+
+ST_9: empty_12 (132)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:82
+.preheader74:29  %empty_12 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str9, i32 %tmp_6)
+
+ST_9: StgValue_126 (134)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:78
+.preheader74:31  br label %.preheader73
+
+
+ <State 10>: 1.57ns
+ST_10: window_0_0_read_as (136)  [1/1] 0.00ns
+.preheader71.preheader:0  %window_0_0_read_as = alloca i32
+
+ST_10: window_0_0 (137)  [1/1] 0.00ns
+.preheader71.preheader:1  %window_0_0 = alloca i32
+
+ST_10: window_0_1 (138)  [1/1] 0.00ns
+.preheader71.preheader:2  %window_0_1 = alloca i32
+
+ST_10: window_1_0_read_as (139)  [1/1] 0.00ns
+.preheader71.preheader:3  %window_1_0_read_as = alloca i32
+
+ST_10: window_2_0_read_as (140)  [1/1] 0.00ns
+.preheader71.preheader:4  %window_2_0_read_as = alloca i32
+
+ST_10: read_count_1 (141)  [1/1] 0.00ns
+.preheader71.preheader:5  %read_count_1 = alloca i32
+
+ST_10: StgValue_133 (142)  [1/1] 1.57ns
+.preheader71.preheader:6  store i32 514, i32* %read_count_1
+
+ST_10: StgValue_134 (143)  [1/1] 1.57ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader71.preheader:7  br label %.preheader71
+
+
+ <State 11>: 6.15ns
+ST_11: indvar_flatten6 (145)  [1/1] 0.00ns
+.preheader71:0  %indvar_flatten6 = phi i19 [ %indvar_flatten_next7, %._crit_edge ], [ 0, %.preheader71.preheader ]
+
+ST_11: y_assign (146)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:88
+.preheader71:1  %y_assign = phi i10 [ %y_assign_mid2, %._crit_edge ], [ 0, %.preheader71.preheader ]
+
+ST_11: x_assign (151)  [1/1] 0.00ns
+.preheader71:6  %x_assign = phi i10 [ %x_4, %._crit_edge ], [ 0, %.preheader71.preheader ]
+
+ST_11: tmp_i_i (157)  [1/1] 2.07ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader71:12  %tmp_i_i = icmp ne i10 %y_assign, 0
+
+ST_11: y (158)  [1/1] 1.84ns  loc: sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader71:13  %y = add i10 %y_assign, 1
+
+ST_11: tmp_3 (159)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader71:14  %tmp_3 = call i1 @_ssdm_op_BitSelect.i1.i10.i32(i10 %y, i32 9)
+
+ST_11: exitcond_flatten8 (160)  [1/1] 2.33ns
+.preheader71:15  %exitcond_flatten8 = icmp eq i19 %indvar_flatten6, -262144
+
+ST_11: indvar_flatten_next7 (161)  [1/1] 2.08ns
+.preheader71:16  %indvar_flatten_next7 = add i19 %indvar_flatten6, 1
+
+ST_11: read_count_1_load (169)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:113
+.preheader72:1  %read_count_1_load = load i32* %read_count_1
+
+ST_11: exitcond2 (171)  [1/1] 2.07ns  loc: sliding_window_2/sliding_window.cpp:88
+.preheader72:3  %exitcond2 = icmp eq i10 %x_assign, -512
+
+ST_11: x_assign_mid2 (172)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:88
+.preheader72:4  %x_assign_mid2 = select i1 %exitcond2, i10 0, i10 %x_assign
+
+ST_11: tmp_i_i_mid1 (173)  [1/1] 2.07ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader72:5  %tmp_i_i_mid1 = icmp ne i10 %y, 0
+
+ST_11: tmp_i_i_mid2 (174)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader72:6  %tmp_i_i_mid2 = select i1 %exitcond2, i1 %tmp_i_i_mid1, i1 %tmp_i_i
+
+ST_11: y_assign_mid2 (180)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:88
+.preheader72:12  %y_assign_mid2 = select i1 %exitcond2, i10 %y, i10 %y_assign
+
+ST_11: x5_cast1 (181)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:88
+.preheader72:13  %x5_cast1 = zext i10 %x_assign_mid2 to i32
+
+ST_11: tmp_3_i_i (193)  [1/1] 2.07ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader72:25  %tmp_3_i_i = icmp ne i10 %x_assign_mid2, 0
+
+ST_11: x_4 (202)  [1/1] 1.84ns  loc: sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader72:34  %x_4 = add i10 %x_assign_mid2, 1
+
+ST_11: line_buf_0_addr_1 (239)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:88
+.preheader72:71  %line_buf_0_addr_1 = getelementptr [512 x i32]* %line_buf_0, i32 0, i32 %x5_cast1
+
+ST_11: window_0_2 (240)  [2/2] 2.71ns  loc: sliding_window_2/sliding_window.cpp:105
+.preheader72:72  %window_0_2 = load i32* %line_buf_0_addr_1, align 4
+
+ST_11: line_buf_1_addr_1 (241)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:88
+.preheader72:73  %line_buf_1_addr_1 = getelementptr [512 x i32]* %line_buf_1, i32 0, i32 %x5_cast1
+
+ST_11: window_1_2 (242)  [2/2] 2.71ns  loc: sliding_window_2/sliding_window.cpp:108
+.preheader72:74  %window_1_2 = load i32* %line_buf_1_addr_1, align 4
+
+ST_11: tmp_12 (244)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:113
+.preheader72:76  %tmp_12 = call i14 @_ssdm_op_PartSelect.i14.i32.i32.i32(i32 %read_count_1_load, i32 18, i32 31)
+
+ST_11: icmp (245)  [1/1] 2.21ns  loc: sliding_window_2/sliding_window.cpp:113
+.preheader72:77  %icmp = icmp slt i14 %tmp_12, 1
+
+ST_11: StgValue_158 (247)  [1/1] 1.57ns  loc: sliding_window_2/sliding_window.cpp:113
+.preheader72:79  br i1 %icmp, label %4, label %._crit_edge
+
+ST_11: empty_13 (249)  [2/2] 0.00ns  loc: sliding_window_2/sliding_window.cpp:115
+:0  %empty_13 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %in_stream_V_data_V, i4* %in_stream_V_keep_V, i4* %in_stream_V_strb_V, i2* %in_stream_V_user_V, i1* %in_stream_V_last_V, i5* %in_stream_V_id_V, i6* %in_stream_V_dest_V)
+
+ST_11: read_count (251)  [1/1] 2.44ns  loc: sliding_window_2/sliding_window.cpp:117
+:2  %read_count = add nsw i32 %read_count_1_load, 1
+
+ST_11: StgValue_161 (252)  [1/1] 1.57ns  loc: sliding_window_2/sliding_window.cpp:117
+:3  store i32 %read_count, i32* %read_count_1
+
+
+ <State 12>: 7.08ns
+ST_12: window_1_1 (149)  [1/1] 0.00ns
+.preheader71:4  %window_1_1 = phi i32 [ %window_1_2, %._crit_edge ], [ %window_1_2_1, %.preheader71.preheader ]
+
+ST_12: window_1_0 (150)  [1/1] 0.00ns
+.preheader71:5  %window_1_0 = phi i32 [ %window_1_1, %._crit_edge ], [ %window_1_1_1, %.preheader71.preheader ]
+
+ST_12: window_0_0_read_as_1 (152)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader71:7  %window_0_0_read_as_1 = load i32* %window_0_0_read_as
+
+ST_12: window_0_0_load (153)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader71:8  %window_0_0_load = load i32* %window_0_0
+
+ST_12: window_0_1_load_1 (154)  [1/1] 0.00ns
+.preheader71:9  %window_0_1_load_1 = load i32* %window_0_1
+
+ST_12: window_1_0_read_as_1 (155)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader71:10  %window_1_0_read_as_1 = load i32* %window_1_0_read_as
+
+ST_12: StgValue_168 (163)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:108
+.preheader71:18  store i32 %window_1_0, i32* %window_1_0_read_as
+
+ST_12: StgValue_169 (164)  [1/1] 0.00ns
+.preheader71:19  store i32 %window_0_1_load_1, i32* %window_0_0
+
+ST_12: StgValue_170 (165)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader71:20  store i32 %window_0_0_load, i32* %window_0_0_read_as
+
+ST_12: window_0_1_load (168)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:0  %window_0_1_load = load i32* %window_0_1
+
+ST_12: y_assign_1_mid1 (175)  [1/1] 1.84ns  loc: sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader72:7  %y_assign_1_mid1 = add i10 %y_assign, 2
+
+ST_12: tmp_7 (177)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader72:9  %tmp_7 = call i1 @_ssdm_op_BitSelect.i1.i10.i32(i10 %y_assign_1_mid1, i32 9)
+
+ST_12: tmp_i2_i_mid2_v (178)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader72:10  %tmp_i2_i_mid2_v = select i1 %exitcond2, i1 %tmp_7, i1 %tmp_3
+
+ST_12: kernel_0_read (184)  [1/1] 1.00ns  loc: sliding_window_2/sliding_window.cpp:93
+.preheader72:16  %kernel_0_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %kernel_0)
+
+ST_12: kernel_1_read (185)  [1/1] 1.00ns  loc: sliding_window_2/sliding_window.cpp:93
+.preheader72:17  %kernel_1_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %kernel_1)
+
+ST_12: kernel_2_read (186)  [1/1] 1.00ns  loc: sliding_window_2/sliding_window.cpp:93
+.preheader72:18  %kernel_2_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %kernel_2)
+
+ST_12: kernel_3_read (187)  [1/1] 1.00ns  loc: sliding_window_2/sliding_window.cpp:93
+.preheader72:19  %kernel_3_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %kernel_3)
+
+ST_12: kernel_4_read (188)  [1/1] 1.00ns  loc: sliding_window_2/sliding_window.cpp:93
+.preheader72:20  %kernel_4_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %kernel_4)
+
+ST_12: kernel_5_read (189)  [1/1] 1.00ns  loc: sliding_window_2/sliding_window.cpp:93
+.preheader72:21  %kernel_5_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %kernel_5)
+
+ST_12: kernel_6_read (190)  [1/1] 1.00ns  loc: sliding_window_2/sliding_window.cpp:93
+.preheader72:22  %kernel_6_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %kernel_6)
+
+ST_12: kernel_7_read (191)  [1/1] 1.00ns  loc: sliding_window_2/sliding_window.cpp:93
+.preheader72:23  %kernel_7_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %kernel_7)
+
+ST_12: kernel_8_read (192)  [1/1] 1.00ns  loc: sliding_window_2/sliding_window.cpp:93
+.preheader72:24  %kernel_8_read = call i8 @_ssdm_op_Read.s_axilite.i8P(i8* %kernel_8)
+
+ST_12: tmp_8_i (195)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:27  %tmp_8_i = zext i8 %kernel_0_read to i32
+
+ST_12: tmp_9_i (196)  [3/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:28  %tmp_9_i = mul i32 %window_0_0_read_as_1, %tmp_8_i
+
+ST_12: tmp_8_0_1_i (198)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:30  %tmp_8_0_1_i = zext i8 %kernel_1_read to i32
+
+ST_12: tmp_9_0_1_i (199)  [3/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:31  %tmp_9_0_1_i = mul i32 %window_0_0_load, %tmp_8_0_1_i
+
+ST_12: tmp_8_0_2_i (206)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:38  %tmp_8_0_2_i = zext i8 %kernel_2_read to i32
+
+ST_12: tmp_9_0_2_i (207)  [3/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:39  %tmp_9_0_2_i = mul i32 %window_0_1_load, %tmp_8_0_2_i
+
+ST_12: tmp_8_1_i (210)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:42  %tmp_8_1_i = zext i8 %kernel_3_read to i32
+
+ST_12: tmp_9_1_i (211)  [3/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:43  %tmp_9_1_i = mul i32 %window_1_0_read_as_1, %tmp_8_1_i
+
+ST_12: tmp_8_1_1_i (214)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:46  %tmp_8_1_1_i = zext i8 %kernel_4_read to i32
+
+ST_12: tmp_9_1_1_i (215)  [3/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:47  %tmp_9_1_1_i = mul i32 %window_1_0, %tmp_8_1_1_i
+
+ST_12: tmp_8_1_2_i (219)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:51  %tmp_8_1_2_i = zext i8 %kernel_5_read to i32
+
+ST_12: tmp_9_1_2_i (220)  [3/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:52  %tmp_9_1_2_i = mul i32 %window_1_1, %tmp_8_1_2_i
+
+ST_12: window_0_2 (240)  [1/2] 2.71ns  loc: sliding_window_2/sliding_window.cpp:105
+.preheader72:72  %window_0_2 = load i32* %line_buf_0_addr_1, align 4
+
+ST_12: window_1_2 (242)  [1/2] 2.71ns  loc: sliding_window_2/sliding_window.cpp:108
+.preheader72:74  %window_1_2 = load i32* %line_buf_1_addr_1, align 4
+
+ST_12: StgValue_198 (243)  [1/1] 2.71ns  loc: sliding_window_2/sliding_window.cpp:108
+.preheader72:75  store i32 %window_1_2, i32* %line_buf_0_addr_1, align 4
+
+ST_12: StgValue_199 (246)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:105
+.preheader72:78  store i32 %window_0_2, i32* %window_0_1
+
+ST_12: empty_13 (249)  [1/2] 0.00ns  loc: sliding_window_2/sliding_window.cpp:115
+:0  %empty_13 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %in_stream_V_data_V, i4* %in_stream_V_keep_V, i4* %in_stream_V_strb_V, i2* %in_stream_V_user_V, i1* %in_stream_V_last_V, i5* %in_stream_V_id_V, i6* %in_stream_V_dest_V)
+
+ST_12: tmp_data_V_4 (250)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:115
+:1  %tmp_data_V_4 = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_13, 0
+
+ST_12: StgValue_202 (253)  [1/1] 1.57ns  loc: sliding_window_2/sliding_window.cpp:118
+:4  br label %._crit_edge
+
+
+ <State 13>: 6.08ns
+ST_13: window_2_1 (147)  [1/1] 0.00ns
+.preheader71:2  %window_2_1 = phi i32 [ %window_2_2, %._crit_edge ], [ %window_2_2_1, %.preheader71.preheader ]
+
+ST_13: window_2_0 (148)  [1/1] 0.00ns
+.preheader71:3  %window_2_0 = phi i32 [ %window_2_1, %._crit_edge ], [ %window_2_1_1, %.preheader71.preheader ]
+
+ST_13: window_2_0_read_as_1 (156)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader71:11  %window_2_0_read_as_1 = load i32* %window_2_0_read_as
+
+ST_13: StgValue_206 (162)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:115
+.preheader71:17  store i32 %window_2_0, i32* %window_2_0_read_as
+
+ST_13: StgValue_207 (166)  [1/1] 0.00ns
+.preheader71:21  br i1 %exitcond_flatten8, label %5, label %.preheader72
+
+ST_13: tmp_4 (182)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:89
+.preheader72:14  %tmp_4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str10)
+
+ST_13: tmp_9_i (196)  [2/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:28  %tmp_9_i = mul i32 %window_0_0_read_as_1, %tmp_8_i
+
+ST_13: tmp_9_0_1_i (199)  [2/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:31  %tmp_9_0_1_i = mul i32 %window_0_0_load, %tmp_8_0_1_i
+
+ST_13: tmp_9_0_2_i (207)  [2/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:39  %tmp_9_0_2_i = mul i32 %window_0_1_load, %tmp_8_0_2_i
+
+ST_13: tmp_9_1_i (211)  [2/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:43  %tmp_9_1_i = mul i32 %window_1_0_read_as_1, %tmp_8_1_i
+
+ST_13: tmp_9_1_1_i (215)  [2/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:47  %tmp_9_1_1_i = mul i32 %window_1_0, %tmp_8_1_1_i
+
+ST_13: tmp_9_1_2_i (220)  [2/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:52  %tmp_9_1_2_i = mul i32 %window_1_1, %tmp_8_1_2_i
+
+ST_13: tmp_8_2_i (224)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:56  %tmp_8_2_i = zext i8 %kernel_6_read to i32
+
+ST_13: tmp_9_2_i (225)  [3/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:57  %tmp_9_2_i = mul i32 %window_2_0_read_as_1, %tmp_8_2_i
+
+ST_13: tmp_8_2_1_i (228)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:60  %tmp_8_2_1_i = zext i8 %kernel_7_read to i32
+
+ST_13: tmp_9_2_1_i (229)  [3/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:61  %tmp_9_2_1_i = mul i32 %window_2_0, %tmp_8_2_1_i
+
+ST_13: tmp_8_2_2_i (234)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:66  %tmp_8_2_2_i = zext i8 %kernel_8_read to i32
+
+ST_13: tmp_9_2_2_i (235)  [3/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:67  %tmp_9_2_2_i = mul i32 %window_2_1, %tmp_8_2_2_i
+
+ST_13: window_2_2 (255)  [1/1] 0.00ns
+._crit_edge:0  %window_2_2 = phi i32 [ %tmp_data_V_4, %4 ], [ 0, %.preheader72 ]
+
+ST_13: StgValue_222 (256)  [1/1] 2.71ns  loc: sliding_window_2/sliding_window.cpp:119
+._crit_edge:1  store i32 %window_2_2, i32* %line_buf_1_addr_1, align 4
+
+ST_13: empty_14 (257)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:135
+._crit_edge:2  %empty_14 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str10, i32 %tmp_4)
+
+ST_13: StgValue_224 (258)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:88
+._crit_edge:3  br label %.preheader71
+
+
+ <State 14>: 8.52ns
+ST_14: or_cond1_i_i (194)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_3_0_1_i)
+.preheader72:26  %or_cond1_i_i = and i1 %tmp_i_i_mid2, %tmp_3_i_i
+
+ST_14: tmp_9_i (196)  [1/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:28  %tmp_9_i = mul i32 %window_0_0_read_as_1, %tmp_8_i
+
+ST_14: result_2_i (197)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_3_0_1_i)
+.preheader72:29  %result_2_i = select i1 %or_cond1_i_i, i32 %tmp_9_i, i32 0
+
+ST_14: tmp_9_0_1_i (199)  [1/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:31  %tmp_9_0_1_i = mul i32 %window_0_0_load, %tmp_8_0_1_i
+
+ST_14: result_3_0_1_i (200)  [1/1] 2.44ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93 (out node of the LUT)
+.preheader72:32  %result_3_0_1_i = add i32 %tmp_9_0_1_i, %result_2_i
+
+ST_14: tmp_9_0_2_i (207)  [1/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:39  %tmp_9_0_2_i = mul i32 %window_0_1_load, %tmp_8_0_2_i
+
+ST_14: tmp_9_1_i (211)  [1/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:43  %tmp_9_1_i = mul i32 %window_1_0_read_as_1, %tmp_8_1_i
+
+ST_14: tmp_9_1_1_i (215)  [1/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:47  %tmp_9_1_1_i = mul i32 %window_1_0, %tmp_8_1_1_i
+
+ST_14: tmp_9_1_2_i (220)  [1/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:52  %tmp_9_1_2_i = mul i32 %window_1_1, %tmp_8_1_2_i
+
+ST_14: tmp_9_2_i (225)  [2/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:57  %tmp_9_2_i = mul i32 %window_2_0_read_as_1, %tmp_8_2_i
+
+ST_14: tmp_9_2_1_i (229)  [2/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:61  %tmp_9_2_1_i = mul i32 %window_2_0, %tmp_8_2_1_i
+
+ST_14: tmp_9_2_2_i (235)  [2/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:67  %tmp_9_2_2_i = mul i32 %window_2_1, %tmp_8_2_2_i
+
+
+ <State 15>: 7.62ns
+ST_15: result_2_0_1_i (201)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader72:33  %result_2_0_1_i = select i1 %tmp_i_i_mid2, i32 %result_3_0_1_i, i32 0
+
+ST_15: tmp_9 (203)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_2_0_2_i)
+.preheader72:35  %tmp_9 = call i1 @_ssdm_op_BitSelect.i1.i10.i32(i10 %x_4, i32 9)
+
+ST_15: rev (204)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_2_0_2_i)
+.preheader72:36  %rev = xor i1 %tmp_9, true
+
+ST_15: p_i2_i (205)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_2_0_2_i)
+.preheader72:37  %p_i2_i = and i1 %tmp_i_i_mid2, %rev
+
+ST_15: result_3_0_2_i (208)  [1/1] 2.44ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:40  %result_3_0_2_i = add i32 %tmp_9_0_2_i, %result_2_0_1_i
+
+ST_15: result_2_0_2_i (209)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (out node of the LUT)
+.preheader72:41  %result_2_0_2_i = select i1 %p_i2_i, i32 %result_3_0_2_i, i32 %result_2_0_1_i
+
+ST_15: result_3_1_i (212)  [1/1] 2.44ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:44  %result_3_1_i = add i32 %tmp_9_1_i, %result_2_0_2_i
+
+ST_15: tmp_9_2_i (225)  [1/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:57  %tmp_9_2_i = mul i32 %window_2_0_read_as_1, %tmp_8_2_i
+
+ST_15: tmp_9_2_1_i (229)  [1/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:61  %tmp_9_2_1_i = mul i32 %window_2_0, %tmp_8_2_1_i
+
+ST_15: tmp_9_2_2_i (235)  [1/3] 6.08ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:67  %tmp_9_2_2_i = mul i32 %window_2_1, %tmp_8_2_2_i
+
+
+ <State 16>: 8.69ns
+ST_16: result_2_1_i (213)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_3_1_1_i)
+.preheader72:45  %result_2_1_i = select i1 %tmp_3_i_i, i32 %result_3_1_i, i32 %result_2_0_2_i
+
+ST_16: result_3_1_1_i (216)  [1/1] 2.44ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93 (out node of the LUT)
+.preheader72:48  %result_3_1_1_i = add i32 %tmp_9_1_1_i, %result_2_1_i
+
+ST_16: tmp_5 (217)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_2_1_2_i)
+.preheader72:49  %tmp_5 = or i10 %y_assign_mid2, %x_4
+
+ST_16: tmp_10 (218)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_2_1_2_i)
+.preheader72:50  %tmp_10 = call i1 @_ssdm_op_BitSelect.i1.i10.i32(i10 %tmp_5, i32 9)
+
+ST_16: result_3_1_2_i (221)  [1/1] 2.44ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:53  %result_3_1_2_i = add i32 %tmp_9_1_2_i, %result_3_1_1_i
+
+ST_16: result_2_1_2_i (222)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (out node of the LUT)
+.preheader72:54  %result_2_1_2_i = select i1 %tmp_10, i32 %result_3_1_1_i, i32 %result_3_1_2_i
+
+ST_16: result_3_2_i (226)  [1/1] 2.44ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:58  %result_3_2_i = add i32 %tmp_9_2_i, %result_2_1_2_i
+
+
+ <State 17>: 7.62ns
+ST_17: y_assign_1_mid2 (176)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node val_out)
+.preheader72:8  %y_assign_1_mid2 = select i1 %exitcond2, i10 %y_assign_1_mid1, i10 %y
+
+ST_17: tmp_i2_i_mid2 (179)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_3_2_1_i)
+.preheader72:11  %tmp_i2_i_mid2 = xor i1 %tmp_i2_i_mid2_v, true
+
+ST_17: or_cond1_i6_i (223)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_3_2_1_i)
+.preheader72:55  %or_cond1_i6_i = and i1 %tmp_3_i_i, %tmp_i2_i_mid2
+
+ST_17: result_2_2_i (227)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node result_3_2_1_i)
+.preheader72:59  %result_2_2_i = select i1 %or_cond1_i6_i, i32 %result_3_2_i, i32 %result_2_1_2_i
+
+ST_17: result_3_2_1_i (230)  [1/1] 2.44ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93 (out node of the LUT)
+.preheader72:62  %result_3_2_1_i = add i32 %tmp_9_2_1_i, %result_2_2_i
+
+ST_17: result_2_2_1_i (231)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93
+.preheader72:63  %result_2_2_1_i = select i1 %tmp_i2_i_mid2_v, i32 %result_2_1_2_i, i32 %result_3_2_1_i
+
+ST_17: tmp_8 (232)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node val_out)
+.preheader72:64  %tmp_8 = or i10 %y_assign_1_mid2, %x_4
+
+ST_17: tmp_11 (233)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (grouped into LUT with out node val_out)
+.preheader72:65  %tmp_11 = call i1 @_ssdm_op_BitSelect.i1.i10.i32(i10 %tmp_8, i32 9)
+
+ST_17: result_3_2_2_i (236)  [1/1] 2.44ns  loc: sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93
+.preheader72:68  %result_3_2_2_i = add i32 %tmp_9_2_2_i, %result_2_2_1_i
+
+ST_17: val_out (237)  [1/1] 1.37ns  loc: sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93 (out node of the LUT)
+.preheader72:69  %val_out = select i1 %tmp_11, i32 %result_2_2_1_i, i32 %result_3_2_2_i
+
+ST_17: StgValue_264 (238)  [2/2] 0.00ns  loc: sliding_window_2/sliding_window.cpp:102
+.preheader72:70  call void @_ssdm_op_Write.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %out_stream_V_data_V, i4* %out_stream_V_keep_V, i4* %out_stream_V_strb_V, i2* %out_stream_V_user_V, i1* %out_stream_V_last_V, i5* %out_stream_V_id_V, i6* %out_stream_V_dest_V, i32 %val_out, i4 1, i4 1, i2 1, i1 undef, i5 0, i6 0)
+
+
+ <State 18>: 0.00ns
+ST_18: empty_15 (170)  [1/1] 0.00ns
+.preheader72:2  %empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 262144, i64 262144, i64 262144)
+
+ST_18: StgValue_266 (183)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:90
+.preheader72:15  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_18: StgValue_267 (238)  [1/2] 0.00ns  loc: sliding_window_2/sliding_window.cpp:102
+.preheader72:70  call void @_ssdm_op_Write.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %out_stream_V_data_V, i4* %out_stream_V_keep_V, i4* %out_stream_V_strb_V, i2* %out_stream_V_user_V, i1* %out_stream_V_last_V, i5* %out_stream_V_id_V, i6* %out_stream_V_dest_V, i32 %val_out, i4 1, i4 1, i2 1, i1 undef, i5 0, i6 0)
+
+
+ <State 19>: 0.00ns
+ST_19: StgValue_268 (260)  [1/1] 0.00ns  loc: sliding_window_2/sliding_window.cpp:137
+:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.57ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('x') with incoming values : ('x', sliding_window_2/sliding_window.cpp:58) [56]  (1.57 ns)
+
+ <State 2>: 3.44ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond1', sliding_window_2/sliding_window.cpp:58) [57]  (2.07 ns)
+	blocking operation 1.37 ns on control path)
+
+ <State 3>: 2.71ns
+The critical path consists of the following:
+	'getelementptr' operation ('line_buf_0_addr', sliding_window_2/sliding_window.cpp:58) [66]  (0 ns)
+	'store' operation (sliding_window_2/sliding_window.cpp:62) of variable 'tmp.data.V', sliding_window_2/sliding_window.cpp:61 on array 'line_buf[0]', sliding_window_2/sliding_window.cpp:46 [67]  (2.71 ns)
+
+ <State 4>: 1.57ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('x1', sliding_window_2/sliding_window.cpp:67) with incoming values : ('x_2', sliding_window_2/sliding_window.cpp:67) [74]  (1.57 ns)
+
+ <State 5>: 3.44ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond4', sliding_window_2/sliding_window.cpp:67) [75]  (2.07 ns)
+	blocking operation 1.37 ns on control path)
+
+ <State 6>: 2.71ns
+The critical path consists of the following:
+	'getelementptr' operation ('line_buf_1_addr', sliding_window_2/sliding_window.cpp:67) [85]  (0 ns)
+	'store' operation (sliding_window_2/sliding_window.cpp:71) of variable 'tmp.data.V', sliding_window_2/sliding_window.cpp:70 on array 'line_buf[1]', sliding_window_2/sliding_window.cpp:46 [86]  (2.71 ns)
+
+ <State 7>: 1.57ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten') with incoming values : ('indvar_flatten_next') [92]  (1.57 ns)
+
+ <State 8>: 6.24ns
+The critical path consists of the following:
+	'phi' operation ('x') with incoming values : ('x', sliding_window_2/sliding_window.cpp:78) [98]  (0 ns)
+	'icmp' operation ('exitcond', sliding_window_2/sliding_window.cpp:78) [104]  (1.36 ns)
+	'select' operation ('x3_mid2', sliding_window_2/sliding_window.cpp:78) [105]  (1.37 ns)
+	'add' operation ('tmp_s', sliding_window_2/sliding_window.cpp:81) [115]  (0.8 ns)
+	'getelementptr' operation ('line_buf_0_addr_2', sliding_window_2/sliding_window.cpp:81) [118]  (0 ns)
+	'load' operation ('line_buf_0_load', sliding_window_2/sliding_window.cpp:81) on array 'line_buf[0]', sliding_window_2/sliding_window.cpp:46 [120]  (2.71 ns)
+
+ <State 9>: 5.45ns
+The critical path consists of the following:
+	'load' operation ('line_buf_0_load', sliding_window_2/sliding_window.cpp:81) on array 'line_buf[0]', sliding_window_2/sliding_window.cpp:46 [120]  (2.71 ns)
+	'select' operation ('window[1][1]', sliding_window_2/sliding_window.cpp:81) [122]  (1.37 ns)
+	'select' operation ('window[2][2]', sliding_window_2/sliding_window.cpp:81) [127]  (0 ns)
+	'select' operation ('window[2][2]', sliding_window_2/sliding_window.cpp:81) [129]  (1.37 ns)
+
+ <State 10>: 1.57ns
+The critical path consists of the following:
+	'alloca' operation ('read_count') [141]  (0 ns)
+	'store' operation of constant 514 on local variable 'read_count' [142]  (1.57 ns)
+
+ <State 11>: 6.15ns
+The critical path consists of the following:
+	'phi' operation ('x') with incoming values : ('x', sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [151]  (0 ns)
+	'icmp' operation ('exitcond2', sliding_window_2/sliding_window.cpp:88) [171]  (2.07 ns)
+	'select' operation ('x_assign_mid2', sliding_window_2/sliding_window.cpp:88) [172]  (1.37 ns)
+	'getelementptr' operation ('line_buf_0_addr_1', sliding_window_2/sliding_window.cpp:88) [239]  (0 ns)
+	'load' operation ('right[0]', sliding_window_2/sliding_window.cpp:105) on array 'line_buf[0]', sliding_window_2/sliding_window.cpp:46 [240]  (2.71 ns)
+
+ <State 12>: 7.08ns
+The critical path consists of the following:
+	s_axi read on port 'kernel_0' (sliding_window_2/sliding_window.cpp:93) [184]  (1 ns)
+	'mul' operation ('tmp_9_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [196]  (6.08 ns)
+
+ <State 13>: 6.08ns
+The critical path consists of the following:
+	'phi' operation ('window[2][2]') with incoming values : ('window[2][2]', sliding_window_2/sliding_window.cpp:81) ('tmp.data.V', sliding_window_2/sliding_window.cpp:115) [147]  (0 ns)
+	'mul' operation ('tmp_9_2_2_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [235]  (6.08 ns)
+
+ <State 14>: 8.52ns
+The critical path consists of the following:
+	'mul' operation ('tmp_9_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [196]  (6.08 ns)
+	'select' operation ('result_2_i', sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [197]  (0 ns)
+	'add' operation ('result_3_0_1_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [200]  (2.44 ns)
+
+ <State 15>: 7.62ns
+The critical path consists of the following:
+	'select' operation ('result_2_0_1_i', sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [201]  (1.37 ns)
+	'add' operation ('result_3_0_2_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [208]  (2.44 ns)
+	'select' operation ('result_2_0_2_i', sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [209]  (1.37 ns)
+	'add' operation ('result_3_1_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [212]  (2.44 ns)
+
+ <State 16>: 8.69ns
+The critical path consists of the following:
+	'select' operation ('result_2_1_i', sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [213]  (0 ns)
+	'add' operation ('result_3_1_1_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [216]  (2.44 ns)
+	'add' operation ('result_3_1_2_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [221]  (2.44 ns)
+	'select' operation ('result_2_1_2_i', sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [222]  (1.37 ns)
+	'add' operation ('result_3_2_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [226]  (2.44 ns)
+
+ <State 17>: 7.62ns
+The critical path consists of the following:
+	'xor' operation ('tmp_i2_i_mid2', sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [179]  (0 ns)
+	'and' operation ('or_cond1_i6_i', sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [223]  (0 ns)
+	'select' operation ('result_2_2_i', sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [227]  (0 ns)
+	'add' operation ('result_3_2_1_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [230]  (2.44 ns)
+	'select' operation ('result_2_2_1_i', sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [231]  (1.37 ns)
+	'add' operation ('result_3_2_2_i', sliding_window_2/sliding_window.cpp:24->sliding_window_2/sliding_window.cpp:93) [236]  (2.44 ns)
+	'select' operation ('val_out', sliding_window_2/sliding_window.cpp:10->sliding_window_2/sliding_window.cpp:22->sliding_window_2/sliding_window.cpp:93) [237]  (1.37 ns)
+	axis write on port 'out_stream_V_data_V' (sliding_window_2/sliding_window.cpp:102) [238]  (0 ns)
+
+ <State 18>: 0ns
+The critical path consists of the following:
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

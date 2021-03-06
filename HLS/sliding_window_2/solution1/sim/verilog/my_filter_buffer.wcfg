@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="my_filter_buffer.wdb" id="1">
+         <top_modules>
+            <top_module name="apatb_my_filter_buffer_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject fp_name="group1" type="group">
+      <obj_property name="label">Design Top Signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="group2" type="group">
+         <obj_property name="label">C Outputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group3" type="group">
+            <obj_property name="label">out_stream(axis)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/out_stream_TDEST" type="array">
+               <obj_property name="ElementShortName">out_stream_TDEST[5:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TDEST[5:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/out_stream_TID" type="array">
+               <obj_property name="ElementShortName">out_stream_TID[4:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TID[4:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/out_stream_TLAST" type="array">
+               <obj_property name="ElementShortName">out_stream_TLAST[0:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TLAST[0:0]</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/out_stream_TUSER" type="array">
+               <obj_property name="ElementShortName">out_stream_TUSER[1:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TUSER[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/out_stream_TSTRB" type="array">
+               <obj_property name="ElementShortName">out_stream_TSTRB[3:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TSTRB[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/out_stream_TKEEP" type="array">
+               <obj_property name="ElementShortName">out_stream_TKEEP[3:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TKEEP[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/out_stream_TREADY" type="logic">
+               <obj_property name="ElementShortName">out_stream_TREADY</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/out_stream_TVALID" type="logic">
+               <obj_property name="ElementShortName">out_stream_TVALID</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/out_stream_TDATA" type="array">
+               <obj_property name="ElementShortName">out_stream_TDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group13" type="group">
+            <obj_property name="label">return(axi_slave)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/interrupt" type="logic">
+               <obj_property name="ElementShortName">interrupt</obj_property>
+               <obj_property name="ObjectShortName">interrupt</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_BRESP" type="array">
+               <obj_property name="ElementShortName">s_axi_CTRL_BRESP[1:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_BRESP[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_BREADY" type="logic">
+               <obj_property name="ElementShortName">s_axi_CTRL_BREADY</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_BREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_BVALID" type="logic">
+               <obj_property name="ElementShortName">s_axi_CTRL_BVALID</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_BVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_RRESP" type="array">
+               <obj_property name="ElementShortName">s_axi_CTRL_RRESP[1:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_RRESP[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_RDATA" type="array">
+               <obj_property name="ElementShortName">s_axi_CTRL_RDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_RDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_RREADY" type="logic">
+               <obj_property name="ElementShortName">s_axi_CTRL_RREADY</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_RREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_RVALID" type="logic">
+               <obj_property name="ElementShortName">s_axi_CTRL_RVALID</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_RVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_ARREADY" type="logic">
+               <obj_property name="ElementShortName">s_axi_CTRL_ARREADY</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_ARREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_ARVALID" type="logic">
+               <obj_property name="ElementShortName">s_axi_CTRL_ARVALID</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_ARVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_ARADDR" type="array">
+               <obj_property name="ElementShortName">s_axi_CTRL_ARADDR[3:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_ARADDR[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_WSTRB" type="array">
+               <obj_property name="ElementShortName">s_axi_CTRL_WSTRB[3:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_WSTRB[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_WDATA" type="array">
+               <obj_property name="ElementShortName">s_axi_CTRL_WDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_WDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_WREADY" type="logic">
+               <obj_property name="ElementShortName">s_axi_CTRL_WREADY</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_WREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_WVALID" type="logic">
+               <obj_property name="ElementShortName">s_axi_CTRL_WVALID</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_WVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_AWREADY" type="logic">
+               <obj_property name="ElementShortName">s_axi_CTRL_AWREADY</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_AWREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_AWVALID" type="logic">
+               <obj_property name="ElementShortName">s_axi_CTRL_AWVALID</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_AWVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_CTRL_AWADDR" type="array">
+               <obj_property name="ElementShortName">s_axi_CTRL_AWADDR[3:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_AWADDR[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group32" type="group">
+         <obj_property name="label">C Inputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group33" type="group">
+            <obj_property name="label">in_stream(axis)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/in_stream_TDEST" type="array">
+               <obj_property name="ElementShortName">in_stream_TDEST[5:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TDEST[5:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/in_stream_TID" type="array">
+               <obj_property name="ElementShortName">in_stream_TID[4:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TID[4:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/in_stream_TLAST" type="array">
+               <obj_property name="ElementShortName">in_stream_TLAST[0:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TLAST[0:0]</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/in_stream_TUSER" type="array">
+               <obj_property name="ElementShortName">in_stream_TUSER[1:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TUSER[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/in_stream_TSTRB" type="array">
+               <obj_property name="ElementShortName">in_stream_TSTRB[3:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TSTRB[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/in_stream_TKEEP" type="array">
+               <obj_property name="ElementShortName">in_stream_TKEEP[3:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TKEEP[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/in_stream_TREADY" type="logic">
+               <obj_property name="ElementShortName">in_stream_TREADY</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/in_stream_TVALID" type="logic">
+               <obj_property name="ElementShortName">in_stream_TVALID</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/in_stream_TDATA" type="array">
+               <obj_property name="ElementShortName">in_stream_TDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group43" type="group">
+            <obj_property name="label">kernel__kernel__kernel__kernel__kernel__kernel__kernel__kernel__kernel(axi_slave)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_BRESP" type="array">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_BRESP[1:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_BRESP[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_BREADY" type="logic">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_BREADY</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_BREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_BVALID" type="logic">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_BVALID</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_BVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_RRESP" type="array">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_RRESP[1:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_RRESP[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_RDATA" type="array">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_RDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_RDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_RREADY" type="logic">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_RREADY</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_RREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_RVALID" type="logic">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_RVALID</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_RVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_ARREADY" type="logic">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_ARREADY</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_ARREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_ARVALID" type="logic">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_ARVALID</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_ARVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_ARADDR" type="array">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_ARADDR[6:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_ARADDR[6:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_WSTRB" type="array">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_WSTRB[3:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_WSTRB[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_WDATA" type="array">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_WDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_WDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_WREADY" type="logic">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_WREADY</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_WREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_WVALID" type="logic">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_WVALID</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_WVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_AWREADY" type="logic">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_AWREADY</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_AWREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_AWVALID" type="logic">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_AWVALID</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_AWVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/s_axi_KERNEL_BUS_AWADDR" type="array">
+               <obj_property name="ElementShortName">s_axi_KERNEL_BUS_AWADDR[6:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_KERNEL_BUS_AWADDR[6:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group61" type="group">
+         <obj_property name="label">Block-level IO Handshake(internal)</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/ap_done" type="logic">
+            <obj_property name="ElementShortName">ap_done</obj_property>
+            <obj_property name="ObjectShortName">ap_done</obj_property>
+         </wvobject>
+         <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/ap_idle" type="logic">
+            <obj_property name="ElementShortName">ap_idle</obj_property>
+            <obj_property name="ObjectShortName">ap_idle</obj_property>
+         </wvobject>
+         <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/ap_ready" type="logic">
+            <obj_property name="ElementShortName">ap_ready</obj_property>
+            <obj_property name="ObjectShortName">ap_ready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/ap_start" type="logic">
+            <obj_property name="ElementShortName">ap_start</obj_property>
+            <obj_property name="ObjectShortName">ap_start</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group66" type="group">
+         <obj_property name="label">Reset</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/ap_rst_n" type="logic">
+            <obj_property name="ElementShortName">ap_rst_n</obj_property>
+            <obj_property name="ObjectShortName">ap_rst_n</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group68" type="group">
+         <obj_property name="label">Clock</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/apatb_my_filter_buffer_top/AESL_inst_my_filter_buffer/ap_clk" type="logic">
+            <obj_property name="ElementShortName">ap_clk</obj_property>
+            <obj_property name="ObjectShortName">ap_clk</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group70" type="group">
+      <obj_property name="label">Test Bench Signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="group71" type="group">
+         <obj_property name="label">Internal Signals</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group72" type="group">
+            <obj_property name="label">Simulation Status</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/AUTOTB_TRANSACTION_NUM" type="array">
+               <obj_property name="ElementShortName">AUTOTB_TRANSACTION_NUM[31:0]</obj_property>
+               <obj_property name="ObjectShortName">AUTOTB_TRANSACTION_NUM[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/ready_cnt" type="array">
+               <obj_property name="ElementShortName">ready_cnt[31:0]</obj_property>
+               <obj_property name="ObjectShortName">ready_cnt[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/done_cnt" type="array">
+               <obj_property name="ElementShortName">done_cnt[31:0]</obj_property>
+               <obj_property name="ObjectShortName">done_cnt[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group73" type="group">
+            <obj_property name="label">Port Depth</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_in_stream_V_data_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_in_stream_V_data_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_in_stream_V_data_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_in_stream_V_keep_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_in_stream_V_keep_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_in_stream_V_keep_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_in_stream_V_strb_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_in_stream_V_strb_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_in_stream_V_strb_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_in_stream_V_user_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_in_stream_V_user_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_in_stream_V_user_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_in_stream_V_last_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_in_stream_V_last_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_in_stream_V_last_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_in_stream_V_id_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_in_stream_V_id_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_in_stream_V_id_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_in_stream_V_dest_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_in_stream_V_dest_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_in_stream_V_dest_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_out_stream_V_data_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_out_stream_V_data_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_out_stream_V_data_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_out_stream_V_keep_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_out_stream_V_keep_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_out_stream_V_keep_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_out_stream_V_strb_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_out_stream_V_strb_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_out_stream_V_strb_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_out_stream_V_user_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_out_stream_V_user_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_out_stream_V_user_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_out_stream_V_last_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_out_stream_V_last_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_out_stream_V_last_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_out_stream_V_id_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_out_stream_V_id_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_out_stream_V_id_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_out_stream_V_dest_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_out_stream_V_dest_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_out_stream_V_dest_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_kernel_0" type="array">
+               <obj_property name="ElementShortName">LENGTH_kernel_0[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_kernel_0[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_kernel_1" type="array">
+               <obj_property name="ElementShortName">LENGTH_kernel_1[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_kernel_1[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_kernel_2" type="array">
+               <obj_property name="ElementShortName">LENGTH_kernel_2[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_kernel_2[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_kernel_3" type="array">
+               <obj_property name="ElementShortName">LENGTH_kernel_3[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_kernel_3[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_kernel_4" type="array">
+               <obj_property name="ElementShortName">LENGTH_kernel_4[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_kernel_4[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_kernel_5" type="array">
+               <obj_property name="ElementShortName">LENGTH_kernel_5[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_kernel_5[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_kernel_6" type="array">
+               <obj_property name="ElementShortName">LENGTH_kernel_6[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_kernel_6[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_kernel_7" type="array">
+               <obj_property name="ElementShortName">LENGTH_kernel_7[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_kernel_7[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/LENGTH_kernel_8" type="array">
+               <obj_property name="ElementShortName">LENGTH_kernel_8[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_kernel_8[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group100" type="group">
+         <obj_property name="label">C Outputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group101" type="group">
+            <obj_property name="label">out_stream(axis)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/out_stream_TDEST" type="array">
+               <obj_property name="ElementShortName">out_stream_TDEST[5:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TDEST[5:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/out_stream_TID" type="array">
+               <obj_property name="ElementShortName">out_stream_TID[4:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TID[4:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/out_stream_TLAST" type="array">
+               <obj_property name="ElementShortName">out_stream_TLAST[0:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TLAST[0:0]</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/out_stream_TUSER" type="array">
+               <obj_property name="ElementShortName">out_stream_TUSER[1:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TUSER[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/out_stream_TSTRB" type="array">
+               <obj_property name="ElementShortName">out_stream_TSTRB[3:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TSTRB[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/out_stream_TKEEP" type="array">
+               <obj_property name="ElementShortName">out_stream_TKEEP[3:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TKEEP[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/out_stream_TREADY" type="logic">
+               <obj_property name="ElementShortName">out_stream_TREADY</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/out_stream_TVALID" type="logic">
+               <obj_property name="ElementShortName">out_stream_TVALID</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/out_stream_TDATA" type="array">
+               <obj_property name="ElementShortName">out_stream_TDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">out_stream_TDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group111" type="group">
+            <obj_property name="label">return(axi_slave)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_INTERRUPT" type="logic">
+               <obj_property name="ElementShortName">CTRL_INTERRUPT</obj_property>
+               <obj_property name="ObjectShortName">CTRL_INTERRUPT</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_BRESP" type="array">
+               <obj_property name="ElementShortName">CTRL_BRESP[1:0]</obj_property>
+               <obj_property name="ObjectShortName">CTRL_BRESP[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_BREADY" type="logic">
+               <obj_property name="ElementShortName">CTRL_BREADY</obj_property>
+               <obj_property name="ObjectShortName">CTRL_BREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_BVALID" type="logic">
+               <obj_property name="ElementShortName">CTRL_BVALID</obj_property>
+               <obj_property name="ObjectShortName">CTRL_BVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_RRESP" type="array">
+               <obj_property name="ElementShortName">CTRL_RRESP[1:0]</obj_property>
+               <obj_property name="ObjectShortName">CTRL_RRESP[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_RDATA" type="array">
+               <obj_property name="ElementShortName">CTRL_RDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">CTRL_RDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_RREADY" type="logic">
+               <obj_property name="ElementShortName">CTRL_RREADY</obj_property>
+               <obj_property name="ObjectShortName">CTRL_RREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_RVALID" type="logic">
+               <obj_property name="ElementShortName">CTRL_RVALID</obj_property>
+               <obj_property name="ObjectShortName">CTRL_RVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_ARREADY" type="logic">
+               <obj_property name="ElementShortName">CTRL_ARREADY</obj_property>
+               <obj_property name="ObjectShortName">CTRL_ARREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_ARVALID" type="logic">
+               <obj_property name="ElementShortName">CTRL_ARVALID</obj_property>
+               <obj_property name="ObjectShortName">CTRL_ARVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_ARADDR" type="array">
+               <obj_property name="ElementShortName">CTRL_ARADDR[3:0]</obj_property>
+               <obj_property name="ObjectShortName">CTRL_ARADDR[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_WSTRB" type="array">
+               <obj_property name="ElementShortName">CTRL_WSTRB[3:0]</obj_property>
+               <obj_property name="ObjectShortName">CTRL_WSTRB[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_WDATA" type="array">
+               <obj_property name="ElementShortName">CTRL_WDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">CTRL_WDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_WREADY" type="logic">
+               <obj_property name="ElementShortName">CTRL_WREADY</obj_property>
+               <obj_property name="ObjectShortName">CTRL_WREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_WVALID" type="logic">
+               <obj_property name="ElementShortName">CTRL_WVALID</obj_property>
+               <obj_property name="ObjectShortName">CTRL_WVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_AWREADY" type="logic">
+               <obj_property name="ElementShortName">CTRL_AWREADY</obj_property>
+               <obj_property name="ObjectShortName">CTRL_AWREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_AWVALID" type="logic">
+               <obj_property name="ElementShortName">CTRL_AWVALID</obj_property>
+               <obj_property name="ObjectShortName">CTRL_AWVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/CTRL_AWADDR" type="array">
+               <obj_property name="ElementShortName">CTRL_AWADDR[3:0]</obj_property>
+               <obj_property name="ObjectShortName">CTRL_AWADDR[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group130" type="group">
+         <obj_property name="label">C Inputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group131" type="group">
+            <obj_property name="label">in_stream(axis)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/in_stream_TDEST" type="array">
+               <obj_property name="ElementShortName">in_stream_TDEST[5:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TDEST[5:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/in_stream_TID" type="array">
+               <obj_property name="ElementShortName">in_stream_TID[4:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TID[4:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/in_stream_TLAST" type="array">
+               <obj_property name="ElementShortName">in_stream_TLAST[0:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TLAST[0:0]</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/in_stream_TUSER" type="array">
+               <obj_property name="ElementShortName">in_stream_TUSER[1:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TUSER[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/in_stream_TSTRB" type="array">
+               <obj_property name="ElementShortName">in_stream_TSTRB[3:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TSTRB[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/in_stream_TKEEP" type="array">
+               <obj_property name="ElementShortName">in_stream_TKEEP[3:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TKEEP[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/in_stream_TREADY" type="logic">
+               <obj_property name="ElementShortName">in_stream_TREADY</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/in_stream_TVALID" type="logic">
+               <obj_property name="ElementShortName">in_stream_TVALID</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/in_stream_TDATA" type="array">
+               <obj_property name="ElementShortName">in_stream_TDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">in_stream_TDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group141" type="group">
+            <obj_property name="label">kernel__kernel__kernel__kernel__kernel__kernel__kernel__kernel__kernel(axi_slave)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_BRESP" type="array">
+               <obj_property name="ElementShortName">KERNEL_BUS_BRESP[1:0]</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_BRESP[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_BREADY" type="logic">
+               <obj_property name="ElementShortName">KERNEL_BUS_BREADY</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_BREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_BVALID" type="logic">
+               <obj_property name="ElementShortName">KERNEL_BUS_BVALID</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_BVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_RRESP" type="array">
+               <obj_property name="ElementShortName">KERNEL_BUS_RRESP[1:0]</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_RRESP[1:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_RDATA" type="array">
+               <obj_property name="ElementShortName">KERNEL_BUS_RDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_RDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_RREADY" type="logic">
+               <obj_property name="ElementShortName">KERNEL_BUS_RREADY</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_RREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_RVALID" type="logic">
+               <obj_property name="ElementShortName">KERNEL_BUS_RVALID</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_RVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_ARREADY" type="logic">
+               <obj_property name="ElementShortName">KERNEL_BUS_ARREADY</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_ARREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_ARVALID" type="logic">
+               <obj_property name="ElementShortName">KERNEL_BUS_ARVALID</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_ARVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_ARADDR" type="array">
+               <obj_property name="ElementShortName">KERNEL_BUS_ARADDR[6:0]</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_ARADDR[6:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_WSTRB" type="array">
+               <obj_property name="ElementShortName">KERNEL_BUS_WSTRB[3:0]</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_WSTRB[3:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_WDATA" type="array">
+               <obj_property name="ElementShortName">KERNEL_BUS_WDATA[31:0]</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_WDATA[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_WREADY" type="logic">
+               <obj_property name="ElementShortName">KERNEL_BUS_WREADY</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_WREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_WVALID" type="logic">
+               <obj_property name="ElementShortName">KERNEL_BUS_WVALID</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_WVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_AWREADY" type="logic">
+               <obj_property name="ElementShortName">KERNEL_BUS_AWREADY</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_AWREADY</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_AWVALID" type="logic">
+               <obj_property name="ElementShortName">KERNEL_BUS_AWVALID</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_AWVALID</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_my_filter_buffer_top/KERNEL_BUS_AWADDR" type="array">
+               <obj_property name="ElementShortName">KERNEL_BUS_AWADDR[6:0]</obj_property>
+               <obj_property name="ObjectShortName">KERNEL_BUS_AWADDR[6:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>
