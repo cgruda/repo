@@ -27,6 +27,7 @@
 								<option id="gnu.cpp.compiler.option.include.paths.263473794" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="D:/School/Project/new_repo/HLS"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/win64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include/etc"/>
@@ -44,6 +45,7 @@
 								<option id="gnu.c.compiler.option.include.paths.786572486" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="D:/School/Project/new_repo/HLS"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/win64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include/etc"/>
@@ -111,6 +113,7 @@
 								<option id="gnu.cpp.compiler.option.include.paths.1898886644" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="D:/School/Project/new_repo/HLS"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/win64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include/etc"/>
@@ -123,6 +126,7 @@
 								<option id="gnu.c.compiler.option.include.paths.1129651444" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="D:/School/Project/new_repo/HLS"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/win64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2016.4/include/etc"/>
@@ -179,4 +183,5 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>

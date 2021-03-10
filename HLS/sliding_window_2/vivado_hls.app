@@ -6,6 +6,8 @@
         <file name="../cnn.h" sc="0" tb="1" cflags=""/>
         <file name="../main.c" sc="0" tb="1" cflags=""/>
         <file name="../main.h" sc="0" tb="1" cflags=""/>
+        <file name="../matrix.c" sc="0" tb="1" cflags=""/>
+        <file name="../matrix.h" sc="0" tb="1" cflags=""/>
         <file name="../sliding_window_tb.cpp" sc="0" tb="1" cflags=""/>
         <file name="../tasks.c" sc="0" tb="1" cflags=""/>
         <file name="../tasks.h" sc="0" tb="1" cflags=""/>

@@ -2,70 +2,51 @@
  * Project 20-1-1-2187
  * CNN accelerator
  *
- * Processing Element Block
- *
- * C++, Vivado HLS
- *
  * Chaim Gruda
  * Shay Tsabar
  *
  */
 
 /*
- ==============================================================================
  * INCLUDES
- ==============================================================================
+ ******************************************************************************
  */
 
-#include <hls_opencv.h>
-#include <stdio.h>
 #include "sliding_window.h"
 
 extern "C" {
 	#include "main.h"
 	#include "tasks.h"
 	#include "cnn.h"
+	#include "matrix.h"
 };
 
+#include <hls_stream.h>
+#include <ap_axi_sdata.h>
+#include <stdint.h>
+#include <stdio.h>
+
 /*
- ==============================================================================
  * DEFINES
- ==============================================================================
+ ******************************************************************************
  */
 
-// #define INPUT_PATH "D:\\School\\Project\\repo\\HLS\\sliding_window_2\\img0.png"
-// #define OUTPUT_PATH "D:\\School\\Project\\repo\\HLS\\sliding_window_2\\out_img0.png"
 // #define STRIDE 1
-#define IN_DHEIGHT 512
-#define IN_DWIDTH 512
-#define OUT_DHEIGHT (IN_DHEIGHT - WIN_SIZE + 1)
-#define OUT_DWIDTH (IN_DWIDTH - WIN_SIZE + 1)
+#define OUT_DHEIGHT (INPUT_IMAGE_ROWS - KERNEL_DIM + 1)
+#define OUT_DWIDTH (INPUT_IMAGE_COLS - KERNEL_DIM + 1)
 
 /*
- ==============================================================================
- * FIXED POINT DEFINES AND MACROS
- ==============================================================================
- */
-
-/*
- ==============================================================================
  * MAIN
- ==============================================================================
+ ******************************************************************************
  */
 
 int main()
 {
-	// cv::Mat src = cv::imread(INPUT_PATH, CV_LOAD_IMAGE_GRAYSCALE);
-	// printf("size=%d x %d\n", src.cols, src.rows);
-	// cv::Mat dst = cv::Mat(OUT_DHEIGHT, OUT_DWIDTH, CV_8U);
-
-	printf("$$$$$$$$$$$$$$ NEW RUN $$$$$$$$$$$$$$\n");
-
-
 	int option;
 	bool exit = false;
 	struct env cnn_env = {0};
 	matrix_t hw_conv_result;
+	int count_in = 0, count_out = 0;
 
 	hls::stream<uint32axis_t> stream_in;
 	hls::stream<uint32axis_t> stream_out;
@@ -78,32 +59,33 @@ int main()
 	init_matrices(&cnn_env);
 	int res = matrix_init(&hw_conv_result,
 						  hw_matrix_name,
-			              512 - 3 + 1,
-						  512 - 3 + 1,
-						  512 - 3 + 1,
-						  512 - 3 + 1,
+						  OUT_DHEIGHT,
+						  OUT_DHEIGHT,
+						  OUT_DWIDTH,
+						  OUT_DWIDTH,
 			              0, 0);
 	if (res != E_SUCCESS) {
 		return res;
 	}
 
+	UI_PRINT("Starting SW CNN\n");
 	cnn_sw(&cnn_env);
+	UI_PRINT("finished SW CNN\n");
 
 	// Tested data values should be in a range of 0.0 to 1.0
 	// Input image pixels are in a range of 0 to 255
 	// Read & convert image
-	for (int y = 0; y < IN_DHEIGHT; y++)
+	for (int y = 0; y < INPUT_IMAGE_ROWS; y++)
 	{
-		for (int x = 0; x < IN_DWIDTH; x++)
+		for (int x = 0; x < INPUT_IMAGE_COLS; x++)
 		{
 			uint32axis_t valIn;
 			uint8_t a = cnn_env.m_image.data[(y * cnn_env.m_image.cols) + x];
-			// uint8_t a = src.at<uint8_t>(y, x);
 			fixp32_t b = UINT8_TO_32FIXP(a);
 			double v = ((double)a + 0.5) / double(255.0);
 			fixp32_t c = b / 255;
-			// printf("[%d:%d] %d -> 0x%08x --> ", y, x, a, b);
-			// printf("%d.%02d (%f)\n", (c >> FRACTION_OFT), FIXP32_FRACTION_GET(c), v);
+			//UI_PRINT("[%d:%d] %d -> 0x%08x --> ", y, x, a, b);
+			//UI_PRINT("%d.%02d (%f)\n", (c >> FRACTION_OFT), FIXP32_FRACTION_GET(c), v);
 			valIn.data = c;
 			valIn.keep = 1;
 			valIn.strb = 1;
@@ -112,13 +94,14 @@ int main()
 			valIn.dest = 0;
 
 			stream_in << valIn;
+			count_in++;
 		}
 	}
 
 	// Apply bilateral filter
-	printf("Starting bilateral_filter…\n");
-	my_filter_buffer(stream_in, stream_out, cnn_env.m_kernel.data, ctrl);
-	printf("bilateral_filter finished!\n");
+	UI_PRINT("Starting HW CNN\n");
+	my_filter_buffer(stream_in, stream_out, cnn_env.m_kernel.data, cnn_env.m_bias.data, ctrl);
+	UI_PRINT("finished HW CNN\n");
 
 	// Convert & write image
 	for (int y = 0; y < OUT_DHEIGHT; y++)
@@ -127,14 +110,17 @@ int main()
 		{
 			uint32axis_t valOut;
 			valOut = stream_out.read();
+			count_out++;
 			fixp32_t value = valOut.data;
 			hw_conv_result.data[y * hw_conv_result.cols + x] = (uint8_t)((value * 255) >> FRACTION_OFT);
-			// dst.at<uint8_t>(y, x) = uint8_t((value * 255) >> FRACTION_OFT);
 		}
 	}
-	// cv::imwrite(OUTPUT_PATH, dst);
-	res = matrix_comp(&hw_conv_result, &cnn_env.m_conv_result);
 
+	// compare HW and SW
+	res = matrix_comp(&hw_conv_result, &cnn_env.m_conv_result);
+	printf("in=%d, out=%d\n", count_in, count_out);
+
+	// free resources
 	free_resources(&cnn_env);
 	matrix_free(&hw_conv_result);
 	UI_PRINT(UI_GOODBYE);

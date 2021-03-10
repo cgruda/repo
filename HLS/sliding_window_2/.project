@@ -29,77 +29,102 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/.apc/.src</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/.apc/.tb</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/.apc/.tb</location>
+		</link>
+		<link>
+			<name>.reference/ap_axi_sdata.h</name>
+			<type>1</type>
+			<location>C:/Xilinx/Vivado_HLS/2016.4/common/technology/autopilot/ap_axi_sdata.h</location>
+		</link>
+		<link>
+			<name>.reference/ap_int.h</name>
+			<type>1</type>
+			<location>C:/Xilinx/Vivado_HLS/2016.4/common/technology/autopilot/ap_int.h</location>
+		</link>
+		<link>
+			<name>.reference/hls_stream.h</name>
+			<type>1</type>
+			<location>C:/Xilinx/Vivado_HLS/2016.4/common/technology/autopilot/hls_stream.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/solution1/.tcls</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/sliding_window.cpp</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/sliding_window.cpp</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.cpp</location>
 		</link>
 		<link>
 			<name>source/sliding_window.h</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/sliding_window.h</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.h</location>
 		</link>
 		<link>
 			<name>testbench/cnn.c</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/cnn.c</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/cnn.c</location>
 		</link>
 		<link>
 			<name>testbench/cnn.h</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/cnn.h</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/cnn.h</location>
 		</link>
 		<link>
 			<name>testbench/main.c</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/main.c</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/main.c</location>
 		</link>
 		<link>
 			<name>testbench/main.h</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/main.h</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/main.h</location>
+		</link>
+		<link>
+			<name>testbench/matrix.c</name>
+			<type>1</type>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/matrix.c</location>
+		</link>
+		<link>
+			<name>testbench/matrix.h</name>
+			<type>1</type>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/matrix.h</location>
 		</link>
 		<link>
 			<name>testbench/sliding_window_tb.cpp</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/sliding_window_tb.cpp</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window_tb.cpp</location>
 		</link>
 		<link>
 			<name>testbench/tasks.c</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/tasks.c</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/tasks.c</location>
 		</link>
 		<link>
 			<name>testbench/tasks.h</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/tasks.h</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/tasks.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/solution1/solution1.directive</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/solution1/directives.tcl</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>D:/School/Project/repo/HLS/sliding_window_2/solution1/script.tcl</location>
+			<location>D:/School/Project/new_repo/HLS/sliding_window_2/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

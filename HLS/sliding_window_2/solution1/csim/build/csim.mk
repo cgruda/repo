@@ -19,7 +19,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../cnn.c ../../../main.c ../../../sliding_window_tb.cpp ../../../tasks.c ../../../sliding_window.cpp
+HLS_SOURCES = ../../../cnn.c ../../../main.c ../../../matrix.c ../../../sliding_window_tb.cpp ../../../tasks.c ../../../sliding_window.cpp
 
 TARGET := csim.exe
 
@@ -83,6 +83,12 @@ $(ObjDir)/main.o: ../../../main.c $(ObjDir)/.dir
 	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/main.d
+
+$(ObjDir)/matrix.o: ../../../matrix.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../matrix.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/matrix.d
 
 $(ObjDir)/sliding_window_tb.o: ../../../sliding_window_tb.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../sliding_window_tb.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)

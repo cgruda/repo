@@ -11,6 +11,8 @@ add_files -tb sliding_window_2/cnn.c
 add_files -tb sliding_window_2/cnn.h
 add_files -tb sliding_window_2/main.c
 add_files -tb sliding_window_2/main.h
+add_files -tb sliding_window_2/matrix.c
+add_files -tb sliding_window_2/matrix.h
 add_files -tb sliding_window_2/sliding_window_tb.cpp
 add_files -tb sliding_window_2/tasks.c
 add_files -tb sliding_window_2/tasks.h
