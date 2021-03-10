@@ -70,7 +70,7 @@ int free_resources(struct env *cnn_env)
 	matrix_free(&cnn_env->m_image);
 	matrix_free(&cnn_env->m_kernel);
 	matrix_free(&cnn_env->m_bias);
-	matrix_free(&cnn_env->m_pool_result);
+	// matrix_free(&cnn_env->m_pool_result);
 
 	return E_SUCCESS;
 }
@@ -112,10 +112,48 @@ int init_matrices(struct env *cnn_env)
 					  KERNEL_COLS,
 			          0,
 					  0);
-		if (res != E_SUCCESS)
+	if (res != E_SUCCESS)
 			return res;
 
 	return E_SUCCESS;
 }
 
+int init_matrices_demo(struct env *cnn_env)
+{
+	int res;
 
+	/* random image */
+	res = matrix_init_demo(&cnn_env->m_image,
+					  "image",
+					  INPUT_IMAGE_ROWS,
+					  INPUT_IMAGE_ROWS,
+					  INPUT_IMAGE_COLS,
+					  INPUT_IMAGE_COLS);
+	if (res != E_SUCCESS)
+		return res;
+
+	/* random kernel */
+	res = matrix_init(&cnn_env->m_kernel,
+					  "kernel",
+					  KERNEL_ROWS,
+					  KERNEL_ROWS,
+					  KERNEL_COLS,
+					  KERNEL_COLS,
+					  1, 1);
+	if (res != E_SUCCESS)
+		return res;
+
+	/* random bias */
+	res = matrix_init(&cnn_env->m_bias,
+			          "bias",
+					  KERNEL_ROWS,
+					  KERNEL_ROWS,
+					  KERNEL_COLS,
+					  KERNEL_COLS,
+					  0,
+					  0);
+	if (res != E_SUCCESS)
+			return res;
+
+	return E_SUCCESS;
+}

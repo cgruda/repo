@@ -49,7 +49,11 @@ int pool_2D(matrix_t *input, int pool_dim, matrix_t *output, int max_pool);
 
 int conv_2D(matrix_t *input, matrix_t *kernel, matrix_t *bias, matrix_t *output);
 
+int conv_2D_norm(matrixf_t *input, matrix_t *kernel, matrix_t *bias, matrixf_t *output);
+
 int cnn_sw(struct env *cnn_env);
+
+int cnn_sw_norm(struct env *cnn_env);
 
 int cnn_hw(struct env *cnn_env);
 

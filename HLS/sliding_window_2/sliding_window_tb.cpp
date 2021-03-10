@@ -45,8 +45,7 @@ int main()
 	int option;
 	bool exit = false;
 	struct env cnn_env = {0};
-	matrix_t hw_conv_result;
-	int count_in = 0, count_out = 0;
+	matrix_t hw_conv_result = {0};
 
 	hls::stream<uint32axis_t> stream_in;
 	hls::stream<uint32axis_t> stream_out;
@@ -56,7 +55,7 @@ int main()
 	UI_PRINT(UI_WELCOME);
 
 	char hw_matrix_name[] = "hw_result";
-	init_matrices(&cnn_env);
+	init_matrices_demo(&cnn_env);
 	int res = matrix_init(&hw_conv_result,
 						  hw_matrix_name,
 						  OUT_DHEIGHT,
@@ -69,6 +68,7 @@ int main()
 	}
 
 	UI_PRINT("Starting SW CNN\n");
+	//cnn_sw_norm(&cnn_env);
 	cnn_sw(&cnn_env);
 	UI_PRINT("finished SW CNN\n");
 
@@ -80,12 +80,12 @@ int main()
 		for (int x = 0; x < INPUT_IMAGE_COLS; x++)
 		{
 			uint32axis_t valIn;
-			uint8_t a = cnn_env.m_image.data[(y * cnn_env.m_image.cols) + x];
+			data_t a = cnn_env.m_image.data[(y * cnn_env.m_image.cols) + x];
 			fixp32_t b = UINT8_TO_32FIXP(a);
-			double v = ((double)a + 0.5) / double(255.0);
+			double v = (double)a / double(255.0);
 			fixp32_t c = b / 255;
-			//UI_PRINT("[%d:%d] %d -> 0x%08x --> ", y, x, a, b);
-			//UI_PRINT("%d.%02d (%f)\n", (c >> FRACTION_OFT), FIXP32_FRACTION_GET(c), v);
+			UI_PRINT("[%d:%d] %d -> 0x%08x := ", y, x, a, c);
+			UI_PRINT("%d.%06d (%f)\n", (c >> FRACTION_OFT), FIXP32_FRACTION_GET(c), v);
 			valIn.data = c;
 			valIn.keep = 1;
 			valIn.strb = 1;
@@ -94,7 +94,6 @@ int main()
 			valIn.dest = 0;
 
 			stream_in << valIn;
-			count_in++;
 		}
 	}
 
@@ -110,15 +109,17 @@ int main()
 		{
 			uint32axis_t valOut;
 			valOut = stream_out.read();
-			count_out++;
 			fixp32_t value = valOut.data;
-			hw_conv_result.data[y * hw_conv_result.cols + x] = (uint8_t)((value * 255) >> FRACTION_OFT);
+			UI_PRINT("0x%06x := %d.%06d\n", value, (value >> FRACTION_OFT), FIXP32_FRACTION_GET(value));
+			hw_conv_result.data[y * hw_conv_result.cols + x] = (data_t)((value * 255) >> FRACTION_OFT);
 		}
 	}
 
 	// compare HW and SW
 	res = matrix_comp(&hw_conv_result, &cnn_env.m_conv_result);
-	printf("in=%d, out=%d\n", count_in, count_out);
+
+	matrix_print(&hw_conv_result);
+	matrix_print(&cnn_env.m_conv_result);
 
 	// free resources
 	free_resources(&cnn_env);

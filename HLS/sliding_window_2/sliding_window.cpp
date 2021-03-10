@@ -29,8 +29,8 @@ inline bool pad_skip(int x, int y, uint8_t ctrl)
 	return (!(ctrl & CTRL_PADD_ENABLE) &&
 			((x < KERNEL_DIM_Q1) ||
 			 (y < KERNEL_DIM_Q1) ||
-			 (x > INPUT_IMAGE_COLS - KERNEL_DIM_Q1) ||
-			 (y > INPUT_IMAGE_ROWS - KERNEL_DIM_Q1)));
+			 (x > INPUT_IMAGE_COLS - KERNEL_DIM_Q1 - 1) ||
+			 (y > INPUT_IMAGE_ROWS - KERNEL_DIM_Q1 - 1)));
 }
 
 inline fixp32_t single_operation(fixp32_t window[KERNEL_DIM][KERNEL_DIM],

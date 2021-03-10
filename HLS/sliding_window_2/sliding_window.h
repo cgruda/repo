@@ -45,7 +45,7 @@
 #define FRACTION_DIV (1 << FRACTION_OFT)
 #define UINT32_TO_32FIXP(num) ((num) << FRACTION_OFT)
 #define UINT8_TO_32FIXP(num) ((uint32_t)(num) << FRACTION_OFT)
-#define FIXP32_FRACTION_GET(num) (((num) & FRACTION_MSK) * 100 / FRACTION_DIV) // 2 points
+#define FIXP32_FRACTION_GET(num) (((num) & FRACTION_MSK) * 1000000 / FRACTION_DIV) // 2 points
 
 // control
 #define CTRL_OPP_OFT    0

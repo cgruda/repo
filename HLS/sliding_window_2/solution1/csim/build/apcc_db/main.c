@@ -158,6 +158,8 @@ signed int free_resources(l_struct_OC_env *llvm_cbe_cnn_env);
 signed int matrix_free(l_struct_OC_matrix *);
 signed int init_matrices(l_struct_OC_env *llvm_cbe_cnn_env);
 signed int matrix_init(l_struct_OC_matrix *,  char *, signed int , signed int , signed int , signed int , signed int , signed int );
+signed int init_matrices_demo(l_struct_OC_env *llvm_cbe_cnn_env);
+signed int matrix_init_demo(l_struct_OC_matrix *,  char *, signed int , signed int , signed int , signed int );
 
 
 /* Global Variable Definitions and Initialization */
@@ -237,7 +239,7 @@ if (AESL_DEBUG_TRACE) {
 printf("\nReturn puts2 = 0x%X",llvm_cbe_puts2);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%1 = call i32 (i8*, ...)* @scanf(i8* getelementptr inbounds ([3 x i8]* @aesl_internal_.str1, i32 0, i32 0), i32* %%choise) nounwind, !dbg !8 for 0x%I64xth hint within @user_input_get  --> \n", ++aesl_llvm_cbe_2_count);
+printf("\n  %%1 = call i32 (i8*, ...)* @scanf(i8* getelementptr inbounds ([3 x i8]* @aesl_internal_.str1, i32 0, i32 0), i32* %%choise) nounwind, !dbg !9 for 0x%I64xth hint within @user_input_get  --> \n", ++aesl_llvm_cbe_2_count);
   scanf(( char *)((&aesl_internal__OC_str1[(((signed int )0u))
 #ifdef AESL_BC_SIM
  % 3
@@ -247,7 +249,7 @@ if (AESL_DEBUG_TRACE) {
 printf("\nReturn  = 0x%X",llvm_cbe_tmp__1);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%2 = load i32* %%choise, align 4, !dbg !8 for 0x%I64xth hint within @user_input_get  --> \n", ++aesl_llvm_cbe_7_count);
+printf("\n  %%2 = load i32* %%choise, align 4, !dbg !9 for 0x%I64xth hint within @user_input_get  --> \n", ++aesl_llvm_cbe_7_count);
   llvm_cbe_tmp__2 = (unsigned int )*(&llvm_cbe_choise);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__2);
@@ -281,7 +283,7 @@ if (AESL_DEBUG_TRACE) {
 printf("\nReturn puts = 0x%X",llvm_cbe_puts);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%4 = call i32 (i8*, ...)* @scanf(i8* getelementptr inbounds ([3 x i8]* @aesl_internal_.str1, i32 0, i32 0), i32* %%choise) nounwind, !dbg !8 for 0x%I64xth hint within @user_input_get  --> \n", ++aesl_llvm_cbe_10_count);
+printf("\n  %%4 = call i32 (i8*, ...)* @scanf(i8* getelementptr inbounds ([3 x i8]* @aesl_internal_.str1, i32 0, i32 0), i32* %%choise) nounwind, !dbg !9 for 0x%I64xth hint within @user_input_get  --> \n", ++aesl_llvm_cbe_10_count);
   scanf(( char *)((&aesl_internal__OC_str1[(((signed int )0u))
 #ifdef AESL_BC_SIM
  % 3
@@ -291,7 +293,7 @@ if (AESL_DEBUG_TRACE) {
 printf("\nReturn  = 0x%X",llvm_cbe_tmp__3);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%5 = load i32* %%choise, align 4, !dbg !8 for 0x%I64xth hint within @user_input_get  --> \n", ++aesl_llvm_cbe_17_count);
+printf("\n  %%5 = load i32* %%choise, align 4, !dbg !9 for 0x%I64xth hint within @user_input_get  --> \n", ++aesl_llvm_cbe_17_count);
   llvm_cbe_tmp__4 = (unsigned int )*(&llvm_cbe_choise);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__4);
@@ -325,85 +327,69 @@ signed int free_resources(l_struct_OC_env *llvm_cbe_cnn_env) {
   static  unsigned long long aesl_llvm_cbe_25_count = 0;
   static  unsigned long long aesl_llvm_cbe_26_count = 0;
   static  unsigned long long aesl_llvm_cbe_27_count = 0;
-  static  unsigned long long aesl_llvm_cbe_28_count = 0;
   l_struct_OC_matrix *llvm_cbe_tmp__5;
-  static  unsigned long long aesl_llvm_cbe_29_count = 0;
+  static  unsigned long long aesl_llvm_cbe_28_count = 0;
   unsigned int llvm_cbe_tmp__6;
-  static  unsigned long long aesl_llvm_cbe_30_count = 0;
+  static  unsigned long long aesl_llvm_cbe_29_count = 0;
   l_struct_OC_matrix *llvm_cbe_tmp__7;
-  static  unsigned long long aesl_llvm_cbe_31_count = 0;
+  static  unsigned long long aesl_llvm_cbe_30_count = 0;
   unsigned int llvm_cbe_tmp__8;
-  static  unsigned long long aesl_llvm_cbe_32_count = 0;
+  static  unsigned long long aesl_llvm_cbe_31_count = 0;
   l_struct_OC_matrix *llvm_cbe_tmp__9;
-  static  unsigned long long aesl_llvm_cbe_33_count = 0;
+  static  unsigned long long aesl_llvm_cbe_32_count = 0;
   unsigned int llvm_cbe_tmp__10;
-  static  unsigned long long aesl_llvm_cbe_34_count = 0;
+  static  unsigned long long aesl_llvm_cbe_33_count = 0;
   l_struct_OC_matrix *llvm_cbe_tmp__11;
-  static  unsigned long long aesl_llvm_cbe_35_count = 0;
+  static  unsigned long long aesl_llvm_cbe_34_count = 0;
   unsigned int llvm_cbe_tmp__12;
-  static  unsigned long long aesl_llvm_cbe_36_count = 0;
-  l_struct_OC_matrix *llvm_cbe_tmp__13;
-  static  unsigned long long aesl_llvm_cbe_37_count = 0;
-  unsigned int llvm_cbe_tmp__14;
-  static  unsigned long long aesl_llvm_cbe_38_count = 0;
+  static  unsigned long long aesl_llvm_cbe_35_count = 0;
 
 const char* AESL_DEBUG_TRACE = getenv("DEBUG_TRACE");
 if (AESL_DEBUG_TRACE)
 printf("\n\{ BEGIN @free_resources\n");
 if (AESL_DEBUG_TRACE)
-printf("\n  %%1 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 3, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_28_count);
+printf("\n  %%1 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 3, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_27_count);
   llvm_cbe_tmp__5 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field3);
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%2 = tail call i32 @matrix_free(%%struct.matrix* %%1) nounwind, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_29_count);
+printf("\n  %%2 = tail call i32 @matrix_free(%%struct.matrix* %%1) nounwind, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_28_count);
    /*tail*/ matrix_free((l_struct_OC_matrix *)llvm_cbe_tmp__5);
 if (AESL_DEBUG_TRACE) {
 printf("\nReturn  = 0x%X",llvm_cbe_tmp__6);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%3 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 0, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_30_count);
+printf("\n  %%3 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 0, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_29_count);
   llvm_cbe_tmp__7 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field0);
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%4 = tail call i32 @matrix_free(%%struct.matrix* %%3) nounwind, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_31_count);
+printf("\n  %%4 = tail call i32 @matrix_free(%%struct.matrix* %%3) nounwind, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_30_count);
    /*tail*/ matrix_free((l_struct_OC_matrix *)llvm_cbe_tmp__7);
 if (AESL_DEBUG_TRACE) {
 printf("\nReturn  = 0x%X",llvm_cbe_tmp__8);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%5 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 1, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_32_count);
+printf("\n  %%5 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 1, !dbg !9 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_31_count);
   llvm_cbe_tmp__9 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field1);
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%6 = tail call i32 @matrix_free(%%struct.matrix* %%5) nounwind, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_33_count);
+printf("\n  %%6 = tail call i32 @matrix_free(%%struct.matrix* %%5) nounwind, !dbg !9 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_32_count);
    /*tail*/ matrix_free((l_struct_OC_matrix *)llvm_cbe_tmp__9);
 if (AESL_DEBUG_TRACE) {
 printf("\nReturn  = 0x%X",llvm_cbe_tmp__10);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%7 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 2, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_34_count);
+printf("\n  %%7 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 2, !dbg !9 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_33_count);
   llvm_cbe_tmp__11 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field2);
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%8 = tail call i32 @matrix_free(%%struct.matrix* %%7) nounwind, !dbg !8 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_35_count);
+printf("\n  %%8 = tail call i32 @matrix_free(%%struct.matrix* %%7) nounwind, !dbg !9 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_34_count);
    /*tail*/ matrix_free((l_struct_OC_matrix *)llvm_cbe_tmp__11);
 if (AESL_DEBUG_TRACE) {
 printf("\nReturn  = 0x%X",llvm_cbe_tmp__12);
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%9 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 4, !dbg !9 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_36_count);
-  llvm_cbe_tmp__13 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field4);
-if (AESL_DEBUG_TRACE) {
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%10 = tail call i32 @matrix_free(%%struct.matrix* %%9) nounwind, !dbg !9 for 0x%I64xth hint within @free_resources  --> \n", ++aesl_llvm_cbe_37_count);
-   /*tail*/ matrix_free((l_struct_OC_matrix *)llvm_cbe_tmp__13);
-if (AESL_DEBUG_TRACE) {
-printf("\nReturn  = 0x%X",llvm_cbe_tmp__14);
 }
   if (AESL_DEBUG_TRACE)
       printf("\nEND @free_resources}\n");
@@ -412,14 +398,17 @@ printf("\nReturn  = 0x%X",llvm_cbe_tmp__14);
 
 
 signed int init_matrices(l_struct_OC_env *llvm_cbe_cnn_env) {
+  static  unsigned long long aesl_llvm_cbe_36_count = 0;
+  static  unsigned long long aesl_llvm_cbe_37_count = 0;
+  static  unsigned long long aesl_llvm_cbe_38_count = 0;
   static  unsigned long long aesl_llvm_cbe_39_count = 0;
   static  unsigned long long aesl_llvm_cbe_40_count = 0;
+  l_struct_OC_matrix *llvm_cbe_tmp__13;
   static  unsigned long long aesl_llvm_cbe_41_count = 0;
+  unsigned int llvm_cbe_tmp__14;
   static  unsigned long long aesl_llvm_cbe_42_count = 0;
   static  unsigned long long aesl_llvm_cbe_43_count = 0;
-  l_struct_OC_matrix *llvm_cbe_tmp__15;
   static  unsigned long long aesl_llvm_cbe_44_count = 0;
-  unsigned int llvm_cbe_tmp__16;
   static  unsigned long long aesl_llvm_cbe_45_count = 0;
   static  unsigned long long aesl_llvm_cbe_46_count = 0;
   static  unsigned long long aesl_llvm_cbe_47_count = 0;
@@ -427,12 +416,12 @@ signed int init_matrices(l_struct_OC_env *llvm_cbe_cnn_env) {
   static  unsigned long long aesl_llvm_cbe_49_count = 0;
   static  unsigned long long aesl_llvm_cbe_50_count = 0;
   static  unsigned long long aesl_llvm_cbe_51_count = 0;
+  l_struct_OC_matrix *llvm_cbe_tmp__15;
   static  unsigned long long aesl_llvm_cbe_52_count = 0;
+  unsigned int llvm_cbe_tmp__16;
   static  unsigned long long aesl_llvm_cbe_53_count = 0;
   static  unsigned long long aesl_llvm_cbe_54_count = 0;
-  l_struct_OC_matrix *llvm_cbe_tmp__17;
   static  unsigned long long aesl_llvm_cbe_55_count = 0;
-  unsigned int llvm_cbe_tmp__18;
   static  unsigned long long aesl_llvm_cbe_56_count = 0;
   static  unsigned long long aesl_llvm_cbe_57_count = 0;
   static  unsigned long long aesl_llvm_cbe_58_count = 0;
@@ -440,36 +429,33 @@ signed int init_matrices(l_struct_OC_env *llvm_cbe_cnn_env) {
   static  unsigned long long aesl_llvm_cbe_60_count = 0;
   static  unsigned long long aesl_llvm_cbe_61_count = 0;
   static  unsigned long long aesl_llvm_cbe_62_count = 0;
+  l_struct_OC_matrix *llvm_cbe_tmp__17;
   static  unsigned long long aesl_llvm_cbe_63_count = 0;
+  unsigned int llvm_cbe_tmp__18;
   static  unsigned long long aesl_llvm_cbe_64_count = 0;
   static  unsigned long long aesl_llvm_cbe_65_count = 0;
-  l_struct_OC_matrix *llvm_cbe_tmp__19;
   static  unsigned long long aesl_llvm_cbe_66_count = 0;
-  unsigned int llvm_cbe_tmp__20;
   static  unsigned long long aesl_llvm_cbe_67_count = 0;
   static  unsigned long long aesl_llvm_cbe_68_count = 0;
   static  unsigned long long aesl_llvm_cbe_69_count = 0;
   static  unsigned long long aesl_llvm_cbe_70_count = 0;
   static  unsigned long long aesl_llvm_cbe_71_count = 0;
   static  unsigned long long aesl_llvm_cbe_72_count = 0;
+  unsigned int llvm_cbe_tmp__19;
+  unsigned int llvm_cbe_tmp__19__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_73_count = 0;
-  static  unsigned long long aesl_llvm_cbe_74_count = 0;
-  static  unsigned long long aesl_llvm_cbe_75_count = 0;
-  unsigned int llvm_cbe_tmp__21;
-  unsigned int llvm_cbe_tmp__21__PHI_TEMPORARY;
-  static  unsigned long long aesl_llvm_cbe_76_count = 0;
 
 const char* AESL_DEBUG_TRACE = getenv("DEBUG_TRACE");
 if (AESL_DEBUG_TRACE)
 printf("\n\{ BEGIN @init_matrices\n");
 if (AESL_DEBUG_TRACE)
-printf("\n  %%1 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 0, !dbg !8 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_43_count);
-  llvm_cbe_tmp__15 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field0);
+printf("\n  %%1 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 0, !dbg !8 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_40_count);
+  llvm_cbe_tmp__13 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field0);
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%2 = tail call i32 @matrix_init(%%struct.matrix* %%1, i8* getelementptr inbounds ([6 x i8]* @aesl_internal_.str3, i32 0, i32 0), i32 4, i32 4, i32 4, i32 4, i32 255, i32 0) nounwind, !dbg !8 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_44_count);
-  llvm_cbe_tmp__16 = (unsigned int ) /*tail*/ matrix_init((l_struct_OC_matrix *)llvm_cbe_tmp__15, ( char *)((&aesl_internal__OC_str3[(((signed int )0u))
+printf("\n  %%2 = tail call i32 @matrix_init(%%struct.matrix* %%1, i8* getelementptr inbounds ([6 x i8]* @aesl_internal_.str3, i32 0, i32 0), i32 4, i32 4, i32 4, i32 4, i32 255, i32 0) nounwind, !dbg !8 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_41_count);
+  llvm_cbe_tmp__14 = (unsigned int ) /*tail*/ matrix_init((l_struct_OC_matrix *)llvm_cbe_tmp__13, ( char *)((&aesl_internal__OC_str3[(((signed int )0u))
 #ifdef AESL_BC_SIM
  % 6
 #endif
@@ -481,24 +467,24 @@ printf("\nArgument  = 0x%X",4u);
 printf("\nArgument  = 0x%X",4u);
 printf("\nArgument  = 0x%X",255u);
 printf("\nArgument  = 0x%X",0u);
-printf("\nReturn  = 0x%X",llvm_cbe_tmp__16);
+printf("\nReturn  = 0x%X",llvm_cbe_tmp__14);
 }
-  if (((llvm_cbe_tmp__16&4294967295U) == (0u&4294967295U))) {
-    goto llvm_cbe_tmp__22;
+  if (((llvm_cbe_tmp__14&4294967295U) == (0u&4294967295U))) {
+    goto llvm_cbe_tmp__20;
   } else {
-    llvm_cbe_tmp__21__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__16;   /* for PHI node */
-    goto llvm_cbe_tmp__23;
+    llvm_cbe_tmp__19__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__14;   /* for PHI node */
+    goto llvm_cbe_tmp__21;
   }
 
-llvm_cbe_tmp__22:
+llvm_cbe_tmp__20:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%5 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 1, !dbg !8 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_54_count);
-  llvm_cbe_tmp__17 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field1);
+printf("\n  %%5 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 1, !dbg !8 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_51_count);
+  llvm_cbe_tmp__15 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field1);
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%6 = tail call i32 @matrix_init(%%struct.matrix* %%5, i8* getelementptr inbounds ([7 x i8]* @aesl_internal_.str4, i32 0, i32 0), i32 3, i32 3, i32 3, i32 3, i32 1, i32 0) nounwind, !dbg !8 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_55_count);
-  llvm_cbe_tmp__18 = (unsigned int ) /*tail*/ matrix_init((l_struct_OC_matrix *)llvm_cbe_tmp__17, ( char *)((&aesl_internal__OC_str4[(((signed int )0u))
+printf("\n  %%6 = tail call i32 @matrix_init(%%struct.matrix* %%5, i8* getelementptr inbounds ([7 x i8]* @aesl_internal_.str4, i32 0, i32 0), i32 3, i32 3, i32 3, i32 3, i32 1, i32 0) nounwind, !dbg !8 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_52_count);
+  llvm_cbe_tmp__16 = (unsigned int ) /*tail*/ matrix_init((l_struct_OC_matrix *)llvm_cbe_tmp__15, ( char *)((&aesl_internal__OC_str4[(((signed int )0u))
 #ifdef AESL_BC_SIM
  % 7
 #endif
@@ -510,24 +496,24 @@ printf("\nArgument  = 0x%X",3u);
 printf("\nArgument  = 0x%X",3u);
 printf("\nArgument  = 0x%X",1u);
 printf("\nArgument  = 0x%X",0u);
-printf("\nReturn  = 0x%X",llvm_cbe_tmp__18);
+printf("\nReturn  = 0x%X",llvm_cbe_tmp__16);
 }
-  if (((llvm_cbe_tmp__18&4294967295U) == (0u&4294967295U))) {
-    goto llvm_cbe_tmp__24;
+  if (((llvm_cbe_tmp__16&4294967295U) == (0u&4294967295U))) {
+    goto llvm_cbe_tmp__22;
   } else {
-    llvm_cbe_tmp__21__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__18;   /* for PHI node */
-    goto llvm_cbe_tmp__23;
+    llvm_cbe_tmp__19__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__16;   /* for PHI node */
+    goto llvm_cbe_tmp__21;
   }
 
-llvm_cbe_tmp__24:
+llvm_cbe_tmp__22:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%9 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 2, !dbg !8 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_65_count);
-  llvm_cbe_tmp__19 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field2);
+printf("\n  %%9 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 2, !dbg !9 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_62_count);
+  llvm_cbe_tmp__17 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field2);
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%10 = tail call i32 @matrix_init(%%struct.matrix* %%9, i8* getelementptr inbounds ([5 x i8]* @aesl_internal_.str5, i32 0, i32 0), i32 3, i32 3, i32 3, i32 3, i32 0, i32 0) nounwind, !dbg !8 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_66_count);
-  llvm_cbe_tmp__20 = (unsigned int ) /*tail*/ matrix_init((l_struct_OC_matrix *)llvm_cbe_tmp__19, ( char *)((&aesl_internal__OC_str5[(((signed int )0u))
+printf("\n  %%10 = tail call i32 @matrix_init(%%struct.matrix* %%9, i8* getelementptr inbounds ([5 x i8]* @aesl_internal_.str5, i32 0, i32 0), i32 3, i32 3, i32 3, i32 3, i32 0, i32 0) nounwind, !dbg !9 for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_63_count);
+  llvm_cbe_tmp__18 = (unsigned int ) /*tail*/ matrix_init((l_struct_OC_matrix *)llvm_cbe_tmp__17, ( char *)((&aesl_internal__OC_str5[(((signed int )0u))
 #ifdef AESL_BC_SIM
  % 5
 #endif
@@ -539,22 +525,168 @@ printf("\nArgument  = 0x%X",3u);
 printf("\nArgument  = 0x%X",3u);
 printf("\nArgument  = 0x%X",0u);
 printf("\nArgument  = 0x%X",0u);
-printf("\nReturn  = 0x%X",llvm_cbe_tmp__20);
+printf("\nReturn  = 0x%X",llvm_cbe_tmp__18);
 }
   if (AESL_DEBUG_TRACE)
       printf("\nEND @init_matrices}\n");
-  return llvm_cbe_tmp__20;
-llvm_cbe_tmp__23:
+  return llvm_cbe_tmp__18;
+llvm_cbe_tmp__21:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%12 = phi i32 [ %%2, %%0 ], [ %%6, %%4  for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_75_count);
-  llvm_cbe_tmp__21 = (unsigned int )llvm_cbe_tmp__21__PHI_TEMPORARY;
+printf("\n  %%12 = phi i32 [ %%2, %%0 ], [ %%6, %%4  for 0x%I64xth hint within @init_matrices  --> \n", ++aesl_llvm_cbe_72_count);
+  llvm_cbe_tmp__19 = (unsigned int )llvm_cbe_tmp__19__PHI_TEMPORARY;
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",llvm_cbe_tmp__21);
+printf("\n = 0x%X",llvm_cbe_tmp__19);
+printf("\n = 0x%X",llvm_cbe_tmp__14);
 printf("\n = 0x%X",llvm_cbe_tmp__16);
-printf("\n = 0x%X",llvm_cbe_tmp__18);
 }
   if (AESL_DEBUG_TRACE)
       printf("\nEND @init_matrices}\n");
-  return llvm_cbe_tmp__21;
+  return llvm_cbe_tmp__19;
+}
+
+
+signed int init_matrices_demo(l_struct_OC_env *llvm_cbe_cnn_env) {
+  static  unsigned long long aesl_llvm_cbe_74_count = 0;
+  static  unsigned long long aesl_llvm_cbe_75_count = 0;
+  static  unsigned long long aesl_llvm_cbe_76_count = 0;
+  static  unsigned long long aesl_llvm_cbe_77_count = 0;
+  static  unsigned long long aesl_llvm_cbe_78_count = 0;
+  l_struct_OC_matrix *llvm_cbe_tmp__23;
+  static  unsigned long long aesl_llvm_cbe_79_count = 0;
+  unsigned int llvm_cbe_tmp__24;
+  static  unsigned long long aesl_llvm_cbe_80_count = 0;
+  static  unsigned long long aesl_llvm_cbe_81_count = 0;
+  static  unsigned long long aesl_llvm_cbe_82_count = 0;
+  static  unsigned long long aesl_llvm_cbe_83_count = 0;
+  static  unsigned long long aesl_llvm_cbe_84_count = 0;
+  static  unsigned long long aesl_llvm_cbe_85_count = 0;
+  static  unsigned long long aesl_llvm_cbe_86_count = 0;
+  static  unsigned long long aesl_llvm_cbe_87_count = 0;
+  static  unsigned long long aesl_llvm_cbe_88_count = 0;
+  static  unsigned long long aesl_llvm_cbe_89_count = 0;
+  l_struct_OC_matrix *llvm_cbe_tmp__25;
+  static  unsigned long long aesl_llvm_cbe_90_count = 0;
+  unsigned int llvm_cbe_tmp__26;
+  static  unsigned long long aesl_llvm_cbe_91_count = 0;
+  static  unsigned long long aesl_llvm_cbe_92_count = 0;
+  static  unsigned long long aesl_llvm_cbe_93_count = 0;
+  static  unsigned long long aesl_llvm_cbe_94_count = 0;
+  static  unsigned long long aesl_llvm_cbe_95_count = 0;
+  static  unsigned long long aesl_llvm_cbe_96_count = 0;
+  static  unsigned long long aesl_llvm_cbe_97_count = 0;
+  static  unsigned long long aesl_llvm_cbe_98_count = 0;
+  static  unsigned long long aesl_llvm_cbe_99_count = 0;
+  static  unsigned long long aesl_llvm_cbe_100_count = 0;
+  l_struct_OC_matrix *llvm_cbe_tmp__27;
+  static  unsigned long long aesl_llvm_cbe_101_count = 0;
+  unsigned int llvm_cbe_tmp__28;
+  static  unsigned long long aesl_llvm_cbe_102_count = 0;
+  static  unsigned long long aesl_llvm_cbe_103_count = 0;
+  static  unsigned long long aesl_llvm_cbe_104_count = 0;
+  static  unsigned long long aesl_llvm_cbe_105_count = 0;
+  static  unsigned long long aesl_llvm_cbe_106_count = 0;
+  static  unsigned long long aesl_llvm_cbe_107_count = 0;
+  static  unsigned long long aesl_llvm_cbe_108_count = 0;
+  static  unsigned long long aesl_llvm_cbe_109_count = 0;
+  static  unsigned long long aesl_llvm_cbe_110_count = 0;
+  unsigned int llvm_cbe_tmp__29;
+  unsigned int llvm_cbe_tmp__29__PHI_TEMPORARY;
+  static  unsigned long long aesl_llvm_cbe_111_count = 0;
+
+const char* AESL_DEBUG_TRACE = getenv("DEBUG_TRACE");
+if (AESL_DEBUG_TRACE)
+printf("\n\{ BEGIN @init_matrices_demo\n");
+if (AESL_DEBUG_TRACE)
+printf("\n  %%1 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 0, !dbg !8 for 0x%I64xth hint within @init_matrices_demo  --> \n", ++aesl_llvm_cbe_78_count);
+  llvm_cbe_tmp__23 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field0);
+if (AESL_DEBUG_TRACE) {
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%2 = tail call i32 @matrix_init_demo(%%struct.matrix* %%1, i8* getelementptr inbounds ([6 x i8]* @aesl_internal_.str3, i32 0, i32 0), i32 4, i32 4, i32 4, i32 4) nounwind, !dbg !8 for 0x%I64xth hint within @init_matrices_demo  --> \n", ++aesl_llvm_cbe_79_count);
+  llvm_cbe_tmp__24 = (unsigned int ) /*tail*/ matrix_init_demo((l_struct_OC_matrix *)llvm_cbe_tmp__23, ( char *)((&aesl_internal__OC_str3[(((signed int )0u))
+#ifdef AESL_BC_SIM
+ % 6
+#endif
+])), 4u, 4u, 4u, 4u);
+if (AESL_DEBUG_TRACE) {
+printf("\nArgument  = 0x%X",4u);
+printf("\nArgument  = 0x%X",4u);
+printf("\nArgument  = 0x%X",4u);
+printf("\nArgument  = 0x%X",4u);
+printf("\nReturn  = 0x%X",llvm_cbe_tmp__24);
+}
+  if (((llvm_cbe_tmp__24&4294967295U) == (0u&4294967295U))) {
+    goto llvm_cbe_tmp__30;
+  } else {
+    llvm_cbe_tmp__29__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__24;   /* for PHI node */
+    goto llvm_cbe_tmp__31;
+  }
+
+llvm_cbe_tmp__30:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%5 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 1, !dbg !8 for 0x%I64xth hint within @init_matrices_demo  --> \n", ++aesl_llvm_cbe_89_count);
+  llvm_cbe_tmp__25 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field1);
+if (AESL_DEBUG_TRACE) {
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%6 = tail call i32 @matrix_init(%%struct.matrix* %%5, i8* getelementptr inbounds ([7 x i8]* @aesl_internal_.str4, i32 0, i32 0), i32 3, i32 3, i32 3, i32 3, i32 1, i32 1) nounwind, !dbg !8 for 0x%I64xth hint within @init_matrices_demo  --> \n", ++aesl_llvm_cbe_90_count);
+  llvm_cbe_tmp__26 = (unsigned int ) /*tail*/ matrix_init((l_struct_OC_matrix *)llvm_cbe_tmp__25, ( char *)((&aesl_internal__OC_str4[(((signed int )0u))
+#ifdef AESL_BC_SIM
+ % 7
+#endif
+])), 3u, 3u, 3u, 3u, 1u, 1u);
+if (AESL_DEBUG_TRACE) {
+printf("\nArgument  = 0x%X",3u);
+printf("\nArgument  = 0x%X",3u);
+printf("\nArgument  = 0x%X",3u);
+printf("\nArgument  = 0x%X",3u);
+printf("\nArgument  = 0x%X",1u);
+printf("\nArgument  = 0x%X",1u);
+printf("\nReturn  = 0x%X",llvm_cbe_tmp__26);
+}
+  if (((llvm_cbe_tmp__26&4294967295U) == (0u&4294967295U))) {
+    goto llvm_cbe_tmp__32;
+  } else {
+    llvm_cbe_tmp__29__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__26;   /* for PHI node */
+    goto llvm_cbe_tmp__31;
+  }
+
+llvm_cbe_tmp__32:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%9 = getelementptr inbounds %%struct.env* %%cnn_env, i32 0, i32 2, !dbg !9 for 0x%I64xth hint within @init_matrices_demo  --> \n", ++aesl_llvm_cbe_100_count);
+  llvm_cbe_tmp__27 = (l_struct_OC_matrix *)(&llvm_cbe_cnn_env->field2);
+if (AESL_DEBUG_TRACE) {
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%10 = tail call i32 @matrix_init(%%struct.matrix* %%9, i8* getelementptr inbounds ([5 x i8]* @aesl_internal_.str5, i32 0, i32 0), i32 3, i32 3, i32 3, i32 3, i32 0, i32 0) nounwind, !dbg !9 for 0x%I64xth hint within @init_matrices_demo  --> \n", ++aesl_llvm_cbe_101_count);
+  llvm_cbe_tmp__28 = (unsigned int ) /*tail*/ matrix_init((l_struct_OC_matrix *)llvm_cbe_tmp__27, ( char *)((&aesl_internal__OC_str5[(((signed int )0u))
+#ifdef AESL_BC_SIM
+ % 5
+#endif
+])), 3u, 3u, 3u, 3u, 0u, 0u);
+if (AESL_DEBUG_TRACE) {
+printf("\nArgument  = 0x%X",3u);
+printf("\nArgument  = 0x%X",3u);
+printf("\nArgument  = 0x%X",3u);
+printf("\nArgument  = 0x%X",3u);
+printf("\nArgument  = 0x%X",0u);
+printf("\nArgument  = 0x%X",0u);
+printf("\nReturn  = 0x%X",llvm_cbe_tmp__28);
+}
+  if (AESL_DEBUG_TRACE)
+      printf("\nEND @init_matrices_demo}\n");
+  return llvm_cbe_tmp__28;
+llvm_cbe_tmp__31:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%12 = phi i32 [ %%2, %%0 ], [ %%6, %%4  for 0x%I64xth hint within @init_matrices_demo  --> \n", ++aesl_llvm_cbe_110_count);
+  llvm_cbe_tmp__29 = (unsigned int )llvm_cbe_tmp__29__PHI_TEMPORARY;
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",llvm_cbe_tmp__29);
+printf("\n = 0x%X",llvm_cbe_tmp__24);
+printf("\n = 0x%X",llvm_cbe_tmp__26);
+}
+  if (AESL_DEBUG_TRACE)
+      printf("\nEND @init_matrices_demo}\n");
+  return llvm_cbe_tmp__29;
 }
 

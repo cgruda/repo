@@ -58,5 +58,7 @@ int free_resources(struct env *cnn_env);
 
 int init_matrices(struct env *cnn_env);
 
+int init_matrices_demo(struct env *cnn_env);
+
 
 #endif // __MAIN_H__

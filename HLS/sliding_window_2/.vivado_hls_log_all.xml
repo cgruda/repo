@@ -7,6 +7,38 @@
       <mgLog/>
       <packageLog/>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:17:13.238+0200"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:17:13.203+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:11:55.663+0200"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '5'." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:11:55.630+0200"/>
+        <logs message="[../../../matrix.c;43 ] Error: errno = 0" projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:11:55.542+0200"/>
+        <logs message="[../../../matrix.c;99 ] Error: errno = 0" projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:11:55.395+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:11:25.149+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:05:09.756+0200"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:05:09.729+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:03:12.615+0200"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:03:12.514+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:01:18.063+0200"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:01:17.873+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:59:46.710+0200"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:59:46.679+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:59:07.021+0200"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:59:06.992+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:58:12.718+0200"/>
+        <logs message="ERROR: [HLS 200-101] Message ID '1-1' value invalid for uint argument.&#xD;&#xA;&#xD;&#xA;FORMAT&#xD;&#xA;  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string]&#xD;&#xA;      &lt;string>&#xD;&#xA;      &lt;uint>&#xD;&#xA;      &lt;string>&#xD;&#xA;&#xD;&#xA;g++.exe: error: obj/cnn.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:58:12.679+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:44:37.877+0200"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:44:37.851+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:43:31.608+0200"/>
+        <logs message="ERROR: [HLS 200-101] Message ID '1-1' value invalid for uint argument.&#xD;&#xA;&#xD;&#xA;FORMAT&#xD;&#xA;  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string]&#xD;&#xA;      &lt;string>&#xD;&#xA;      &lt;uint>&#xD;&#xA;      &lt;string>&#xD;&#xA;&#xD;&#xA;g++.exe: error: obj/cnn.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:43:31.579+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:42:49.638+0200"/>
+        <logs message="ERROR: [HLS 200-101] Message ID '1-1' value invalid for uint argument.&#xD;&#xA;&#xD;&#xA;FORMAT&#xD;&#xA;  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string]&#xD;&#xA;      &lt;string>&#xD;&#xA;      &lt;uint>&#xD;&#xA;      &lt;string>&#xD;&#xA;&#xD;&#xA;g++.exe: error: obj/cnn.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:42:49.612+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:42:32.122+0200"/>
+        <logs message="ERROR: [HLS 200-101] Message ID '1-1' value invalid for uint argument.&#xD;&#xA;&#xD;&#xA;FORMAT&#xD;&#xA;  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string]&#xD;&#xA;      &lt;string>&#xD;&#xA;      &lt;uint>&#xD;&#xA;      &lt;string>&#xD;&#xA;&#xD;&#xA;g++.exe: error: obj/cnn.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:42:32.091+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:41:06.088+0200"/>
+        <logs message="ERROR: [HLS 200-101] Message ID '1-1' value invalid for uint argument.&#xD;&#xA;&#xD;&#xA;FORMAT&#xD;&#xA;  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string]&#xD;&#xA;      &lt;string>&#xD;&#xA;      &lt;uint>&#xD;&#xA;      &lt;string>&#xD;&#xA;&#xD;&#xA;g++.exe: error: obj/cnn.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:41:06.050+0200"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:33:39.486+0200"/>
+        <logs message="ERROR: [HLS 200-101] Message ID '1-1' value invalid for uint argument.&#xD;&#xA;&#xD;&#xA;FORMAT&#xD;&#xA;  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string]&#xD;&#xA;      &lt;string>&#xD;&#xA;      &lt;uint>&#xD;&#xA;      &lt;string>&#xD;&#xA;&#xD;&#xA;g++.exe: error: obj/cnn.o: No such file or directory&#xD;&#xA;g++.exe: error: obj/matrix.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:33:39.457+0200"/>
+        <logs message="ERROR: [HLS 200-101] Message ID '1-1' value invalid for uint argument.&#xD;&#xA;&#xD;&#xA;FORMAT&#xD;&#xA;  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string]&#xD;&#xA;      &lt;string>&#xD;&#xA;      &lt;uint>&#xD;&#xA;      &lt;string>&#xD;&#xA;" projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:33:39.343+0200"/>
         <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T14:12:02.459+0200"/>
         <logs message="@E Simulation failed: SIGSEGV." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T14:12:02.431+0200"/>
         <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T14:08:24.008+0200"/>
@@ -59,6 +91,38 @@
       <mgLog/>
       <packageLog/>
       <csimLog>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:18:43.823+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:17:05.748+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:11:49.032+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:11:14.406+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:04:55.888+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:03:03.986+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:01:09.050+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:59:39.838+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:58:57.076+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:57:56.088+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:44:28.855+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:43:26.785+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:42:43.612+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:42:13.734+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:40:56.062+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:33:24.231+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T19:06:53.210+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T18:37:19.983+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T18:36:20.788+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T18:35:21.705+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T18:34:37.274+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T18:32:24.052+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T18:31:04.790+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T18:20:37.881+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T18:15:07.357+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T18:11:57.563+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T18:00:02.549+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T17:17:53.142+0200" type="Warning"/>
+        <logs message="WARNING: Hls::stream 'hls::stream&lt;ap_axis&lt;32, 2, 5, 6> >.2' contains leftover data, which may result in RTL simulation hanging." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T17:12:33.880+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T17:12:20.355+0200" type="Warning"/>
+        <logs message="WARNING: Hls::stream 'hls::stream&lt;ap_axis&lt;32, 2, 5, 6> >.2' contains leftover data, which may result in RTL simulation hanging." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T17:09:37.033+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T17:09:17.113+0200" type="Warning"/>
         <logs message="WARNING: Hls::stream 'hls::stream&lt;ap_axis&lt;32, 2, 5, 6> >.2' contains leftover data, which may result in RTL simulation hanging." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T16:52:56.367+0200" type="Warning"/>
         <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T16:52:44.362+0200" type="Warning"/>
         <logs message="WARNING: Hls::stream 'hls::stream&lt;ap_axis&lt;32, 2, 5, 6> >.2' contains leftover data, which may result in RTL simulation hanging." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T14:41:37.543+0200" type="Warning"/>
