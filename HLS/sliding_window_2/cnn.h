@@ -57,5 +57,7 @@ int cnn_sw_norm(struct env *cnn_env);
 
 int cnn_hw(struct env *cnn_env);
 
+int cnn_precision_loss_calc(matrix_t *ref, matrix_t *test, double *prec);
+
 
 #endif // __CNN_H__

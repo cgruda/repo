@@ -52,7 +52,7 @@ int matrix_init(matrix_t *m, char *name, int rows_max, int rows_min,
 
 	return E_SUCCESS;
 }
-/*
+
 int matrixf_init_zero(matrixf_t *mf, char *name, int rows_max, int rows_min,
 		int cols_max, int cols_min)
 {
@@ -65,7 +65,7 @@ int matrixf_init_zero(matrixf_t *mf, char *name, int rows_max, int rows_min,
 	mf->cols = (rand() % (cols_max - cols_min + 1)) + cols_min;
 
 	// allocate image mem
-	realloc(mf->data, mf->rows * mf->cols * sizeof(*mf->data));
+	mf->data = calloc(mf->rows * mf->cols, sizeof(*mf->data));
 	if (!mf->data) {
 		PRINT_ERROR(E_STDLIB);
 		return E_STDLIB;
@@ -79,7 +79,7 @@ int matrixf_init_zero(matrixf_t *mf, char *name, int rows_max, int rows_min,
 	}
 
 	return E_SUCCESS;
-}*/
+}
 
 int matrix_init_demo(matrix_t *m, char *name, int rows_max, int rows_min,
 		int cols_max, int cols_min)
@@ -109,7 +109,7 @@ int matrix_init_demo(matrix_t *m, char *name, int rows_max, int rows_min,
 	return E_SUCCESS;
 }
 
-int matrix_comp(matrix_t *a, matrix_t *b)
+int matrix_dim_comp(matrix_t *a, matrix_t *b)
 {
 	if (!a || !b)
 		return E_FAILURE;
@@ -117,17 +117,23 @@ int matrix_comp(matrix_t *a, matrix_t *b)
 	if (!a->data || !b->data)
 		return E_FAILURE;
 
+	if (a->rows != b->rows) {
+		return E_FAILURE;
+	}
+
+	if (a->cols != b->cols) {
+		return E_FAILURE;
+	}
+
+	return E_SUCCESS;
+}
+
+int matrix_comp(matrix_t *a, matrix_t *b)
+{
 	bool halt = false;
 	int data_mismatch_count = 0;
 
-	if (a->rows != b->rows) {
-		printf("rows mismatch: %s.rows=%d, %s.rows=%d\n", a->name, a->rows, b->name, b->rows);
-		halt = 1;
-	}
-	if (a->cols != b->cols) {
-		printf("cols mismatch: %s.cols=%d, %s.cols=%d\n", a->name, a->cols, b->name, b->cols);
-		halt = 1;
-	}
+	halt = !!matrix_dim_comp(a, b);
 
 	for (int i = 0; i < a->rows && !halt; i++) {
 		for (int j = 0; j < a->cols && !halt; j++) {
@@ -176,15 +182,15 @@ int matrix_free(matrix_t *m)
 
 	return E_SUCCESS;
 }
-/*
+
 int matrixf_free(matrixf_t *mf)
 {
 	free(mf->data);
 	memset(mf, 0, sizeof(*mf));
 
 	return E_SUCCESS;
-}*/
-/*
+}
+
 int matrix_norm(matrix_t *m, matrixf_t *mf, int norm)
 {
 	strcpy(mf->name, m->name);
@@ -194,7 +200,7 @@ int matrix_norm(matrix_t *m, matrixf_t *mf, int norm)
 	mf->cols = m->cols;
 
 	// allocate image mem
-	realloc(mf->data, mf->rows * mf->cols * sizeof(*mf->data));
+	mf->data = calloc(mf->rows * mf->cols, sizeof(*mf->data));
 	if (!mf->data) {
 		PRINT_ERROR(E_STDLIB);
 		return E_STDLIB;
@@ -208,8 +214,8 @@ int matrix_norm(matrix_t *m, matrixf_t *mf, int norm)
 	}
 
 	return E_SUCCESS;
-}*/
-/*
+}
+
 int matrix_denorm(matrixf_t *mf, matrix_t *m, int norm)
 {
 	strcpy(m->name, mf->name);
@@ -219,7 +225,7 @@ int matrix_denorm(matrixf_t *mf, matrix_t *m, int norm)
 	m->cols = mf->cols;
 
 	// allocate image mem
-	realloc(m->data, m->rows * m->cols * sizeof(*m->data));
+	m->data = calloc(m->rows * m->cols, sizeof(*m->data));
 	if (!m->data) {
 		PRINT_ERROR(E_STDLIB);
 		return E_STDLIB;
@@ -234,4 +240,4 @@ int matrix_denorm(matrixf_t *mf, matrix_t *m, int norm)
 
 	return E_SUCCESS;
 }
-*/
+

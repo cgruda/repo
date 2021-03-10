@@ -7,6 +7,7 @@
       <mgLog/>
       <packageLog/>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:22:33.700+0200"/>
         <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:17:13.238+0200"/>
         <logs message="@E Simulation failed: SIGSEGV." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:17:13.203+0200"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:11:55.663+0200"/>
@@ -91,6 +92,14 @@
       <mgLog/>
       <packageLog/>
       <csimLog>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T21:01:02.077+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:59:56.582+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:57:19.347+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:55:25.240+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:51:56.623+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:48:01.797+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:23:48.918+0200" type="Warning"/>
+        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:22:17.520+0200" type="Warning"/>
         <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:18:43.823+0200" type="Warning"/>
         <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:17:05.748+0200" type="Warning"/>
         <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="sliding_window_2" solutionName="solution1" date="2021-03-10T20:11:49.032+0200" type="Warning"/>

@@ -18,6 +18,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <time.h>
 
 /*
@@ -46,7 +47,7 @@ int conv_2D(matrix_t *input, matrix_t *kernel, matrix_t *bias, matrix_t *output)
 
 	return E_SUCCESS;
 }
-/*
+
 int conv_2D_norm(matrixf_t *input, matrix_t *kernel, matrix_t *bias, matrixf_t *output)
 {
 	// sanity
@@ -68,7 +69,7 @@ int conv_2D_norm(matrixf_t *input, matrix_t *kernel, matrix_t *bias, matrixf_t *
 
 	return E_SUCCESS;
 }
-*/
+
 int pool_2D(matrix_t *input, int pool_dim, matrix_t *output, int max_pool)
 {
 	int res;
@@ -141,7 +142,7 @@ int cnn_sw(struct env *cnn_env)
 
 	return E_SUCCESS;
 }
-/*
+
 int cnn_sw_norm(struct env *cnn_env)
 {
 	int res;
@@ -179,9 +180,30 @@ int cnn_sw_norm(struct env *cnn_env)
 
 	return E_SUCCESS;
 }
-*/
+
 int cnn_hw(struct env *cnn_env)
 {
 	printf("cnn_hw not implemented yet!\n");
 	return E_SUCCESS;
+}
+
+int cnn_precision_loss_calc(matrix_t *ref, matrix_t *test, double *prec)
+{
+	if(matrix_dim_comp(ref, test) != E_SUCCESS)
+		return E_FAILURE;
+
+	int number_of_samples = ref->cols * ref->rows;
+	double sum_of_samples = 0;
+
+	for (int i = 0; i < ref->rows; i++) {
+		for (int j = 0; j < ref->cols; j++) {
+			sum_of_samples += (double)test->data[i * ref->cols + j] / (double)ref->data[i * ref->cols + j];
+			// FIXME: what if > 1 ?
+		}
+	}
+
+	*prec = sum_of_samples / number_of_samples;
+
+	return E_SUCCESS;
+
 }

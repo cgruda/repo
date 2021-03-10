@@ -68,8 +68,8 @@ int main()
 	}
 
 	UI_PRINT("Starting SW CNN\n");
-	//cnn_sw_norm(&cnn_env);
-	cnn_sw(&cnn_env);
+	cnn_sw_norm(&cnn_env);
+	//cnn_sw(&cnn_env);
 	UI_PRINT("finished SW CNN\n");
 
 	// Tested data values should be in a range of 0.0 to 1.0
@@ -82,10 +82,10 @@ int main()
 			uint32axis_t valIn;
 			data_t a = cnn_env.m_image.data[(y * cnn_env.m_image.cols) + x];
 			fixp32_t b = UINT8_TO_32FIXP(a);
-			double v = (double)a / double(255.0);
+			// double v = (double)a / double(255.0);
 			fixp32_t c = b / 255;
-			UI_PRINT("[%d:%d] %d -> 0x%08x := ", y, x, a, c);
-			UI_PRINT("%d.%06d (%f)\n", (c >> FRACTION_OFT), FIXP32_FRACTION_GET(c), v);
+			// UI_PRINT("[%d:%d] %d -> 0x%08x := ", y, x, a, c);
+			// UI_PRINT("%d.%06d (%f)\n", (c >> FRACTION_OFT), FIXP32_FRACTION_GET(c), v);
 			valIn.data = c;
 			valIn.keep = 1;
 			valIn.strb = 1;
@@ -110,16 +110,20 @@ int main()
 			uint32axis_t valOut;
 			valOut = stream_out.read();
 			fixp32_t value = valOut.data;
-			UI_PRINT("0x%06x := %d.%06d\n", value, (value >> FRACTION_OFT), FIXP32_FRACTION_GET(value));
+			// UI_PRINT("0x%06x := %d.%06d\n", value, (value >> FRACTION_OFT), FIXP32_FRACTION_GET(value));
 			hw_conv_result.data[y * hw_conv_result.cols + x] = (data_t)((value * 255) >> FRACTION_OFT);
 		}
 	}
 
 	// compare HW and SW
-	res = matrix_comp(&hw_conv_result, &cnn_env.m_conv_result);
+	// res = matrix_comp(&hw_conv_result, &cnn_env.m_conv_result);
 
-	matrix_print(&hw_conv_result);
-	matrix_print(&cnn_env.m_conv_result);
+	// matrix_print(&hw_conv_result);
+	// matrix_print(&cnn_env.m_conv_result);
+
+	double prec;
+	cnn_precision_loss_calc(&cnn_env.m_conv_result, &hw_conv_result, &prec);
+	printf("precision = %f\n", prec);
 
 	// free resources
 	free_resources(&cnn_env);

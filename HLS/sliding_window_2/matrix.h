@@ -59,6 +59,8 @@ typedef struct matrixf {
  ******************************************************************************
  */
 
+int matrix_dim_comp(matrix_t *a, matrix_t *b);
+
 int matrix_comp(matrix_t *a, matrix_t *b);
 
 int matrix_free(matrix_t *m);
