@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'my_filter_buffer'" level="0">
-<item name = "Date">Fri Jan 29 23:15:36 2021
+<item name = "Date">Wed Mar 10 21:28:06 2021
 </item>
 <item name = "Version">2016.4 (Build 1756540 on Mon Jan 23 19:31:01 MST 2017)</item>
 <item name = "Project">sliding_window_2</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.69, 1.25</column>
+<column name="ap_clk">10.00, 8.72, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">262676, 262676, 262677, 262677, none</column>
+<column name="">44, 44, 45, 45, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -36,9 +36,9 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">2, 2, 2, 1, 1, 2, yes</column>
-<column name="- Loop 2">512, 512, 2, 1, 1, 512, yes</column>
-<column name="- Loop 3">4, 4, 2, 1, 1, 4, yes</column>
-<column name="- Loop 4">262150, 262150, 8, 1, 1, 262144, yes</column>
+<column name="- Loop 2">4, 4, 2, 1, 1, 4, yes</column>
+<column name="- Loop 3">4, 4, 1, 1, 1, 4, yes</column>
+<column name="- Loop 4">26, 26, 12, 1, 1, 16, yes</column>
 </table>
 </item>
 </section>

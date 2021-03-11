@@ -43,8 +43,8 @@ set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c ../sliding_window.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {D:/School/Project/repo/HLS/sliding_window_2/solution1/solution1.directive}
-set TBFiles {verilog ../sliding_window_tb.cpp bc ../sliding_window_tb.cpp vhdl ../sliding_window_tb.cpp sc ../sliding_window_tb.cpp cas ../sliding_window_tb.cpp c {}}
+set DirectiveFile {D:/School/Project/new_repo/HLS/sliding_window_2/solution1/solution1.directive}
+set TBFiles {verilog {../tasks.h ../tasks.c ../sliding_window_tb.cpp ../matrix.h ../matrix.c ../main.h ../main.c ../cnn.h ../cnn.c} bc {../tasks.h ../tasks.c ../sliding_window_tb.cpp ../matrix.h ../matrix.c ../main.h ../main.c ../cnn.h ../cnn.c} vhdl {../tasks.h ../tasks.c ../sliding_window_tb.cpp ../matrix.h ../matrix.c ../main.h ../main.c ../cnn.h ../cnn.c} sc {../tasks.h ../tasks.c ../sliding_window_tb.cpp ../matrix.h ../matrix.c ../main.h ../main.c ../cnn.h ../cnn.c} cas {../tasks.h ../tasks.c ../sliding_window_tb.cpp ../matrix.h ../matrix.c ../main.h ../main.c ../cnn.h ../cnn.c} c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

@@ -27,8 +27,8 @@
  */
 
 // input image
-#define INPUT_IMAGE_ROWS 128
-#define INPUT_IMAGE_COLS 128
+#define INPUT_IMAGE_ROWS 4
+#define INPUT_IMAGE_COLS 4
 #define INPUT_IMAGE_LEN  (INPUT_IMAGE_ROWS * INPUT_IMAGE_COLS)
 
 // kernel

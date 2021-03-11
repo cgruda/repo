@@ -5,15 +5,13 @@
 // 
 // ==============================================================
 
-#1 "D:/School/Project/repo/HLS/sliding_window_2/sliding_window.cpp"
+#1 "D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.cpp"
 #1 "<built-in>"
 #1 "<command-line>"
-#1 "D:/School/Project/repo/HLS/sliding_window_2/sliding_window.cpp"
-
-
-#1 "D:/School/Project/repo/HLS/sliding_window_2/sliding_window.hpp" 1
-
-
+#1 "D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.cpp"
+#15 "D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.cpp"
+#1 "D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.h" 1
+#20 "D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.h"
 #1 "C:/Xilinx/Vivado_HLS/2016.4/include/hls_stream.h" 1
 #79 "C:/Xilinx/Vivado_HLS/2016.4/include/hls_stream.h"
 #1 "c:\\xilinx\\vivado_hls\\2016.4\\msys\\bin\\../lib/gcc/mingw32/4.6.2/include/c++/queue" 1 3
@@ -22209,7 +22207,7 @@ class stream
 };
 
 }
-#4 "D:/School/Project/repo/HLS/sliding_window_2/sliding_window.hpp" 2
+#21 "D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.h" 2
 #1 "C:/Xilinx/Vivado_HLS/2016.4/include/ap_axi_sdata.h" 1
 #86 "C:/Xilinx/Vivado_HLS/2016.4/include/ap_axi_sdata.h"
 #1 "C:/Xilinx/Vivado_HLS/2016.4/include/ap_int.h" 1
@@ -33778,27 +33776,49 @@ template<int D,int U,int TI,int TD>
     ap_uint<TI> id;
     ap_uint<TD> dest;
   };
-#5 "D:/School/Project/repo/HLS/sliding_window_2/sliding_window.hpp" 2
-#15 "D:/School/Project/repo/HLS/sliding_window_2/sliding_window.hpp"
+#22 "D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.h" 2
+#65 "D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.h"
+typedef uint32_t fixp32_t;
 typedef ap_axis<32, 2, 5, 6> uint32axis_t;
+
+
+
+
+
 
 void my_filter_buffer(hls::stream<uint32axis_t>& in_stream,
        hls::stream<uint32axis_t>& out_stream,
-       uint8_t kernel[(3 * 3)]);
-#4 "D:/School/Project/repo/HLS/sliding_window_2/sliding_window.cpp" 2
+       uint8_t kernel[(3 * 3)],
+       uint8_t bias[(3 * 3)],
+       uint8_t ctrl);
+#16 "D:/School/Project/new_repo/HLS/sliding_window_2/sliding_window.cpp" 2
+
+
 
 
 
 
 inline bool bounds_ok(int y, int x)
 {
-  return (0 <= y && y < 512 && 0 <= x && x < 512);
+ return (0 <= y && y < 4 && 0 <= x && x < 4);
 }
 
-
-inline uint32_t single_operation(uint32_t window[3][3], uint8_t kernel[(3 * 3)], int y, int x)
+inline bool pad_skip(int x, int y, uint8_t ctrl)
 {
- uint32_t result = 0;
+ return (!(ctrl & 0x04) &&
+   ((x < (((3) - 1) / 2)) ||
+    (y < (((3) - 1) / 2)) ||
+    (x > 4 - (((3) - 1) / 2) - 1) ||
+    (y > 4 - (((3) - 1) / 2) - 1)));
+}
+
+inline fixp32_t single_operation(fixp32_t window[3][3],
+         uint8_t kernel[(3 * 3)],
+         uint8_t bias[(3 * 3)],
+         int y,
+         int x)
+{
+ fixp32_t result = 0;
 
  for (int i = -(((3) - 1) / 2); i <= (((3) - 1) / 2); i++)
  {
@@ -33806,7 +33826,7 @@ inline uint32_t single_operation(uint32_t window[3][3], uint8_t kernel[(3 * 3)],
   {
    if (bounds_ok(y + i, x + j))
    {
-    result += window[i + (((3) - 1) / 2)][j + (((3) - 1) / 2)] * kernel[((i + (((3) - 1) / 2)) * 3) + (j + (((3) - 1) / 2))];
+    result += window[i + (((3) - 1) / 2)][j + (((3) - 1) / 2)] * kernel[((i + (((3) - 1) / 2)) * 3) + (j + (((3) - 1) / 2))] + bias[((i + (((3) - 1) / 2)) * 3) + (j + (((3) - 1) / 2))];
    }
   }
  }
@@ -33815,47 +33835,55 @@ inline uint32_t single_operation(uint32_t window[3][3], uint8_t kernel[(3 * 3)],
 }
 
 
+
+
+
+
 void my_filter_buffer(hls::stream<uint32axis_t>& in_stream,
        hls::stream<uint32axis_t>& out_stream,
-       uint8_t kernel[(3 * 3)])
+       uint8_t kernel[(3 * 3)],
+       uint8_t bias[(3 * 3)],
+       uint8_t ctrl)
 {
 #pragma HLS INTERFACE axis port=out_stream
 #pragma HLS INTERFACE axis port=in_stream
 #pragma HLS INTERFACE s_axilite port=kernel bundle=KERNEL_BUS
+#pragma HLS INTERFACE s_axilite port=ctrl bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=return bundle=CTRL
 
 #pragma HLS ARRAY_PARTITION variable=kernel complete
+#pragma HLS ARRAY_PARTITION variable=bias complete
 
-
-
- uint32_t line_buf[3 - 1][512];
- uint32_t window[3][3];
- uint32_t right[3];
+ fixp32_t line_buf[3 - 1][4];
+ fixp32_t window[3][3];
+ fixp32_t right[3];
 
 #pragma HLS ARRAY_PARTITION variable=line_buf complete dim=1
 #pragma HLS ARRAY_PARTITION variable=window complete dim=0
 #pragma HLS ARRAY_PARTITION variable=right complete
 
- uint32axis_t valout;
+ uint32axis_t val_in;
+ uint32axis_t val_out;
 
 
- int read_count = 512 * (((3) - 1) / 2) + (((3) - 1) / 2) + 1;
- for (int x = 512 - (((3) - 1) / 2) - 1; x < 512; x++)
+ for (int x = 4 - (((3) - 1) / 2) - 1; x < 4; x++)
  {
 #pragma HLS PIPELINE
-  uint32axis_t v0 = in_stream.read();
-  line_buf[(((3) - 1) / 2) - 1][x] = v0.data;
+  val_in = in_stream.read();
+  line_buf[(((3) - 1) / 2) - 1][x] = val_in.data;
  }
 
  for (int y = (((3) - 1) / 2); y < 3 - 1; y++)
  {
-  for (int x = 0; x < 512; x++)
+  for (int x = 0; x < 4; x++)
   {
 #pragma HLS PIPELINE
-   uint32axis_t v1 = in_stream.read();
-   line_buf[y][x] = v1.data;
+   val_in = in_stream.read();
+   line_buf[y][x] = val_in.data;
   }
  }
+
+ int read_count = 4 * (((3) - 1) / 2) + (((3) - 1) / 2) + 1;
 
 
  for (int y = (((3) - 1) / 2); y < 3; y++)
@@ -33863,28 +33891,28 @@ void my_filter_buffer(hls::stream<uint32axis_t>& in_stream,
   for (int x = (((3) - 1) / 2); x < 3; x++)
   {
 #pragma HLS PIPELINE
-   window[y][x] = line_buf[y - 1][x + 512 - 3];
+   window[y][x] = line_buf[y - 1][x + 4 - 3];
   }
  }
 
 
- for (int y = 0; y < 512; y++)
+ for (int y = 0; y < 4; y++)
  {
-  for (int x = 0; x < 512; x++)
+  for (int x = 0; x < 4; x++)
   {
 #pragma HLS PIPELINE
 
 
-   int val_out = single_operation(window, kernel, y, x);
-
-
-   valout.data = val_out;
-   valout.keep = 1;
-   valout.strb = 1;
-   valout.user = 1;
-   valout.id = 0;
-   valout.dest = 0;
-   out_stream.write(valout);
+   if (!pad_skip(x, y, ctrl))
+   {
+    val_out.data = single_operation(window, kernel, bias, y, x);;
+    val_out.keep = 1;
+    val_out.strb = 1;
+    val_out.user = 1;
+    val_out.id = 0;
+    val_out.dest = 0;
+    out_stream.write(val_out);
+   }
 
 
    right[0] = line_buf[0][x];
@@ -33894,14 +33922,13 @@ void my_filter_buffer(hls::stream<uint32axis_t>& in_stream,
    }
 
 
-   uint32_t val_in = 0;
-   if (read_count < 512 * 512)
+   val_in.data = 0;
+   if (read_count < 4 * 4)
    {
-    uint32axis_t v2 = in_stream.read();
-    val_in = v2.data;
+    val_in = in_stream.read();
     read_count++;
    }
-   right[3 - 1] = line_buf[3 - 2][x] = val_in;
+   right[3 - 1] = line_buf[3 - 2][x] = val_in.data;
 
 
    for (int y = 0; y < 3; y++)

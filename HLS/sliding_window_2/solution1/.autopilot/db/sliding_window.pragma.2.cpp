@@ -1,5 +1,5 @@
-# 1 "D:/School/Project/repo/HLS/sliding_window_2/solution1/.autopilot/db/sliding_window.pragma.1.cpp"
-# 1 "D:/School/Project/repo/HLS/sliding_window_2/solution1/.autopilot/db/sliding_window.pragma.1.cpp" 1
+# 1 "D:/School/Project/new_repo/HLS/sliding_window_2/solution1/.autopilot/db/sliding_window.pragma.1.cpp"
+# 1 "D:/School/Project/new_repo/HLS/sliding_window_2/solution1/.autopilot/db/sliding_window.pragma.1.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 153 "<built-in>" 3
@@ -204,7 +204,7 @@ extern "C" {
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 # 7 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "D:/School/Project/repo/HLS/sliding_window_2/solution1/.autopilot/db/sliding_window.pragma.1.cpp" 2
+# 1 "D:/School/Project/new_repo/HLS/sliding_window_2/solution1/.autopilot/db/sliding_window.pragma.1.cpp" 2
 # 1 "sliding_window_2/sliding_window.cpp"
 # 1 "sliding_window_2/sliding_window.cpp" 1
 # 1 "<built-in>" 1
@@ -412,9 +412,42 @@ extern "C" {
 # 7 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "sliding_window_2/sliding_window.cpp" 2
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
+ *
+ * Chaim Gruda
+ * Shay Tsabar
+ *
+ */
+
+/*
+ * INCLUDES
+ ******************************************************************************
+ */
 
 
-# 1 "sliding_window_2/sliding_window.hpp" 1
+
+# 1 "sliding_window_2/sliding_window.h" 1
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
+ *
+ * Chaim Gruda
+ * Shay Tsabar
+ *
+ */
+
+
+
+
+
+
+/*
+ * INCLUDES
+ ******************************************************************************
+ */
+
 
 
 # 1 "C:/Xilinx/Vivado_HLS/2016.4/common/technology/autopilot\\hls_stream.h" 1
@@ -726,7 +759,7 @@ class stream
 
 
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
-# 4 "sliding_window_2/sliding_window.hpp" 2
+# 21 "sliding_window_2/sliding_window.h" 2
 # 1 "C:/Xilinx/Vivado_HLS/2016.4/common/technology/autopilot\\ap_axi_sdata.h" 1
 /*****************************************************************************
  *
@@ -32586,7 +32619,7 @@ template<int D,int U,int TI,int TD>
 
 
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
-# 5 "sliding_window_2/sliding_window.hpp" 2
+# 22 "sliding_window_2/sliding_window.h" 2
 # 1 "C:/Xilinx/Vivado_HLS/2016.4/win64/tools/clang/bin/../lib/clang/3.1/include\\stdint.h" 1 3 4
 /*===---- stdint.h - Standard header for sized integer types --------------===*\
  *
@@ -32735,35 +32768,90 @@ __extension__ typedef unsigned long long uintmax_t;
 # 173 "C:/Xilinx/Vivado_HLS/2016.4/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\stdint.h" 3 4
 /* 7.18.4  Macros for integer constants */
 # 33 "C:/Xilinx/Vivado_HLS/2016.4/win64/tools/clang/bin/../lib/clang/3.1/include\\stdint.h" 2 3 4
-# 6 "sliding_window_2/sliding_window.hpp" 2
-# 15 "sliding_window_2/sliding_window.hpp"
+# 23 "sliding_window_2/sliding_window.h" 2
+
+/*
+ * DEFINES
+ ******************************************************************************
+ */
+
+// input image
+
+
+
+
+// kernel
+
+
+
+
+
+
+
+// fixed point
+
+
+
+
+
+
+
+// control
+# 60 "sliding_window_2/sliding_window.h"
+/*
+ * TYPES
+ ******************************************************************************
+ */
+
+typedef uint32_t fixp32_t;
 typedef ap_axis<32, 2, 5, 6> uint32axis_t;
+
+/*
+ * DECLARATIONS
+ ******************************************************************************
+ */
 
 void my_filter_buffer(hls::stream<uint32axis_t>& in_stream,
        hls::stream<uint32axis_t>& out_stream,
-       uint8_t kernel[(3 /* must be odd*/ * 3 /* must be odd*/)]);
-# 4 "sliding_window_2/sliding_window.cpp" 2
+       uint8_t kernel[(3 * 3)],
+       uint8_t bias[(3 * 3)],
+       uint8_t ctrl);
+# 16 "sliding_window_2/sliding_window.cpp" 2
 
-
-
+/*
+ * DEFENITIONS
+ ******************************************************************************
+ */
 
 inline bool bounds_ok(int y, int x)
 {
-  return (0 <= y && y < 512 && 0 <= x && x < 512);
+ return (0 <= y && y < 4 && 0 <= x && x < 4);
 }
 
-// Defines the actual calculation for one output value.
-inline uint32_t single_operation(uint32_t window[3 /* must be odd*/][3 /* must be odd*/], uint8_t kernel[(3 /* must be odd*/ * 3 /* must be odd*/)], int y, int x)
-{_ssdm_SpecArrayDimSize(kernel,(3 /* must be odd*/ * 3 /* must be odd*/));_ssdm_SpecArrayDimSize(window,3);
- uint32_t result = 0;
+inline bool pad_skip(int x, int y, uint8_t ctrl)
+{
+ return (!(ctrl & 0x04) &&
+   ((x < (((3) - 1) / 2)) ||
+    (y < (((3) - 1) / 2)) ||
+    (x > 4 - (((3) - 1) / 2) - 1) ||
+    (y > 4 - (((3) - 1) / 2) - 1)));
+}
 
- for (int i = -(((3 /* must be odd*/) - 1) / 2); i <= (((3 /* must be odd*/) - 1) / 2); i++)
+inline fixp32_t single_operation(fixp32_t window[3][3],
+         uint8_t kernel[(3 * 3)],
+         uint8_t bias[(3 * 3)],
+         int y,
+         int x)
+{_ssdm_SpecArrayDimSize(kernel,(3 * 3));_ssdm_SpecArrayDimSize(bias,(3 * 3));_ssdm_SpecArrayDimSize(window,3);
+ fixp32_t result = 0;
+
+ for (int i = -(((3) - 1) / 2); i <= (((3) - 1) / 2); i++)
  {
-  for (int j = -(((3 /* must be odd*/) - 1) / 2); j <= (((3 /* must be odd*/) - 1) / 2); j++)
+  for (int j = -(((3) - 1) / 2); j <= (((3) - 1) / 2); j++)
   {
    if (bounds_ok(y + i, x + j))
    {
-    result += window[i + (((3 /* must be odd*/) - 1) / 2)][j + (((3 /* must be odd*/) - 1) / 2)] * kernel[((i + (((3 /* must be odd*/) - 1) / 2)) * 3 /* must be odd*/) + (j + (((3 /* must be odd*/) - 1) / 2))];
+    result += window[i + (((3) - 1) / 2)][j + (((3) - 1) / 2)] * kernel[((i + (((3) - 1) / 2)) * 3) + (j + (((3) - 1) / 2))] + bias[((i + (((3) - 1) / 2)) * 3) + (j + (((3) - 1) / 2))];
    }
   }
  }
@@ -32771,108 +32859,116 @@ inline uint32_t single_operation(uint32_t window[3 /* must be odd*/][3 /* must b
  return result;
 }
 
-// A buffered implementation of a 2D filter.
+/*
+ * HLS IP BLOCK
+ ******************************************************************************
+ */
+
 void my_filter_buffer(hls::stream<uint32axis_t>& in_stream,
        hls::stream<uint32axis_t>& out_stream,
-       uint8_t kernel[(3 /* must be odd*/ * 3 /* must be odd*/)])
-{_ssdm_SpecArrayDimSize(kernel,(3 /* must be odd*/ * 3 /* must be odd*/));
+       uint8_t kernel[(3 * 3)],
+       uint8_t bias[(3 * 3)],
+       uint8_t ctrl)
+{_ssdm_SpecArrayDimSize(kernel,(3 * 3));_ssdm_SpecArrayDimSize(bias,(3 * 3));
 _ssdm_op_SpecInterface(&out_stream, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(&in_stream, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(kernel, "s_axilite", 0, 0, "", 0, 0, "KERNEL_BUS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(bias, "s_axilite", 0, 0, "", 0, 0, "KERNEL_BUS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(ctrl, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 
 _ssdm_SpecArrayPartition( kernel, 1, "COMPLETE", 0, "");
+_ssdm_SpecArrayPartition( bias, 1, "COMPLETE", 0, "");
 
-//#pragma HLS INTERFACE s_axilite port=opp bundle=CTRL_BUS
-
- uint32_t line_buf[3 /* must be odd*/ - 1][512];
- uint32_t window[3 /* must be odd*/][3 /* must be odd*/];
- uint32_t right[3 /* must be odd*/];
+ fixp32_t line_buf[3 - 1][4];
+ fixp32_t window[3][3];
+ fixp32_t right[3];
 
 _ssdm_SpecArrayPartition( line_buf, 1, "COMPLETE", 0, "");
 _ssdm_SpecArrayPartition( window, 0, "COMPLETE", 0, "");
 _ssdm_SpecArrayPartition( right, 1, "COMPLETE", 0, "");
 
- uint32axis_t valout;
+ uint32axis_t val_in;
+ uint32axis_t val_out;
 
  // Load initial values into line buffer
- int read_count = 512 * (((3 /* must be odd*/) - 1) / 2) + (((3 /* must be odd*/) - 1) / 2) + 1;
- for (int x = 512 - (((3 /* must be odd*/) - 1) / 2) - 1; x < 512; x++)
+ for (int x = 4 - (((3) - 1) / 2) - 1; x < 4; x++)
  {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- uint32axis_t v0 = in_stream.read();
-  line_buf[(((3 /* must be odd*/) - 1) / 2) - 1][x] = v0.data;
+ val_in = in_stream.read();
+  line_buf[(((3) - 1) / 2) - 1][x] = val_in.data;
  }
 
- for (int y = (((3 /* must be odd*/) - 1) / 2); y < 3 /* must be odd*/ - 1; y++)
+ for (int y = (((3) - 1) / 2); y < 3 - 1; y++)
  {
-  for (int x = 0; x < 512; x++)
+  for (int x = 0; x < 4; x++)
   {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- uint32axis_t v1 = in_stream.read();
-   line_buf[y][x] = v1.data;
+ val_in = in_stream.read();
+   line_buf[y][x] = val_in.data;
   }
  }
 
-  // Copy initial values into window
- for (int y = (((3 /* must be odd*/) - 1) / 2); y < 3 /* must be odd*/; y++)
+ int read_count = 4 * (((3) - 1) / 2) + (((3) - 1) / 2) + 1;
+
+    // Copy initial values into window
+ for (int y = (((3) - 1) / 2); y < 3; y++)
  {
-  for (int x = (((3 /* must be odd*/) - 1) / 2); x < 3 /* must be odd*/; x++)
+  for (int x = (((3) - 1) / 2); x < 3; x++)
   {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- window[y][x] = line_buf[y - 1][x + 512 - 3 /* must be odd*/];
+ window[y][x] = line_buf[y - 1][x + 4 - 3];
   }
  }
 
  // Start convolution
- for (int y = 0; y < 512; y++)
+ for (int y = 0; y < 4; y++)
  {
-  for (int x = 0; x < 512; x++)
+  for (int x = 0; x < 4; x++)
   {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 
- // Calculate output value
-   int val_out = single_operation(window, kernel, y, x);
-
-   // Write output value
-   valout.data = val_out;
-   valout.keep = 1;
-   valout.strb = 1;
-   valout.user = 1;
-   valout.id = 0;
-   valout.dest = 0;
-   out_stream.write(valout);
+ // Write output value
+   if (!pad_skip(x, y, ctrl))
+   {
+    val_out.data = single_operation(window, kernel, bias, y, x);;
+    val_out.keep = 1;
+    val_out.strb = 1;
+    val_out.user = 1;
+    val_out.id = 0;
+    val_out.dest = 0;
+    out_stream.write(val_out);
+   }
 
    // Shift line buffer column up
    right[0] = line_buf[0][x];
-   for (int y = 1; y < 3 /* must be odd*/ - 1; y++)
+   for (int y = 1; y < 3 - 1; y++)
    {
     right[y] = line_buf[y - 1][x] = line_buf[y][x];
    }
 
    // Read input value
-   uint32_t val_in = 0;
-   if (read_count < 512 * 512)
+   val_in.data = 0;
+   if (read_count < 4 * 4)
    {
-    uint32axis_t v2 = in_stream.read();
-    val_in = v2.data;
+    val_in = in_stream.read();
     read_count++;
    }
-   right[3 /* must be odd*/ - 1] = line_buf[3 /* must be odd*/ - 2][x] = val_in;
+   right[3 - 1] = line_buf[3 - 2][x] = val_in.data;
 
    // Shift window left
-   for (int y = 0; y < 3 /* must be odd*/; y++)
+   for (int y = 0; y < 3; y++)
    {
-    for (int x = 0; x < 3 /* must be odd*/ - 1; x++)
+    for (int x = 0; x < 3 - 1; x++)
     {
      window[y][x] = window[y][x + 1];
     }
    }
 
    // Update rightmost window values
-   for (int y = 0; y < 3 /* must be odd*/; y++)
+   for (int y = 0; y < 3; y++)
    {
-    window[y][3 /* must be odd*/ - 1] = right[y];
+    window[y][3 - 1] = right[y];
    }
   }
  }

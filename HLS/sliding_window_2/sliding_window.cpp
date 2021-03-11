@@ -69,6 +69,7 @@ void my_filter_buffer(hls::stream<uint32axis_t>& in_stream,
 #pragma HLS INTERFACE axis port=out_stream
 #pragma HLS INTERFACE axis port=in_stream
 #pragma HLS INTERFACE s_axilite port=kernel bundle=KERNEL_BUS
+#pragma HLS INTERFACE s_axilite port=bias bundle=KERNEL_BUS
 #pragma HLS INTERFACE s_axilite port=ctrl bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=return bundle=CTRL
 

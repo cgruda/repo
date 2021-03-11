@@ -226,6 +226,30 @@ set Interface2 "wire"
 set DataType2 "unsigned char"
 set Port2 [list $PortName2 $Interface2 $DataType2 $Pointer2 $Dims2 $Const2 $Volatile2 $ArrayOpt2]
 lappend PortList $Port2
+set PortName3 "bias"
+set BitWidth3 "32"
+set ArrayOpt3 ""
+set Const3 "0"
+set Volatile3 "0"
+set Pointer3 "0"
+set Reference3 "0"
+set Dims3 [list 9]
+set Interface3 "wire"
+set DataType3 "unsigned char"
+set Port3 [list $PortName3 $Interface3 $DataType3 $Pointer3 $Dims3 $Const3 $Volatile3 $ArrayOpt3]
+lappend PortList $Port3
+set PortName4 "ctrl"
+set BitWidth4 "8"
+set ArrayOpt4 ""
+set Const4 "0"
+set Volatile4 "0"
+set Pointer4 "0"
+set Reference4 "0"
+set Dims4 [list 0]
+set Interface4 "wire"
+set DataType4 "unsigned char"
+set Port4 [list $PortName4 $Interface4 $DataType4 $Pointer4 $Dims4 $Const4 $Volatile4 $ArrayOpt4]
+lappend PortList $Port4
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 1 

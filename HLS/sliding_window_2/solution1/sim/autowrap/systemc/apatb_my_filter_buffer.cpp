@@ -125,6 +125,26 @@ using namespace sc_dt;
 #define AUTOTB_TVIN_kernel_7  "../tv/cdatafile/c.my_filter_buffer.autotvin_kernel_7.dat"
 // wrapc file define: "kernel_8"
 #define AUTOTB_TVIN_kernel_8  "../tv/cdatafile/c.my_filter_buffer.autotvin_kernel_8.dat"
+// wrapc file define: "bias_0"
+#define AUTOTB_TVIN_bias_0  "../tv/cdatafile/c.my_filter_buffer.autotvin_bias_0.dat"
+// wrapc file define: "bias_1"
+#define AUTOTB_TVIN_bias_1  "../tv/cdatafile/c.my_filter_buffer.autotvin_bias_1.dat"
+// wrapc file define: "bias_2"
+#define AUTOTB_TVIN_bias_2  "../tv/cdatafile/c.my_filter_buffer.autotvin_bias_2.dat"
+// wrapc file define: "bias_3"
+#define AUTOTB_TVIN_bias_3  "../tv/cdatafile/c.my_filter_buffer.autotvin_bias_3.dat"
+// wrapc file define: "bias_4"
+#define AUTOTB_TVIN_bias_4  "../tv/cdatafile/c.my_filter_buffer.autotvin_bias_4.dat"
+// wrapc file define: "bias_5"
+#define AUTOTB_TVIN_bias_5  "../tv/cdatafile/c.my_filter_buffer.autotvin_bias_5.dat"
+// wrapc file define: "bias_6"
+#define AUTOTB_TVIN_bias_6  "../tv/cdatafile/c.my_filter_buffer.autotvin_bias_6.dat"
+// wrapc file define: "bias_7"
+#define AUTOTB_TVIN_bias_7  "../tv/cdatafile/c.my_filter_buffer.autotvin_bias_7.dat"
+// wrapc file define: "bias_8"
+#define AUTOTB_TVIN_bias_8  "../tv/cdatafile/c.my_filter_buffer.autotvin_bias_8.dat"
+// wrapc file define: "ctrl"
+#define AUTOTB_TVIN_ctrl  "../tv/cdatafile/c.my_filter_buffer.autotvin_ctrl.dat"
 
 #define INTER_TCL  "../tv/cdatafile/ref.tcl"
 
@@ -170,6 +190,16 @@ class INTER_TCL_FILE {
 			kernel_6_depth = 0;
 			kernel_7_depth = 0;
 			kernel_8_depth = 0;
+			bias_0_depth = 0;
+			bias_1_depth = 0;
+			bias_2_depth = 0;
+			bias_3_depth = 0;
+			bias_4_depth = 0;
+			bias_5_depth = 0;
+			bias_6_depth = 0;
+			bias_7_depth = 0;
+			bias_8_depth = 0;
+			ctrl_depth = 0;
 			trans_num =0;
 		}
 
@@ -212,6 +242,16 @@ class INTER_TCL_FILE {
 			total_list << "{kernel_6 " << kernel_6_depth << "}\n";
 			total_list << "{kernel_7 " << kernel_7_depth << "}\n";
 			total_list << "{kernel_8 " << kernel_8_depth << "}\n";
+			total_list << "{bias_0 " << bias_0_depth << "}\n";
+			total_list << "{bias_1 " << bias_1_depth << "}\n";
+			total_list << "{bias_2 " << bias_2_depth << "}\n";
+			total_list << "{bias_3 " << bias_3_depth << "}\n";
+			total_list << "{bias_4 " << bias_4_depth << "}\n";
+			total_list << "{bias_5 " << bias_5_depth << "}\n";
+			total_list << "{bias_6 " << bias_6_depth << "}\n";
+			total_list << "{bias_7 " << bias_7_depth << "}\n";
+			total_list << "{bias_8 " << bias_8_depth << "}\n";
+			total_list << "{ctrl " << ctrl_depth << "}\n";
 			return total_list.str();
 		}
 
@@ -242,6 +282,16 @@ class INTER_TCL_FILE {
 		int kernel_6_depth;
 		int kernel_7_depth;
 		int kernel_8_depth;
+		int bias_0_depth;
+		int bias_1_depth;
+		int bias_2_depth;
+		int bias_3_depth;
+		int bias_4_depth;
+		int bias_5_depth;
+		int bias_6_depth;
+		int bias_7_depth;
+		int bias_8_depth;
+		int ctrl_depth;
 		int trans_num;
 
 	private:
@@ -249,15 +299,19 @@ class INTER_TCL_FILE {
 		const char* mName;
 };
 
-extern void my_filter_buffer (
+extern "C" void my_filter_buffer (
 hls::stream<ap_axis<32, 2, 5, 6 > >& in_stream,
 hls::stream<ap_axis<32, 2, 5, 6 > >& out_stream,
-unsigned char kernel[9]);
+unsigned char kernel[9],
+unsigned char bias[9],
+unsigned char ctrl);
 
-void AESL_WRAP_my_filter_buffer (
+extern "C" void AESL_WRAP_my_filter_buffer (
 hls::stream<ap_axis<32, 2, 5, 6 > >& in_stream,
 hls::stream<ap_axis<32, 2, 5, 6 > >& out_stream,
-unsigned char kernel[9])
+unsigned char kernel[9],
+unsigned char bias[9],
+unsigned char ctrl)
 {
 	refine_signal_handler();
 	fstream wrapc_switch_file_token;
@@ -1564,6 +1618,46 @@ unsigned char kernel[9])
 		char* tvin_kernel_8 = new char[50];
 		aesl_fh.touch(AUTOTB_TVIN_kernel_8);
 
+		// "bias_0"
+		char* tvin_bias_0 = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_bias_0);
+
+		// "bias_1"
+		char* tvin_bias_1 = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_bias_1);
+
+		// "bias_2"
+		char* tvin_bias_2 = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_bias_2);
+
+		// "bias_3"
+		char* tvin_bias_3 = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_bias_3);
+
+		// "bias_4"
+		char* tvin_bias_4 = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_bias_4);
+
+		// "bias_5"
+		char* tvin_bias_5 = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_bias_5);
+
+		// "bias_6"
+		char* tvin_bias_6 = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_bias_6);
+
+		// "bias_7"
+		char* tvin_bias_7 = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_bias_7);
+
+		// "bias_8"
+		char* tvin_bias_8 = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_bias_8);
+
+		// "ctrl"
+		char* tvin_ctrl = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_ctrl);
+
 		CodeState = DUMP_INPUTS;
 		static INTER_TCL_FILE tcl_file(INTER_TCL);
 		int leading_zero;
@@ -2009,6 +2103,471 @@ unsigned char kernel[9])
 		// release memory allocation
 		delete [] kernel_8_tvin_wrapc_buffer;
 
+		// [[transaction]]
+		sprintf(tvin_bias_0, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_bias_0, tvin_bias_0);
+
+		sc_bv<8>* bias_0_tvin_wrapc_buffer = new sc_bv<8>[1];
+
+		// RTL Name: bias_0
+		{
+			// bitslice(7, 0)
+			{
+				int hls_map_index = 0;
+				// celement: bias(7, 0)
+				{
+					// carray: (0) => (0) @ (2)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 2)
+					{
+						// sub                   : i_0
+						// ori_name              : bias[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : bias[0]
+						// regulate_c_name       : bias
+						// input_type_conversion : bias[i_0]
+						if (&(bias[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> bias_tmp_mem;
+							bias_tmp_mem = bias[i_0];
+							bias_0_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = bias_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_bias_0, "%s\n", (bias_0_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_bias_0, tvin_bias_0);
+		}
+
+		tcl_file.set_num(1, &tcl_file.bias_0_depth);
+		sprintf(tvin_bias_0, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_bias_0, tvin_bias_0);
+
+		// release memory allocation
+		delete [] bias_0_tvin_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvin_bias_1, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_bias_1, tvin_bias_1);
+
+		sc_bv<8>* bias_1_tvin_wrapc_buffer = new sc_bv<8>[1];
+
+		// RTL Name: bias_1
+		{
+			// bitslice(7, 0)
+			{
+				int hls_map_index = 0;
+				// celement: bias(7, 0)
+				{
+					// carray: (1) => (1) @ (2)
+					for (int i_0 = 1; i_0 <= 1; i_0 += 2)
+					{
+						// sub                   : i_0
+						// ori_name              : bias[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : bias[0]
+						// regulate_c_name       : bias
+						// input_type_conversion : bias[i_0]
+						if (&(bias[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> bias_tmp_mem;
+							bias_tmp_mem = bias[i_0];
+							bias_1_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = bias_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_bias_1, "%s\n", (bias_1_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_bias_1, tvin_bias_1);
+		}
+
+		tcl_file.set_num(1, &tcl_file.bias_1_depth);
+		sprintf(tvin_bias_1, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_bias_1, tvin_bias_1);
+
+		// release memory allocation
+		delete [] bias_1_tvin_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvin_bias_2, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_bias_2, tvin_bias_2);
+
+		sc_bv<8>* bias_2_tvin_wrapc_buffer = new sc_bv<8>[1];
+
+		// RTL Name: bias_2
+		{
+			// bitslice(7, 0)
+			{
+				int hls_map_index = 0;
+				// celement: bias(7, 0)
+				{
+					// carray: (2) => (2) @ (2)
+					for (int i_0 = 2; i_0 <= 2; i_0 += 2)
+					{
+						// sub                   : i_0
+						// ori_name              : bias[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : bias[0]
+						// regulate_c_name       : bias
+						// input_type_conversion : bias[i_0]
+						if (&(bias[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> bias_tmp_mem;
+							bias_tmp_mem = bias[i_0];
+							bias_2_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = bias_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_bias_2, "%s\n", (bias_2_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_bias_2, tvin_bias_2);
+		}
+
+		tcl_file.set_num(1, &tcl_file.bias_2_depth);
+		sprintf(tvin_bias_2, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_bias_2, tvin_bias_2);
+
+		// release memory allocation
+		delete [] bias_2_tvin_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvin_bias_3, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_bias_3, tvin_bias_3);
+
+		sc_bv<8>* bias_3_tvin_wrapc_buffer = new sc_bv<8>[1];
+
+		// RTL Name: bias_3
+		{
+			// bitslice(7, 0)
+			{
+				int hls_map_index = 0;
+				// celement: bias(7, 0)
+				{
+					// carray: (3) => (3) @ (2)
+					for (int i_0 = 3; i_0 <= 3; i_0 += 2)
+					{
+						// sub                   : i_0
+						// ori_name              : bias[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : bias[0]
+						// regulate_c_name       : bias
+						// input_type_conversion : bias[i_0]
+						if (&(bias[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> bias_tmp_mem;
+							bias_tmp_mem = bias[i_0];
+							bias_3_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = bias_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_bias_3, "%s\n", (bias_3_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_bias_3, tvin_bias_3);
+		}
+
+		tcl_file.set_num(1, &tcl_file.bias_3_depth);
+		sprintf(tvin_bias_3, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_bias_3, tvin_bias_3);
+
+		// release memory allocation
+		delete [] bias_3_tvin_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvin_bias_4, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_bias_4, tvin_bias_4);
+
+		sc_bv<8>* bias_4_tvin_wrapc_buffer = new sc_bv<8>[1];
+
+		// RTL Name: bias_4
+		{
+			// bitslice(7, 0)
+			{
+				int hls_map_index = 0;
+				// celement: bias(7, 0)
+				{
+					// carray: (4) => (4) @ (2)
+					for (int i_0 = 4; i_0 <= 4; i_0 += 2)
+					{
+						// sub                   : i_0
+						// ori_name              : bias[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : bias[0]
+						// regulate_c_name       : bias
+						// input_type_conversion : bias[i_0]
+						if (&(bias[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> bias_tmp_mem;
+							bias_tmp_mem = bias[i_0];
+							bias_4_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = bias_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_bias_4, "%s\n", (bias_4_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_bias_4, tvin_bias_4);
+		}
+
+		tcl_file.set_num(1, &tcl_file.bias_4_depth);
+		sprintf(tvin_bias_4, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_bias_4, tvin_bias_4);
+
+		// release memory allocation
+		delete [] bias_4_tvin_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvin_bias_5, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_bias_5, tvin_bias_5);
+
+		sc_bv<8>* bias_5_tvin_wrapc_buffer = new sc_bv<8>[1];
+
+		// RTL Name: bias_5
+		{
+			// bitslice(7, 0)
+			{
+				int hls_map_index = 0;
+				// celement: bias(7, 0)
+				{
+					// carray: (5) => (5) @ (2)
+					for (int i_0 = 5; i_0 <= 5; i_0 += 2)
+					{
+						// sub                   : i_0
+						// ori_name              : bias[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : bias[0]
+						// regulate_c_name       : bias
+						// input_type_conversion : bias[i_0]
+						if (&(bias[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> bias_tmp_mem;
+							bias_tmp_mem = bias[i_0];
+							bias_5_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = bias_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_bias_5, "%s\n", (bias_5_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_bias_5, tvin_bias_5);
+		}
+
+		tcl_file.set_num(1, &tcl_file.bias_5_depth);
+		sprintf(tvin_bias_5, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_bias_5, tvin_bias_5);
+
+		// release memory allocation
+		delete [] bias_5_tvin_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvin_bias_6, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_bias_6, tvin_bias_6);
+
+		sc_bv<8>* bias_6_tvin_wrapc_buffer = new sc_bv<8>[1];
+
+		// RTL Name: bias_6
+		{
+			// bitslice(7, 0)
+			{
+				int hls_map_index = 0;
+				// celement: bias(7, 0)
+				{
+					// carray: (6) => (6) @ (2)
+					for (int i_0 = 6; i_0 <= 6; i_0 += 2)
+					{
+						// sub                   : i_0
+						// ori_name              : bias[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : bias[0]
+						// regulate_c_name       : bias
+						// input_type_conversion : bias[i_0]
+						if (&(bias[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> bias_tmp_mem;
+							bias_tmp_mem = bias[i_0];
+							bias_6_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = bias_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_bias_6, "%s\n", (bias_6_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_bias_6, tvin_bias_6);
+		}
+
+		tcl_file.set_num(1, &tcl_file.bias_6_depth);
+		sprintf(tvin_bias_6, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_bias_6, tvin_bias_6);
+
+		// release memory allocation
+		delete [] bias_6_tvin_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvin_bias_7, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_bias_7, tvin_bias_7);
+
+		sc_bv<8>* bias_7_tvin_wrapc_buffer = new sc_bv<8>[1];
+
+		// RTL Name: bias_7
+		{
+			// bitslice(7, 0)
+			{
+				int hls_map_index = 0;
+				// celement: bias(7, 0)
+				{
+					// carray: (7) => (7) @ (2)
+					for (int i_0 = 7; i_0 <= 7; i_0 += 2)
+					{
+						// sub                   : i_0
+						// ori_name              : bias[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : bias[0]
+						// regulate_c_name       : bias
+						// input_type_conversion : bias[i_0]
+						if (&(bias[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> bias_tmp_mem;
+							bias_tmp_mem = bias[i_0];
+							bias_7_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = bias_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_bias_7, "%s\n", (bias_7_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_bias_7, tvin_bias_7);
+		}
+
+		tcl_file.set_num(1, &tcl_file.bias_7_depth);
+		sprintf(tvin_bias_7, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_bias_7, tvin_bias_7);
+
+		// release memory allocation
+		delete [] bias_7_tvin_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvin_bias_8, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_bias_8, tvin_bias_8);
+
+		sc_bv<8>* bias_8_tvin_wrapc_buffer = new sc_bv<8>[1];
+
+		// RTL Name: bias_8
+		{
+			// bitslice(7, 0)
+			{
+				int hls_map_index = 0;
+				// celement: bias(7, 0)
+				{
+					// carray: (8) => (8) @ (2)
+					for (int i_0 = 8; i_0 <= 8; i_0 += 2)
+					{
+						// sub                   : i_0
+						// ori_name              : bias[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : bias[0]
+						// regulate_c_name       : bias
+						// input_type_conversion : bias[i_0]
+						if (&(bias[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> bias_tmp_mem;
+							bias_tmp_mem = bias[i_0];
+							bias_8_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = bias_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_bias_8, "%s\n", (bias_8_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_bias_8, tvin_bias_8);
+		}
+
+		tcl_file.set_num(1, &tcl_file.bias_8_depth);
+		sprintf(tvin_bias_8, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_bias_8, tvin_bias_8);
+
+		// release memory allocation
+		delete [] bias_8_tvin_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvin_ctrl, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_ctrl, tvin_ctrl);
+
+		sc_bv<8> ctrl_tvin_wrapc_buffer;
+
+		// RTL Name: ctrl
+		{
+			// bitslice(7, 0)
+			{
+				// celement: ctrl(7, 0)
+				{
+					// carray: (0) => (0) @ (0)
+					{
+						// sub                   : 
+						// ori_name              : ctrl
+						// sub_1st_elem          : 
+						// ori_name_1st_elem     : ctrl
+						// regulate_c_name       : ctrl
+						// input_type_conversion : ctrl
+						if (&(ctrl) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> ctrl_tmp_mem;
+							ctrl_tmp_mem = ctrl;
+							ctrl_tvin_wrapc_buffer.range(7, 0) = ctrl_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_ctrl, "%s\n", (ctrl_tvin_wrapc_buffer).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_ctrl, tvin_ctrl);
+		}
+
+		tcl_file.set_num(1, &tcl_file.ctrl_depth);
+		sprintf(tvin_ctrl, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_ctrl, tvin_ctrl);
+
 		// push back input stream: "in_stream"
 		for (int i = 0; i < aesl_tmp_1; i++)
 		{
@@ -2024,7 +2583,7 @@ unsigned char kernel[9])
 // [call_c_dut] ---------->
 
 		CodeState = CALL_C_DUT;
-		my_filter_buffer(in_stream, out_stream, kernel);
+		my_filter_buffer(in_stream, out_stream, kernel, bias, ctrl);
 
 		CodeState = DUMP_OUTPUTS;
 		// record input size to tv3: "in_stream"
@@ -3038,6 +3597,26 @@ unsigned char kernel[9])
 		delete [] tvin_kernel_7;
 		// release memory allocation: "kernel_8"
 		delete [] tvin_kernel_8;
+		// release memory allocation: "bias_0"
+		delete [] tvin_bias_0;
+		// release memory allocation: "bias_1"
+		delete [] tvin_bias_1;
+		// release memory allocation: "bias_2"
+		delete [] tvin_bias_2;
+		// release memory allocation: "bias_3"
+		delete [] tvin_bias_3;
+		// release memory allocation: "bias_4"
+		delete [] tvin_bias_4;
+		// release memory allocation: "bias_5"
+		delete [] tvin_bias_5;
+		// release memory allocation: "bias_6"
+		delete [] tvin_bias_6;
+		// release memory allocation: "bias_7"
+		delete [] tvin_bias_7;
+		// release memory allocation: "bias_8"
+		delete [] tvin_bias_8;
+		// release memory allocation: "ctrl"
+		delete [] tvin_ctrl;
 
 		AESL_transaction++;
 

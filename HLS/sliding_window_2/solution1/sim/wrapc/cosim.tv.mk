@@ -48,13 +48,30 @@ IFLAG += -D__RTL_SIMULATION__
 IFLAG += -D__xilinx_ip_top=
 DFLAG += -DAESL_PIPELINE
 LFLAG += -Wl,--enable-auto-import
+DFLAG += -DAESL_EXTERN_C
 
 include ./Makefile.rules
 
 all : $(TARGET)
 
+$(ObjDir)/tasks.c_pre.c.tb.o : tasks.c_pre.c.tb.c $(ObjDir)/.dir
+	$(Echo) "   Compiling tasks.c_pre.c.tb.c" $(AVE_DIR_DLOG)
+	$(Verb) $(CC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
+
 $(ObjDir)/sliding_window_tb.cpp_pre.cpp.tb.o : sliding_window_tb.cpp_pre.cpp.tb.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling sliding_window_tb.cpp_pre.cpp.tb.cpp" $(AVE_DIR_DLOG)
+	$(Verb) $(CC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
+
+$(ObjDir)/matrix.c_pre.c.tb.o : matrix.c_pre.c.tb.c $(ObjDir)/.dir
+	$(Echo) "   Compiling matrix.c_pre.c.tb.c" $(AVE_DIR_DLOG)
+	$(Verb) $(CC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
+
+$(ObjDir)/main.c_pre.c.tb.o : main.c_pre.c.tb.c $(ObjDir)/.dir
+	$(Echo) "   Compiling main.c_pre.c.tb.c" $(AVE_DIR_DLOG)
+	$(Verb) $(CC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
+
+$(ObjDir)/cnn.c_pre.c.tb.o : cnn.c_pre.c.tb.c $(ObjDir)/.dir
+	$(Echo) "   Compiling cnn.c_pre.c.tb.c" $(AVE_DIR_DLOG)
 	$(Verb) $(CC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
 
 $(ObjDir)/sliding_window.cpp_pre.cpp.tb.o : sliding_window.cpp_pre.cpp.tb.cpp $(ObjDir)/.dir

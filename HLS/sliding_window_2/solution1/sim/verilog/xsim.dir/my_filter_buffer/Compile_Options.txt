@@ -1,1 +1,0 @@
-"xil_defaultlib.apatb_my_filter_buffer_top" -prj "my_filter_buffer.prj" --initfile "C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini" --lib "ieee_proposed=./ieee_proposed" -s "my_filter_buffer" -debug "wave" 

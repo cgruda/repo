@@ -7,4 +7,6 @@
 extern void AESL_WRAP_my_filter_buffer (
 hls::stream<struct ap_axis<32, 2, 5, 6 > >& in_stream,
 hls::stream<struct ap_axis<32, 2, 5, 6 > >& out_stream,
-unsigned char kernel[9]);
+unsigned char kernel[9],
+unsigned char bias[9],
+unsigned char ctrl);

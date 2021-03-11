@@ -1,14 +1,14 @@
 set C_TypeInfoList {{ 
-"my_filter_buffer" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"in_stream": [[], {"reference": "0"}] }, {"out_stream": [[], {"reference": "0"}] }, {"kernel": [[], {"array": ["1", [9]]}] }],[],""], 
-"1": [ "uint8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}], 
+"my_filter_buffer" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"in_stream": [[], {"reference": "0"}] }, {"out_stream": [[], {"reference": "0"}] }, {"kernel": [[], {"array": ["1", [9]]}] }, {"bias": [[], {"array": ["1", [9]]}] }, {"ctrl": [[],"1"] }],[],""], 
 "0": [ "stream<ap_axis<32, 2, 5, 6> >", {"hls_type": {"stream": [[[[],"2"]],"3"]}}], 
 "2": [ "ap_axis<32, 2, 5, 6>", {"struct": [[],[{"D":[[], {"scalar": { "int": 32}}]},{"U":[[], {"scalar": { "int": 2}}]},{"TI":[[], {"scalar": { "int": 5}}]},{"TD":[[], {"scalar": { "int": 6}}]}],[{ "data": [[], "4"]},{ "keep": [[], "5"]},{ "strb": [[], "5"]},{ "user": [[], "6"]},{ "last": [[], "7"]},{ "id": [[], "8"]},{ "dest": [[], "9"]}],""]}], 
+"8": [ "ap_uint<5>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 5}}]],""]}}], 
 "5": [ "ap_uint<4>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 4}}]],""]}}], 
 "6": [ "ap_uint<2>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 2}}]],""]}}], 
-"9": [ "ap_uint<6>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 6}}]],""]}}], 
+"4": [ "ap_int<32>", {"hls_type": {"ap_int": [[[[], {"scalar": { "int": 32}}]],""]}}], 
 "7": [ "ap_uint<1>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 1}}]],""]}}], 
-"8": [ "ap_uint<5>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 5}}]],""]}}], 
-"4": [ "ap_int<32>", {"hls_type": {"ap_int": [[[[], {"scalar": { "int": 32}}]],""]}}],
+"9": [ "ap_uint<6>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 6}}]],""]}}], 
+"1": [ "uint8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}],
 "3": ["hls", ""]
 }}
 set moduleName my_filter_buffer
@@ -46,6 +46,16 @@ set C_modelArgList {
 	{ kernel_6 int 8 regular {axi_slave 0}  }
 	{ kernel_7 int 8 regular {axi_slave 0}  }
 	{ kernel_8 int 8 regular {axi_slave 0}  }
+	{ bias_0 int 8 regular {axi_slave 0}  }
+	{ bias_1 int 8 regular {axi_slave 0}  }
+	{ bias_2 int 8 regular {axi_slave 0}  }
+	{ bias_3 int 8 regular {axi_slave 0}  }
+	{ bias_4 int 8 regular {axi_slave 0}  }
+	{ bias_5 int 8 regular {axi_slave 0}  }
+	{ bias_6 int 8 regular {axi_slave 0}  }
+	{ bias_7 int 8 regular {axi_slave 0}  }
+	{ bias_8 int 8 regular {axi_slave 0}  }
+	{ ctrl uint 8 regular {axi_slave 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "in_stream_V_data_V", "interface" : "axis", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "in_stream.V.data.V","cData": "int32","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
@@ -70,7 +80,17 @@ set C_modelArgMapList {[
  	{ "Name" : "kernel_5", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "kernel","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 5,"up" : 5,"step" : 2}]}]}], "offset" : {"in":56}, "offset_end" : {"in":63}} , 
  	{ "Name" : "kernel_6", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "kernel","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 6,"up" : 6,"step" : 2}]}]}], "offset" : {"in":64}, "offset_end" : {"in":71}} , 
  	{ "Name" : "kernel_7", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "kernel","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 7,"up" : 7,"step" : 2}]}]}], "offset" : {"in":72}, "offset_end" : {"in":79}} , 
- 	{ "Name" : "kernel_8", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "kernel","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 8,"up" : 8,"step" : 2}]}]}], "offset" : {"in":80}, "offset_end" : {"in":87}} ]}
+ 	{ "Name" : "kernel_8", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "kernel","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 8,"up" : 8,"step" : 2}]}]}], "offset" : {"in":80}, "offset_end" : {"in":87}} , 
+ 	{ "Name" : "bias_0", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "bias","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 2}]}]}], "offset" : {"in":88}, "offset_end" : {"in":95}} , 
+ 	{ "Name" : "bias_1", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "bias","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 1,"up" : 1,"step" : 2}]}]}], "offset" : {"in":96}, "offset_end" : {"in":103}} , 
+ 	{ "Name" : "bias_2", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "bias","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 2,"up" : 2,"step" : 2}]}]}], "offset" : {"in":104}, "offset_end" : {"in":111}} , 
+ 	{ "Name" : "bias_3", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "bias","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 3,"up" : 3,"step" : 2}]}]}], "offset" : {"in":112}, "offset_end" : {"in":119}} , 
+ 	{ "Name" : "bias_4", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "bias","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 4,"up" : 4,"step" : 2}]}]}], "offset" : {"in":120}, "offset_end" : {"in":127}} , 
+ 	{ "Name" : "bias_5", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "bias","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 5,"up" : 5,"step" : 2}]}]}], "offset" : {"in":128}, "offset_end" : {"in":135}} , 
+ 	{ "Name" : "bias_6", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "bias","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 6,"up" : 6,"step" : 2}]}]}], "offset" : {"in":136}, "offset_end" : {"in":143}} , 
+ 	{ "Name" : "bias_7", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "bias","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 7,"up" : 7,"step" : 2}]}]}], "offset" : {"in":144}, "offset_end" : {"in":151}} , 
+ 	{ "Name" : "bias_8", "interface" : "axi_slave", "bundle":"KERNEL_BUS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "bias","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 8,"up" : 8,"step" : 2}]}]}], "offset" : {"in":152}, "offset_end" : {"in":159}} , 
+ 	{ "Name" : "ctrl", "interface" : "axi_slave", "bundle":"CTRL","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "ctrl","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":16}, "offset_end" : {"in":23}} ]}
 # RTL Port declarations: 
 set portNum 55
 set portList { 
@@ -96,14 +116,14 @@ set portList {
 	{ out_stream_TDEST sc_out sc_lv 6 signal 13 } 
 	{ s_axi_CTRL_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_AWREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_CTRL_AWADDR sc_in sc_lv 4 signal -1 } 
+	{ s_axi_CTRL_AWADDR sc_in sc_lv 5 signal -1 } 
 	{ s_axi_CTRL_WVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_WREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_WDATA sc_in sc_lv 32 signal -1 } 
 	{ s_axi_CTRL_WSTRB sc_in sc_lv 4 signal -1 } 
 	{ s_axi_CTRL_ARVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_ARREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_CTRL_ARADDR sc_in sc_lv 4 signal -1 } 
+	{ s_axi_CTRL_ARADDR sc_in sc_lv 5 signal -1 } 
 	{ s_axi_CTRL_RVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_RREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_RDATA sc_out sc_lv 32 signal -1 } 
@@ -114,14 +134,14 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 	{ s_axi_KERNEL_BUS_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_KERNEL_BUS_AWREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_KERNEL_BUS_AWADDR sc_in sc_lv 7 signal -1 } 
+	{ s_axi_KERNEL_BUS_AWADDR sc_in sc_lv 8 signal -1 } 
 	{ s_axi_KERNEL_BUS_WVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_KERNEL_BUS_WREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_KERNEL_BUS_WDATA sc_in sc_lv 32 signal -1 } 
 	{ s_axi_KERNEL_BUS_WSTRB sc_in sc_lv 4 signal -1 } 
 	{ s_axi_KERNEL_BUS_ARVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_KERNEL_BUS_ARREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_KERNEL_BUS_ARADDR sc_in sc_lv 7 signal -1 } 
+	{ s_axi_KERNEL_BUS_ARADDR sc_in sc_lv 8 signal -1 } 
 	{ s_axi_KERNEL_BUS_RVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_KERNEL_BUS_RREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_KERNEL_BUS_RDATA sc_out sc_lv 32 signal -1 } 
@@ -131,14 +151,14 @@ set portList {
 	{ s_axi_KERNEL_BUS_BRESP sc_out sc_lv 2 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_CTRL_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "CTRL", "role": "AWADDR" },"address":[{"name":"my_filter_buffer","role":"start","value":"0","valid_bit":"0"},{"name":"my_filter_buffer","role":"continue","value":"0","valid_bit":"4"},{"name":"my_filter_buffer","role":"auto_start","value":"0","valid_bit":"7"}] },
+	{ "name": "s_axi_CTRL_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "CTRL", "role": "AWADDR" },"address":[{"name":"my_filter_buffer","role":"start","value":"0","valid_bit":"0"},{"name":"my_filter_buffer","role":"continue","value":"0","valid_bit":"4"},{"name":"my_filter_buffer","role":"auto_start","value":"0","valid_bit":"7"},{"name":"ctrl","role":"data","value":"16"}] },
 	{ "name": "s_axi_CTRL_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "AWVALID" } },
 	{ "name": "s_axi_CTRL_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "AWREADY" } },
 	{ "name": "s_axi_CTRL_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "WVALID" } },
 	{ "name": "s_axi_CTRL_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "WREADY" } },
 	{ "name": "s_axi_CTRL_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "CTRL", "role": "WDATA" } },
 	{ "name": "s_axi_CTRL_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "CTRL", "role": "WSTRB" } },
-	{ "name": "s_axi_CTRL_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "CTRL", "role": "ARADDR" },"address":[{"name":"my_filter_buffer","role":"start","value":"0","valid_bit":"0"},{"name":"my_filter_buffer","role":"done","value":"0","valid_bit":"1"},{"name":"my_filter_buffer","role":"idle","value":"0","valid_bit":"2"},{"name":"my_filter_buffer","role":"ready","value":"0","valid_bit":"3"},{"name":"my_filter_buffer","role":"auto_start","value":"0","valid_bit":"7"}] },
+	{ "name": "s_axi_CTRL_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "CTRL", "role": "ARADDR" },"address":[{"name":"my_filter_buffer","role":"start","value":"0","valid_bit":"0"},{"name":"my_filter_buffer","role":"done","value":"0","valid_bit":"1"},{"name":"my_filter_buffer","role":"idle","value":"0","valid_bit":"2"},{"name":"my_filter_buffer","role":"ready","value":"0","valid_bit":"3"},{"name":"my_filter_buffer","role":"auto_start","value":"0","valid_bit":"7"}] },
 	{ "name": "s_axi_CTRL_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "ARVALID" } },
 	{ "name": "s_axi_CTRL_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "ARREADY" } },
 	{ "name": "s_axi_CTRL_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "RVALID" } },
@@ -149,14 +169,14 @@ set NewPortList {[
 	{ "name": "s_axi_CTRL_BREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "BREADY" } },
 	{ "name": "s_axi_CTRL_BRESP", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "CTRL", "role": "BRESP" } },
 	{ "name": "interrupt", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "interrupt" } },
-	{ "name": "s_axi_KERNEL_BUS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "AWADDR" },"address":[{"name":"kernel_0","role":"data","value":"16"},{"name":"kernel_1","role":"data","value":"24"},{"name":"kernel_2","role":"data","value":"32"},{"name":"kernel_3","role":"data","value":"40"},{"name":"kernel_4","role":"data","value":"48"},{"name":"kernel_5","role":"data","value":"56"},{"name":"kernel_6","role":"data","value":"64"},{"name":"kernel_7","role":"data","value":"72"},{"name":"kernel_8","role":"data","value":"80"}] },
+	{ "name": "s_axi_KERNEL_BUS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "AWADDR" },"address":[{"name":"kernel_0","role":"data","value":"16"},{"name":"kernel_1","role":"data","value":"24"},{"name":"kernel_2","role":"data","value":"32"},{"name":"kernel_3","role":"data","value":"40"},{"name":"kernel_4","role":"data","value":"48"},{"name":"kernel_5","role":"data","value":"56"},{"name":"kernel_6","role":"data","value":"64"},{"name":"kernel_7","role":"data","value":"72"},{"name":"kernel_8","role":"data","value":"80"},{"name":"bias_0","role":"data","value":"88"},{"name":"bias_1","role":"data","value":"96"},{"name":"bias_2","role":"data","value":"104"},{"name":"bias_3","role":"data","value":"112"},{"name":"bias_4","role":"data","value":"120"},{"name":"bias_5","role":"data","value":"128"},{"name":"bias_6","role":"data","value":"136"},{"name":"bias_7","role":"data","value":"144"},{"name":"bias_8","role":"data","value":"152"}] },
 	{ "name": "s_axi_KERNEL_BUS_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "AWVALID" } },
 	{ "name": "s_axi_KERNEL_BUS_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "AWREADY" } },
 	{ "name": "s_axi_KERNEL_BUS_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "WVALID" } },
 	{ "name": "s_axi_KERNEL_BUS_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "WREADY" } },
 	{ "name": "s_axi_KERNEL_BUS_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "WDATA" } },
 	{ "name": "s_axi_KERNEL_BUS_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "WSTRB" } },
-	{ "name": "s_axi_KERNEL_BUS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "ARADDR" },"address":[] },
+	{ "name": "s_axi_KERNEL_BUS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "ARADDR" },"address":[] },
 	{ "name": "s_axi_KERNEL_BUS_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "ARVALID" } },
 	{ "name": "s_axi_KERNEL_BUS_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "ARREADY" } },
 	{ "name": "s_axi_KERNEL_BUS_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "KERNEL_BUS", "role": "RVALID" } },
@@ -223,26 +243,36 @@ set RtlHierarchyInfo {[
 		{"Name" : "kernel_5", "Type" : "None", "Direction" : "I"},
 		{"Name" : "kernel_6", "Type" : "None", "Direction" : "I"},
 		{"Name" : "kernel_7", "Type" : "None", "Direction" : "I"},
-		{"Name" : "kernel_8", "Type" : "None", "Direction" : "I"}]},
+		{"Name" : "kernel_8", "Type" : "None", "Direction" : "I"},
+		{"Name" : "bias_0", "Type" : "None", "Direction" : "I"},
+		{"Name" : "bias_1", "Type" : "None", "Direction" : "I"},
+		{"Name" : "bias_2", "Type" : "None", "Direction" : "I"},
+		{"Name" : "bias_3", "Type" : "None", "Direction" : "I"},
+		{"Name" : "bias_4", "Type" : "None", "Direction" : "I"},
+		{"Name" : "bias_5", "Type" : "None", "Direction" : "I"},
+		{"Name" : "bias_6", "Type" : "None", "Direction" : "I"},
+		{"Name" : "bias_7", "Type" : "None", "Direction" : "I"},
+		{"Name" : "bias_8", "Type" : "None", "Direction" : "I"},
+		{"Name" : "ctrl", "Type" : "None", "Direction" : "I"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_CTRL_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_KERNEL_BUS_s_axi_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.line_buf_0_U", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.line_buf_1_U", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_dEe_U0", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_dEe_U1", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_dEe_U2", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_dEe_U3", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_dEe_U4", "Parent" : "0"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_dEe_U5", "Parent" : "0"},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_dEe_U6", "Parent" : "0"},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_dEe_U7", "Parent" : "0"},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_dEe_U8", "Parent" : "0"}]}
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_bkb_U0", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_bkb_U1", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_bkb_U2", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_bkb_U3", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_bkb_U4", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_bkb_U5", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_bkb_U6", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_bkb_U7", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_bkb_U8", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_cud_U9", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.my_filter_buffer_cud_U10", "Parent" : "0"}]}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "262676", "Max" : "262676"}
-	, {"Name" : "Interval", "Min" : "262677", "Max" : "262677"}
+	{"Name" : "Latency", "Min" : "44", "Max" : "44"}
+	, {"Name" : "Interval", "Min" : "45", "Max" : "45"}
 ]}
 
 set Spec2ImplPortList { 

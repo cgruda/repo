@@ -1,0 +1,1048 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Mar 11 21:14:19 2021
+# Process ID: 11388
+# Current directory: D:/School/Project/new_repo/Vivado/conv_0/conv_0.runs/design_1_my_filter_buffer_0_0_synth_1
+# Command line: vivado.exe -log design_1_my_filter_buffer_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_my_filter_buffer_0_0.tcl
+# Log file: D:/School/Project/new_repo/Vivado/conv_0/conv_0.runs/design_1_my_filter_buffer_0_0_synth_1/design_1_my_filter_buffer_0_0.vds
+# Journal file: D:/School/Project/new_repo/Vivado/conv_0/conv_0.runs/design_1_my_filter_buffer_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_my_filter_buffer_0_0.tcl -notrace
+Command: synth_design -top design_1_my_filter_buffer_0_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7212 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 366.941 ; gain = 156.859
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_my_filter_buffer_0_0' [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ip/design_1_my_filter_buffer_0_0/synth/design_1_my_filter_buffer_0_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'my_filter_buffer' [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:12]
+	Parameter ap_ST_fsm_state1 bound to: 9'b000000001 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 9'b000000010 
+	Parameter ap_ST_fsm_state4 bound to: 9'b000000100 
+	Parameter ap_ST_fsm_pp1_stage0 bound to: 9'b000001000 
+	Parameter ap_ST_fsm_state7 bound to: 9'b000010000 
+	Parameter ap_ST_fsm_state8 bound to: 9'b000100000 
+	Parameter ap_ST_fsm_state9 bound to: 9'b001000000 
+	Parameter ap_ST_fsm_pp3_stage0 bound to: 9'b010000000 
+	Parameter ap_ST_fsm_state22 bound to: 9'b100000000 
+	Parameter ap_const_lv32_0 bound to: 0 - type: integer 
+	Parameter ap_const_lv2_0 bound to: 2'b00 
+	Parameter ap_const_lv2_2 bound to: 2'b10 
+	Parameter ap_const_lv2_3 bound to: 2'b11 
+	Parameter ap_const_lv2_1 bound to: 2'b01 
+	Parameter ap_const_lv32_1 bound to: 1 - type: integer 
+	Parameter ap_const_lv32_3 bound to: 3 - type: integer 
+	Parameter ap_const_lv32_7 bound to: 7 - type: integer 
+	Parameter C_S_AXI_CTRL_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ap_const_int64_8 bound to: 8 - type: integer 
+	Parameter C_S_AXI_CTRL_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_KERNEL_BUS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_KERNEL_BUS_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter ap_const_lv32_5 bound to: 5 - type: integer 
+	Parameter ap_const_lv32_6 bound to: 6 - type: integer 
+	Parameter ap_const_lv32_2 bound to: 2 - type: integer 
+	Parameter ap_const_lv3_2 bound to: 3'b010 
+	Parameter ap_const_lv3_0 bound to: 3'b000 
+	Parameter ap_const_lv32_4 bound to: 4 - type: integer 
+	Parameter ap_const_lv5_0 bound to: 5'b00000 
+	Parameter ap_const_lv4_1 bound to: 4'b0001 
+	Parameter ap_const_lv6_0 bound to: 6'b000000 
+	Parameter ap_const_lv3_4 bound to: 3'b100 
+	Parameter ap_const_lv3_1 bound to: 3'b001 
+	Parameter ap_const_lv5_10 bound to: 5'b10000 
+	Parameter ap_const_lv5_1 bound to: 5'b00001 
+	Parameter ap_const_lv32_1F bound to: 31 - type: integer 
+	Parameter ap_const_lv28_1 bound to: 28'b0000000000000000000000000001 
+	Parameter ap_const_lv32_8 bound to: 8 - type: integer 
+	Parameter C_S_AXI_CTRL_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_KERNEL_BUS_WSTRB_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:174]
+INFO: [Synth 8-638] synthesizing module 'my_filter_buffer_CTRL_s_axi' [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_CTRL_s_axi.v:9]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_AP_CTRL bound to: 5'b00000 
+	Parameter ADDR_GIE bound to: 5'b00100 
+	Parameter ADDR_IER bound to: 5'b01000 
+	Parameter ADDR_ISR bound to: 5'b01100 
+	Parameter ADDR_CTRL_DATA_0 bound to: 5'b10000 
+	Parameter ADDR_CTRL_CTRL bound to: 5'b10100 
+	Parameter WRIDLE bound to: 2'b00 
+	Parameter WRDATA bound to: 2'b01 
+	Parameter WRRESP bound to: 2'b10 
+	Parameter RDIDLE bound to: 2'b00 
+	Parameter RDDATA bound to: 2'b01 
+	Parameter ADDR_BITS bound to: 5 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_CTRL_s_axi.v:195]
+INFO: [Synth 8-256] done synthesizing module 'my_filter_buffer_CTRL_s_axi' (1#1) [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_CTRL_s_axi.v:9]
+INFO: [Synth 8-638] synthesizing module 'my_filter_buffer_KERNEL_BUS_s_axi' [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_KERNEL_BUS_s_axi.v:9]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_KERNEL_0_DATA_0 bound to: 8'b00010000 
+	Parameter ADDR_KERNEL_0_CTRL bound to: 8'b00010100 
+	Parameter ADDR_KERNEL_1_DATA_0 bound to: 8'b00011000 
+	Parameter ADDR_KERNEL_1_CTRL bound to: 8'b00011100 
+	Parameter ADDR_KERNEL_2_DATA_0 bound to: 8'b00100000 
+	Parameter ADDR_KERNEL_2_CTRL bound to: 8'b00100100 
+	Parameter ADDR_KERNEL_3_DATA_0 bound to: 8'b00101000 
+	Parameter ADDR_KERNEL_3_CTRL bound to: 8'b00101100 
+	Parameter ADDR_KERNEL_4_DATA_0 bound to: 8'b00110000 
+	Parameter ADDR_KERNEL_4_CTRL bound to: 8'b00110100 
+	Parameter ADDR_KERNEL_5_DATA_0 bound to: 8'b00111000 
+	Parameter ADDR_KERNEL_5_CTRL bound to: 8'b00111100 
+	Parameter ADDR_KERNEL_6_DATA_0 bound to: 8'b01000000 
+	Parameter ADDR_KERNEL_6_CTRL bound to: 8'b01000100 
+	Parameter ADDR_KERNEL_7_DATA_0 bound to: 8'b01001000 
+	Parameter ADDR_KERNEL_7_CTRL bound to: 8'b01001100 
+	Parameter ADDR_KERNEL_8_DATA_0 bound to: 8'b01010000 
+	Parameter ADDR_KERNEL_8_CTRL bound to: 8'b01010100 
+	Parameter ADDR_BIAS_0_DATA_0 bound to: 8'b01011000 
+	Parameter ADDR_BIAS_0_CTRL bound to: 8'b01011100 
+	Parameter ADDR_BIAS_1_DATA_0 bound to: 8'b01100000 
+	Parameter ADDR_BIAS_1_CTRL bound to: 8'b01100100 
+	Parameter ADDR_BIAS_2_DATA_0 bound to: 8'b01101000 
+	Parameter ADDR_BIAS_2_CTRL bound to: 8'b01101100 
+	Parameter ADDR_BIAS_3_DATA_0 bound to: 8'b01110000 
+	Parameter ADDR_BIAS_3_CTRL bound to: 8'b01110100 
+	Parameter ADDR_BIAS_4_DATA_0 bound to: 8'b01111000 
+	Parameter ADDR_BIAS_4_CTRL bound to: 8'b01111100 
+	Parameter ADDR_BIAS_5_DATA_0 bound to: 8'b10000000 
+	Parameter ADDR_BIAS_5_CTRL bound to: 8'b10000100 
+	Parameter ADDR_BIAS_6_DATA_0 bound to: 8'b10001000 
+	Parameter ADDR_BIAS_6_CTRL bound to: 8'b10001100 
+	Parameter ADDR_BIAS_7_DATA_0 bound to: 8'b10010000 
+	Parameter ADDR_BIAS_7_CTRL bound to: 8'b10010100 
+	Parameter ADDR_BIAS_8_DATA_0 bound to: 8'b10011000 
+	Parameter ADDR_BIAS_8_CTRL bound to: 8'b10011100 
+	Parameter WRIDLE bound to: 2'b00 
+	Parameter WRDATA bound to: 2'b01 
+	Parameter WRRESP bound to: 2'b10 
+	Parameter RDIDLE bound to: 2'b00 
+	Parameter RDDATA bound to: 2'b01 
+	Parameter ADDR_BITS bound to: 8 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_KERNEL_BUS_s_axi.v:300]
+INFO: [Synth 8-256] done synthesizing module 'my_filter_buffer_KERNEL_BUS_s_axi' (2#1) [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_KERNEL_BUS_s_axi.v:9]
+INFO: [Synth 8-638] synthesizing module 'my_filter_buffer_bkb' [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:35]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 3 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'my_filter_buffer_bkb_Mul3S_0' [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:11]
+INFO: [Synth 8-256] done synthesizing module 'my_filter_buffer_bkb_Mul3S_0' (3#1) [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:11]
+INFO: [Synth 8-256] done synthesizing module 'my_filter_buffer_bkb' (4#1) [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:35]
+INFO: [Synth 8-638] synthesizing module 'my_filter_buffer_cud' [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_cud.v:11]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter din2_WIDTH bound to: 32 - type: integer 
+	Parameter din3_WIDTH bound to: 32 - type: integer 
+	Parameter din4_WIDTH bound to: 32 - type: integer 
+	Parameter din5_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'my_filter_buffer_cud' (5#1) [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_cud.v:11]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2290]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2366]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2368]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2370]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2372]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2374]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2376]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2378]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2380]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2382]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2384]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2386]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2388]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2390]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2392]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2394]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2396]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2398]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2400]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2402]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2404]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2406]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2408]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2410]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2412]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2414]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2520]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2522]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2524]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2526]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2528]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2530]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2532]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2620]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2626]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2636]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2646]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2650]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2656]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2660]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2662]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2664]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2666]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2668]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2670]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2672]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2674]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2676]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2678]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2690]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2696]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:2698]
+INFO: [Synth 8-256] done synthesizing module 'my_filter_buffer' (6#1) [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:12]
+INFO: [Synth 8-256] done synthesizing module 'design_1_my_filter_buffer_0_0' (7#1) [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ip/design_1_my_filter_buffer_0_0/synth/design_1_my_filter_buffer_0_0.v:57]
+WARNING: [Synth 8-3331] design my_filter_buffer_bkb has unconnected port reset
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[31]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[30]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[29]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[28]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[27]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[26]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[25]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[24]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[23]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[22]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[21]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[20]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[19]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[18]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[17]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[16]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[15]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[14]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[13]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[12]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[11]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[10]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[9]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[8]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[31]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[30]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[29]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[28]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[27]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[26]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[25]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[24]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[23]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[22]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[21]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[20]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[19]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[18]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[17]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[16]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[15]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[14]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[13]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[12]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[11]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[10]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[9]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[8]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TKEEP[3]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TKEEP[2]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TKEEP[1]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TKEEP[0]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TSTRB[3]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TSTRB[2]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TSTRB[1]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TSTRB[0]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TUSER[1]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TUSER[0]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TLAST[0]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TID[4]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TID[3]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TID[2]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TID[1]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TID[0]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TDEST[5]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TDEST[4]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TDEST[3]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TDEST[2]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TDEST[1]
+WARNING: [Synth 8-3331] design my_filter_buffer has unconnected port in_stream_TDEST[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 412.859 ; gain = 202.777
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 412.859 ; gain = 202.777
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ip/design_1_my_filter_buffer_0_0/constraints/my_filter_buffer_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ip/design_1_my_filter_buffer_0_0/constraints/my_filter_buffer_ooc.xdc] for cell 'inst'
+Parsing XDC File [D:/School/Project/new_repo/Vivado/conv_0/conv_0.runs/design_1_my_filter_buffer_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/School/Project/new_repo/Vivado/conv_0/conv_0.runs/design_1_my_filter_buffer_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.172 . Memory (MB): peak = 740.684 ; gain = 0.328
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 740.684 ; gain = 530.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 740.684 ; gain = 530.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 740.684 ; gain = 530.602
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'ctrl_read_reg_1764_reg' and it is trimmed from '8' to '3' bits. [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer.v:1731]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "exitcond1_fu_699_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond4_fu_735_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond_flatten_fu_828_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "exitcond_flatten8_fu_1036_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "sel_tmp4_fu_1391_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp3_fu_1385_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp2_fu_1379_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond_fu_840_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond2_fu_1048_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond_fu_709_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp8_fu_761_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp6_fu_756_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp_fu_751_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond1_fu_898_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond3_mid1_fu_872_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond2_fu_878_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_3_i_fu_1004_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_2_i_fu_1142_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:42 . Memory (MB): peak = 740.684 ; gain = 530.602
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 8     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 7     
+	   2 Input      2 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 4     
++---Registers : 
+	               32 Bit    Registers := 95    
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 79    
+	                5 Bit    Registers := 2     
+	                3 Bit    Registers := 34    
+	                2 Bit    Registers := 15    
+	                1 Bit    Registers := 68    
++---Multipliers : 
+	                 9x32  Multipliers := 9     
++---Muxes : 
+	   6 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 34    
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 23    
+	   2 Input      7 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   6 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 11    
+	   4 Input      2 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 56    
+	   5 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module my_filter_buffer_CTRL_s_axi 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   6 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
+Module my_filter_buffer_KERNEL_BUS_s_axi 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 19    
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 18    
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module my_filter_buffer_bkb_Mul3S_0 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
++---Multipliers : 
+	                 9x32  Multipliers := 1     
+Module my_filter_buffer_cud 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+Module my_filter_buffer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 8     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 7     
+	   2 Input      2 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 75    
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 50    
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 34    
+	                2 Bit    Registers := 12    
+	                1 Bit    Registers := 60    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 28    
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      7 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 11    
+	   4 Input      2 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 53    
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "sel_tmp4_fu_1391_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp3_fu_1385_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp2_fu_1379_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:24]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:24]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:24]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:24]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:24]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:24]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:24]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:24]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ipshared/18d5/hdl/verilog/my_filter_buffer_bkb.v:24]
+DSP Report: Generating DSP my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/tmp_product, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: register A is absorbed into DSP my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: Generating DSP my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: register my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg is absorbed into DSP my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: Generating DSP my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/tmp_product, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: register A is absorbed into DSP my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: Generating DSP my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: register my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg is absorbed into DSP my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: Generating DSP my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/tmp_product, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: register A is absorbed into DSP my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: Generating DSP my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: register my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg is absorbed into DSP my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U8/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: Generating DSP my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/tmp_product, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: register A is absorbed into DSP my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: Generating DSP my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: register my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg is absorbed into DSP my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U7/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: Generating DSP my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/tmp_product, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: register A is absorbed into DSP my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: Generating DSP my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: register my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg is absorbed into DSP my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U6/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: Generating DSP my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/tmp_product, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: register A is absorbed into DSP my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: Generating DSP my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: register my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg is absorbed into DSP my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U5/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: Generating DSP my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/tmp_product, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: register A is absorbed into DSP my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: Generating DSP my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: register my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg is absorbed into DSP my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U4/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: Generating DSP my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/tmp_product, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: register A is absorbed into DSP my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: Generating DSP my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: register my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg is absorbed into DSP my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U3/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: Generating DSP my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/tmp_product, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: register A is absorbed into DSP my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: operator my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/tmp_product.
+DSP Report: Generating DSP my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: register my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg is absorbed into DSP my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+DSP Report: operator my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/tmp_product is absorbed into DSP my_filter_buffer_bkb_U2/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg.
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[31]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[30]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[29]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[28]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[27]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[26]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[25]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[24]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[23]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[22]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[21]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[20]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[19]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[18]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[17]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[16]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[15]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[14]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[13]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[12]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[11]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[10]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[9]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WDATA[8]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WSTRB[3]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WSTRB[2]
+WARNING: [Synth 8-3331] design my_filter_buffer_KERNEL_BUS_s_axi has unconnected port WSTRB[1]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[31]
+WARNING: [Synth 8-3331] design my_filter_buffer_CTRL_s_axi has unconnected port WDATA[30]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[0]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[1]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[2]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[3]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[4]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[5]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[6]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[7]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[8]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[9]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[10]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[11]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[12]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[13]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[14]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[15]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[16]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[16]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[17]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[17]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[18]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[18]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[19]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[19]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[20]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[20]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[21]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[22]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[22]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[23]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[24]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[25]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[26]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[27]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[28]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[29]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[30]' (FDRE) to 'inst/ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\ap_phi_precharge_reg_pp3_iter1_line_buf_1_3_17_reg_681_reg[31] )
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[8]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[9]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[10]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[11]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[12]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[13]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[14]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[15]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[16]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[17]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[18]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[19]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[20]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[21]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[22]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[23]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[24]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[25]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[26]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[27]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[28]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[29]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[30]' (FDE) to 'inst/my_filter_buffer_KERNEL_BUS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/my_filter_buffer_KERNEL_BUS_s_axi_U/\rdata_reg[31] )
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[8]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[9]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[10]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[11]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[12]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[13]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[14]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[15]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[16]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[16]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[17]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[17]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[18]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[18]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[19]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[19]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[20]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[20]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[21]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[22]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[22]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[23]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[24]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[25]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[26]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[27]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[28]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[29]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[30]' (FDE) to 'inst/my_filter_buffer_CTRL_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/my_filter_buffer_CTRL_s_axi_U/\rdata_reg[31] )
+WARNING: [Synth 8-3332] Sequential element (rdata_reg[31]) is unused and will be removed from module my_filter_buffer_CTRL_s_axi.
+WARNING: [Synth 8-3332] Sequential element (rdata_reg[31]) is unused and will be removed from module my_filter_buffer_KERNEL_BUS_s_axi.
+WARNING: [Synth 8-3332] Sequential element (ctrl_read_reg_1764_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ctrl_read_reg_1764_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (x_assign_1_reg_2181_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (x_assign_1_reg_2181_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter6_x_assign_1_reg_2181_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter6_x_assign_1_reg_2181_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter7_x_assign_1_reg_2181_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter7_x_assign_1_reg_2181_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter8_x_assign_1_reg_2181_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter8_x_assign_1_reg_2181_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter9_x_assign_1_reg_2181_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter9_x_assign_1_reg_2181_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (y_assign_1_mid2_reg_1944_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (y_assign_1_mid2_reg_1944_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter1_y_assign_1_mid2_reg_1944_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter1_y_assign_1_mid2_reg_1944_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter2_y_assign_1_mid2_reg_1944_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter2_y_assign_1_mid2_reg_1944_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter3_y_assign_1_mid2_reg_1944_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter3_y_assign_1_mid2_reg_1944_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter4_y_assign_1_mid2_reg_1944_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter4_y_assign_1_mid2_reg_1944_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter5_y_assign_1_mid2_reg_1944_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter5_y_assign_1_mid2_reg_1944_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter6_y_assign_1_mid2_reg_1944_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter6_y_assign_1_mid2_reg_1944_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter7_y_assign_1_mid2_reg_1944_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter7_y_assign_1_mid2_reg_1944_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter8_y_assign_1_mid2_reg_1944_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter8_y_assign_1_mid2_reg_1944_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter9_y_assign_1_mid2_reg_1944_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter9_y_assign_1_mid2_reg_1944_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter1_y_assign_mid2_reg_1955_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter1_y_assign_mid2_reg_1955_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter2_y_assign_mid2_reg_1955_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter2_y_assign_mid2_reg_1955_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter3_y_assign_mid2_reg_1955_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter3_y_assign_mid2_reg_1955_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter4_y_assign_mid2_reg_1955_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter4_y_assign_mid2_reg_1955_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter5_y_assign_mid2_reg_1955_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter5_y_assign_mid2_reg_1955_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter6_y_assign_mid2_reg_1955_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter6_y_assign_mid2_reg_1955_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter7_y_assign_mid2_reg_1955_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp3_iter7_y_assign_mid2_reg_1955_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[47]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[46]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[45]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[44]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[43]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[42]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[41]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[40]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[39]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[38]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[37]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[36]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[35]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[34]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[33]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[32]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[31]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[30]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[29]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[28]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[27]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[26]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[25]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[24]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[23]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[22]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[21]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[20]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[19]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[18]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[17]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[16]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[15]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[14]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[13]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[12]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[11]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[10]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[9]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[8]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[7]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[6]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[5]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[4]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[3]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[2]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[1]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U1/my_filter_buffer_bkb_Mul3S_0_U/a_reg0_reg[0]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[47]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[46]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[45]) is unused and will be removed from module my_filter_buffer.
+WARNING: [Synth 8-3332] Sequential element (my_filter_buffer_bkb_U0/my_filter_buffer_bkb_Mul3S_0_U/buff0_reg[44]) is unused and will be removed from module my_filter_buffer.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'inst/tmp_i2_i_mid2_v_reg_1949_reg[0]' (FDE) to 'inst/y_assign_1_mid2_reg_1944_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_pipeline_reg_pp3_iter1_tmp_i2_i_mid2_v_reg_1949_reg[0]' (FDE) to 'inst/ap_pipeline_reg_pp3_iter1_y_assign_1_mid2_reg_1944_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_pipeline_reg_pp3_iter2_tmp_i2_i_mid2_v_reg_1949_reg[0]' (FDE) to 'inst/ap_pipeline_reg_pp3_iter2_y_assign_1_mid2_reg_1944_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_pipeline_reg_pp3_iter3_tmp_i2_i_mid2_v_reg_1949_reg[0]' (FDE) to 'inst/ap_pipeline_reg_pp3_iter3_y_assign_1_mid2_reg_1944_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_pipeline_reg_pp3_iter4_tmp_i2_i_mid2_v_reg_1949_reg[0]' (FDE) to 'inst/ap_pipeline_reg_pp3_iter4_y_assign_1_mid2_reg_1944_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_pipeline_reg_pp3_iter5_tmp_i2_i_mid2_v_reg_1949_reg[0]' (FDE) to 'inst/ap_pipeline_reg_pp3_iter5_y_assign_1_mid2_reg_1944_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_pipeline_reg_pp3_iter6_tmp_i2_i_mid2_v_reg_1949_reg[0]' (FDE) to 'inst/ap_pipeline_reg_pp3_iter6_y_assign_1_mid2_reg_1944_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_pipeline_reg_pp3_iter7_tmp_i2_i_mid2_v_reg_1949_reg[0]' (FDE) to 'inst/ap_pipeline_reg_pp3_iter7_y_assign_1_mid2_reg_1944_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/ap_pipeline_reg_pp3_iter8_tmp_i2_i_mid2_v_reg_1949_reg[0]' (FDE) to 'inst/ap_pipeline_reg_pp3_iter8_y_assign_1_mid2_reg_1944_reg[2]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:53 . Memory (MB): peak = 740.684 ; gain = 530.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++-----------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|my_filter_buffer | A2*B2           | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|my_filter_buffer | (PCIN>>17)+A*B2 | 15     | 9      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|my_filter_buffer | A2*B2           | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|my_filter_buffer | (PCIN>>17)+A*B2 | 15     | 9      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|my_filter_buffer | A2*B2           | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|my_filter_buffer | (PCIN>>17)+A*B2 | 15     | 9      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|my_filter_buffer | A2*B2           | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|my_filter_buffer | (PCIN>>17)+A*B2 | 15     | 9      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|my_filter_buffer | A2*B2           | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|my_filter_buffer | (PCIN>>17)+A*B2 | 15     | 9      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|my_filter_buffer | A2*B2           | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|my_filter_buffer | (PCIN>>17)+A*B2 | 15     | 9      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|my_filter_buffer | A2*B2           | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|my_filter_buffer | (PCIN>>17)+A*B2 | 15     | 9      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|my_filter_buffer | A2*B2           | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|my_filter_buffer | (PCIN>>17)+A*B2 | 15     | 9      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|my_filter_buffer | A2*B2           | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|my_filter_buffer | (PCIN>>17)+A*B2 | 15     | 9      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
++-----------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:08 ; elapsed = 00:01:19 . Memory (MB): peak = 748.469 ; gain = 538.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:20 . Memory (MB): peak = 759.164 ; gain = 549.082
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:01:24 . Memory (MB): peak = 790.328 ; gain = 580.246
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:14 ; elapsed = 00:01:25 . Memory (MB): peak = 790.328 ; gain = 580.246
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:14 ; elapsed = 00:01:25 . Memory (MB): peak = 790.328 ; gain = 580.246
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:15 ; elapsed = 00:01:26 . Memory (MB): peak = 790.328 ; gain = 580.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:15 ; elapsed = 00:01:26 . Memory (MB): peak = 790.328 ; gain = 580.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:15 ; elapsed = 00:01:26 . Memory (MB): peak = 790.328 ; gain = 580.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:15 ; elapsed = 00:01:26 . Memory (MB): peak = 790.328 ; gain = 580.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++-----------------+-----------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name      | RTL Name                                                  | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-----------------+-----------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|my_filter_buffer | ap_pipeline_reg_pp3_iter4_x_assign_mid2_reg_1931_reg[2]   | 3      | 3     | NO           | NO                 | YES               | 3      | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter7_y_assign_1_mid2_reg_1944_reg[2] | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter7_y_assign_mid2_reg_1955_reg[2]   | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter9_bias_8_read_reg_2046_reg[7]     | 8      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter9_tmp_9_2_2_i_reg_2171_reg[31]    | 6      | 32    | NO           | NO                 | YES               | 32     | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter8_bias_7_read_reg_2041_reg[7]     | 7      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter8_tmp_9_2_1_i_reg_2166_reg[31]    | 5      | 32    | NO           | NO                 | YES               | 32     | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter7_bias_6_read_reg_2036_reg[7]     | 6      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter7_tmp_9_2_i_reg_2161_reg[31]      | 4      | 32    | NO           | NO                 | YES               | 32     | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter6_bias_5_read_reg_2031_reg[7]     | 5      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter6_tmp_9_1_2_i_reg_2156_reg[31]    | 3      | 32    | NO           | NO                 | YES               | 32     | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter6_bias_4_read_reg_2026_reg[7]     | 5      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter6_tmp_9_1_1_i_reg_2151_reg[31]    | 3      | 32    | NO           | NO                 | YES               | 32     | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter5_bias_3_read_reg_2021_reg[7]     | 4      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|my_filter_buffer | ap_pipeline_reg_pp3_iter4_bias_2_read_reg_2016_reg[7]     | 3      | 8     | NO           | NO                 | YES               | 8      | 0       | 
++-----------------+-----------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |    84|
+|2     |DSP48E1   |     9|
+|3     |DSP48E1_2 |     9|
+|4     |LUT1      |    61|
+|5     |LUT2      |   108|
+|6     |LUT3      |   408|
+|7     |LUT4      |   356|
+|8     |LUT5      |   241|
+|9     |LUT6      |   507|
+|10    |MUXF7     |     8|
+|11    |SRL16E    |   221|
+|12    |FDRE      |  2515|
+|13    |FDSE      |     5|
++------+----------+------+
+
+Report Instance Areas: 
++------+----------------------------------------+----------------------------------+------+
+|      |Instance                                |Module                            |Cells |
++------+----------------------------------------+----------------------------------+------+
+|1     |top                                     |                                  |  4532|
+|2     |  inst                                  |my_filter_buffer                  |  4532|
+|3     |    my_filter_buffer_CTRL_s_axi_U       |my_filter_buffer_CTRL_s_axi       |    87|
+|4     |    my_filter_buffer_KERNEL_BUS_s_axi_U |my_filter_buffer_KERNEL_BUS_s_axi |   401|
+|5     |    my_filter_buffer_bkb_U0             |my_filter_buffer_bkb              |    59|
+|6     |      my_filter_buffer_bkb_Mul3S_0_U    |my_filter_buffer_bkb_Mul3S_0_16   |    59|
+|7     |    my_filter_buffer_bkb_U1             |my_filter_buffer_bkb_0            |    19|
+|8     |      my_filter_buffer_bkb_Mul3S_0_U    |my_filter_buffer_bkb_Mul3S_0_15   |    19|
+|9     |    my_filter_buffer_bkb_U2             |my_filter_buffer_bkb_1            |    22|
+|10    |      my_filter_buffer_bkb_Mul3S_0_U    |my_filter_buffer_bkb_Mul3S_0_14   |    22|
+|11    |    my_filter_buffer_bkb_U3             |my_filter_buffer_bkb_2            |    19|
+|12    |      my_filter_buffer_bkb_Mul3S_0_U    |my_filter_buffer_bkb_Mul3S_0_13   |    19|
+|13    |    my_filter_buffer_bkb_U4             |my_filter_buffer_bkb_3            |    51|
+|14    |      my_filter_buffer_bkb_Mul3S_0_U    |my_filter_buffer_bkb_Mul3S_0_12   |    51|
+|15    |    my_filter_buffer_bkb_U5             |my_filter_buffer_bkb_4            |    51|
+|16    |      my_filter_buffer_bkb_Mul3S_0_U    |my_filter_buffer_bkb_Mul3S_0_11   |    51|
+|17    |    my_filter_buffer_bkb_U6             |my_filter_buffer_bkb_5            |    19|
+|18    |      my_filter_buffer_bkb_Mul3S_0_U    |my_filter_buffer_bkb_Mul3S_0_10   |    19|
+|19    |    my_filter_buffer_bkb_U7             |my_filter_buffer_bkb_6            |    51|
+|20    |      my_filter_buffer_bkb_Mul3S_0_U    |my_filter_buffer_bkb_Mul3S_0_9    |    51|
+|21    |    my_filter_buffer_bkb_U8             |my_filter_buffer_bkb_7            |    51|
+|22    |      my_filter_buffer_bkb_Mul3S_0_U    |my_filter_buffer_bkb_Mul3S_0      |    51|
+|23    |    my_filter_buffer_cud_U10            |my_filter_buffer_cud              |    96|
+|24    |    my_filter_buffer_cud_U9             |my_filter_buffer_cud_8            |    32|
++------+----------------------------------------+----------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:15 ; elapsed = 00:01:26 . Memory (MB): peak = 790.328 ; gain = 580.246
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 558 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:48 ; elapsed = 00:01:00 . Memory (MB): peak = 790.328 ; gain = 172.695
+Synthesis Optimization Complete : Time (s): cpu = 00:01:16 ; elapsed = 00:01:26 . Memory (MB): peak = 790.328 ; gain = 580.246
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 102 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ip/design_1_my_filter_buffer_0_0/constraints/my_filter_buffer_ooc.xdc] for cell 'inst'
+INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port ap_clk. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC.  [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ip/design_1_my_filter_buffer_0_0/constraints/my_filter_buffer_ooc.xdc:6]
+Finished Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ip/design_1_my_filter_buffer_0_0/constraints/my_filter_buffer_ooc.xdc] for cell 'inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+152 Infos, 253 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:20 . Memory (MB): peak = 790.328 ; gain = 500.520
+INFO: [Common 17-1381] The checkpoint 'D:/School/Project/new_repo/Vivado/conv_0/conv_0.runs/design_1_my_filter_buffer_0_0_synth_1/design_1_my_filter_buffer_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP d:/School/Project/new_repo/Vivado/conv_0/conv_0.srcs/sources_1/bd/design_1/ip/design_1_my_filter_buffer_0_0/design_1_my_filter_buffer_0_0.xci
+INFO: [Coretcl 2-1174] Renamed 23 cell refs.
+INFO: [Common 17-1381] The checkpoint 'D:/School/Project/new_repo/Vivado/conv_0/conv_0.runs/design_1_my_filter_buffer_0_0_synth_1/design_1_my_filter_buffer_0_0.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.090 . Memory (MB): peak = 790.328 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 11 21:15:59 2021...
