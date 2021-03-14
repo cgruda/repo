@@ -136,8 +136,6 @@ int cnn_sw(struct env *cnn_env)
 	if (res != E_SUCCESS)
 		return res;
 
-	matrix_print(&cnn_env->m_conv_result);
-
 	// res = pool_2D(&cnn_env->m_conv_result, 2, &cnn_env->m_pool_result, POOL_MAX);
 	// if (res != E_SUCCESS)
 	//	return res;
@@ -209,4 +207,3 @@ int cnn_precision_loss_calc(matrix_t *ref, matrix_t *test, double *prec)
 	return E_SUCCESS;
 
 }
-

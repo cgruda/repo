@@ -7,8 +7,6 @@
  *
  */
 
-#define _CRT_SECURE_NO_WARNINGS
-
 /*
  * INCLUDES
  ******************************************************************************
@@ -21,8 +19,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
-#include <stdint.h>
 
 /*
  * FUNCTIONS
@@ -34,7 +30,7 @@ int matrix_init(matrix_t *m, char *name, int rows_max, int rows_min,
 {
 	strcpy(m->name, name);
 
-	srand((uint32_t)time(0));
+	srand(time(0));
 
 	/* random image size */
 	m->rows = (rand() % (rows_max - rows_min + 1)) + rows_min;
@@ -62,7 +58,7 @@ int matrixf_init_zero(matrixf_t *mf, char *name, int rows_max, int rows_min,
 {
 	strcpy(mf->name, name);
 
-	srand((uint32_t)time(0));
+	srand(time(0));
 
 	// random image size
 	mf->rows = (rand() % (rows_max - rows_min + 1)) + rows_min;
@@ -90,7 +86,7 @@ int matrix_init_demo(matrix_t *m, char *name, int rows_max, int rows_min,
 {
 	strcpy(m->name, name);
 
-	srand((uint32_t)time(0));
+	srand(time(0));
 
 	/* random image size */
 	m->rows = (rand() % (rows_max - rows_min + 1)) + rows_min;
