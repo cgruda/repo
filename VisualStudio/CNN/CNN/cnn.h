@@ -35,8 +35,11 @@ enum pooling_type {
 struct env {
 	matrix_t m_image;
 	matrix_t m_kernel;
+	matrix_t m_kernel2;
 	matrix_t m_bias;
+	matrix_t m_bias2;
 	matrix_t m_conv_result;
+	matrix_t m_conv_result2;
 	matrix_t m_pool_result;
 };
 

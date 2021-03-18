@@ -1,0 +1,1466 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Mar 18 14:08:15 2021
+# Process ID: 14556
+# Current directory: D:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.runs/design_1_cnn_2d_conv_d8x8_k5x5_0_0_synth_1
+# Command line: vivado.exe -log design_1_cnn_2d_conv_d8x8_k5x5_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_cnn_2d_conv_d8x8_k5x5_0_0.tcl
+# Log file: D:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.runs/design_1_cnn_2d_conv_d8x8_k5x5_0_0_synth_1/design_1_cnn_2d_conv_d8x8_k5x5_0_0.vds
+# Journal file: D:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.runs/design_1_cnn_2d_conv_d8x8_k5x5_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_cnn_2d_conv_d8x8_k5x5_0_0.tcl -notrace
+Command: synth_design -top design_1_cnn_2d_conv_d8x8_k5x5_0_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13356 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 367.352 ; gain = 156.996
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_cnn_2d_conv_d8x8_k5x5_0_0' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ip/design_1_cnn_2d_conv_d8x8_k5x5_0_0/synth/design_1_cnn_2d_conv_d8x8_k5x5_0_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'cnn_2d_conv_d8x8_k5x5' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:12]
+	Parameter ap_ST_fsm_state1 bound to: 9'b000000001 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 9'b000000010 
+	Parameter ap_ST_fsm_state4 bound to: 9'b000000100 
+	Parameter ap_ST_fsm_pp1_stage0 bound to: 9'b000001000 
+	Parameter ap_ST_fsm_state7 bound to: 9'b000010000 
+	Parameter ap_ST_fsm_pp2_stage0 bound to: 9'b000100000 
+	Parameter ap_ST_fsm_state11 bound to: 9'b001000000 
+	Parameter ap_ST_fsm_pp3_stage0 bound to: 9'b010000000 
+	Parameter ap_ST_fsm_state22 bound to: 9'b100000000 
+	Parameter ap_const_lv32_0 bound to: 0 - type: integer 
+	Parameter ap_const_lv2_0 bound to: 2'b00 
+	Parameter ap_const_lv2_2 bound to: 2'b10 
+	Parameter ap_const_lv2_3 bound to: 2'b11 
+	Parameter ap_const_lv2_1 bound to: 2'b01 
+	Parameter ap_const_lv32_1 bound to: 1 - type: integer 
+	Parameter ap_const_lv32_3 bound to: 3 - type: integer 
+	Parameter ap_const_lv32_7 bound to: 7 - type: integer 
+	Parameter C_S_AXI_CTRL_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ap_const_int64_8 bound to: 8 - type: integer 
+	Parameter C_S_AXI_CTRL_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ap_const_lv32_5 bound to: 5 - type: integer 
+	Parameter ap_const_lv32_2 bound to: 2 - type: integer 
+	Parameter ap_const_lv32_4 bound to: 4 - type: integer 
+	Parameter ap_const_lv32_6 bound to: 6 - type: integer 
+	Parameter ap_const_lv4_5 bound to: 4'b0101 
+	Parameter ap_const_lv5_0 bound to: 5'b00000 
+	Parameter ap_const_lv3_2 bound to: 3'b010 
+	Parameter ap_const_lv4_0 bound to: 4'b0000 
+	Parameter ap_const_lv7_0 bound to: 7'b0000000 
+	Parameter ap_const_lv32_13 bound to: 19 - type: integer 
+	Parameter ap_const_lv4_F bound to: 4'b1111 
+	Parameter ap_const_lv6_0 bound to: 6'b000000 
+	Parameter ap_const_lv4_8 bound to: 4'b1000 
+	Parameter ap_const_lv4_1 bound to: 4'b0001 
+	Parameter ap_const_lv5_10 bound to: 5'b10000 
+	Parameter ap_const_lv5_1 bound to: 5'b00001 
+	Parameter ap_const_lv3_1 bound to: 3'b001 
+	Parameter ap_const_lv3_3 bound to: 3'b011 
+	Parameter ap_const_lv4_9 bound to: 4'b1001 
+	Parameter ap_const_lv3_5 bound to: 3'b101 
+	Parameter ap_const_lv7_40 bound to: 7'b1000000 
+	Parameter ap_const_lv7_1 bound to: 7'b0000001 
+	Parameter ap_const_lv3_0 bound to: 3'b000 
+	Parameter ap_const_lv32_1F bound to: 31 - type: integer 
+	Parameter ap_const_lv26_1 bound to: 26'b00000000000000000000000001 
+	Parameter ap_const_lv32_10 bound to: 16 - type: integer 
+	Parameter ap_const_lv32_8 bound to: 8 - type: integer 
+	Parameter C_S_AXI_CTRL_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:148]
+INFO: [Synth 8-638] synthesizing module 'cnn_2d_conv_d8x8_k5x5_CTRL_s_axi' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5_CTRL_s_axi.v:9]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_AP_CTRL bound to: 8'b00000000 
+	Parameter ADDR_GIE bound to: 8'b00000100 
+	Parameter ADDR_IER bound to: 8'b00001000 
+	Parameter ADDR_ISR bound to: 8'b00001100 
+	Parameter ADDR_CTRL_DATA_0 bound to: 8'b00010000 
+	Parameter ADDR_CTRL_CTRL bound to: 8'b00010100 
+	Parameter ADDR_KERNELDATA_0_DATA_0 bound to: 8'b00011000 
+	Parameter ADDR_KERNELDATA_0_CTRL bound to: 8'b00011100 
+	Parameter ADDR_KERNELDATA_1_DATA_0 bound to: 8'b00100000 
+	Parameter ADDR_KERNELDATA_1_CTRL bound to: 8'b00100100 
+	Parameter ADDR_KERNELDATA_2_DATA_0 bound to: 8'b00101000 
+	Parameter ADDR_KERNELDATA_2_CTRL bound to: 8'b00101100 
+	Parameter ADDR_KERNELDATA_3_DATA_0 bound to: 8'b00110000 
+	Parameter ADDR_KERNELDATA_3_CTRL bound to: 8'b00110100 
+	Parameter ADDR_KERNELDATA_4_DATA_0 bound to: 8'b00111000 
+	Parameter ADDR_KERNELDATA_4_CTRL bound to: 8'b00111100 
+	Parameter ADDR_KERNELDATA_5_DATA_0 bound to: 8'b01000000 
+	Parameter ADDR_KERNELDATA_5_CTRL bound to: 8'b01000100 
+	Parameter ADDR_KERNELDATA_6_DATA_0 bound to: 8'b01001000 
+	Parameter ADDR_KERNELDATA_6_CTRL bound to: 8'b01001100 
+	Parameter ADDR_KERNELDATA_7_DATA_0 bound to: 8'b01010000 
+	Parameter ADDR_KERNELDATA_7_CTRL bound to: 8'b01010100 
+	Parameter ADDR_KERNELDATA_8_DATA_0 bound to: 8'b01011000 
+	Parameter ADDR_KERNELDATA_8_CTRL bound to: 8'b01011100 
+	Parameter ADDR_KERNELDATA_9_DATA_0 bound to: 8'b01100000 
+	Parameter ADDR_KERNELDATA_9_CTRL bound to: 8'b01100100 
+	Parameter ADDR_KERNELDATA_10_DATA_0 bound to: 8'b01101000 
+	Parameter ADDR_KERNELDATA_10_CTRL bound to: 8'b01101100 
+	Parameter ADDR_KERNELDATA_11_DATA_0 bound to: 8'b01110000 
+	Parameter ADDR_KERNELDATA_11_CTRL bound to: 8'b01110100 
+	Parameter ADDR_KERNELDATA_12_DATA_0 bound to: 8'b01111000 
+	Parameter ADDR_KERNELDATA_12_CTRL bound to: 8'b01111100 
+	Parameter ADDR_KERNELDATA_13_DATA_0 bound to: 8'b10000000 
+	Parameter ADDR_KERNELDATA_13_CTRL bound to: 8'b10000100 
+	Parameter ADDR_KERNELDATA_14_DATA_0 bound to: 8'b10001000 
+	Parameter ADDR_KERNELDATA_14_CTRL bound to: 8'b10001100 
+	Parameter ADDR_KERNELDATA_15_DATA_0 bound to: 8'b10010000 
+	Parameter ADDR_KERNELDATA_15_CTRL bound to: 8'b10010100 
+	Parameter ADDR_KERNELDATA_16_DATA_0 bound to: 8'b10011000 
+	Parameter ADDR_KERNELDATA_16_CTRL bound to: 8'b10011100 
+	Parameter ADDR_KERNELDATA_17_DATA_0 bound to: 8'b10100000 
+	Parameter ADDR_KERNELDATA_17_CTRL bound to: 8'b10100100 
+	Parameter ADDR_KERNELDATA_18_DATA_0 bound to: 8'b10101000 
+	Parameter ADDR_KERNELDATA_18_CTRL bound to: 8'b10101100 
+	Parameter ADDR_KERNELDATA_19_DATA_0 bound to: 8'b10110000 
+	Parameter ADDR_KERNELDATA_19_CTRL bound to: 8'b10110100 
+	Parameter ADDR_KERNELDATA_20_DATA_0 bound to: 8'b10111000 
+	Parameter ADDR_KERNELDATA_20_CTRL bound to: 8'b10111100 
+	Parameter ADDR_KERNELDATA_21_DATA_0 bound to: 8'b11000000 
+	Parameter ADDR_KERNELDATA_21_CTRL bound to: 8'b11000100 
+	Parameter ADDR_KERNELDATA_22_DATA_0 bound to: 8'b11001000 
+	Parameter ADDR_KERNELDATA_22_CTRL bound to: 8'b11001100 
+	Parameter ADDR_KERNELDATA_23_DATA_0 bound to: 8'b11010000 
+	Parameter ADDR_KERNELDATA_23_CTRL bound to: 8'b11010100 
+	Parameter ADDR_KERNELDATA_24_DATA_0 bound to: 8'b11011000 
+	Parameter ADDR_KERNELDATA_24_CTRL bound to: 8'b11011100 
+	Parameter WRIDLE bound to: 2'b00 
+	Parameter WRDATA bound to: 2'b01 
+	Parameter WRRESP bound to: 2'b10 
+	Parameter RDIDLE bound to: 2'b00 
+	Parameter RDDATA bound to: 2'b01 
+	Parameter ADDR_BITS bound to: 8 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5_CTRL_s_axi.v:369]
+INFO: [Synth 8-256] done synthesizing module 'cnn_2d_conv_d8x8_k5x5_CTRL_s_axi' (1#1) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5_CTRL_s_axi.v:9]
+INFO: [Synth 8-638] synthesizing module 'cnn_2d_conv_d8x8_bkb' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_bkb.v:54]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 8 - type: integer 
+	Parameter AddressWidth bound to: 3 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'cnn_2d_conv_d8x8_bkb_ram' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_bkb.v:9]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 3 - type: integer 
+	Parameter MEM_SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_bkb.v:24]
+INFO: [Synth 8-256] done synthesizing module 'cnn_2d_conv_d8x8_bkb_ram' (2#1) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_bkb.v:9]
+INFO: [Synth 8-256] done synthesizing module 'cnn_2d_conv_d8x8_bkb' (3#1) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_bkb.v:54]
+INFO: [Synth 8-638] synthesizing module 'cnn_2d_conv_d8x8_cud' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_cud.v:62]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 8 - type: integer 
+	Parameter AddressWidth bound to: 3 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'cnn_2d_conv_d8x8_cud_ram' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_cud.v:9]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 3 - type: integer 
+	Parameter MEM_SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_cud.v:26]
+INFO: [Synth 8-256] done synthesizing module 'cnn_2d_conv_d8x8_cud_ram' (4#1) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_cud.v:9]
+INFO: [Synth 8-256] done synthesizing module 'cnn_2d_conv_d8x8_cud' (5#1) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_cud.v:62]
+INFO: [Synth 8-638] synthesizing module 'cnn_2d_conv_d8x8_fYi' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_fYi.v:41]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 6 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'cnn_2d_conv_d8x8_fYi_MulnS_0' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_fYi.v:11]
+INFO: [Synth 8-256] done synthesizing module 'cnn_2d_conv_d8x8_fYi_MulnS_0' (6#1) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_fYi.v:11]
+INFO: [Synth 8-256] done synthesizing module 'cnn_2d_conv_d8x8_fYi' (7#1) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_fYi.v:41]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2661]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2831]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2833]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2839]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2859]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2923]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2933]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2939]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2941]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2943]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2945]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2947]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2949]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2951]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2953]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2955]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2957]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2959]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2961]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2963]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2965]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2967]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2969]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2971]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2973]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2975]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2977]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2979]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2981]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2983]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2985]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2987]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2989]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2991]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2993]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2995]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2997]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:2999]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3001]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3003]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3005]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3007]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3009]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3011]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3013]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3015]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3017]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3019]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3021]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3023]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3025]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3027]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3033]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3035]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3047]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3051]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3057]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:3059]
+INFO: [Synth 8-256] done synthesizing module 'cnn_2d_conv_d8x8_k5x5' (8#1) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:12]
+INFO: [Synth 8-256] done synthesizing module 'design_1_cnn_2d_conv_d8x8_k5x5_0_0' (9#1) [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ip/design_1_cnn_2d_conv_d8x8_k5x5_0_0/synth/design_1_cnn_2d_conv_d8x8_k5x5_0_0.v:57]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_fYi has unconnected port reset
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_cud has unconnected port reset
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_bkb has unconnected port reset
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TKEEP[3]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TKEEP[2]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TKEEP[1]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TKEEP[0]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TSTRB[3]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TSTRB[2]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TSTRB[1]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TSTRB[0]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TUSER[1]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TUSER[0]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TLAST[0]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TID[4]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TID[3]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TID[2]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TID[1]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TID[0]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[5]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[4]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[3]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[2]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[1]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 411.336 ; gain = 200.980
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 411.336 ; gain = 200.980
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ip/design_1_cnn_2d_conv_d8x8_k5x5_0_0/constraints/cnn_2d_conv_d8x8_k5x5_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ip/design_1_cnn_2d_conv_d8x8_k5x5_0_0/constraints/cnn_2d_conv_d8x8_k5x5_ooc.xdc] for cell 'inst'
+Parsing XDC File [D:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.runs/design_1_cnn_2d_conv_d8x8_k5x5_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.runs/design_1_cnn_2d_conv_d8x8_k5x5_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.210 . Memory (MB): peak = 746.563 ; gain = 1.027
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 746.563 ; gain = 536.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 746.563 ; gain = 536.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 746.563 ; gain = 536.207
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'lineBuffer_1_addr_2_reg_2507_reg[2:0]' into 'lineBuffer_0_addr_reg_2501_reg[2:0]' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:757]
+INFO: [Synth 8-4471] merging register 'lineBuffer_2_addr_2_reg_2513_reg[2:0]' into 'lineBuffer_0_addr_reg_2501_reg[2:0]' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:775]
+INFO: [Synth 8-4471] merging register 'lineBuffer_3_addr_2_reg_2519_reg[2:0]' into 'lineBuffer_0_addr_reg_2501_reg[2:0]' [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:1850]
+WARNING: [Synth 8-3936] Found unconnected internal register 'x1_mid2_reg_2201_reg' and it is trimmed from '4' to '3' bits. [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ipshared/d5ad/hdl/verilog/cnn_2d_conv_d8x8_k5x5.v:1828]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "exitcond1_fu_895_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "exitcond_flatten_fu_912_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "exitcond_flatten8_fu_1013_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "exitcond_flatten1_fu_1561_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "exitcond_fu_924_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond2_fu_1025_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond3_fu_1573_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond_fu_950_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp14_fu_1161_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp6_fu_1156_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp2_fu_989_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sel_tmp_fu_983_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "icmp1_fu_1603_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "icmp2_fu_1619_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "icmp3_fu_1679_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-3971] The signal ram_reg was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 746.563 ; gain = 536.207
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 5     
+	   5 Input     32 Bit       Adders := 2     
+	  11 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 6     
+	   2 Input      3 Bit       Adders := 4     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 247   
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 11    
+	                1 Bit    Registers := 58    
++---Multipliers : 
+	                32x32  Multipliers := 25    
++---RAMs : 
+	              256 Bit         RAMs := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 47    
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 5     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 31    
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 40    
+	   5 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module cnn_2d_conv_d8x8_k5x5_CTRL_s_axi 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 27    
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 26    
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
+Module cnn_2d_conv_d8x8_bkb_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module cnn_2d_conv_d8x8_cud_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---RAMs : 
+	              256 Bit         RAMs := 1     
+Module cnn_2d_conv_d8x8_fYi_MulnS_0 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
++---Multipliers : 
+	                32x32  Multipliers := 1     
+Module cnn_2d_conv_d8x8_k5x5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 5     
+	   5 Input     32 Bit       Adders := 2     
+	  11 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 6     
+	   2 Input      3 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 66    
+	                9 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 9     
+	                1 Bit    Registers := 51    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 21    
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 31    
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 38    
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "exitcond_flatten1_fu_1561_p2" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff0_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/tmp_product is absorbed into DSP cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg.
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TKEEP[3]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TKEEP[2]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TKEEP[1]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TKEEP[0]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TSTRB[3]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TSTRB[2]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TSTRB[1]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TSTRB[0]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TUSER[1]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TUSER[0]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TLAST[0]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TID[4]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TID[3]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TID[2]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TID[1]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TID[0]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[5]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[4]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[3]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[2]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[1]
+WARNING: [Synth 8-3331] design cnn_2d_conv_d8x8_k5x5 has unconnected port inStream_TDEST[0]
+INFO: [Synth 8-3971] The signal lineBuffer_1_U/cnn_2d_conv_d8x8_cud_ram_U/ram_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal lineBuffer_2_U/cnn_2d_conv_d8x8_cud_ram_U/ram_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal lineBuffer_3_U/cnn_2d_conv_d8x8_cud_ram_U/ram_reg was recognized as a true dual port RAM template.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[47]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[46]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[45]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[44]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[43]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[42]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[41]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[40]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[39]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[38]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[37]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[36]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[35]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[34]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[33]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[32]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[31]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[30]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[29]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[28]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[27]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[26]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[25]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[24]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[23]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[22]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[21]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[20]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[19]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[18]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff1_reg[17]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[47]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[46]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[45]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[44]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[43]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[42]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[41]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[40]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[39]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[38]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[37]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[36]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[35]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[34]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[33]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[32]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[31]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[30]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[29]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[28]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[27]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[26]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[25]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[24]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[23]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[22]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[21]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[20]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[19]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[18]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff2_reg[17]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[47]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[46]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[45]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[44]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[43]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[42]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[41]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[40]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[39]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[38]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[37]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[36]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[35]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[34]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[33]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[32]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[31]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[30]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[29]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[28]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[27]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[26]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[25]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[24]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[23]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[22]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[21]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[20]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[19]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[18]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[17]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/b_reg0_reg[16]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/b_reg0_reg[15]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/b_reg0_reg[14]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/b_reg0_reg[13]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/b_reg0_reg[12]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/b_reg0_reg[11]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+WARNING: [Synth 8-3332] Sequential element (cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/b_reg0_reg[10]) is unused and will be removed from module cnn_2d_conv_d8x8_k5x5.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:47 . Memory (MB): peak = 746.563 ; gain = 536.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++-------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name              | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|cnn_2d_conv_d8x8_cud_ram | ram_reg    | 8 x 32(WRITE_FIRST)    | W | R | 8 x 32(READ_FIRST)     | W |   | Port A and B     | 0      | 1      | 
+|cnn_2d_conv_d8x8_cud_ram | ram_reg    | 8 x 32(WRITE_FIRST)    | W | R | 8 x 32(READ_FIRST)     | W |   | Port A and B     | 0      | 1      | 
+|cnn_2d_conv_d8x8_cud_ram | ram_reg    | 8 x 32(WRITE_FIRST)    | W | R | 8 x 32(READ_FIRST)     | W |   | Port A and B     | 0      | 1      | 
++-------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++----------------------+---------------------------------------------------+----------------+----------------------+--------------+
+|Module Name           | RTL Object                                        | Inference      | Size (Depth x Width) | Primitives   | 
++----------------------+---------------------------------------------------+----------------+----------------------+--------------+
+|cnn_2d_conv_d8x8_k5x5 | lineBuffer_0_U/cnn_2d_conv_d8x8_bkb_ram_U/ram_reg | User Attribute | 8 x 32               | RAM32M x 6   | 
++----------------------+---------------------------------------------------+----------------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping  Report (see note below)
++----------------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name           | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|cnn_2d_conv_d8x8_k5x5 | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
++----------------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:01:05 . Memory (MB): peak = 777.918 ; gain = 567.563
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:08 . Memory (MB): peak = 800.172 ; gain = 589.816
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_1_U/cnn_2d_conv_d8x8_cud_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_2_U/cnn_2d_conv_d8x8_cud_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_3_U/cnn_2d_conv_d8x8_cud_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:14 . Memory (MB): peak = 842.387 ; gain = 632.031
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:07 ; elapsed = 00:01:16 . Memory (MB): peak = 842.387 ; gain = 632.031
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:07 ; elapsed = 00:01:16 . Memory (MB): peak = 842.387 ; gain = 632.031
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:09 ; elapsed = 00:01:18 . Memory (MB): peak = 842.387 ; gain = 632.031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:09 ; elapsed = 00:01:18 . Memory (MB): peak = 842.387 ; gain = 632.031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:09 ; elapsed = 00:01:19 . Memory (MB): peak = 842.387 ; gain = 632.031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:09 ; elapsed = 00:01:19 . Memory (MB): peak = 842.387 ; gain = 632.031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++----------------------+-----------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name           | RTL Name                                                              | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++----------------------+-----------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|cnn_2d_conv_d8x8_k5x5 | ap_pipeline_reg_pp3_iter5_p_i_reg_2497_reg[0]                         | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U1/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16]  | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U5/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16]  | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U3/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16]  | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U2/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16]  | 3      | 17    | NO           | NO                 | YES               | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U0/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16]  | 3      | 17    | NO           | NO                 | YES               | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U4/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16]  | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U6/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16]  | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U11/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U9/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16]  | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U8/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16]  | 3      | 17    | NO           | NO                 | YES               | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U7/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16]  | 3      | 17    | NO           | NO                 | YES               | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U10/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U14/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U12/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U17/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U15/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U13/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U18/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U22/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U21/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U20/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | YES               | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U19/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | YES               | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U16/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | NO                | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U24/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | YES               | 17     | 0       | 
+|cnn_2d_conv_d8x8_k5x5 | cnn_2d_conv_d8x8_fYi_U23/cnn_2d_conv_d8x8_fYi_MulnS_0_U/buff3_reg[16] | 3      | 17    | NO           | NO                 | YES               | 17     | 0       | 
++----------------------+-----------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |   140|
+|2     |DSP48E1   |    25|
+|3     |DSP48E1_2 |    25|
+|4     |DSP48E1_3 |    25|
+|5     |LUT1      |   103|
+|6     |LUT2      |   182|
+|7     |LUT3      |  1754|
+|8     |LUT4      |   368|
+|9     |LUT5      |   138|
+|10    |LUT6      |   377|
+|11    |MUXF7     |    10|
+|12    |MUXF8     |     5|
+|13    |RAM32M    |     6|
+|14    |RAMB36E1  |     3|
+|15    |SRL16E    |   426|
+|16    |FDRE      |  4102|
+|17    |FDSE      |     7|
++------+----------+------+
+
+Report Instance Areas: 
++------+---------------------------------------+---------------------------------+------+
+|      |Instance                               |Module                           |Cells |
++------+---------------------------------------+---------------------------------+------+
+|1     |top                                    |                                 |  7696|
+|2     |  inst                                 |cnn_2d_conv_d8x8_k5x5            |  7696|
+|3     |    cnn_2d_conv_d8x8_fYi_U0            |cnn_2d_conv_d8x8_fYi             |   107|
+|4     |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_51  |   107|
+|5     |    cnn_2d_conv_d8x8_fYi_U1            |cnn_2d_conv_d8x8_fYi_0           |    50|
+|6     |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_50  |    50|
+|7     |    cnn_2d_conv_d8x8_fYi_U10           |cnn_2d_conv_d8x8_fYi_1           |    50|
+|8     |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_49  |    50|
+|9     |    cnn_2d_conv_d8x8_fYi_U11           |cnn_2d_conv_d8x8_fYi_2           |    50|
+|10    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_48  |    50|
+|11    |    cnn_2d_conv_d8x8_fYi_U12           |cnn_2d_conv_d8x8_fYi_3           |    83|
+|12    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_47  |    83|
+|13    |    cnn_2d_conv_d8x8_fYi_U13           |cnn_2d_conv_d8x8_fYi_4           |    82|
+|14    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_46  |    82|
+|15    |    cnn_2d_conv_d8x8_fYi_U14           |cnn_2d_conv_d8x8_fYi_5           |    82|
+|16    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_45  |    82|
+|17    |    cnn_2d_conv_d8x8_fYi_U15           |cnn_2d_conv_d8x8_fYi_6           |    50|
+|18    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_44  |    50|
+|19    |    cnn_2d_conv_d8x8_fYi_U16           |cnn_2d_conv_d8x8_fYi_7           |    50|
+|20    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_43  |    50|
+|21    |    cnn_2d_conv_d8x8_fYi_U17           |cnn_2d_conv_d8x8_fYi_8           |    82|
+|22    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_42  |    82|
+|23    |    cnn_2d_conv_d8x8_fYi_U18           |cnn_2d_conv_d8x8_fYi_9           |    82|
+|24    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_41  |    82|
+|25    |    cnn_2d_conv_d8x8_fYi_U19           |cnn_2d_conv_d8x8_fYi_10          |   139|
+|26    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_40  |   139|
+|27    |    cnn_2d_conv_d8x8_fYi_U2            |cnn_2d_conv_d8x8_fYi_11          |    67|
+|28    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_39  |    67|
+|29    |    cnn_2d_conv_d8x8_fYi_U20           |cnn_2d_conv_d8x8_fYi_12          |    67|
+|30    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_38  |    67|
+|31    |    cnn_2d_conv_d8x8_fYi_U21           |cnn_2d_conv_d8x8_fYi_13          |    50|
+|32    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_37  |    50|
+|33    |    cnn_2d_conv_d8x8_fYi_U22           |cnn_2d_conv_d8x8_fYi_14          |    82|
+|34    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_36  |    82|
+|35    |    cnn_2d_conv_d8x8_fYi_U23           |cnn_2d_conv_d8x8_fYi_15          |   140|
+|36    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_35  |   140|
+|37    |    cnn_2d_conv_d8x8_fYi_U24           |cnn_2d_conv_d8x8_fYi_16          |    67|
+|38    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_34  |    67|
+|39    |    cnn_2d_conv_d8x8_fYi_U3            |cnn_2d_conv_d8x8_fYi_17          |    50|
+|40    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_33  |    50|
+|41    |    cnn_2d_conv_d8x8_fYi_U4            |cnn_2d_conv_d8x8_fYi_18          |    50|
+|42    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_32  |    50|
+|43    |    cnn_2d_conv_d8x8_fYi_U5            |cnn_2d_conv_d8x8_fYi_19          |    50|
+|44    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_31  |    50|
+|45    |    cnn_2d_conv_d8x8_fYi_U6            |cnn_2d_conv_d8x8_fYi_20          |    50|
+|46    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_30  |    50|
+|47    |    cnn_2d_conv_d8x8_fYi_U7            |cnn_2d_conv_d8x8_fYi_21          |   107|
+|48    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_29  |   107|
+|49    |    cnn_2d_conv_d8x8_fYi_U8            |cnn_2d_conv_d8x8_fYi_22          |    67|
+|50    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0_28  |    67|
+|51    |    cnn_2d_conv_d8x8_fYi_U9            |cnn_2d_conv_d8x8_fYi_23          |    50|
+|52    |      cnn_2d_conv_d8x8_fYi_MulnS_0_U   |cnn_2d_conv_d8x8_fYi_MulnS_0     |    50|
+|53    |    cnn_2d_conv_d8x8_k5x5_CTRL_s_axi_U |cnn_2d_conv_d8x8_k5x5_CTRL_s_axi |  2115|
+|54    |    lineBuffer_0_U                     |cnn_2d_conv_d8x8_bkb             |    42|
+|55    |      cnn_2d_conv_d8x8_bkb_ram_U       |cnn_2d_conv_d8x8_bkb_ram         |    42|
+|56    |    lineBuffer_1_U                     |cnn_2d_conv_d8x8_cud             |    11|
+|57    |      cnn_2d_conv_d8x8_cud_ram_U       |cnn_2d_conv_d8x8_cud_ram_27      |    11|
+|58    |    lineBuffer_2_U                     |cnn_2d_conv_d8x8_cud_24          |    35|
+|59    |      cnn_2d_conv_d8x8_cud_ram_U       |cnn_2d_conv_d8x8_cud_ram_26      |    35|
+|60    |    lineBuffer_3_U                     |cnn_2d_conv_d8x8_cud_25          |    40|
+|61    |      cnn_2d_conv_d8x8_cud_ram_U       |cnn_2d_conv_d8x8_cud_ram         |    40|
++------+---------------------------------------+---------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:09 ; elapsed = 00:01:19 . Memory (MB): peak = 842.387 ; gain = 632.031
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4023 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:00:59 . Memory (MB): peak = 842.387 ; gain = 218.008
+Synthesis Optimization Complete : Time (s): cpu = 00:01:09 ; elapsed = 00:01:19 . Memory (MB): peak = 842.387 ; gain = 632.031
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 224 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ip/design_1_cnn_2d_conv_d8x8_k5x5_0_0/constraints/cnn_2d_conv_d8x8_k5x5_ooc.xdc] for cell 'inst'
+INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port ap_clk. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC.  [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ip/design_1_cnn_2d_conv_d8x8_k5x5_0_0/constraints/cnn_2d_conv_d8x8_k5x5_ooc.xdc:6]
+Finished Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ip/design_1_cnn_2d_conv_d8x8_k5x5_0_0/constraints/cnn_2d_conv_d8x8_k5x5_ooc.xdc] for cell 'inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 6 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+62 Infos, 206 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:11 ; elapsed = 00:01:18 . Memory (MB): peak = 842.387 ; gain = 553.234
+INFO: [Common 17-1381] The checkpoint 'D:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.runs/design_1_cnn_2d_conv_d8x8_k5x5_0_0_synth_1/design_1_cnn_2d_conv_d8x8_k5x5_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP d:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.srcs/sources_1/bd/design_1/ip/design_1_cnn_2d_conv_d8x8_k5x5_0_0/design_1_cnn_2d_conv_d8x8_k5x5_0_0.xci
+INFO: [Coretcl 2-1174] Renamed 60 cell refs.
+INFO: [Common 17-1381] The checkpoint 'D:/School/Project/new_repo/Vivado/conv_test_1/conv_test_1.runs/design_1_cnn_2d_conv_d8x8_k5x5_0_0_synth_1/design_1_cnn_2d_conv_d8x8_k5x5_0_0.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.142 . Memory (MB): peak = 842.387 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 18 14:09:51 2021...

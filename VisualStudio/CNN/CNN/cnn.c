@@ -132,11 +132,33 @@ int cnn_sw(struct env *cnn_env)
 		return res;
 	}
 
+	// matrix_print(&cnn_env->m_image);
+	// matrix_print(&cnn_env->m_kernel);
+
 	res = conv_2D(&cnn_env->m_image, &cnn_env->m_kernel, &cnn_env->m_bias, &cnn_env->m_conv_result);
 	if (res != E_SUCCESS)
 		return res;
 
 	matrix_print(&cnn_env->m_conv_result);
+
+	/* init conv results matrix */
+	res = matrix_init(&cnn_env->m_conv_result2,
+		"sw_conv_2D",
+		cnn_env->m_conv_result.rows - cnn_env->m_kernel2.rows + 1,
+		cnn_env->m_conv_result.rows - cnn_env->m_kernel2.rows + 1,
+		cnn_env->m_conv_result.cols - cnn_env->m_kernel2.cols + 1,
+		cnn_env->m_conv_result.cols - cnn_env->m_kernel2.cols + 1,
+		0, 0);
+	if (res != E_SUCCESS) {
+		return res;
+	}
+
+	res = conv_2D(&cnn_env->m_conv_result, &cnn_env->m_kernel2, &cnn_env->m_bias2, &cnn_env->m_conv_result2);
+	if (res != E_SUCCESS)
+		return res;
+
+	
+	matrix_print(&cnn_env->m_conv_result2);
 
 	// res = pool_2D(&cnn_env->m_conv_result, 2, &cnn_env->m_pool_result, POOL_MAX);
 	// if (res != E_SUCCESS)

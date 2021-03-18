@@ -1,0 +1,5 @@
+cnn_2d_conv_d8x8_fYi
+cnn_2d_conv_d8x8_bkb
+cnn_2d_conv_d8x8_cud
+cnn_2d_conv_d8x8_k5x5_CTRL_s_axi
+cnn_2d_conv_d8x8_k5x5

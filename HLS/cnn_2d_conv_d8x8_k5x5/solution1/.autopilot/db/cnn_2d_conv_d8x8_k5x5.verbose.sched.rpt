@@ -1,0 +1,1972 @@
+
+
+================================================================
+== Vivado HLS Report for 'cnn_2d_conv_d8x8_k5x5'
+================================================================
+* Date:           Thu Mar 18 13:55:56 2021
+
+* Version:        2016.4 (Build 1756540 on Mon Jan 23 19:31:01 MST 2017)
+* Project:        cnn_2d_conv_d8x8_k5x5
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.52|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  109|  109|  110|  110|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    3|    3|         2|          1|          1|     3|    yes   |
+        |- Loop 2  |   16|   16|         2|          1|          1|    16|    yes   |
+        |- Loop 3  |   10|   10|         3|          1|          1|     9|    yes   |
+        |- Loop 4  |   72|   72|        10|          1|          1|    64|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+  * Pipeline-2: initiation interval (II) = 1, depth = 3
+  * Pipeline-3: initiation interval (II) = 1, depth = 10
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 22
+* Pipeline: 4
+  Pipeline-0: II = 1, D = 2, States = { 2 3 }
+  Pipeline-1: II = 1, D = 2, States = { 5 6 }
+  Pipeline-2: II = 1, D = 3, States = { 8 9 10 }
+  Pipeline-3: II = 1, D = 10, States = { 12 13 14 15 16 17 18 19 20 21 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	4  / (exitcond1)
+	3  / (!exitcond1)
+3 --> 
+	2  / true
+4 --> 
+	5  / true
+5 --> 
+	7  / (exitcond_flatten)
+	6  / (!exitcond_flatten)
+6 --> 
+	5  / true
+7 --> 
+	8  / true
+8 --> 
+	11  / (exitcond_flatten8)
+	9  / (!exitcond_flatten8)
+9 --> 
+	10  / true
+10 --> 
+	8  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	22  / (exitcond_flatten1)
+	14  / (!exitcond_flatten1)
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	12  / true
+22 --> 
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: StgValue_23 (41)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_24), !map !62
+
+ST_1: StgValue_24 (42)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_23), !map !68
+
+ST_1: StgValue_25 (43)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_22), !map !74
+
+ST_1: StgValue_26 (44)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_21), !map !80
+
+ST_1: StgValue_27 (45)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_20), !map !86
+
+ST_1: StgValue_28 (46)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_19), !map !92
+
+ST_1: StgValue_29 (47)  [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_18), !map !98
+
+ST_1: StgValue_30 (48)  [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_17), !map !104
+
+ST_1: StgValue_31 (49)  [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_16), !map !110
+
+ST_1: StgValue_32 (50)  [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_15), !map !116
+
+ST_1: StgValue_33 (51)  [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_14), !map !122
+
+ST_1: StgValue_34 (52)  [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_13), !map !128
+
+ST_1: StgValue_35 (53)  [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_12), !map !134
+
+ST_1: StgValue_36 (54)  [1/1] 0.00ns
+:13  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_11), !map !140
+
+ST_1: StgValue_37 (55)  [1/1] 0.00ns
+:14  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_10), !map !146
+
+ST_1: StgValue_38 (56)  [1/1] 0.00ns
+:15  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_9), !map !152
+
+ST_1: StgValue_39 (57)  [1/1] 0.00ns
+:16  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_8), !map !158
+
+ST_1: StgValue_40 (58)  [1/1] 0.00ns
+:17  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_7), !map !164
+
+ST_1: StgValue_41 (59)  [1/1] 0.00ns
+:18  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_6), !map !170
+
+ST_1: StgValue_42 (60)  [1/1] 0.00ns
+:19  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_5), !map !176
+
+ST_1: StgValue_43 (61)  [1/1] 0.00ns
+:20  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_4), !map !182
+
+ST_1: StgValue_44 (62)  [1/1] 0.00ns
+:21  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_3), !map !188
+
+ST_1: StgValue_45 (63)  [1/1] 0.00ns
+:22  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_2), !map !194
+
+ST_1: StgValue_46 (64)  [1/1] 0.00ns
+:23  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_1), !map !200
+
+ST_1: StgValue_47 (65)  [1/1] 0.00ns
+:24  call void (...)* @_ssdm_op_SpecBitsMap(i32* %kernelData_0), !map !206
+
+ST_1: StgValue_48 (66)  [1/1] 0.00ns
+:25  call void (...)* @_ssdm_op_SpecBitsMap(i32* %inStream_V_data_V), !map !212
+
+ST_1: StgValue_49 (67)  [1/1] 0.00ns
+:26  call void (...)* @_ssdm_op_SpecBitsMap(i4* %inStream_V_keep_V), !map !216
+
+ST_1: StgValue_50 (68)  [1/1] 0.00ns
+:27  call void (...)* @_ssdm_op_SpecBitsMap(i4* %inStream_V_strb_V), !map !220
+
+ST_1: StgValue_51 (69)  [1/1] 0.00ns
+:28  call void (...)* @_ssdm_op_SpecBitsMap(i2* %inStream_V_user_V), !map !224
+
+ST_1: StgValue_52 (70)  [1/1] 0.00ns
+:29  call void (...)* @_ssdm_op_SpecBitsMap(i1* %inStream_V_last_V), !map !228
+
+ST_1: StgValue_53 (71)  [1/1] 0.00ns
+:30  call void (...)* @_ssdm_op_SpecBitsMap(i5* %inStream_V_id_V), !map !232
+
+ST_1: StgValue_54 (72)  [1/1] 0.00ns
+:31  call void (...)* @_ssdm_op_SpecBitsMap(i6* %inStream_V_dest_V), !map !236
+
+ST_1: StgValue_55 (73)  [1/1] 0.00ns
+:32  call void (...)* @_ssdm_op_SpecBitsMap(i32* %outStream_V_data_V), !map !240
+
+ST_1: StgValue_56 (74)  [1/1] 0.00ns
+:33  call void (...)* @_ssdm_op_SpecBitsMap(i4* %outStream_V_keep_V), !map !244
+
+ST_1: StgValue_57 (75)  [1/1] 0.00ns
+:34  call void (...)* @_ssdm_op_SpecBitsMap(i4* %outStream_V_strb_V), !map !248
+
+ST_1: StgValue_58 (76)  [1/1] 0.00ns
+:35  call void (...)* @_ssdm_op_SpecBitsMap(i2* %outStream_V_user_V), !map !252
+
+ST_1: StgValue_59 (77)  [1/1] 0.00ns
+:36  call void (...)* @_ssdm_op_SpecBitsMap(i1* %outStream_V_last_V), !map !256
+
+ST_1: StgValue_60 (78)  [1/1] 0.00ns
+:37  call void (...)* @_ssdm_op_SpecBitsMap(i5* %outStream_V_id_V), !map !260
+
+ST_1: StgValue_61 (79)  [1/1] 0.00ns
+:38  call void (...)* @_ssdm_op_SpecBitsMap(i6* %outStream_V_dest_V), !map !264
+
+ST_1: StgValue_62 (80)  [1/1] 0.00ns
+:39  call void (...)* @_ssdm_op_SpecBitsMap(i32 %ctrl), !map !268
+
+ST_1: StgValue_63 (81)  [1/1] 0.00ns
+:40  call void (...)* @_ssdm_op_SpecTopModule([22 x i8]* @cnn_2d_conv_d8x8_k5x) nounwind
+
+ST_1: lineBuffer_0 (82)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:96
+:41  %lineBuffer_0 = alloca [8 x i32], align 4
+
+ST_1: lineBuffer_1 (83)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:96
+:42  %lineBuffer_1 = alloca [8 x i32], align 4
+
+ST_1: lineBuffer_2 (84)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:96
+:43  %lineBuffer_2 = alloca [8 x i32], align 4
+
+ST_1: lineBuffer_3 (85)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:96
+:44  %lineBuffer_3 = alloca [8 x i32], align 4
+
+ST_1: StgValue_68 (86)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:88
+:45  call void (...)* @_ssdm_op_SpecInterface(i32* %outStream_V_data_V, i4* %outStream_V_keep_V, i4* %outStream_V_strb_V, i2* %outStream_V_user_V, i1* %outStream_V_last_V, i5* %outStream_V_id_V, i6* %outStream_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_69 (87)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:89
+:46  call void (...)* @_ssdm_op_SpecInterface(i32* %inStream_V_data_V, i4* %inStream_V_keep_V, i4* %inStream_V_strb_V, i2* %inStream_V_user_V, i1* %inStream_V_last_V, i5* %inStream_V_id_V, i6* %inStream_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_70 (88)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:90
+:47  call void (...)* @_ssdm_op_SpecInterface(i32 %ctrl, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_71 (89)  [1/1] 0.00ns
+:48  call void (...)* @_ssdm_op_SpecInterface(i32* %kernelData_0, i32* %kernelData_1, i32* %kernelData_2, i32* %kernelData_3, i32* %kernelData_4, i32* %kernelData_5, i32* %kernelData_6, i32* %kernelData_7, i32* %kernelData_8, i32* %kernelData_9, i32* %kernelData_10, i32* %kernelData_11, i32* %kernelData_12, i32* %kernelData_13, i32* %kernelData_14, i32* %kernelData_15, i32* %kernelData_16, i32* %kernelData_17, i32* %kernelData_18, i32* %kernelData_19, i32* %kernelData_20, i32* %kernelData_21, i32* %kernelData_22, i32* %kernelData_23, i32* %kernelData_24, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_72 (90)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:92
+:49  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_73 (91)  [1/1] 1.57ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:104
+:50  br label %1
+
+
+ <State 2>: 3.25ns
+ST_2: x (93)  [1/1] 0.00ns
+:0  %x = phi i4 [ 5, %0 ], [ %x_1, %2 ]
+
+ST_2: exitcond1 (94)  [1/1] 1.88ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:104
+:1  %exitcond1 = icmp eq i4 %x, -8
+
+ST_2: StgValue_76 (95)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:104
+:2  br i1 %exitcond1, label %.preheader86.preheader, label %2
+
+ST_2: empty_7 (101)  [2/2] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:106
+:4  %empty_7 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %inStream_V_data_V, i4* %inStream_V_keep_V, i4* %inStream_V_strb_V, i2* %inStream_V_user_V, i1* %inStream_V_last_V, i5* %inStream_V_id_V, i6* %inStream_V_dest_V)
+
+ST_2: x_1 (106)  [1/1] 0.80ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:104
+:9  %x_1 = add i4 %x, 1
+
+
+ <State 3>: 2.39ns
+ST_3: x_cast (97)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:104
+:0  %x_cast = zext i4 %x to i32
+
+ST_3: empty (98)  [1/1] 0.00ns
+:1  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3)
+
+ST_3: tmp (99)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:104
+:2  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str6)
+
+ST_3: StgValue_82 (100)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:105
+:3  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_3: empty_7 (101)  [1/2] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:106
+:4  %empty_7 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %inStream_V_data_V, i4* %inStream_V_keep_V, i4* %inStream_V_strb_V, i2* %inStream_V_user_V, i1* %inStream_V_last_V, i5* %inStream_V_id_V, i6* %inStream_V_dest_V)
+
+ST_3: tmp_data_V (102)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:106
+:5  %tmp_data_V = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_7, 0
+
+ST_3: lineBuffer_1_addr (103)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:104
+:6  %lineBuffer_1_addr = getelementptr [8 x i32]* %lineBuffer_1, i32 0, i32 %x_cast
+
+ST_3: StgValue_86 (104)  [1/1] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:107
+:7  store i32 %tmp_data_V, i32* %lineBuffer_1_addr, align 4
+
+ST_3: empty_8 (105)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:108
+:8  %empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str6, i32 %tmp)
+
+ST_3: StgValue_88 (107)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:104
+:10  br label %1
+
+
+ <State 4>: 1.57ns
+ST_4: StgValue_89 (109)  [1/1] 1.57ns
+.preheader86.preheader:0  br label %.preheader86
+
+
+ <State 5>: 4.05ns
+ST_5: indvar_flatten (111)  [1/1] 0.00ns
+.preheader86:0  %indvar_flatten = phi i5 [ %indvar_flatten_next, %3 ], [ 0, %.preheader86.preheader ]
+
+ST_5: y (112)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:112
+.preheader86:1  %y = phi i3 [ %y_mid2, %3 ], [ 2, %.preheader86.preheader ]
+
+ST_5: x1 (113)  [1/1] 0.00ns
+.preheader86:2  %x1 = phi i4 [ %x_2, %3 ], [ 0, %.preheader86.preheader ]
+
+ST_5: exitcond_flatten (114)  [1/1] 1.91ns
+.preheader86:3  %exitcond_flatten = icmp eq i5 %indvar_flatten, -16
+
+ST_5: indvar_flatten_next (115)  [1/1] 1.72ns
+.preheader86:4  %indvar_flatten_next = add i5 %indvar_flatten, 1
+
+ST_5: StgValue_95 (116)  [1/1] 0.00ns
+.preheader86:5  br i1 %exitcond_flatten, label %.preheader84.preheader, label %.preheader87
+
+ST_5: exitcond (119)  [1/1] 1.88ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:112
+.preheader87:1  %exitcond = icmp eq i4 %x1, -8
+
+ST_5: x1_mid2 (120)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:112
+.preheader87:2  %x1_mid2 = select i1 %exitcond, i4 0, i4 %x1
+
+ST_5: y_s (121)  [1/1] 0.80ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:111
+.preheader87:3  %y_s = add i3 %y, 1
+
+ST_5: cond_mid1 (122)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:115
+.preheader87:4  %cond_mid1 = icmp eq i3 %y_s, 2
+
+ST_5: cond (123)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:115
+.preheader87:5  %cond = icmp eq i3 %y, 2
+
+ST_5: cond_mid2 (124)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:115
+.preheader87:6  %cond_mid2 = select i1 %exitcond, i1 %cond_mid1, i1 %cond
+
+ST_5: y_mid2 (125)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:112
+.preheader87:7  %y_mid2 = select i1 %exitcond, i3 %y_s, i3 %y
+
+ST_5: tmp_2 (127)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:112
+.preheader87:9  %tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str7)
+
+ST_5: empty_11 (129)  [2/2] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:114
+.preheader87:11  %empty_11 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %inStream_V_data_V, i4* %inStream_V_keep_V, i4* %inStream_V_strb_V, i2* %inStream_V_user_V, i1* %inStream_V_last_V, i5* %inStream_V_id_V, i6* %inStream_V_dest_V)
+
+ST_5: StgValue_105 (133)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:115
+.preheader87:15  br i1 %cond_mid2, label %branch26, label %branch27
+
+ST_5: empty_9 (141)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:116
+:0  %empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str7, i32 %tmp_2)
+
+ST_5: x_2 (142)  [1/1] 0.80ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:112
+:1  %x_2 = add i4 %x1_mid2, 1
+
+ST_5: StgValue_108 (143)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:112
+:2  br label %.preheader86
+
+
+ <State 6>: 2.39ns
+ST_6: empty_10 (118)  [1/1] 0.00ns
+.preheader87:0  %empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)
+
+ST_6: x1_cast (126)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:112
+.preheader87:8  %x1_cast = zext i4 %x1_mid2 to i32
+
+ST_6: StgValue_111 (128)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:113
+.preheader87:10  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_6: empty_11 (129)  [1/2] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:114
+.preheader87:11  %empty_11 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %inStream_V_data_V, i4* %inStream_V_keep_V, i4* %inStream_V_strb_V, i2* %inStream_V_user_V, i1* %inStream_V_last_V, i5* %inStream_V_id_V, i6* %inStream_V_dest_V)
+
+ST_6: tmp_data_V_1 (130)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:114
+.preheader87:12  %tmp_data_V_1 = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_11, 0
+
+ST_6: lineBuffer_2_addr (131)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:115
+.preheader87:13  %lineBuffer_2_addr = getelementptr [8 x i32]* %lineBuffer_2, i32 0, i32 %x1_cast
+
+ST_6: lineBuffer_3_addr (132)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:115
+.preheader87:14  %lineBuffer_3_addr = getelementptr [8 x i32]* %lineBuffer_3, i32 0, i32 %x1_cast
+
+ST_6: StgValue_116 (135)  [1/1] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:115
+branch27:0  store i32 %tmp_data_V_1, i32* %lineBuffer_3_addr, align 4
+
+ST_6: StgValue_117 (136)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:115
+branch27:1  br label %3
+
+ST_6: StgValue_118 (138)  [1/1] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:115
+branch26:0  store i32 %tmp_data_V_1, i32* %lineBuffer_2_addr, align 4
+
+ST_6: StgValue_119 (139)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:115
+branch26:1  br label %3
+
+
+ <State 7>: 1.57ns
+ST_7: window_4_4 (145)  [1/1] 0.00ns
+.preheader84.preheader:0  %window_4_4 = alloca i32
+
+ST_7: StgValue_121 (146)  [1/1] 1.57ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader84.preheader:1  br label %.preheader84
+
+
+ <State 8>: 6.18ns
+ST_8: indvar_flatten6 (148)  [1/1] 0.00ns
+.preheader84:0  %indvar_flatten6 = phi i4 [ %indvar_flatten_next7, %.preheader85 ], [ 0, %.preheader84.preheader ]
+
+ST_8: y3 (149)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader84:1  %y3 = phi i3 [ %y3_mid2, %.preheader85 ], [ 2, %.preheader84.preheader ]
+
+ST_8: window_4_4_32 (150)  [1/1] 0.00ns
+.preheader84:2  %window_4_4_32 = phi i32 [ %window_4_4_14, %.preheader85 ], [ undef, %.preheader84.preheader ]
+
+ST_8: window_4_4_1 (151)  [1/1] 0.00ns
+.preheader84:3  %window_4_4_1 = phi i32 [ %window_4_4_16, %.preheader85 ], [ undef, %.preheader84.preheader ]
+
+ST_8: window_4_4_10 (152)  [1/1] 0.00ns
+.preheader84:4  %window_4_4_10 = phi i32 [ %window_4_4_23, %.preheader85 ], [ undef, %.preheader84.preheader ]
+
+ST_8: window_4_4_15 (153)  [1/1] 0.00ns
+.preheader84:5  %window_4_4_15 = phi i32 [ %window_4_4_29, %.preheader85 ], [ undef, %.preheader84.preheader ]
+
+ST_8: window_4_4_17 (154)  [1/1] 0.00ns
+.preheader84:6  %window_4_4_17 = phi i32 [ %window_4_4_34, %.preheader85 ], [ undef, %.preheader84.preheader ]
+
+ST_8: window_2_4_1 (155)  [1/1] 0.00ns
+.preheader84:7  %window_2_4_1 = phi i32 [ %window_4_4_42, %.preheader85 ], [ undef, %.preheader84.preheader ]
+
+ST_8: window_4_4_24 (156)  [1/1] 0.00ns
+.preheader84:8  %window_4_4_24 = phi i32 [ %window_4_4_49, %.preheader85 ], [ undef, %.preheader84.preheader ]
+
+ST_8: window_4_4_30 (157)  [1/1] 0.00ns
+.preheader84:9  %window_4_4_30 = phi i32 [ %window_4_4_52, %.preheader85 ], [ undef, %.preheader84.preheader ]
+
+ST_8: x4 (158)  [1/1] 0.00ns
+.preheader84:10  %x4 = phi i3 [ %x_3, %.preheader85 ], [ 2, %.preheader84.preheader ]
+
+ST_8: sel_tmp (159)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader84:11  %sel_tmp = icmp eq i3 %y3, 2
+
+ST_8: sel_tmp2 (160)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader84:12  %sel_tmp2 = icmp eq i3 %y3, 3
+
+ST_8: sel_tmp4 (161)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader84:13  %sel_tmp4 = icmp ne i3 %y3, 2
+
+ST_8: sel_tmp5 (162)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader84:14  %sel_tmp5 = icmp ne i3 %y3, 3
+
+ST_8: sel_tmp10 (163)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader84:15  %sel_tmp10 = and i1 %sel_tmp4, %sel_tmp5
+
+ST_8: exitcond_flatten8 (164)  [1/1] 1.88ns
+.preheader84:16  %exitcond_flatten8 = icmp eq i4 %indvar_flatten6, -7
+
+ST_8: indvar_flatten_next7 (165)  [1/1] 0.80ns
+.preheader84:17  %indvar_flatten_next7 = add i4 %indvar_flatten6, 1
+
+ST_8: StgValue_140 (166)  [1/1] 0.00ns
+.preheader84:18  br i1 %exitcond_flatten8, label %.preheader82.preheader, label %.preheader85
+
+ST_8: exitcond2 (170)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:2  %exitcond2 = icmp eq i3 %x4, -3
+
+ST_8: x4_mid2 (171)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:3  %x4_mid2 = select i1 %exitcond2, i3 2, i3 %x4
+
+ST_8: y_1 (172)  [1/1] 0.80ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:123
+.preheader85:4  %y_1 = add i3 %y3, 1
+
+ST_8: sel_tmp_mid1 (173)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:5  %sel_tmp_mid1 = icmp eq i3 %y_1, 2
+
+ST_8: sel_tmp_mid2 (174)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:6  %sel_tmp_mid2 = select i1 %exitcond2, i1 %sel_tmp_mid1, i1 %sel_tmp
+
+ST_8: sel_tmp2_mid1 (175)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:7  %sel_tmp2_mid1 = icmp eq i3 %y_1, 3
+
+ST_8: sel_tmp2_mid2 (176)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:8  %sel_tmp2_mid2 = select i1 %exitcond2, i1 %sel_tmp2_mid1, i1 %sel_tmp2
+
+ST_8: sel_tmp16_mid1 (177)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:123
+.preheader85:9  %sel_tmp16_mid1 = icmp ne i3 %y_1, 2
+
+ST_8: sel_tmp17_mid1 (178)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:123
+.preheader85:10  %sel_tmp17_mid1 = icmp ne i3 %y_1, 3
+
+ST_8: sel_tmp18_mid1 (179)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:123 (grouped into LUT with out node sel_tmp18_mid2)
+.preheader85:11  %sel_tmp18_mid1 = and i1 %sel_tmp16_mid1, %sel_tmp17_mid1
+
+ST_8: sel_tmp18_mid2 (180)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:12  %sel_tmp18_mid2 = select i1 %exitcond2, i1 %sel_tmp18_mid1, i1 %sel_tmp10
+
+ST_8: y3_mid2 (181)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:13  %y3_mid2 = select i1 %exitcond2, i3 %y_1, i3 %y3
+
+ST_8: tmp_s (184)  [1/1] 0.80ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:16  %tmp_s = add i3 %x4_mid2, 3
+
+ST_8: tmp_cast (185)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:17  %tmp_cast = zext i3 %tmp_s to i32
+
+ST_8: lineBuffer_1_addr_1 (186)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:18  %lineBuffer_1_addr_1 = getelementptr [8 x i32]* %lineBuffer_1, i32 0, i32 %tmp_cast
+
+ST_8: lineBuffer_2_addr_1 (187)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:19  %lineBuffer_2_addr_1 = getelementptr [8 x i32]* %lineBuffer_2, i32 0, i32 %tmp_cast
+
+ST_8: lineBuffer_3_addr_1 (188)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:20  %lineBuffer_3_addr_1 = getelementptr [8 x i32]* %lineBuffer_3, i32 0, i32 %tmp_cast
+
+ST_8: lineBuffer_3_load (189)  [2/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:21  %lineBuffer_3_load = load i32* %lineBuffer_3_addr_1, align 4
+
+ST_8: lineBuffer_1_load (190)  [2/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:22  %lineBuffer_1_load = load i32* %lineBuffer_1_addr_1, align 4
+
+ST_8: lineBuffer_2_load (191)  [2/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:23  %lineBuffer_2_load = load i32* %lineBuffer_2_addr_1, align 4
+
+ST_8: x_3 (252)  [1/1] 0.80ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:84  %x_3 = add i3 %x4_mid2, 1
+
+
+ <State 9>: 3.76ns
+ST_9: lineBuffer_3_load (189)  [1/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:21  %lineBuffer_3_load = load i32* %lineBuffer_3_addr_1, align 4
+
+ST_9: lineBuffer_1_load (190)  [1/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:22  %lineBuffer_1_load = load i32* %lineBuffer_1_addr_1, align 4
+
+ST_9: lineBuffer_2_load (191)  [1/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:23  %lineBuffer_2_load = load i32* %lineBuffer_2_addr_1, align 4
+
+ST_9: sel_tmp1 (192)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_2_2)
+.preheader85:24  %sel_tmp1 = select i1 %sel_tmp_mid2, i32 %lineBuffer_1_load, i32 %lineBuffer_3_load
+
+ST_9: window_4_2_2 (193)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:25  %window_4_2_2 = select i1 %sel_tmp2_mid2, i32 %lineBuffer_2_load, i32 %sel_tmp1
+
+ST_9: sel_tmp7 (194)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:26  %sel_tmp7 = icmp ne i3 %x4_mid2, 2
+
+ST_9: sel_tmp9 (195)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:27  %sel_tmp9 = icmp ne i3 %x4_mid2, 3
+
+ST_9: tmp1 (196)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:28  %tmp1 = and i1 %sel_tmp7, %sel_tmp9
+
+ST_9: sel_tmp6 (199)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:31  %sel_tmp6 = icmp eq i3 %x4_mid2, 3
+
+ST_9: sel_tmp14 (208)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:40  %sel_tmp14 = icmp eq i3 %x4_mid2, 2
+
+
+ <State 10>: 6.85ns
+ST_10: window_4_4_load_1 (168)  [1/1] 0.00ns
+.preheader85:0  %window_4_4_load_1 = load i32* %window_4_4
+
+ST_10: empty_12 (169)  [1/1] 0.00ns
+.preheader85:1  %empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 9, i64 9, i64 9)
+
+ST_10: tmp_6 (182)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:14  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str8)
+
+ST_10: StgValue_175 (183)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:125
+.preheader85:15  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_10: sel_tmp3 (197)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:29  %sel_tmp3 = and i1 %tmp1, %sel_tmp_mid2
+
+ST_10: window_4_4_2 (198)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (grouped into LUT with out node window_4_4_3)
+.preheader85:30  %window_4_4_2 = select i1 %sel_tmp3, i32 %window_4_4_load_1, i32 %window_4_2_2
+
+ST_10: sel_tmp8 (200)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:32  %sel_tmp8 = and i1 %sel_tmp_mid2, %sel_tmp6
+
+ST_10: window_4_4_3 (201)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:33  %window_4_4_3 = select i1 %sel_tmp8, i32 %window_4_4_load_1, i32 %window_4_4_2
+
+ST_10: sel_tmp11 (202)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:34  %sel_tmp11 = and i1 %tmp1, %sel_tmp2_mid2
+
+ST_10: window_4_4_4 (203)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (grouped into LUT with out node window_4_4_5)
+.preheader85:35  %window_4_4_4 = select i1 %sel_tmp11, i32 %window_4_4_load_1, i32 %window_4_4_3
+
+ST_10: sel_tmp12 (204)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:36  %sel_tmp12 = and i1 %sel_tmp2_mid2, %sel_tmp6
+
+ST_10: window_4_4_5 (205)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:37  %window_4_4_5 = select i1 %sel_tmp12, i32 %window_4_4_load_1, i32 %window_4_4_4
+
+ST_10: sel_tmp13 (206)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:38  %sel_tmp13 = and i1 %sel_tmp18_mid2, %sel_tmp6
+
+ST_10: window_4_4_6 (207)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (grouped into LUT with out node window_4_4_7)
+.preheader85:39  %window_4_4_6 = select i1 %sel_tmp13, i32 %window_4_4_load_1, i32 %window_4_4_5
+
+ST_10: sel_tmp15 (209)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:41  %sel_tmp15 = and i1 %sel_tmp_mid2, %sel_tmp14
+
+ST_10: window_4_4_7 (210)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:42  %window_4_4_7 = select i1 %sel_tmp15, i32 %window_4_4_load_1, i32 %window_4_4_6
+
+ST_10: sel_tmp16 (211)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader85:43  %sel_tmp16 = and i1 %sel_tmp2_mid2, %sel_tmp14
+
+ST_10: window_4_4_8 (212)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_9)
+.preheader85:44  %window_4_4_8 = select i1 %sel_tmp16, i32 %window_4_4_load_1, i32 %window_4_4_7
+
+ST_10: sel_tmp17 (213)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:45  %sel_tmp17 = and i1 %sel_tmp18_mid2, %sel_tmp14
+
+ST_10: window_4_4_9 (214)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:46  %window_4_4_9 = select i1 %sel_tmp17, i32 %window_4_4_load_1, i32 %window_4_4_8
+
+ST_10: window_4_4_11 (215)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (grouped into LUT with out node window_4_4_12)
+.preheader85:47  %window_4_4_11 = select i1 %sel_tmp13, i32 %window_4_2_2, i32 %window_4_4_32
+
+ST_10: window_4_4_12 (216)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:48  %window_4_4_12 = select i1 %sel_tmp15, i32 %window_4_4_32, i32 %window_4_4_11
+
+ST_10: window_4_4_13 (217)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_14)
+.preheader85:49  %window_4_4_13 = select i1 %sel_tmp16, i32 %window_4_4_32, i32 %window_4_4_12
+
+ST_10: window_4_4_14 (218)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:50  %window_4_4_14 = select i1 %sel_tmp17, i32 %window_4_4_32, i32 %window_4_4_13
+
+ST_10: window_4_4_16 (219)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:51  %window_4_4_16 = select i1 %sel_tmp17, i32 %window_4_2_2, i32 %window_4_4_1
+
+ST_10: window_4_4_18 (220)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (grouped into LUT with out node window_4_4_19)
+.preheader85:52  %window_4_4_18 = select i1 %sel_tmp11, i32 %window_4_2_2, i32 %window_4_4_10
+
+ST_10: window_4_4_19 (221)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:53  %window_4_4_19 = select i1 %sel_tmp12, i32 %window_4_4_10, i32 %window_4_4_18
+
+ST_10: window_4_4_20 (222)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (grouped into LUT with out node window_4_4_21)
+.preheader85:54  %window_4_4_20 = select i1 %sel_tmp13, i32 %window_4_4_10, i32 %window_4_4_19
+
+ST_10: window_4_4_21 (223)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:55  %window_4_4_21 = select i1 %sel_tmp15, i32 %window_4_4_10, i32 %window_4_4_20
+
+ST_10: window_4_4_22 (224)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_23)
+.preheader85:56  %window_4_4_22 = select i1 %sel_tmp16, i32 %window_4_4_10, i32 %window_4_4_21
+
+ST_10: window_4_4_23 (225)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:57  %window_4_4_23 = select i1 %sel_tmp17, i32 %window_4_4_10, i32 %window_4_4_22
+
+ST_10: window_4_4_25 (226)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_26)
+.preheader85:58  %window_4_4_25 = select i1 %sel_tmp12, i32 %window_4_2_2, i32 %window_4_4_15
+
+ST_10: window_4_4_26 (227)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:59  %window_4_4_26 = select i1 %sel_tmp13, i32 %window_4_4_15, i32 %window_4_4_25
+
+ST_10: window_4_4_27 (228)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_28)
+.preheader85:60  %window_4_4_27 = select i1 %sel_tmp15, i32 %window_4_4_15, i32 %window_4_4_26
+
+ST_10: window_4_4_28 (229)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:61  %window_4_4_28 = select i1 %sel_tmp16, i32 %window_4_4_15, i32 %window_4_4_27
+
+ST_10: window_4_4_29 (230)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:62  %window_4_4_29 = select i1 %sel_tmp17, i32 %window_4_4_15, i32 %window_4_4_28
+
+ST_10: window_4_4_33 (231)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_34)
+.preheader85:63  %window_4_4_33 = select i1 %sel_tmp16, i32 %window_4_2_2, i32 %window_4_4_17
+
+ST_10: window_4_4_34 (232)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:64  %window_4_4_34 = select i1 %sel_tmp17, i32 %window_4_4_17, i32 %window_4_4_33
+
+ST_10: window_4_4_35 (233)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (grouped into LUT with out node window_4_4_36)
+.preheader85:65  %window_4_4_35 = select i1 %sel_tmp3, i32 %window_4_2_2, i32 %window_2_4_1
+
+ST_10: window_4_4_36 (234)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:66  %window_4_4_36 = select i1 %sel_tmp8, i32 %window_2_4_1, i32 %window_4_4_35
+
+ST_10: window_4_4_37 (235)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (grouped into LUT with out node window_4_4_38)
+.preheader85:67  %window_4_4_37 = select i1 %sel_tmp11, i32 %window_2_4_1, i32 %window_4_4_36
+
+ST_10: window_4_4_38 (236)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:68  %window_4_4_38 = select i1 %sel_tmp12, i32 %window_2_4_1, i32 %window_4_4_37
+
+ST_10: window_4_4_39 (237)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (grouped into LUT with out node window_4_4_40)
+.preheader85:69  %window_4_4_39 = select i1 %sel_tmp13, i32 %window_2_4_1, i32 %window_4_4_38
+
+ST_10: window_4_4_40 (238)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:70  %window_4_4_40 = select i1 %sel_tmp15, i32 %window_2_4_1, i32 %window_4_4_39
+
+ST_10: window_4_4_41 (239)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_42)
+.preheader85:71  %window_4_4_41 = select i1 %sel_tmp16, i32 %window_2_4_1, i32 %window_4_4_40
+
+ST_10: window_4_4_42 (240)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:72  %window_4_4_42 = select i1 %sel_tmp17, i32 %window_2_4_1, i32 %window_4_4_41
+
+ST_10: window_4_4_43 (241)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_44)
+.preheader85:73  %window_4_4_43 = select i1 %sel_tmp8, i32 %window_4_2_2, i32 %window_4_4_24
+
+ST_10: window_4_4_44 (242)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:74  %window_4_4_44 = select i1 %sel_tmp11, i32 %window_4_4_24, i32 %window_4_4_43
+
+ST_10: window_4_4_45 (243)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_46)
+.preheader85:75  %window_4_4_45 = select i1 %sel_tmp12, i32 %window_4_4_24, i32 %window_4_4_44
+
+ST_10: window_4_4_46 (244)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:76  %window_4_4_46 = select i1 %sel_tmp13, i32 %window_4_4_24, i32 %window_4_4_45
+
+ST_10: window_4_4_47 (245)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_48)
+.preheader85:77  %window_4_4_47 = select i1 %sel_tmp15, i32 %window_4_4_24, i32 %window_4_4_46
+
+ST_10: window_4_4_48 (246)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:78  %window_4_4_48 = select i1 %sel_tmp16, i32 %window_4_4_24, i32 %window_4_4_47
+
+ST_10: window_4_4_49 (247)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:79  %window_4_4_49 = select i1 %sel_tmp17, i32 %window_4_4_24, i32 %window_4_4_48
+
+ST_10: window_4_4_50 (248)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (grouped into LUT with out node window_4_4_51)
+.preheader85:80  %window_4_4_50 = select i1 %sel_tmp15, i32 %window_4_2_2, i32 %window_4_4_30
+
+ST_10: window_4_4_51 (249)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126 (out node of the LUT)
+.preheader85:81  %window_4_4_51 = select i1 %sel_tmp16, i32 %window_4_4_30, i32 %window_4_4_50
+
+ST_10: window_4_4_52 (250)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124 (out node of the LUT)
+.preheader85:82  %window_4_4_52 = select i1 %sel_tmp17, i32 %window_4_4_30, i32 %window_4_4_51
+
+ST_10: empty_13 (251)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:127
+.preheader85:83  %empty_13 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str8, i32 %tmp_6)
+
+ST_10: StgValue_229 (253)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:85  store i32 %window_4_4_9, i32* %window_4_4
+
+ST_10: StgValue_230 (254)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:124
+.preheader85:86  br label %.preheader84
+
+
+ <State 11>: 1.57ns
+ST_11: window_0_0_read_as (256)  [1/1] 0.00ns
+.preheader82.preheader:0  %window_0_0_read_as = alloca i32
+
+ST_11: window_0_0 (257)  [1/1] 0.00ns
+.preheader82.preheader:1  %window_0_0 = alloca i32
+
+ST_11: window_0_1 (258)  [1/1] 0.00ns
+.preheader82.preheader:2  %window_0_1 = alloca i32
+
+ST_11: window_0_2 (259)  [1/1] 0.00ns
+.preheader82.preheader:3  %window_0_2 = alloca i32
+
+ST_11: window_0_3 (260)  [1/1] 0.00ns
+.preheader82.preheader:4  %window_0_3 = alloca i32
+
+ST_11: window_1_0_read_as (261)  [1/1] 0.00ns
+.preheader82.preheader:5  %window_1_0_read_as = alloca i32
+
+ST_11: window_1_0 (262)  [1/1] 0.00ns
+.preheader82.preheader:6  %window_1_0 = alloca i32
+
+ST_11: window_1_1 (263)  [1/1] 0.00ns
+.preheader82.preheader:7  %window_1_1 = alloca i32
+
+ST_11: window_1_2 (264)  [1/1] 0.00ns
+.preheader82.preheader:8  %window_1_2 = alloca i32
+
+ST_11: window_1_3 (265)  [1/1] 0.00ns
+.preheader82.preheader:9  %window_1_3 = alloca i32
+
+ST_11: window_2_0_read_as (266)  [1/1] 0.00ns
+.preheader82.preheader:10  %window_2_0_read_as = alloca i32
+
+ST_11: window_2_0 (267)  [1/1] 0.00ns
+.preheader82.preheader:11  %window_2_0 = alloca i32
+
+ST_11: window_3_0_read_as (268)  [1/1] 0.00ns
+.preheader82.preheader:12  %window_3_0_read_as = alloca i32
+
+ST_11: window_3_0 (269)  [1/1] 0.00ns
+.preheader82.preheader:13  %window_3_0 = alloca i32
+
+ST_11: window_4_0_read_as (270)  [1/1] 0.00ns
+.preheader82.preheader:14  %window_4_0_read_as = alloca i32
+
+ST_11: window_4_0 (271)  [1/1] 0.00ns
+.preheader82.preheader:15  %window_4_0 = alloca i32
+
+ST_11: window_4_4_load (272)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader82.preheader:16  %window_4_4_load = load i32* %window_4_4
+
+ST_11: window_4_3 (273)  [1/1] 0.00ns
+.preheader82.preheader:17  %window_4_3 = alloca i32
+
+ST_11: writeCount_1 (274)  [1/1] 0.00ns
+.preheader82.preheader:18  %writeCount_1 = alloca i32
+
+ST_11: readCount_1 (275)  [1/1] 0.00ns
+.preheader82.preheader:19  %readCount_1 = alloca i32
+
+ST_11: StgValue_251 (276)  [1/1] 1.57ns
+.preheader82.preheader:20  store i32 19, i32* %readCount_1
+
+ST_11: StgValue_252 (277)  [1/1] 1.57ns
+.preheader82.preheader:21  store i32 0, i32* %writeCount_1
+
+ST_11: StgValue_253 (278)  [1/1] 1.57ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:126
+.preheader82.preheader:22  store i32 %window_4_4_load, i32* %window_4_3
+
+ST_11: StgValue_254 (279)  [1/1] 1.57ns
+.preheader82.preheader:23  br label %.preheader82
+
+
+ <State 12>: 7.61ns
+ST_12: indvar_flatten1 (281)  [1/1] 0.00ns
+.preheader82:0  %indvar_flatten1 = phi i7 [ %indvar_flatten_next1, %._crit_edge88 ], [ 0, %.preheader82.preheader ]
+
+ST_12: y_assign (282)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+.preheader82:1  %y_assign = phi i4 [ %y_assign_mid2, %._crit_edge88 ], [ 0, %.preheader82.preheader ]
+
+ST_12: x_assign (291)  [1/1] 0.00ns
+.preheader82:10  %x_assign = phi i4 [ %x_4, %._crit_edge88 ], [ 0, %.preheader82.preheader ]
+
+ST_12: exitcond_flatten1 (309)  [1/1] 1.97ns
+.preheader82:28  %exitcond_flatten1 = icmp eq i7 %indvar_flatten1, -64
+
+ST_12: indvar_flatten_next1 (310)  [1/1] 1.72ns
+.preheader82:29  %indvar_flatten_next1 = add i7 %indvar_flatten1, 1
+
+ST_12: empty_16 (327)  [1/1] 0.00ns
+.preheader83:0  %empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64)
+
+ST_12: exitcond3 (328)  [1/1] 1.88ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+.preheader83:1  %exitcond3 = icmp eq i4 %x_assign, -8
+
+ST_12: x_assign_mid2 (329)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+.preheader83:2  %x_assign_mid2 = select i1 %exitcond3, i4 0, i4 %x_assign
+
+ST_12: y_2 (330)  [1/1] 0.80ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:131
+.preheader83:3  %y_2 = add i4 %y_assign, 1
+
+ST_12: tmp_1 (331)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136
+.preheader83:4  %tmp_1 = call i3 @_ssdm_op_PartSelect.i3.i4.i32.i32(i4 %y_2, i32 1, i32 3)
+
+ST_12: icmp1 (332)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136
+.preheader83:5  %icmp1 = icmp eq i3 %tmp_1, 0
+
+ST_12: tmp_3 (333)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136
+.preheader83:6  %tmp_3 = call i3 @_ssdm_op_PartSelect.i3.i4.i32.i32(i4 %y_assign, i32 1, i32 3)
+
+ST_12: icmp2 (334)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136
+.preheader83:7  %icmp2 = icmp eq i3 %tmp_3, 0
+
+ST_12: tmp_i_mid2 (335)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136 (grouped into LUT with out node tmp3)
+.preheader83:8  %tmp_i_mid2 = select i1 %exitcond3, i1 %icmp1, i1 %icmp2
+
+ST_12: tmp_2_i_mid1 (336)  [1/1] 1.88ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136
+.preheader83:9  %tmp_2_i_mid1 = icmp ugt i4 %y_2, 5
+
+ST_12: tmp_2_i (337)  [1/1] 1.88ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136
+.preheader83:10  %tmp_2_i = icmp ugt i4 %y_assign, 5
+
+ST_12: tmp_2_i_mid2 (338)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136 (grouped into LUT with out node p_i)
+.preheader83:11  %tmp_2_i_mid2 = select i1 %exitcond3, i1 %tmp_2_i_mid1, i1 %tmp_2_i
+
+ST_12: y_assign_mid2 (339)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+.preheader83:12  %y_assign_mid2 = select i1 %exitcond3, i4 %y_2, i4 %y_assign
+
+ST_12: x_assign_cast (340)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+.preheader83:13  %x_assign_cast = zext i4 %x_assign_mid2 to i32
+
+ST_12: tmp_5 (341)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+.preheader83:14  %tmp_5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str9)
+
+ST_12: StgValue_275 (342)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:133
+.preheader83:15  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_12: tmp_4 (343)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136
+.preheader83:16  %tmp_4 = call i3 @_ssdm_op_PartSelect.i3.i4.i32.i32(i4 %x_assign_mid2, i32 1, i32 3)
+
+ST_12: icmp3 (344)  [1/1] 1.62ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136
+.preheader83:17  %icmp3 = icmp eq i3 %tmp_4, 0
+
+ST_12: tmp_1_i (345)  [1/1] 1.88ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136
+.preheader83:18  %tmp_1_i = icmp ugt i4 %x_assign_mid2, 5
+
+ST_12: tmp3 (346)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136 (out node of the LUT)
+.preheader83:19  %tmp3 = or i1 %icmp3, %tmp_i_mid2
+
+ST_12: tmp4 (347)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136 (grouped into LUT with out node p_i)
+.preheader83:20  %tmp4 = or i1 %tmp_1_i, %tmp_2_i_mid2
+
+ST_12: p_i (348)  [1/1] 1.37ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136 (out node of the LUT)
+.preheader83:21  %p_i = or i1 %tmp4, %tmp3
+
+ST_12: StgValue_282 (349)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:136
+.preheader83:22  br i1 %p_i, label %._crit_edge, label %4
+
+ST_12: readCount_1_load (434)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:161
+._crit_edge:0  %readCount_1_load = load i32* %readCount_1
+
+ST_12: lineBuffer_0_addr (435)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+._crit_edge:1  %lineBuffer_0_addr = getelementptr [8 x i32]* %lineBuffer_0, i32 0, i32 %x_assign_cast
+
+ST_12: windowRightCol_0 (436)  [2/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:154
+._crit_edge:2  %windowRightCol_0 = load i32* %lineBuffer_0_addr, align 4
+
+ST_12: lineBuffer_1_addr_2 (437)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+._crit_edge:3  %lineBuffer_1_addr_2 = getelementptr [8 x i32]* %lineBuffer_1, i32 0, i32 %x_assign_cast
+
+ST_12: windowRightCol_1 (438)  [2/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+._crit_edge:4  %windowRightCol_1 = load i32* %lineBuffer_1_addr_2, align 4
+
+ST_12: lineBuffer_2_addr_2 (440)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+._crit_edge:6  %lineBuffer_2_addr_2 = getelementptr [8 x i32]* %lineBuffer_2, i32 0, i32 %x_assign_cast
+
+ST_12: windowRightCol_2 (441)  [2/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+._crit_edge:7  %windowRightCol_2 = load i32* %lineBuffer_2_addr_2, align 4
+
+ST_12: lineBuffer_3_addr_2 (443)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+._crit_edge:9  %lineBuffer_3_addr_2 = getelementptr [8 x i32]* %lineBuffer_3, i32 0, i32 %x_assign_cast
+
+ST_12: windowRightCol_3 (444)  [2/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+._crit_edge:10  %windowRightCol_3 = load i32* %lineBuffer_3_addr_2, align 4
+
+ST_12: tmp_27 (446)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:161
+._crit_edge:12  %tmp_27 = call i26 @_ssdm_op_PartSelect.i26.i32.i32.i32(i32 %readCount_1_load, i32 6, i32 31)
+
+ST_12: icmp (447)  [1/1] 2.43ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:161
+._crit_edge:13  %icmp = icmp slt i26 %tmp_27, 1
+
+ST_12: StgValue_294 (450)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:161
+._crit_edge:16  br i1 %icmp, label %5, label %._crit_edge88
+
+ST_12: empty_14 (452)  [2/2] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:162
+:0  %empty_14 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %inStream_V_data_V, i4* %inStream_V_keep_V, i4* %inStream_V_strb_V, i2* %inStream_V_user_V, i1* %inStream_V_last_V, i5* %inStream_V_id_V, i6* %inStream_V_dest_V)
+
+ST_12: readCount (454)  [1/1] 2.44ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:163
+:2  %readCount = add nsw i32 %readCount_1_load, 1
+
+ST_12: StgValue_297 (455)  [1/1] 1.57ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:163
+:3  store i32 %readCount, i32* %readCount_1
+
+ST_12: x_4 (462)  [1/1] 0.80ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+._crit_edge88:3  %x_4 = add i4 %x_assign_mid2, 1
+
+
+ <State 13>: 7.08ns
+ST_13: window_4_2 (283)  [1/1] 0.00ns
+.preheader82:2  %window_4_2 = phi i32 [ %window_4_3_2, %._crit_edge88 ], [ %window_4_4_32, %.preheader82.preheader ]
+
+ST_13: window_4_1 (284)  [1/1] 0.00ns
+.preheader82:3  %window_4_1 = phi i32 [ %window_4_2, %._crit_edge88 ], [ %window_4_4_1, %.preheader82.preheader ]
+
+ST_13: window_3_3_1 (285)  [1/1] 0.00ns
+.preheader82:4  %window_3_3_1 = phi i32 [ %windowRightCol_3, %._crit_edge88 ], [ %window_4_4_10, %.preheader82.preheader ]
+
+ST_13: window_3_2 (286)  [1/1] 0.00ns
+.preheader82:5  %window_3_2 = phi i32 [ %window_3_3_1, %._crit_edge88 ], [ %window_4_4_15, %.preheader82.preheader ]
+
+ST_13: window_3_1 (287)  [1/1] 0.00ns
+.preheader82:6  %window_3_1 = phi i32 [ %window_3_2, %._crit_edge88 ], [ %window_4_4_17, %.preheader82.preheader ]
+
+ST_13: window_2_3 (288)  [1/1] 0.00ns
+.preheader82:7  %window_2_3 = phi i32 [ %windowRightCol_2, %._crit_edge88 ], [ %window_2_4_1, %.preheader82.preheader ]
+
+ST_13: window_2_2 (289)  [1/1] 0.00ns
+.preheader82:8  %window_2_2 = phi i32 [ %window_2_3, %._crit_edge88 ], [ %window_4_4_24, %.preheader82.preheader ]
+
+ST_13: window_2_1 (290)  [1/1] 0.00ns
+.preheader82:9  %window_2_1 = phi i32 [ %window_2_2, %._crit_edge88 ], [ %window_4_4_30, %.preheader82.preheader ]
+
+ST_13: window_0_0_read_as_1 (292)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:11  %window_0_0_read_as_1 = load i32* %window_0_0_read_as
+
+ST_13: window_0_0_load (293)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:12  %window_0_0_load = load i32* %window_0_0
+
+ST_13: window_0_1_load (294)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:13  %window_0_1_load = load i32* %window_0_1
+
+ST_13: window_0_2_load (295)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:14  %window_0_2_load = load i32* %window_0_2
+
+ST_13: window_0_3_load_1 (296)  [1/1] 0.00ns
+.preheader82:15  %window_0_3_load_1 = load i32* %window_0_3
+
+ST_13: window_1_0_read_as_1 (297)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:16  %window_1_0_read_as_1 = load i32* %window_1_0_read_as
+
+ST_13: window_1_0_load (298)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:17  %window_1_0_load = load i32* %window_1_0
+
+ST_13: window_1_1_load (299)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:18  %window_1_1_load = load i32* %window_1_1
+
+ST_13: window_1_2_load (300)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:19  %window_1_2_load = load i32* %window_1_2
+
+ST_13: window_1_3_load_1 (301)  [1/1] 0.00ns
+.preheader82:20  %window_1_3_load_1 = load i32* %window_1_3
+
+ST_13: window_2_0_read_as_1 (302)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:21  %window_2_0_read_as_1 = load i32* %window_2_0_read_as
+
+ST_13: window_2_0_load (303)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:22  %window_2_0_load = load i32* %window_2_0
+
+ST_13: window_3_0_read_as_1 (304)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:23  %window_3_0_read_as_1 = load i32* %window_3_0_read_as
+
+ST_13: window_3_0_load (305)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:24  %window_3_0_load = load i32* %window_3_0
+
+ST_13: window_4_0_read_as_1 (306)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:25  %window_4_0_read_as_1 = load i32* %window_4_0_read_as
+
+ST_13: window_4_0_load (307)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:26  %window_4_0_load = load i32* %window_4_0
+
+ST_13: window_4_3_2 (308)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:27  %window_4_3_2 = load i32* %window_4_3
+
+ST_13: StgValue_324 (311)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:30  store i32 %window_4_1, i32* %window_4_0
+
+ST_13: StgValue_325 (312)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:31  store i32 %window_4_0_load, i32* %window_4_0_read_as
+
+ST_13: StgValue_326 (313)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+.preheader82:32  store i32 %window_3_1, i32* %window_3_0
+
+ST_13: StgValue_327 (314)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:33  store i32 %window_3_0_load, i32* %window_3_0_read_as
+
+ST_13: StgValue_328 (315)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+.preheader82:34  store i32 %window_2_1, i32* %window_2_0
+
+ST_13: StgValue_329 (316)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:35  store i32 %window_2_0_load, i32* %window_2_0_read_as
+
+ST_13: StgValue_330 (317)  [1/1] 0.00ns
+.preheader82:36  store i32 %window_1_3_load_1, i32* %window_1_2
+
+ST_13: StgValue_331 (318)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:37  store i32 %window_1_2_load, i32* %window_1_1
+
+ST_13: StgValue_332 (319)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:38  store i32 %window_1_1_load, i32* %window_1_0
+
+ST_13: StgValue_333 (320)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:39  store i32 %window_1_0_load, i32* %window_1_0_read_as
+
+ST_13: StgValue_334 (321)  [1/1] 0.00ns
+.preheader82:40  store i32 %window_0_3_load_1, i32* %window_0_2
+
+ST_13: StgValue_335 (322)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:41  store i32 %window_0_2_load, i32* %window_0_1
+
+ST_13: StgValue_336 (323)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:42  store i32 %window_0_1_load, i32* %window_0_0
+
+ST_13: StgValue_337 (324)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+.preheader82:43  store i32 %window_0_0_load, i32* %window_0_0_read_as
+
+ST_13: StgValue_338 (325)  [1/1] 0.00ns
+.preheader82:44  br i1 %exitcond_flatten1, label %6, label %.preheader83
+
+ST_13: window_0_3_load (351)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:0  %window_0_3_load = load i32* %window_0_3
+
+ST_13: window_1_3_load (352)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:1  %window_1_3_load = load i32* %window_1_3
+
+ST_13: kernelData_0_read (355)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:4  %kernelData_0_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_0)
+
+ST_13: kernelData_1_read (356)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:5  %kernelData_1_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_1)
+
+ST_13: kernelData_2_read (357)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:6  %kernelData_2_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_2)
+
+ST_13: kernelData_3_read (358)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:7  %kernelData_3_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_3)
+
+ST_13: kernelData_4_read (359)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:8  %kernelData_4_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_4)
+
+ST_13: kernelData_5_read (360)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:9  %kernelData_5_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_5)
+
+ST_13: kernelData_6_read (361)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:10  %kernelData_6_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_6)
+
+ST_13: kernelData_7_read (362)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:11  %kernelData_7_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_7)
+
+ST_13: kernelData_8_read (363)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:12  %kernelData_8_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_8)
+
+ST_13: kernelData_9_read (364)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:13  %kernelData_9_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_9)
+
+ST_13: kernelData_10_read (365)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:14  %kernelData_10_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_10)
+
+ST_13: kernelData_11_read (366)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:15  %kernelData_11_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_11)
+
+ST_13: kernelData_12_read (367)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:16  %kernelData_12_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_12)
+
+ST_13: kernelData_13_read (368)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:17  %kernelData_13_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_13)
+
+ST_13: kernelData_14_read (369)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:18  %kernelData_14_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_14)
+
+ST_13: kernelData_15_read (370)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:19  %kernelData_15_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_15)
+
+ST_13: kernelData_16_read (371)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:20  %kernelData_16_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_16)
+
+ST_13: kernelData_17_read (372)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:21  %kernelData_17_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_17)
+
+ST_13: kernelData_18_read (373)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:22  %kernelData_18_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_18)
+
+ST_13: kernelData_19_read (374)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:23  %kernelData_19_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_19)
+
+ST_13: kernelData_20_read (375)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:24  %kernelData_20_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_20)
+
+ST_13: kernelData_21_read (376)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:25  %kernelData_21_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_21)
+
+ST_13: kernelData_22_read (377)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:26  %kernelData_22_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_22)
+
+ST_13: kernelData_23_read (378)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:27  %kernelData_23_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_23)
+
+ST_13: kernelData_24_read (379)  [1/1] 1.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:28  %kernelData_24_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %kernelData_24)
+
+ST_13: tmp_9_i (380)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:29  %tmp_9_i = mul i32 %kernelData_0_read, %window_0_0_read_as_1
+
+ST_13: tmp_9_0_1_i (381)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:30  %tmp_9_0_1_i = mul i32 %kernelData_1_read, %window_0_0_load
+
+ST_13: tmp_9_0_2_i (382)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:31  %tmp_9_0_2_i = mul i32 %kernelData_2_read, %window_0_1_load
+
+ST_13: tmp_9_0_3_i (383)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:32  %tmp_9_0_3_i = mul i32 %kernelData_3_read, %window_0_2_load
+
+ST_13: tmp_9_0_4_i (384)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:33  %tmp_9_0_4_i = mul i32 %kernelData_4_read, %window_0_3_load
+
+ST_13: tmp_9_1_i (385)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:34  %tmp_9_1_i = mul i32 %kernelData_5_read, %window_1_0_read_as_1
+
+ST_13: tmp_9_1_1_i (386)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:35  %tmp_9_1_1_i = mul i32 %kernelData_6_read, %window_1_0_load
+
+ST_13: tmp_9_1_2_i (387)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:36  %tmp_9_1_2_i = mul i32 %kernelData_7_read, %window_1_1_load
+
+ST_13: tmp_9_1_3_i (388)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:37  %tmp_9_1_3_i = mul i32 %kernelData_8_read, %window_1_2_load
+
+ST_13: tmp_9_1_4_i (389)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:38  %tmp_9_1_4_i = mul i32 %kernelData_9_read, %window_1_3_load
+
+ST_13: tmp_9_2_i (390)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:39  %tmp_9_2_i = mul i32 %kernelData_10_read, %window_2_0_read_as_1
+
+ST_13: tmp_9_2_1_i (391)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:40  %tmp_9_2_1_i = mul i32 %kernelData_11_read, %window_2_0_load
+
+ST_13: tmp_9_2_2_i (392)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:41  %tmp_9_2_2_i = mul i32 %kernelData_12_read, %window_2_1
+
+ST_13: tmp_9_2_3_i (393)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:42  %tmp_9_2_3_i = mul i32 %kernelData_13_read, %window_2_2
+
+ST_13: tmp_9_2_4_i (394)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:43  %tmp_9_2_4_i = mul i32 %kernelData_14_read, %window_2_3
+
+ST_13: tmp_9_3_i (395)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:44  %tmp_9_3_i = mul i32 %kernelData_15_read, %window_3_0_read_as_1
+
+ST_13: tmp_9_3_1_i (396)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:45  %tmp_9_3_1_i = mul i32 %kernelData_16_read, %window_3_0_load
+
+ST_13: tmp_9_3_2_i (397)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:46  %tmp_9_3_2_i = mul i32 %kernelData_17_read, %window_3_1
+
+ST_13: tmp_9_3_3_i (398)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:47  %tmp_9_3_3_i = mul i32 %kernelData_18_read, %window_3_2
+
+ST_13: tmp_9_3_4_i (399)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:48  %tmp_9_3_4_i = mul i32 %kernelData_19_read, %window_3_3_1
+
+ST_13: tmp_9_4_i (400)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:49  %tmp_9_4_i = mul i32 %kernelData_20_read, %window_4_0_read_as_1
+
+ST_13: tmp_9_4_1_i (401)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:50  %tmp_9_4_1_i = mul i32 %kernelData_21_read, %window_4_0_load
+
+ST_13: tmp_9_4_2_i (402)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:51  %tmp_9_4_2_i = mul i32 %kernelData_22_read, %window_4_1
+
+ST_13: tmp_9_4_3_i (403)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:52  %tmp_9_4_3_i = mul i32 %kernelData_23_read, %window_4_2
+
+ST_13: tmp_9_4_4_i (404)  [6/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:53  %tmp_9_4_4_i = mul i32 %kernelData_24_read, %window_4_3_2
+
+ST_13: windowRightCol_0 (436)  [1/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:154
+._crit_edge:2  %windowRightCol_0 = load i32* %lineBuffer_0_addr, align 4
+
+ST_13: windowRightCol_1 (438)  [1/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+._crit_edge:4  %windowRightCol_1 = load i32* %lineBuffer_1_addr_2, align 4
+
+ST_13: StgValue_393 (439)  [1/1] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+._crit_edge:5  store i32 %windowRightCol_1, i32* %lineBuffer_0_addr, align 4
+
+ST_13: windowRightCol_2 (441)  [1/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+._crit_edge:7  %windowRightCol_2 = load i32* %lineBuffer_2_addr_2, align 4
+
+ST_13: StgValue_395 (442)  [1/1] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+._crit_edge:8  store i32 %windowRightCol_2, i32* %lineBuffer_1_addr_2, align 4
+
+ST_13: windowRightCol_3 (444)  [1/2] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+._crit_edge:10  %windowRightCol_3 = load i32* %lineBuffer_3_addr_2, align 4
+
+ST_13: StgValue_397 (445)  [1/1] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+._crit_edge:11  store i32 %windowRightCol_3, i32* %lineBuffer_2_addr_2, align 4
+
+ST_13: StgValue_398 (448)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:156
+._crit_edge:14  store i32 %windowRightCol_1, i32* %window_1_3
+
+ST_13: StgValue_399 (449)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:154
+._crit_edge:15  store i32 %windowRightCol_0, i32* %window_0_3
+
+ST_13: empty_14 (452)  [1/2] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:162
+:0  %empty_14 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %inStream_V_data_V, i4* %inStream_V_keep_V, i4* %inStream_V_strb_V, i2* %inStream_V_user_V, i1* %inStream_V_last_V, i5* %inStream_V_id_V, i6* %inStream_V_dest_V)
+
+ST_13: tmp_data_V_4 (453)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:162
+:1  %tmp_data_V_4 = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_14, 0
+
+ST_13: StgValue_402 (456)  [1/1] 1.57ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:162
+:4  store i32 %tmp_data_V_4, i32* %window_4_3
+
+ST_13: StgValue_403 (457)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:164
+:5  br label %._crit_edge88
+
+
+ <State 14>: 6.08ns
+ST_14: tmp_9_i (380)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:29  %tmp_9_i = mul i32 %kernelData_0_read, %window_0_0_read_as_1
+
+ST_14: tmp_9_0_1_i (381)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:30  %tmp_9_0_1_i = mul i32 %kernelData_1_read, %window_0_0_load
+
+ST_14: tmp_9_0_2_i (382)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:31  %tmp_9_0_2_i = mul i32 %kernelData_2_read, %window_0_1_load
+
+ST_14: tmp_9_0_3_i (383)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:32  %tmp_9_0_3_i = mul i32 %kernelData_3_read, %window_0_2_load
+
+ST_14: tmp_9_0_4_i (384)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:33  %tmp_9_0_4_i = mul i32 %kernelData_4_read, %window_0_3_load
+
+ST_14: tmp_9_1_i (385)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:34  %tmp_9_1_i = mul i32 %kernelData_5_read, %window_1_0_read_as_1
+
+ST_14: tmp_9_1_1_i (386)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:35  %tmp_9_1_1_i = mul i32 %kernelData_6_read, %window_1_0_load
+
+ST_14: tmp_9_1_2_i (387)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:36  %tmp_9_1_2_i = mul i32 %kernelData_7_read, %window_1_1_load
+
+ST_14: tmp_9_1_3_i (388)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:37  %tmp_9_1_3_i = mul i32 %kernelData_8_read, %window_1_2_load
+
+ST_14: tmp_9_1_4_i (389)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:38  %tmp_9_1_4_i = mul i32 %kernelData_9_read, %window_1_3_load
+
+ST_14: tmp_9_2_i (390)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:39  %tmp_9_2_i = mul i32 %kernelData_10_read, %window_2_0_read_as_1
+
+ST_14: tmp_9_2_1_i (391)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:40  %tmp_9_2_1_i = mul i32 %kernelData_11_read, %window_2_0_load
+
+ST_14: tmp_9_2_2_i (392)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:41  %tmp_9_2_2_i = mul i32 %kernelData_12_read, %window_2_1
+
+ST_14: tmp_9_2_3_i (393)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:42  %tmp_9_2_3_i = mul i32 %kernelData_13_read, %window_2_2
+
+ST_14: tmp_9_2_4_i (394)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:43  %tmp_9_2_4_i = mul i32 %kernelData_14_read, %window_2_3
+
+ST_14: tmp_9_3_i (395)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:44  %tmp_9_3_i = mul i32 %kernelData_15_read, %window_3_0_read_as_1
+
+ST_14: tmp_9_3_1_i (396)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:45  %tmp_9_3_1_i = mul i32 %kernelData_16_read, %window_3_0_load
+
+ST_14: tmp_9_3_2_i (397)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:46  %tmp_9_3_2_i = mul i32 %kernelData_17_read, %window_3_1
+
+ST_14: tmp_9_3_3_i (398)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:47  %tmp_9_3_3_i = mul i32 %kernelData_18_read, %window_3_2
+
+ST_14: tmp_9_3_4_i (399)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:48  %tmp_9_3_4_i = mul i32 %kernelData_19_read, %window_3_3_1
+
+ST_14: tmp_9_4_i (400)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:49  %tmp_9_4_i = mul i32 %kernelData_20_read, %window_4_0_read_as_1
+
+ST_14: tmp_9_4_1_i (401)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:50  %tmp_9_4_1_i = mul i32 %kernelData_21_read, %window_4_0_load
+
+ST_14: tmp_9_4_2_i (402)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:51  %tmp_9_4_2_i = mul i32 %kernelData_22_read, %window_4_1
+
+ST_14: tmp_9_4_3_i (403)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:52  %tmp_9_4_3_i = mul i32 %kernelData_23_read, %window_4_2
+
+ST_14: tmp_9_4_4_i (404)  [5/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:53  %tmp_9_4_4_i = mul i32 %kernelData_24_read, %window_4_3_2
+
+ST_14: window_4_4_53 (459)  [1/1] 0.00ns
+._crit_edge88:0  %window_4_4_53 = load i32* %window_4_3
+
+ST_14: StgValue_430 (460)  [1/1] 2.39ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:165
+._crit_edge88:1  store i32 %window_4_4_53, i32* %lineBuffer_3_addr_2, align 4
+
+ST_14: empty_15 (461)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:178
+._crit_edge88:2  %empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str9, i32 %tmp_5)
+
+ST_14: StgValue_432 (463)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:132
+._crit_edge88:4  br label %.preheader82
+
+
+ <State 15>: 6.08ns
+ST_15: tmp_9_i (380)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:29  %tmp_9_i = mul i32 %kernelData_0_read, %window_0_0_read_as_1
+
+ST_15: tmp_9_0_1_i (381)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:30  %tmp_9_0_1_i = mul i32 %kernelData_1_read, %window_0_0_load
+
+ST_15: tmp_9_0_2_i (382)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:31  %tmp_9_0_2_i = mul i32 %kernelData_2_read, %window_0_1_load
+
+ST_15: tmp_9_0_3_i (383)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:32  %tmp_9_0_3_i = mul i32 %kernelData_3_read, %window_0_2_load
+
+ST_15: tmp_9_0_4_i (384)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:33  %tmp_9_0_4_i = mul i32 %kernelData_4_read, %window_0_3_load
+
+ST_15: tmp_9_1_i (385)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:34  %tmp_9_1_i = mul i32 %kernelData_5_read, %window_1_0_read_as_1
+
+ST_15: tmp_9_1_1_i (386)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:35  %tmp_9_1_1_i = mul i32 %kernelData_6_read, %window_1_0_load
+
+ST_15: tmp_9_1_2_i (387)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:36  %tmp_9_1_2_i = mul i32 %kernelData_7_read, %window_1_1_load
+
+ST_15: tmp_9_1_3_i (388)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:37  %tmp_9_1_3_i = mul i32 %kernelData_8_read, %window_1_2_load
+
+ST_15: tmp_9_1_4_i (389)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:38  %tmp_9_1_4_i = mul i32 %kernelData_9_read, %window_1_3_load
+
+ST_15: tmp_9_2_i (390)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:39  %tmp_9_2_i = mul i32 %kernelData_10_read, %window_2_0_read_as_1
+
+ST_15: tmp_9_2_1_i (391)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:40  %tmp_9_2_1_i = mul i32 %kernelData_11_read, %window_2_0_load
+
+ST_15: tmp_9_2_2_i (392)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:41  %tmp_9_2_2_i = mul i32 %kernelData_12_read, %window_2_1
+
+ST_15: tmp_9_2_3_i (393)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:42  %tmp_9_2_3_i = mul i32 %kernelData_13_read, %window_2_2
+
+ST_15: tmp_9_2_4_i (394)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:43  %tmp_9_2_4_i = mul i32 %kernelData_14_read, %window_2_3
+
+ST_15: tmp_9_3_i (395)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:44  %tmp_9_3_i = mul i32 %kernelData_15_read, %window_3_0_read_as_1
+
+ST_15: tmp_9_3_1_i (396)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:45  %tmp_9_3_1_i = mul i32 %kernelData_16_read, %window_3_0_load
+
+ST_15: tmp_9_3_2_i (397)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:46  %tmp_9_3_2_i = mul i32 %kernelData_17_read, %window_3_1
+
+ST_15: tmp_9_3_3_i (398)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:47  %tmp_9_3_3_i = mul i32 %kernelData_18_read, %window_3_2
+
+ST_15: tmp_9_3_4_i (399)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:48  %tmp_9_3_4_i = mul i32 %kernelData_19_read, %window_3_3_1
+
+ST_15: tmp_9_4_i (400)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:49  %tmp_9_4_i = mul i32 %kernelData_20_read, %window_4_0_read_as_1
+
+ST_15: tmp_9_4_1_i (401)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:50  %tmp_9_4_1_i = mul i32 %kernelData_21_read, %window_4_0_load
+
+ST_15: tmp_9_4_2_i (402)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:51  %tmp_9_4_2_i = mul i32 %kernelData_22_read, %window_4_1
+
+ST_15: tmp_9_4_3_i (403)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:52  %tmp_9_4_3_i = mul i32 %kernelData_23_read, %window_4_2
+
+ST_15: tmp_9_4_4_i (404)  [4/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:53  %tmp_9_4_4_i = mul i32 %kernelData_24_read, %window_4_3_2
+
+
+ <State 16>: 6.08ns
+ST_16: tmp_9_i (380)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:29  %tmp_9_i = mul i32 %kernelData_0_read, %window_0_0_read_as_1
+
+ST_16: tmp_9_0_1_i (381)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:30  %tmp_9_0_1_i = mul i32 %kernelData_1_read, %window_0_0_load
+
+ST_16: tmp_9_0_2_i (382)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:31  %tmp_9_0_2_i = mul i32 %kernelData_2_read, %window_0_1_load
+
+ST_16: tmp_9_0_3_i (383)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:32  %tmp_9_0_3_i = mul i32 %kernelData_3_read, %window_0_2_load
+
+ST_16: tmp_9_0_4_i (384)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:33  %tmp_9_0_4_i = mul i32 %kernelData_4_read, %window_0_3_load
+
+ST_16: tmp_9_1_i (385)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:34  %tmp_9_1_i = mul i32 %kernelData_5_read, %window_1_0_read_as_1
+
+ST_16: tmp_9_1_1_i (386)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:35  %tmp_9_1_1_i = mul i32 %kernelData_6_read, %window_1_0_load
+
+ST_16: tmp_9_1_2_i (387)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:36  %tmp_9_1_2_i = mul i32 %kernelData_7_read, %window_1_1_load
+
+ST_16: tmp_9_1_3_i (388)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:37  %tmp_9_1_3_i = mul i32 %kernelData_8_read, %window_1_2_load
+
+ST_16: tmp_9_1_4_i (389)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:38  %tmp_9_1_4_i = mul i32 %kernelData_9_read, %window_1_3_load
+
+ST_16: tmp_9_2_i (390)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:39  %tmp_9_2_i = mul i32 %kernelData_10_read, %window_2_0_read_as_1
+
+ST_16: tmp_9_2_1_i (391)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:40  %tmp_9_2_1_i = mul i32 %kernelData_11_read, %window_2_0_load
+
+ST_16: tmp_9_2_2_i (392)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:41  %tmp_9_2_2_i = mul i32 %kernelData_12_read, %window_2_1
+
+ST_16: tmp_9_2_3_i (393)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:42  %tmp_9_2_3_i = mul i32 %kernelData_13_read, %window_2_2
+
+ST_16: tmp_9_2_4_i (394)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:43  %tmp_9_2_4_i = mul i32 %kernelData_14_read, %window_2_3
+
+ST_16: tmp_9_3_i (395)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:44  %tmp_9_3_i = mul i32 %kernelData_15_read, %window_3_0_read_as_1
+
+ST_16: tmp_9_3_1_i (396)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:45  %tmp_9_3_1_i = mul i32 %kernelData_16_read, %window_3_0_load
+
+ST_16: tmp_9_3_2_i (397)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:46  %tmp_9_3_2_i = mul i32 %kernelData_17_read, %window_3_1
+
+ST_16: tmp_9_3_3_i (398)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:47  %tmp_9_3_3_i = mul i32 %kernelData_18_read, %window_3_2
+
+ST_16: tmp_9_3_4_i (399)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:48  %tmp_9_3_4_i = mul i32 %kernelData_19_read, %window_3_3_1
+
+ST_16: tmp_9_4_i (400)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:49  %tmp_9_4_i = mul i32 %kernelData_20_read, %window_4_0_read_as_1
+
+ST_16: tmp_9_4_1_i (401)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:50  %tmp_9_4_1_i = mul i32 %kernelData_21_read, %window_4_0_load
+
+ST_16: tmp_9_4_2_i (402)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:51  %tmp_9_4_2_i = mul i32 %kernelData_22_read, %window_4_1
+
+ST_16: tmp_9_4_3_i (403)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:52  %tmp_9_4_3_i = mul i32 %kernelData_23_read, %window_4_2
+
+ST_16: tmp_9_4_4_i (404)  [3/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:53  %tmp_9_4_4_i = mul i32 %kernelData_24_read, %window_4_3_2
+
+
+ <State 17>: 6.08ns
+ST_17: tmp_9_i (380)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:29  %tmp_9_i = mul i32 %kernelData_0_read, %window_0_0_read_as_1
+
+ST_17: tmp_9_0_1_i (381)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:30  %tmp_9_0_1_i = mul i32 %kernelData_1_read, %window_0_0_load
+
+ST_17: tmp_9_0_2_i (382)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:31  %tmp_9_0_2_i = mul i32 %kernelData_2_read, %window_0_1_load
+
+ST_17: tmp_9_0_3_i (383)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:32  %tmp_9_0_3_i = mul i32 %kernelData_3_read, %window_0_2_load
+
+ST_17: tmp_9_0_4_i (384)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:33  %tmp_9_0_4_i = mul i32 %kernelData_4_read, %window_0_3_load
+
+ST_17: tmp_9_1_i (385)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:34  %tmp_9_1_i = mul i32 %kernelData_5_read, %window_1_0_read_as_1
+
+ST_17: tmp_9_1_1_i (386)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:35  %tmp_9_1_1_i = mul i32 %kernelData_6_read, %window_1_0_load
+
+ST_17: tmp_9_1_2_i (387)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:36  %tmp_9_1_2_i = mul i32 %kernelData_7_read, %window_1_1_load
+
+ST_17: tmp_9_1_3_i (388)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:37  %tmp_9_1_3_i = mul i32 %kernelData_8_read, %window_1_2_load
+
+ST_17: tmp_9_1_4_i (389)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:38  %tmp_9_1_4_i = mul i32 %kernelData_9_read, %window_1_3_load
+
+ST_17: tmp_9_2_i (390)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:39  %tmp_9_2_i = mul i32 %kernelData_10_read, %window_2_0_read_as_1
+
+ST_17: tmp_9_2_1_i (391)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:40  %tmp_9_2_1_i = mul i32 %kernelData_11_read, %window_2_0_load
+
+ST_17: tmp_9_2_2_i (392)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:41  %tmp_9_2_2_i = mul i32 %kernelData_12_read, %window_2_1
+
+ST_17: tmp_9_2_3_i (393)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:42  %tmp_9_2_3_i = mul i32 %kernelData_13_read, %window_2_2
+
+ST_17: tmp_9_2_4_i (394)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:43  %tmp_9_2_4_i = mul i32 %kernelData_14_read, %window_2_3
+
+ST_17: tmp_9_3_i (395)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:44  %tmp_9_3_i = mul i32 %kernelData_15_read, %window_3_0_read_as_1
+
+ST_17: tmp_9_3_1_i (396)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:45  %tmp_9_3_1_i = mul i32 %kernelData_16_read, %window_3_0_load
+
+ST_17: tmp_9_3_2_i (397)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:46  %tmp_9_3_2_i = mul i32 %kernelData_17_read, %window_3_1
+
+ST_17: tmp_9_3_3_i (398)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:47  %tmp_9_3_3_i = mul i32 %kernelData_18_read, %window_3_2
+
+ST_17: tmp_9_3_4_i (399)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:48  %tmp_9_3_4_i = mul i32 %kernelData_19_read, %window_3_3_1
+
+ST_17: tmp_9_4_i (400)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:49  %tmp_9_4_i = mul i32 %kernelData_20_read, %window_4_0_read_as_1
+
+ST_17: tmp_9_4_1_i (401)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:50  %tmp_9_4_1_i = mul i32 %kernelData_21_read, %window_4_0_load
+
+ST_17: tmp_9_4_2_i (402)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:51  %tmp_9_4_2_i = mul i32 %kernelData_22_read, %window_4_1
+
+ST_17: tmp_9_4_3_i (403)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:52  %tmp_9_4_3_i = mul i32 %kernelData_23_read, %window_4_2
+
+ST_17: tmp_9_4_4_i (404)  [2/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:53  %tmp_9_4_4_i = mul i32 %kernelData_24_read, %window_4_3_2
+
+
+ <State 18>: 8.52ns
+ST_18: tmp_9_i (380)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:29  %tmp_9_i = mul i32 %kernelData_0_read, %window_0_0_read_as_1
+
+ST_18: tmp_9_0_1_i (381)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:30  %tmp_9_0_1_i = mul i32 %kernelData_1_read, %window_0_0_load
+
+ST_18: tmp_9_0_2_i (382)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:31  %tmp_9_0_2_i = mul i32 %kernelData_2_read, %window_0_1_load
+
+ST_18: tmp_9_0_3_i (383)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:32  %tmp_9_0_3_i = mul i32 %kernelData_3_read, %window_0_2_load
+
+ST_18: tmp_9_0_4_i (384)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:33  %tmp_9_0_4_i = mul i32 %kernelData_4_read, %window_0_3_load
+
+ST_18: tmp_9_1_i (385)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:34  %tmp_9_1_i = mul i32 %kernelData_5_read, %window_1_0_read_as_1
+
+ST_18: tmp_9_1_1_i (386)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:35  %tmp_9_1_1_i = mul i32 %kernelData_6_read, %window_1_0_load
+
+ST_18: tmp_9_1_2_i (387)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:36  %tmp_9_1_2_i = mul i32 %kernelData_7_read, %window_1_1_load
+
+ST_18: tmp_9_1_3_i (388)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:37  %tmp_9_1_3_i = mul i32 %kernelData_8_read, %window_1_2_load
+
+ST_18: tmp_9_1_4_i (389)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:38  %tmp_9_1_4_i = mul i32 %kernelData_9_read, %window_1_3_load
+
+ST_18: tmp_9_2_i (390)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:39  %tmp_9_2_i = mul i32 %kernelData_10_read, %window_2_0_read_as_1
+
+ST_18: tmp_9_2_1_i (391)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:40  %tmp_9_2_1_i = mul i32 %kernelData_11_read, %window_2_0_load
+
+ST_18: tmp_9_2_2_i (392)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:41  %tmp_9_2_2_i = mul i32 %kernelData_12_read, %window_2_1
+
+ST_18: tmp_9_2_3_i (393)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:42  %tmp_9_2_3_i = mul i32 %kernelData_13_read, %window_2_2
+
+ST_18: tmp_9_2_4_i (394)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:43  %tmp_9_2_4_i = mul i32 %kernelData_14_read, %window_2_3
+
+ST_18: tmp_9_3_i (395)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:44  %tmp_9_3_i = mul i32 %kernelData_15_read, %window_3_0_read_as_1
+
+ST_18: tmp_9_3_1_i (396)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:45  %tmp_9_3_1_i = mul i32 %kernelData_16_read, %window_3_0_load
+
+ST_18: tmp_9_3_2_i (397)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:46  %tmp_9_3_2_i = mul i32 %kernelData_17_read, %window_3_1
+
+ST_18: tmp_9_3_3_i (398)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:47  %tmp_9_3_3_i = mul i32 %kernelData_18_read, %window_3_2
+
+ST_18: tmp_9_3_4_i (399)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:48  %tmp_9_3_4_i = mul i32 %kernelData_19_read, %window_3_3_1
+
+ST_18: tmp_9_4_i (400)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:49  %tmp_9_4_i = mul i32 %kernelData_20_read, %window_4_0_read_as_1
+
+ST_18: tmp_9_4_1_i (401)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:50  %tmp_9_4_1_i = mul i32 %kernelData_21_read, %window_4_0_load
+
+ST_18: tmp_9_4_2_i (402)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:51  %tmp_9_4_2_i = mul i32 %kernelData_22_read, %window_4_1
+
+ST_18: tmp_9_4_3_i (403)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:52  %tmp_9_4_3_i = mul i32 %kernelData_23_read, %window_4_2
+
+ST_18: tmp_9_4_4_i (404)  [1/6] 6.08ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:53  %tmp_9_4_4_i = mul i32 %kernelData_24_read, %window_4_3_2
+
+ST_18: tmp5 (405)  [1/1] 2.44ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:54  %tmp5 = add i32 %tmp_9_i, %tmp_9_0_2_i
+
+ST_18: tmp2 (410)  [1/1] 2.44ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:59  %tmp2 = add i32 %tmp_9_1_2_i, %tmp_9_1_3_i
+
+ST_18: tmp20 (421)  [1/1] 2.44ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:70  %tmp20 = add i32 %tmp_9_3_4_i, %tmp_9_4_i
+
+ST_18: tmp23 (424)  [1/1] 2.44ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:73  %tmp23 = add i32 %tmp_9_4_3_i, %tmp_9_4_4_i
+
+
+ <State 19>: 7.88ns
+ST_19: tmp6 (406)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:55  %tmp6 = add i32 %tmp5, %tmp_9_0_1_i
+
+ST_19: tmp7 (407)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:56  %tmp7 = add i32 %tmp_9_0_4_i, %tmp_9_1_i
+
+ST_19: tmp8 (408)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:57  %tmp8 = add i32 %tmp7, %tmp_9_0_3_i
+
+ST_19: tmp9 (409)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:58  %tmp9 = add i32 %tmp8, %tmp6
+
+ST_19: tmp10 (411)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:60  %tmp10 = add i32 %tmp2, %tmp_9_1_1_i
+
+ST_19: tmp11 (412)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:61  %tmp11 = add i32 %tmp_9_2_i, %tmp_9_2_1_i
+
+ST_19: tmp12 (413)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:62  %tmp12 = add i32 %tmp11, %tmp_9_1_4_i
+
+ST_19: tmp13 (414)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:63  %tmp13 = add i32 %tmp12, %tmp10
+
+ST_19: tmp15 (416)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:65  %tmp15 = add i32 %tmp_9_2_3_i, %tmp_9_2_4_i
+
+ST_19: tmp16 (417)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:66  %tmp16 = add i32 %tmp15, %tmp_9_2_2_i
+
+ST_19: tmp17 (418)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:67  %tmp17 = add i32 %tmp_9_3_1_i, %tmp_9_3_2_i
+
+ST_19: tmp18 (419)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:68  %tmp18 = add i32 %tmp17, %tmp_9_3_i
+
+ST_19: tmp19 (420)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:69  %tmp19 = add i32 %tmp18, %tmp16
+
+ST_19: tmp21 (422)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:71  %tmp21 = add i32 %tmp20, %tmp_9_3_3_i
+
+ST_19: tmp22 (423)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:72  %tmp22 = add i32 %tmp_9_4_1_i, %tmp_9_4_2_i
+
+ST_19: tmp24 (425)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:74  %tmp24 = add i32 %tmp23, %tmp22
+
+ST_19: tmp25 (426)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:75  %tmp25 = add i32 %tmp24, %tmp21
+
+ST_19: tmp26 (427)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:76  %tmp26 = add i32 %tmp25, %tmp19
+
+
+ <State 20>: 4.96ns
+ST_20: writeCount_1_load (353)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:140
+:2  %writeCount_1_load = load i32* %writeCount_1
+
+ST_20: writeCount (354)  [1/1] 2.44ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:140
+:3  %writeCount = add nsw i32 %writeCount_1_load, 1
+
+ST_20: tmp14 (415)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:64  %tmp14 = add i32 %tmp13, %tmp9
+
+ST_20: tmp_data_V_2 (428)  [1/1] 1.97ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142
+:77  %tmp_data_V_2 = add i32 %tmp26, %tmp14
+
+ST_20: tmp_last_V (429)  [1/1] 2.52ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:75->cnn_2d_conv_d8x8_k5x5/core.cpp:148
+:78  %tmp_last_V = icmp eq i32 %writeCount, 16
+
+ST_20: StgValue_560 (430)  [2/2] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:150
+:79  call void @_ssdm_op_Write.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %outStream_V_data_V, i4* %outStream_V_keep_V, i4* %outStream_V_strb_V, i2* %outStream_V_user_V, i1* %outStream_V_last_V, i5* %outStream_V_id_V, i6* %outStream_V_dest_V, i32 %tmp_data_V_2, i4 -1, i4 0, i2 0, i1 %tmp_last_V, i5 0, i6 0)
+
+ST_20: StgValue_561 (431)  [1/1] 1.57ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:74->cnn_2d_conv_d8x8_k5x5/core.cpp:148
+:80  store i32 %writeCount, i32* %writeCount_1
+
+
+ <State 21>: 0.00ns
+ST_21: StgValue_562 (430)  [1/2] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:150
+:79  call void @_ssdm_op_Write.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %outStream_V_data_V, i4* %outStream_V_keep_V, i4* %outStream_V_strb_V, i2* %outStream_V_user_V, i1* %outStream_V_last_V, i5* %outStream_V_id_V, i6* %outStream_V_dest_V, i32 %tmp_data_V_2, i4 -1, i4 0, i2 0, i1 %tmp_last_V, i5 0, i6 0)
+
+ST_21: StgValue_563 (432)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:151
+:81  br label %._crit_edge
+
+
+ <State 22>: 0.00ns
+ST_22: StgValue_564 (465)  [1/1] 0.00ns  loc: cnn_2d_conv_d8x8_k5x5/core.cpp:180
+:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.57ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('x') with incoming values : ('x', cnn_2d_conv_d8x8_k5x5/core.cpp:104) [93]  (1.57 ns)
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond1', cnn_2d_conv_d8x8_k5x5/core.cpp:104) [94]  (1.88 ns)
+	blocking operation 1.37 ns on control path)
+
+ <State 3>: 2.39ns
+The critical path consists of the following:
+	'getelementptr' operation ('lineBuffer_1_addr', cnn_2d_conv_d8x8_k5x5/core.cpp:104) [103]  (0 ns)
+	'store' operation (cnn_2d_conv_d8x8_k5x5/core.cpp:107) of variable 'tmp.data.V', cnn_2d_conv_d8x8_k5x5/core.cpp:106 on array 'lineBuffer[1]', cnn_2d_conv_d8x8_k5x5/core.cpp:96 [104]  (2.39 ns)
+
+ <State 4>: 1.57ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten') with incoming values : ('indvar_flatten_next') [111]  (1.57 ns)
+
+ <State 5>: 4.05ns
+The critical path consists of the following:
+	'phi' operation ('x') with incoming values : ('x', cnn_2d_conv_d8x8_k5x5/core.cpp:112) [113]  (0 ns)
+	'icmp' operation ('exitcond', cnn_2d_conv_d8x8_k5x5/core.cpp:112) [119]  (1.88 ns)
+	'select' operation ('x1_mid2', cnn_2d_conv_d8x8_k5x5/core.cpp:112) [120]  (1.37 ns)
+	'add' operation ('x', cnn_2d_conv_d8x8_k5x5/core.cpp:112) [142]  (0.8 ns)
+
+ <State 6>: 2.39ns
+The critical path consists of the following:
+	'getelementptr' operation ('lineBuffer_3_addr', cnn_2d_conv_d8x8_k5x5/core.cpp:115) [132]  (0 ns)
+	'store' operation (cnn_2d_conv_d8x8_k5x5/core.cpp:115) of variable 'tmp.data.V', cnn_2d_conv_d8x8_k5x5/core.cpp:114 on array 'lineBuffer[3]', cnn_2d_conv_d8x8_k5x5/core.cpp:96 [135]  (2.39 ns)
+
+ <State 7>: 1.57ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten6') with incoming values : ('indvar_flatten_next7') [148]  (1.57 ns)
+
+ <State 8>: 6.18ns
+The critical path consists of the following:
+	'phi' operation ('x') with incoming values : ('x', cnn_2d_conv_d8x8_k5x5/core.cpp:124) [158]  (0 ns)
+	'icmp' operation ('exitcond2', cnn_2d_conv_d8x8_k5x5/core.cpp:124) [170]  (1.62 ns)
+	'select' operation ('x4_mid2', cnn_2d_conv_d8x8_k5x5/core.cpp:124) [171]  (1.37 ns)
+	'add' operation ('tmp_s', cnn_2d_conv_d8x8_k5x5/core.cpp:126) [184]  (0.8 ns)
+	'getelementptr' operation ('lineBuffer_3_addr_1', cnn_2d_conv_d8x8_k5x5/core.cpp:126) [188]  (0 ns)
+	'load' operation ('lineBuffer_3_load', cnn_2d_conv_d8x8_k5x5/core.cpp:126) on array 'lineBuffer[3]', cnn_2d_conv_d8x8_k5x5/core.cpp:96 [189]  (2.39 ns)
+
+ <State 9>: 3.76ns
+The critical path consists of the following:
+	'load' operation ('lineBuffer_3_load', cnn_2d_conv_d8x8_k5x5/core.cpp:126) on array 'lineBuffer[3]', cnn_2d_conv_d8x8_k5x5/core.cpp:96 [189]  (2.39 ns)
+	'select' operation ('sel_tmp1', cnn_2d_conv_d8x8_k5x5/core.cpp:126) [192]  (0 ns)
+	'select' operation ('window[4][2]', cnn_2d_conv_d8x8_k5x5/core.cpp:126) [193]  (1.37 ns)
+
+ <State 10>: 6.85ns
+The critical path consists of the following:
+	'and' operation ('sel_tmp3', cnn_2d_conv_d8x8_k5x5/core.cpp:124) [197]  (1.37 ns)
+	'select' operation ('window[4][4]', cnn_2d_conv_d8x8_k5x5/core.cpp:124) [198]  (0 ns)
+	'select' operation ('window[4][4]', cnn_2d_conv_d8x8_k5x5/core.cpp:126) [201]  (1.37 ns)
+	'select' operation ('window[4][4]', cnn_2d_conv_d8x8_k5x5/core.cpp:124) [203]  (0 ns)
+	'select' operation ('window[4][4]', cnn_2d_conv_d8x8_k5x5/core.cpp:126) [205]  (1.37 ns)
+	'select' operation ('window[4][4]', cnn_2d_conv_d8x8_k5x5/core.cpp:124) [207]  (0 ns)
+	'select' operation ('window[4][4]', cnn_2d_conv_d8x8_k5x5/core.cpp:126) [210]  (1.37 ns)
+	'select' operation ('window[4][4]', cnn_2d_conv_d8x8_k5x5/core.cpp:126) [212]  (0 ns)
+	'select' operation ('window[4][4]', cnn_2d_conv_d8x8_k5x5/core.cpp:124) [214]  (1.37 ns)
+
+ <State 11>: 1.57ns
+The critical path consists of the following:
+	'load' operation ('window_4_4_load', cnn_2d_conv_d8x8_k5x5/core.cpp:126) on local variable 'window[4][4]' [272]  (0 ns)
+	'store' operation (cnn_2d_conv_d8x8_k5x5/core.cpp:126) of variable 'window_4_4_load', cnn_2d_conv_d8x8_k5x5/core.cpp:126 on local variable 'window[4][3]' [278]  (1.57 ns)
+
+ <State 12>: 7.61ns
+The critical path consists of the following:
+	'phi' operation ('x') with incoming values : ('x', cnn_2d_conv_d8x8_k5x5/core.cpp:132) [291]  (0 ns)
+	'icmp' operation ('exitcond3', cnn_2d_conv_d8x8_k5x5/core.cpp:132) [328]  (1.88 ns)
+	'select' operation ('x_assign_mid2', cnn_2d_conv_d8x8_k5x5/core.cpp:132) [329]  (1.37 ns)
+	'icmp' operation ('icmp3', cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136) [344]  (1.62 ns)
+	'or' operation ('tmp3', cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136) [346]  (1.37 ns)
+	'or' operation ('p_i', cnn_2d_conv_d8x8_k5x5/core.cpp:51->cnn_2d_conv_d8x8_k5x5/core.cpp:136) [348]  (1.37 ns)
+
+ <State 13>: 7.08ns
+The critical path consists of the following:
+	s_axi read on port 'kernelData_0' (cnn_2d_conv_d8x8_k5x5/core.cpp:142) [355]  (1 ns)
+	'mul' operation ('tmp_9_i', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [380]  (6.08 ns)
+
+ <State 14>: 6.08ns
+The critical path consists of the following:
+	'mul' operation ('tmp_9_i', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [380]  (6.08 ns)
+
+ <State 15>: 6.08ns
+The critical path consists of the following:
+	'mul' operation ('tmp_9_i', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [380]  (6.08 ns)
+
+ <State 16>: 6.08ns
+The critical path consists of the following:
+	'mul' operation ('tmp_9_i', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [380]  (6.08 ns)
+
+ <State 17>: 6.08ns
+The critical path consists of the following:
+	'mul' operation ('tmp_9_i', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [380]  (6.08 ns)
+
+ <State 18>: 8.52ns
+The critical path consists of the following:
+	'mul' operation ('tmp_9_i', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [380]  (6.08 ns)
+	'add' operation ('tmp5', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [405]  (2.44 ns)
+
+ <State 19>: 7.88ns
+The critical path consists of the following:
+	'add' operation ('tmp15', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [416]  (1.97 ns)
+	'add' operation ('tmp16', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [417]  (1.97 ns)
+	'add' operation ('tmp19', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [420]  (1.97 ns)
+	'add' operation ('tmp26', cnn_2d_conv_d8x8_k5x5/core.cpp:65->cnn_2d_conv_d8x8_k5x5/core.cpp:142) [427]  (1.97 ns)
+
+ <State 20>: 4.96ns
+The critical path consists of the following:
+	'load' operation ('writeCount_1_load', cnn_2d_conv_d8x8_k5x5/core.cpp:140) on local variable 'writeCount' [353]  (0 ns)
+	'add' operation ('writeCount', cnn_2d_conv_d8x8_k5x5/core.cpp:140) [354]  (2.44 ns)
+	'icmp' operation ('val', cnn_2d_conv_d8x8_k5x5/core.cpp:75->cnn_2d_conv_d8x8_k5x5/core.cpp:148) [429]  (2.52 ns)
+
+ <State 21>: 0ns
+The critical path consists of the following:
+
+ <State 22>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

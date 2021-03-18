@@ -31,12 +31,12 @@
 // NOTE: must match HW
 
 // input image
-#define INPUT_IMAGE_ROWS 4
-#define INPUT_IMAGE_COLS 4
+#define INPUT_IMAGE_ROWS 8
+#define INPUT_IMAGE_COLS 8
 #define INPUT_IMAGE_LEN  (INPUT_IMAGE_ROWS * INPUT_IMAGE_COLS)
 
 // kernel
-#define KERNEL_DIM 3
+#define KERNEL_DIM 5
 #define KERNEL_DIM_Q1 (((KERNEL_DIM) - 1) / 2)
 #define KERNEL_ROWS KERNEL_DIM
 #define KERNEL_COLS KERNEL_DIM
@@ -143,6 +143,17 @@ int init_matrices_demo(struct env *cnn_env)
 	if (res != E_SUCCESS)
 		return res;
 
+	/* random kernel */
+	res = matrix_init(&cnn_env->m_kernel2,
+		"kernel",
+		3,
+		3,
+		3,
+		3,
+		1, 1);
+	if (res != E_SUCCESS)
+		return res;
+
 	/* random bias */
 	res = matrix_init(&cnn_env->m_bias,
 			          "bias",
@@ -155,6 +166,18 @@ int init_matrices_demo(struct env *cnn_env)
 	if (res != E_SUCCESS)
 			return res;
 
+	/* random bias */
+	res = matrix_init(&cnn_env->m_bias2,
+		"bias",
+		3,
+		3,
+		3,
+		3,
+		0,
+		0);
+	if (res != E_SUCCESS)
+		return res;
+
 	return E_SUCCESS;
 }
 
@@ -166,7 +189,7 @@ int main(int argc, char** argv)
 
 	UI_PRINT(UI_WELCOME);
 
-	init_matrices(&cnn_env);
+	init_matrices_demo(&cnn_env);
 
 	do {
 		// option = user_input_get();

@@ -30,7 +30,7 @@
  ******************************************************************************
  */
 
-typedef uint8_t data_t;
+typedef uint32_t data_t;
 typedef double dataf_t;
 
 
