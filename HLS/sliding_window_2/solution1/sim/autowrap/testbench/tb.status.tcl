@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName sliding_window.cpp_pre.cpp.tb.cpp
