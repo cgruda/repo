@@ -1,0 +1,58 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'cnn_conv_d94x94_k3x3'" level="0">
+<item name = "Date">Sat Mar 20 17:04:45 2021
+</item>
+<item name = "Version">2016.4 (Build 1756540 on Mon Jan 23 19:31:01 MST 2017)</item>
+<item name = "Project">cnn_conv_d94x94_k3x3</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.05, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">8953, 8953, 8954, 8954, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_fixed_point_mul_fu_525">fixed_point_mul, 7, 7, 1, 1, function</column>
+<column name="grp_fixed_point_mul_fu_532">fixed_point_mul, 7, 7, 1, 1, function</column>
+<column name="grp_fixed_point_mul_fu_539">fixed_point_mul, 7, 7, 1, 1, function</column>
+<column name="grp_fixed_point_mul_fu_546">fixed_point_mul, 7, 7, 1, 1, function</column>
+<column name="grp_fixed_point_mul_fu_553">fixed_point_mul, 7, 7, 1, 1, function</column>
+<column name="grp_fixed_point_mul_fu_561">fixed_point_mul, 7, 7, 1, 1, function</column>
+<column name="grp_fixed_point_mul_fu_569">fixed_point_mul, 7, 7, 1, 1, function</column>
+<column name="grp_fixed_point_mul_fu_576">fixed_point_mul, 7, 7, 1, 1, function</column>
+<column name="grp_fixed_point_mul_fu_584">fixed_point_mul, 7, 7, 1, 1, function</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">2, 2, 2, 1, 1, 2, yes</column>
+<column name="- Loop 2">94, 94, 2, 1, 1, 94, yes</column>
+<column name="- Loop 3">4, 4, 2, 1, 1, 4, yes</column>
+<column name="- Loop 4">8845, 8845, 11, 1, 1, 8836, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

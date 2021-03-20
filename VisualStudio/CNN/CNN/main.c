@@ -31,12 +31,12 @@
 // NOTE: must match HW
 
 // input image
-#define INPUT_IMAGE_ROWS 8
-#define INPUT_IMAGE_COLS 8
+#define INPUT_IMAGE_ROWS 512
+#define INPUT_IMAGE_COLS 512
 #define INPUT_IMAGE_LEN  (INPUT_IMAGE_ROWS * INPUT_IMAGE_COLS)
 
 // kernel
-#define KERNEL_DIM 5
+#define KERNEL_DIM 11
 #define KERNEL_DIM_Q1 (((KERNEL_DIM) - 1) / 2)
 #define KERNEL_ROWS KERNEL_DIM
 #define KERNEL_COLS KERNEL_DIM

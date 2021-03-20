@@ -159,7 +159,7 @@ int matrix_comp(matrix_t *a, matrix_t *b)
 	}
 }
 
-int matrix_print(matrix_t *m)
+int matrix_print(matrix_t *m, int max_print)
 {
 	if (!m)
 		return E_FAILURE;
@@ -167,11 +167,18 @@ int matrix_print(matrix_t *m)
 	if (!m->data)
 		return E_FAILURE;
 
+	int printed = 0;
+
 	printf("\n");
 	printf("%s:\n", m->name);
 	for (int i = 0; i < m->rows; i++) {
 		for (int j = 0; j < m->cols; j++) {
-			printf("%3d ", m->data[i * m->cols + j]);
+			printf("0x%08X ", m->data[i * m->cols + j]);
+			printed++;
+
+			if (max_print > 0 && printed == max_print) {
+				return E_SUCCESS;
+			}
 		}
 		printf("\n");
 	}

@@ -15,6 +15,7 @@
  ******************************************************************************
  */
 
+#include "config.h"
 #include "matrix.h"
 
 /*
@@ -23,8 +24,8 @@
  */
 
 enum pooling_type {
-	POOL_AVG,
-	POOL_MAX
+	MAX_POOL,
+	AVG_POOL
 };
 
 /*
@@ -42,6 +43,56 @@ struct env {
 	matrix_t m_conv_result2;
 	matrix_t m_pool_result;
 };
+
+
+struct conv_cfg {
+	int input_rows;
+	int input_cols;
+	int kernel_rows;
+	int kernel_cols;
+	int output_rows;
+	int output_cols;
+	int activation;
+};
+
+struct pool_cfg {
+	int pool_type;
+	int input_rows;
+	int input_cols;
+	int pool_rows;
+	int pool_cols;
+	int output_rows;
+	int output_cols;
+};
+
+struct cnn_layer_cfg {
+	int layer_id;
+	struct conv_cfg;
+	struct pool_cfg;
+};
+
+struct cnn_cfg {
+	int num_layers;
+	struct cnn_layer_cfg layer_cfg[CNN_LAYERS_MAX];
+};
+
+struct pool {
+	struct pool_cfg *cfg;
+	matrix_t input;
+	matrix_t output;
+	matrixf_t input_f;
+	matrixf_t output_f;
+};
+
+struct conv {
+	struct conv_cfg *cfg;
+	matrix_t input;
+	matrix_t kernel;
+	matrix_t output;
+	matrixf_t input_f;
+	matrixf_t kernel_f;
+	matrixf_t output_f;
+}
 
 /*
  * DECLARATION

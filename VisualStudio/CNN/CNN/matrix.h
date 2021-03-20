@@ -67,7 +67,7 @@ int matrix_free(matrix_t *m);
 
 int matrixf_free(matrixf_t *mf);
 
-int matrix_print(matrix_t *m);
+int matrix_print(matrix_t *m, int max_print);
 
 int matrix_init(matrix_t *m, char *name, int rows_max, int rows_min,
 		int cols_max, int cols_min, int data_val_max, int data_val_min);
