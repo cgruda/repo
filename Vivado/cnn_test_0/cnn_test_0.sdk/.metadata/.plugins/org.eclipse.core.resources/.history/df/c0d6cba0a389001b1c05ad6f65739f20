@@ -1,0 +1,9 @@
+/*
+ * conv_0.c
+ *
+ *  Created on: Mar 20, 2021
+ *      Author: cgrud
+ */
+
+#include "xcnn_conv_d94x94_k3x3.h"
+

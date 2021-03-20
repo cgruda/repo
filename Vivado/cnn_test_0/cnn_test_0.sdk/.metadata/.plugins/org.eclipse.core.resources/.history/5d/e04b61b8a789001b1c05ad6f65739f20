@@ -1,0 +1,12 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 20, 2021
+ *      Author: cgrud
+ */
+
+
+int main()
+{
+	printf("hello world\n");
+}

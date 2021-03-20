@@ -1,0 +1,15 @@
+/*
+ * conv_0.h
+ *
+ *  Created on: Mar 20, 2021
+ *      Author: cgrud
+ */
+
+#ifndef SRC_CONV_0_H_
+#define SRC_CONV_0_H_
+
+#define CONV_0_KERNEL_DIM 3
+#define CONV_0_KERNEL_LEN (CONV_0_KERNEL_DIM * CONV_0_KERNEL_DIM)
+
+
+#endif /* SRC_CONV_0_H_ */
