@@ -109,12 +109,16 @@ int main()
 
 	/*******************************************************/
 	for (int i = 0; i < INPUT_LEN; i++) {
-		input_data[i] = i;
+		if (i % 2) {
+			input_data[i] = -FLOAT_2_FIXED(i);
+		} else {
+			input_data[i] = FLOAT_2_FIXED(i);
+		}
 	}
 	for (int i = 0; i < KERNEL_LEN; i++) {
 		kernel[i] = -FLOAT_2_FIXED(1);
 	}
-	ctrl = 0;
+	ctrl = 1;
 	/*******************************************************/
 
 
