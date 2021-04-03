@@ -1,0 +1,40 @@
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
+ *
+ * Chaim Gruda
+ * Shay Tsabar
+ *
+ */
+
+#include <stdio.h>
+
+
+#define SEVERITY 0xFFFFFFFF
+
+enum severity {
+	FATAL,
+	ERROR,
+	WARN,
+	INFO,
+	DEBUG,
+	TRACE,
+	SEVERITY_MAX
+};
+
+const severity_str[SEVERITY_MAX] = {
+	[FATAL] = "[FATAL]",
+	[ERROR] = "[ERROR]",
+	[WARN]  = "[WARNING]",
+	[INFO]  = "[INFO]",
+	[DEBUG] = "[DEBUG]",
+	[TRACE] = "[TRACE]"
+};
+
+#define DBG_LOG_PRINT(level, ...) do {	\
+	if (level <= SEVERITY) {							\
+		printf("%s ", severity_str[level]);				\
+		printf(...);									\
+	} while(0);
+
+

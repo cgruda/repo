@@ -1,0 +1,26 @@
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
+ *
+ * Chaim Gruda
+ * Shay Tsabar
+ *
+ */
+
+#ifndef SRC_CNN_HW_H_
+#define SRC_CNN_HW_H_
+
+/*
+ * INCLUDES
+ ******************************************************************************
+ */
+
+#include "pool_0.h"
+#include "conv_0.h"
+
+/*
+ * DEFENITIONS
+ ******************************************************************************
+ */
+
+#endif /* SRC_CNN_HW_H_ */

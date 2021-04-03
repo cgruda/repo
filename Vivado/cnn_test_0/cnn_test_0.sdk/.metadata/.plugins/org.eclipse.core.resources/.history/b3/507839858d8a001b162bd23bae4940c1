@@ -1,0 +1,57 @@
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
+ *
+ * Chaim Gruda
+ * Shay Tsabar
+ *
+ */
+
+/*
+ * INCLUDES
+ ******************************************************************************
+ */
+
+#include <stdio.h>
+#include "conv_0.h"
+#include "pool_0.h"
+#include "cnn_hw.h"
+#include "dbg.h"
+
+/*
+ * MAIN
+ ******************************************************************************
+ */
+
+int main()
+{
+	int status = XST_SUCCESS;
+	struct cnn_hw cnn_hw = {0};
+
+	DBG_LOG_PRINT(TRACE, "hello world\n");
+
+	status = cnn_hw_init(&cnn_hw);
+	if (status != XST_SUCCESS) {
+		return status;
+	}
+
+	// cnn sw init
+
+	// simulation init
+
+	// cnn hw set
+
+	// dbg init
+
+	// print menu
+	// main loop with user options:
+	// 0. exit
+	// 1. run HW and get results
+	// 2. run SW and get results
+	// 3. run programmed simulation
+	// 4. ?
+
+	// free resources
+
+	return 0;
+}

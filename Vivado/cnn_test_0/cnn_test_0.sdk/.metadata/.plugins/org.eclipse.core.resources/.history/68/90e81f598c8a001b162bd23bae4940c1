@@ -1,0 +1,15 @@
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
+ *
+ * Chaim Gruda
+ * Shay Tsabar
+ *
+ */
+
+#ifndef SRC_DBG_H_
+#define SRC_DBG_H_
+
+
+
+#endif /* SRC_DBG_H_ */

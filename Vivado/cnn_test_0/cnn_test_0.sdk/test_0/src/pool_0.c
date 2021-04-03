@@ -20,7 +20,7 @@
  ******************************************************************************
  */
 
-int pool_0_init(pool_0_hw *p_hw, u16 device_id)
+int pool_0_initialize(pool_0_hw *p_hw, u16 device_id)
 {
 	return XCnn_pool_d92x92_p2x2_Initialize(p_hw, device_id);
 }
@@ -30,7 +30,7 @@ pool_0_hw_cfg *pool_0_config_lookup(u16 device_id)
 	return XCnn_pool_d92x92_p2x2_LookupConfig(device_id);
 }
 
-int pool_0_config_init(pool_0_hw *p_hw, pool_0_hw_cfg *p_hw_cfg)
+int pool_0_config_initialize(pool_0_hw *p_hw, pool_0_hw_cfg *p_hw_cfg)
 {
 	return XCnn_pool_d92x92_p2x2_CfgInitialize(p_hw, p_hw_cfg);
 }
@@ -75,3 +75,19 @@ u32 pool_0_ctrl_get(pool_0_hw *p_hw)
 	return XCnn_pool_d92x92_p2x2_Get_ctrl(p_hw);
 }
 
+int pool_0_hw_init(pool_0_hw *p_hw, pool_0_hw_cfg *p_hw_cfg)
+{
+	int status = XST_SUCCESS;
+
+	p_hw_cfg = pool_0_config_lookup(POOL_0_HW_DEVICE_ID);
+	if (!p_hw_cfg) {
+		return XST_FAILURE;
+	}
+
+	status = pool_0_config_initialize(p_hw, p_hw_cfg);
+	if (status != XST_SUCCESS) {
+		return status;
+	}
+
+	return status;
+}
