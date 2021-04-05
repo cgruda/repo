@@ -25,7 +25,7 @@
 #========================================================================================
 
 # execution vars
-set gen_bitstream 1
+set gen_bitstream 0
 set lun_sdk 0
 
 # specific project vars
@@ -56,7 +56,7 @@ set ip0_ver 1.0
 # IP1
 set ip1 XXX111YYY
 set ip1_name XXX111YYY_Z
-set ip0_ver 1.0
+set ip1_ver 1.0
 
 # IP2
 set ip2 XXX222YYY

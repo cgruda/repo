@@ -27,13 +27,13 @@ POOL = 1
 #                                   IP CONFIGURATIONS
 #========================================================================================
 
-project_name = "autotest13"
-ip_count = 1
+project_name = "autotest14"
+ip_count = 2
 keep_log = 0
 
 # [type, data_dim, op_dim]
 ip0 = {"type": CONV, "data_dim": 16, "op_dim": 3}
-ip1 = {}
+ip1 = {"type": POOL, "data_dim": 14, "op_dim": 2}
 ip2 = {}
 ip3 = {}
 ip4 = {}
@@ -73,20 +73,25 @@ def prep_tcl_script(project_name, ip_count, ips_names):
 		for line in fp:
 			line = line.rstrip("\n")
 			new_line = ""
+			mod = False
 			if (line == "set project_name PROJECT_NAME"):
 				new_line = "set project_name {}".format(project_name)
+				mod = True
 			elif (line == "set ip_count IP_COUNT"):
 				new_line = "set ip_count %d" %ip_count
+				mod = True
 			else:
 				for i in range(ip_count):
 					temp_line0 = "set ip%d XXX%d%d%dYYY" %(i,i,i,i)
 					temp_line1 = "set ip%d_name XXX%d%d%dYYY_Z" %(i,i,i,i)
 					if (line == temp_line0):
 						new_line = "set ip%d %s" %(i, ips_names[i])
+						mod= True
 					elif (line == temp_line1):
 						new_line = "set ip%d_name %s_0" %(i, ips_names[i])
-					else:
-						new_line = line
+						mod = True
+			if (not mod):
+				new_line = line
 			new_line = new_line + "\n"
 			new_lines.append(new_line)
 	create_new_temp_file(temp_path + tclscript, new_lines)
@@ -102,7 +107,7 @@ os.chdir(vivado_path + "\\TEMP")
 
 # prep tcl vars
 ip0_name = ip_name_get(ip0["type"], ip0["data_dim"], ip0["op_dim"])
-ip1_name = "nothing"
+ip1_name = ip_name_get(ip1["type"], ip1["data_dim"], ip1["op_dim"])
 ip2_name = "nothing"
 ip3_name = "nothing"
 ip4_name = "nothing"
