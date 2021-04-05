@@ -31,32 +31,42 @@
 #define AXI_STREAM_ID   0
 
 /*
+ * TYPES
+ ******************************************************************************
+ */
+
+typedef ap_axiu<32, 2, 5, 6> axiu32_t;
+
+/*
  * DEFENITIONS
  ******************************************************************************
  */
 
-inline bool padSkip(int x, int y)
+inline bool poolSkip(int x, int y)
 {
-	return ((x < KERNEL_DIM_Q1) 				  ||
-			(y < KERNEL_DIM_Q1) 				  ||
-			(x > INPUT_COLS - KERNEL_DIM_Q1 - 1)  ||
-			(y > INPUT_ROWS - KERNEL_DIM_Q1 - 1));
+	return (!(x % POOL_DIM_R == POOL_DIM_Q1) ||
+			!(y % POOL_DIM_R == POOL_DIM_Q1));
 }
 
-inline ufixp32_t singleOperation(ufixp32_t window[KERNEL_DIM][KERNEL_DIM],
-		ufixp32_t kernel[KERNEL_LEN], int y, int x, uint32_t ctrl)
+inline ufixp32_t singleOperation(ufixp32_t window[POOL_DIM][POOL_DIM], int y, int x, int op)
 {
-	ufixp32_t result = 0;
+	ufixp32_t maxValue = 0;
+	ufixp32_t sum = 0;
+	ufixp32_t result;
 
-	for (int i = -KERNEL_DIM_Q1; i <= KERNEL_DIM_Q1; i++) {
-		for (int j = -KERNEL_DIM_Q1; j <= KERNEL_DIM_Q1; j++) {
-			result += fixed_point_mul(window[i + KERNEL_DIM_Q1][j + KERNEL_DIM_Q1],
-					kernel[((i + KERNEL_DIM_Q1) * KERNEL_DIM) + (j + KERNEL_DIM_Q1)]);
+	for (int i = -POOL_DIM_Q1; i <= 0; i++) {
+		for (int j = -POOL_DIM_Q1; j <= 0; j++) {
+			if (window[i + POOL_DIM_Q1][j + POOL_DIM_Q1] > maxValue) {
+				maxValue = window[i + POOL_DIM_Q1][j + POOL_DIM_Q1];
+			}
+			sum += window[i + POOL_DIM_Q1][j + POOL_DIM_Q1];
 		}
 	}
 
-	if ((ctrl & CTRL_ACTIVATION_MSK) == CTRL_ACTIVATION_RELU) {
-		result = (result & SIGN_BIT) ? 0 : result;
+	if (op == MAX_POOL) {
+		result = maxValue;
+	} else {
+		result = fixed_point_div(sum, FLOAT_2_FIXED(POOL_DIM_R * POOL_DIM_R));
 	}
 
 	return result;
@@ -71,35 +81,31 @@ inline bool isLast(int writeCount) {
  ******************************************************************************
  */
 
-void cnn_conv_d64x64_k3x3(hls::stream<axiu32_t> &inStream,
-						  hls::stream<axiu32_t> &outStream,
-						  uint32_t ctrl,
-						  ufixp32_t kernel[KERNEL_LEN])
+void cnn_pool_d16x16_p2x2(hls::stream<axiu32_t> &inStream,
+		 	 	 	      hls::stream<axiu32_t> &outStream,
+						  uint32_t ctrl)
 {
 #pragma HLS INTERFACE axis port=outStream
 #pragma HLS INTERFACE axis port=inStream
 #pragma HLS INTERFACE s_axilite port=ctrl bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=kernel bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=return bundle=CTRL
 
-#pragma HLS ARRAY_PARTITION variable=kernel complete
-
-	ufixp32_t lineBuffer[KERNEL_DIM - 1][INPUT_COLS];
-	ufixp32_t window[KERNEL_DIM][KERNEL_DIM];
-	ufixp32_t windowRightCol[KERNEL_DIM];
+	ufixp32_t lineBuffer[POOL_DIM - 1][INPUT_COLS];
+	ufixp32_t window[POOL_DIM][POOL_DIM];
+	ufixp32_t windowRightCol[POOL_DIM];
 #pragma HLS ARRAY_PARTITION variable=lineBuffer complete dim=1
 #pragma HLS ARRAY_PARTITION variable=window complete dim=0
 #pragma HLS ARRAY_PARTITION variable=windowRightCol complete
 
 	// Load initial values into line buffer
-	for (int x = INPUT_COLS - KERNEL_DIM_Q1 - 1; x < INPUT_COLS; x++) {
+	for (int x = INPUT_COLS - POOL_DIM_Q1 - 1; x < INPUT_COLS; x++) {
 #pragma HLS PIPELINE
 		axiu32_t valIn = inStream.read();
-		lineBuffer[KERNEL_DIM_Q1 - 1][x] = valIn.data;
+		lineBuffer[POOL_DIM_Q1 - 1][x] = valIn.data;
 	}
 
 	// Fill values into line buffer values
-	for (int y = KERNEL_DIM_Q1; y < KERNEL_DIM - 1; y++) {
+	for (int y = POOL_DIM_Q1; y < POOL_DIM - 1; y++) {
 		for (int x = 0; x < INPUT_COLS; x++) {
 #pragma HLS PIPELINE
 			axiu32_t valIn = inStream.read();
@@ -107,30 +113,30 @@ void cnn_conv_d64x64_k3x3(hls::stream<axiu32_t> &inStream,
 		}
 	}
 
-	int readCount = INPUT_COLS * KERNEL_DIM_Q1 + KERNEL_DIM_Q1 + 1;
+	int readCount = INPUT_COLS * POOL_DIM_Q1 + POOL_DIM_Q1 + 1;
 	int writeCount = 0;
 
 	// Fill initial values into window
-	for (int y = KERNEL_DIM_Q1; y < KERNEL_DIM; y++) {
-		for (int x = KERNEL_DIM_Q1; x < KERNEL_DIM; x++) {
+	for (int y = POOL_DIM_Q1; y < POOL_DIM; y++) {
+		for (int x = POOL_DIM_Q1; x < POOL_DIM; x++) {
 #pragma HLS PIPELINE
-			window[y][x] = lineBuffer[y - 1][x + INPUT_COLS - KERNEL_DIM];
+			window[y][x] = lineBuffer[y - 1][x + INPUT_COLS - POOL_DIM];
 		}
 	}
 
-	// Start convolution
+	// Start pooling
 	for (int y = 0; y < INPUT_ROWS; y++) {
 		for (int x = 0; x < INPUT_COLS; x++) {
 #pragma HLS PIPELINE
 
 			// Calculate and write output pixel
-			if (!padSkip(x, y)) {
+			if (!poolSkip(x, y)) {
 
 				axiu32_t valOut;
 
 				writeCount++;
 
-				valOut.data = singleOperation(window, kernel, y, x, ctrl);
+				valOut.data = singleOperation(window, y, x, ctrl & CTRL_OP_MSK);
 				valOut.keep = AXI_STREAM_KEEP;
 				valOut.strb = AXI_STREAM_STRB;
 				valOut.user = AXI_STREAM_USER;
@@ -143,7 +149,7 @@ void cnn_conv_d64x64_k3x3(hls::stream<axiu32_t> &inStream,
 
 			// Shift line buffer column up
 			windowRightCol[0] = lineBuffer[0][x];
-			for (int y = 1; y < KERNEL_DIM - 1; y++) {
+			for (int y = 1; y < POOL_DIM - 1; y++) {
 				windowRightCol[y] = lineBuffer[y - 1][x] = lineBuffer[y][x];
 			}
 
@@ -153,18 +159,18 @@ void cnn_conv_d64x64_k3x3(hls::stream<axiu32_t> &inStream,
 				valIn = inStream.read();
 				readCount++;
 			}
-			windowRightCol[KERNEL_DIM - 1] = lineBuffer[KERNEL_DIM - 2][x] = valIn.data;
+			windowRightCol[POOL_DIM - 1] = lineBuffer[POOL_DIM - 2][x] = valIn.data;
 
 			// Shift window left
-			for (int y = 0; y < KERNEL_DIM; y++) {
-				for (int x = 0; x < KERNEL_DIM - 1; x++) {
+			for (int y = 0; y < POOL_DIM; y++) {
+				for (int x = 0; x < POOL_DIM - 1; x++) {
 					window[y][x] = window[y][x + 1];
 				}
 			}
 
 			// Update rightmost window values
-			for (int y = 0; y < KERNEL_DIM; y++) {
-				window[y][KERNEL_DIM - 1] = windowRightCol[y];
+			for (int y = 0; y < POOL_DIM; y++) {
+				window[y][POOL_DIM - 1] = windowRightCol[y];
 			}
 		}
 	}

@@ -44,40 +44,9 @@ typedef uint32_t ufixp32_t;
  ******************************************************************************
  */
 
-inline void fixed_point_print(ufixp32_t num)
-{
-	if (num & SIGN_BIT) {
-		printf("0x%08X = -%.6f\n", -num, FIXED_2_FLOAT(-num));
-	} else {
-		printf("0x%08X = %.6f\n", num, FIXED_2_FLOAT(num));
-	}
-}
-
-inline ufixp32_t fixed_point_mul(ufixp32_t a, ufixp32_t b)
-{
-	ufixp32_t result = 0;
-	int sign = !SIGN_EQ(a, b);
-
-	a = (a & SIGN_BIT) ? -a : a;
-	b = (b & SIGN_BIT) ? -b : b;
-
-	result = ((a * b) >> FIXP_FRACTION_WIDTH);
-
-	return sign ? -result : result;
-}
-
-inline ufixp32_t fixed_point_div(ufixp32_t a, ufixp32_t b)
-{
-	ufixp32_t result = 0;
-	int sign = !SIGN_EQ(a, b);
-
-	a = (a & SIGN_BIT) ? -a : a;
-	b = (b & SIGN_BIT) ? -b : b;
-
-	result = ((a << FIXP_FRACTION_WIDTH) / b);
-
-	return sign ? -result : result;
-}
+void fixed_point_print(ufixp32_t num);
+ufixp32_t fixed_point_mul(ufixp32_t a, ufixp32_t b);
+ufixp32_t fixed_point_div(ufixp32_t a, ufixp32_t b);
 
 
 #endif // __FIXED_POINT_H__

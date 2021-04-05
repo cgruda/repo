@@ -25,24 +25,24 @@
  */
 
 // data
-#define INPUT_COLS 64
-#define INPUT_ROWS 64
+#define INPUT_COLS 16
+#define INPUT_ROWS 16
 #define INPUT_LEN  (INPUT_COLS * INPUT_ROWS)
 
-// kernel
-#define KERNEL_DIM 3
-#define KERNEL_LEN (KERNEL_DIM * KERNEL_DIM)
-#define KERNEL_DIM_Q1 (((KERNEL_DIM) - 1) / 2)
+#define POOL_DIM_R 2
+#define POOL_DIM POOL_DIM_R + 1
+#define POOL_LEN (POOL_DIM * POOL_DIM)
+#define POOL_DIM_Q1 (((POOL_DIM) - 1) / 2)
 
 // output
-#define OUTPUT_ROWS (INPUT_ROWS - KERNEL_DIM + 1)
-#define OUTPUT_COLS (INPUT_COLS - KERNEL_DIM + 1)
+#define OUTPUT_ROWS (INPUT_ROWS / POOL_DIM_R)
+#define OUTPUT_COLS (INPUT_COLS / POOL_DIM_R)
 #define OUTPUT_LEN  (OUTPUT_ROWS * OUTPUT_COLS)
 
 // ctrl
-#define CTRL_ACTIVATION_MSK  0x00000001
-#define CTRL_ACTIVATION_NONE 0
-#define CTRL_ACTIVATION_RELU 1
+#define CTRL_OP_MSK 0x00000001
+#define MAX_POOL 0
+#define AVG_POOL 1
 
 /*
  * TYPES
@@ -56,10 +56,8 @@ typedef ap_axiu<32, 2, 5, 6> axiu32_t;
  ******************************************************************************
  */
 
-void cnn_conv_d64x64_k3x3(hls::stream<axiu32_t> &inStream,
+void cnn_pool_d16x16_p2x2(hls::stream<axiu32_t> &inStream,
 		 	 	 	 	  hls::stream<axiu32_t> &outStream,
-						  uint32_t ctrl,
-						  uint32_t kernel[KERNEL_LEN]);
-
+						  uint32_t ctrl);
 
 #endif // __CORE_H__
