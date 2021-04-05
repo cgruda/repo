@@ -1,3 +1,29 @@
+# Project 20-1-1-2187
+# CNN accelerator
+# 
+# Chaim Gruda
+# Shay Tsabar
+
+#========================================================================================
+#                                        README
+#========================================================================================
+# 
+# This script automates the creation of Vivado projects and designs.
+# in order to use it you must first add the following to system PATH
+# 
+#	C:\Xilinx\Vivado\2016.4\bin (assuming this is the install dir)
+# 
+# how to add to path: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
+# 
+# repo_path      - make sure its set to repo checked out from git
+# gen_bitstream  - if set to 1 will generate bitstream (takes a while to complete)
+# lun_sdk        - if set to 1 will launch SDK at end of run
+# ip_count       - from 1 to 6
+# 
+# ipX            - make sure the IP exists in HLS folder
+# ipX_name       - i suggest to make it "ipX_0"
+# ipX_ver        - usually will be 1.0 (unless you know better)
+# 
 
 #========================================================================================
 #                                      script vars
@@ -24,6 +50,7 @@ set project_board digilentinc.com:zedboard:part0:1.0
 #                                IP configuration
 #========================================================================================
 
+# support up to 6 ips
 set ip_count 1
 
 # IP0
@@ -74,11 +101,10 @@ startgroup
 set_property -dict [list CONFIG.PCW_USE_S_AXI_HP0 {1} CONFIG.PCW_USE_FABRIC_INTERRUPT {1} CONFIG.PCW_IRQ_F2P_INTR {1}] [get_bd_cells processing_system7_0]
 endgroup
 
-# add specified ip
+# add specified ips
 set_property ip_repo_paths $hls_path [current_project]
 update_ip_catalog
 
-# connect ip to dma
 if {$ip_count == 1} {
 	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip0:$ip0_ver $ip0_name
