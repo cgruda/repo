@@ -25,12 +25,12 @@
  */
 
 // data
-#define INPUT_COLS 64
-#define INPUT_ROWS 64
+#define INPUT_COLS X
+#define INPUT_ROWS X
 #define INPUT_LEN  (INPUT_COLS * INPUT_ROWS)
 
 // kernel
-#define KERNEL_DIM 3
+#define KERNEL_DIM Y
 #define KERNEL_LEN (KERNEL_DIM * KERNEL_DIM)
 #define KERNEL_DIM_Q1 (((KERNEL_DIM) - 1) / 2)
 
@@ -56,10 +56,11 @@ typedef ap_axiu<32, 2, 5, 6> axiu32_t;
  ******************************************************************************
  */
 
-void cnn_conv_d64x64_k3x3(hls::stream<axiu32_t> &inStream,
-		 	 	 	 	  hls::stream<axiu32_t> &outStream,
-						  uint32_t ctrl,
-						  uint32_t kernel[KERNEL_LEN]);
+void
+cnn_conv_dXxX_kYxY
+(hls::stream<axiu32_t> &inStream, hls::stream<axiu32_t> &outStream,
+uint32_t ctrl,
+uint32_t kernel[KERNEL_LEN]);
 
 
 #endif // __CORE_H__

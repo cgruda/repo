@@ -57,7 +57,8 @@ int main()
 	}
 
 	// Call core
-	cnn_pool_d16x16_p2x2(inputStream, outputStream, ctrl);
+cnn_pool_dXxX_pYxY
+(inputStream, outputStream, ctrl);
 
 	// Get results from core and print them out
 	for (int i = 0; i < OUTPUT_ROWS; i++) {

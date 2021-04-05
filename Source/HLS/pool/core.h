@@ -25,11 +25,11 @@
  */
 
 // data
-#define INPUT_COLS 16
-#define INPUT_ROWS 16
+#define INPUT_COLS X
+#define INPUT_ROWS X
 #define INPUT_LEN  (INPUT_COLS * INPUT_ROWS)
 
-#define POOL_DIM_R 2
+#define POOL_DIM_R Y
 #define POOL_DIM POOL_DIM_R + 1
 #define POOL_LEN (POOL_DIM * POOL_DIM)
 #define POOL_DIM_Q1 (((POOL_DIM) - 1) / 2)
@@ -56,8 +56,10 @@ typedef ap_axiu<32, 2, 5, 6> axiu32_t;
  ******************************************************************************
  */
 
-void cnn_pool_d16x16_p2x2(hls::stream<axiu32_t> &inStream,
-		 	 	 	 	  hls::stream<axiu32_t> &outStream,
-						  uint32_t ctrl);
+void
+cnn_pool_dXxX_pYxY
+(hls::stream<axiu32_t> &inStream,
+hls::stream<axiu32_t> &outStream,
+uint32_t ctrl);
 
 #endif // __CORE_H__

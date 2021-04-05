@@ -61,7 +61,8 @@ int main()
 	}
 
 	// Call core
-	cnn_conv_d64x64_k3x3(inputStream, outputStream, ctrl, kernel);
+cnn_conv_dXxX_kYxY
+	(inputStream, outputStream, ctrl, kernel);
 
 	// Get results from core and print them out
 	for (int i = 0; i < OUTPUT_ROWS; i++) {

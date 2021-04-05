@@ -81,9 +81,11 @@ inline bool isLast(int writeCount) {
  ******************************************************************************
  */
 
-void cnn_pool_d16x16_p2x2(hls::stream<axiu32_t> &inStream,
-		 	 	 	      hls::stream<axiu32_t> &outStream,
-						  uint32_t ctrl)
+void
+cnn_pool_dXxX_pYxY
+(hls::stream<axiu32_t> &inStream,
+hls::stream<axiu32_t> &outStream,
+uint32_t ctrl)
 {
 #pragma HLS INTERFACE axis port=outStream
 #pragma HLS INTERFACE axis port=inStream

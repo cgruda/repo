@@ -8,7 +8,7 @@
 #                                        README
 #========================================================================================
 # 
-# This script automates the creation of Vivado projects and designs.
+# This script automates the creation of Vivado_HLS projects and code.
 # in order to use it you must first add the following to system PATH
 # (assuming this is the install dir):
 #
@@ -18,24 +18,126 @@
 # 
 # 	https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
 #
-# beofre you run the script make sure the equivalent tcl script is configured with correct
-# variables.
+# beofre you run the script make sure to properly set path vars and IP configuration 
 
-# beofre you run the script make sure the equivalent tcl script is configured with correct
-# variables.
+import os
+CONV = 0
+POOL = 1
+
+#========================================================================================
+#                                   IP configuration
+#========================================================================================
+
+repo_path = "D:\\School\\Project\\new_repo\\"
+type = CONV
+data_dim = 16
+op_dim = 3
+
+#========================================================================================
+#                               global vars - dont change
+#========================================================================================
+
+scripts_path = repo_path + "Scripts\\"
+conv_source_path = repo_path + "Source\\HLS\\conv\\"
+pool_source_path = repo_path + "Source\\HLS\\pool\\"
+hls_path = repo_path + "HLS\\"
+temp_path = hls_path + "TEMP\\"
+tclscript = "hlsProjectGen.tcl"
+tclscript_path = scripts_path + tclscript
+
+
+#========================================================================================
+#                                      functions
+#========================================================================================
+
+def ip_name_get(type, data_dim, op_dim):
+	type_s = "conv" if type == CONV else "pool"
+	data_dim_s = "d{}x{}".format(data_dim, data_dim)
+	op_dim_s = "{}{}x{}".format("k" if type == CONV else "p", op_dim, op_dim)
+	ip_name = "cnn_{}_{}_{}".format(type_s, data_dim_s, op_dim_s)
+	return ip_name
+
+def get_new_core_lines(orig_file, data_dim, op_dim):
+	new_lines = []
+	with open(orig_file, 'r') as fp:
+		for line in fp:
+			line = line.rstrip("\n")
+			new_line = ""
+			if (line == "#define INPUT_COLS X"):
+				new_line = "#define INPUT_COLS %d" %data_dim
+			elif (line == "#define INPUT_ROWS X"):
+				new_line = "#define INPUT_ROWS %d" %data_dim
+			elif (line == "#define KERNEL_DIM Y"):
+				new_line = "#define KERNEL_DIM %d" %op_dim
+			elif (line == "#define POOL_DIM_R Y"):
+				new_line = "#define POOL_DIM_R %d" %op_dim
+			elif (line == "cnn_conv_dXxX_kYxY"):
+				new_line = ip_name
+			elif (line == "cnn_pool_dXxX_pYxY"):
+				new_line = ip_name
+			else:
+				new_line = line
+			new_line = new_line + "\n"
+			new_lines.append(new_line)
+	return new_lines
+
+def create_new_temp_file(file_name, lines):
+	with open(file_name, 'w') as fp:
+		fp.writelines(lines)
+
+def prep_hls_files(type, data_dim, op_dim, ip_name):
+	if (type == CONV):
+		new_core_h_lines = get_new_core_lines(conv_source_path + "core.h", data_dim, op_dim)
+		new_core_cpp_lines = get_new_core_lines(conv_source_path + "core.cpp", data_dim, op_dim)
+		new_core_tb_cpp_lines = get_new_core_lines(conv_source_path + "core_tb.cpp", data_dim, op_dim)
+		create_new_temp_file(temp_path + "core.h", new_core_h_lines)
+		create_new_temp_file(temp_path + "core.cpp", new_core_cpp_lines)
+		create_new_temp_file(temp_path + "core_tb.cpp", new_core_tb_cpp_lines)
+	elif (type == POOL):
+		new_core_h_lines = get_new_core_lines(pool_source_path + "core.h", data_dim, op_dim)
+		new_core_cpp_lines = get_new_core_lines(pool_source_path + "core.cpp", data_dim, op_dim)
+		new_core_tb_cpp_lines = get_new_core_lines(pool_source_path + "core_tb.cpp", data_dim, op_dim)
+		create_new_temp_file(temp_path + "core.h", new_core_h_lines)
+		create_new_temp_file(temp_path + "core.cpp", new_core_cpp_lines)
+		create_new_temp_file(temp_path + "core_tb.cpp", new_core_tb_cpp_lines)
+	else:
+		print("unknown type %s" %type)
+		exit()
+
+def prep_tcl_script(ip_name):
+	new_lines = []
+	with open(tclscript_path, 'r') as fp:
+		for line in fp:
+			line = line.rstrip("\n")
+			new_line = ""
+			if (line == "set project_name PROJECT_NAME"):
+				new_line = "set project_name {}".format(ip_name)
+			elif (line == "set project_name_str \"PROJECT_NAME\""):
+				new_line = "set project_name_str \"{}\"".format(ip_name)
+			else:
+				new_line = line
+			new_line = new_line + "\n"
+			new_lines.append(new_line)
+	create_new_temp_file(temp_path + tclscript, new_lines)
+
 
 #========================================================================================
 #                                         main
 #========================================================================================
 
-import os
+os.chdir(hls_path)
+os.system("mkdir TEMP")
+os.chdir(hls_path + "\\TEMP")
 
-project_name = "autotest1"
+# prep hls file
+ip_name = ip_name_get(type, data_dim, op_dim)
+prep_hls_files(type, data_dim, op_dim, ip_name)
+prep_tcl_script(ip_name)
 
-repo_path = "D:/School/Project/new_repo"
-hls_path = repo_path + "/HLS"
-project_path = hls_path + "/" + project_name
-
-tclscript = "hlsProjectGen.tcl"
+cmd = "copy {} {}".format(temp_path + tclscript, hls_path + ".")
+os.system(cmd)
+os.chdir(hls_path)
 cmd = "vivado_hls -f {}".format(tclscript)
+os.system(cmd)
+cmd = "rmdir /s /q" + temp_path
 os.system(cmd)
