@@ -18,7 +18,7 @@
 # 
 # 	https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
 #
-# beofre you run the script make sure to properly set path vars and IP configuration 
+# beofre you run the script make sure to properly set repo_path and IP configuration 
 
 import os
 CONV = 0
@@ -29,9 +29,9 @@ POOL = 1
 #========================================================================================
 
 repo_path = "D:\\School\\Project\\new_repo\\"
-type = CONV
-data_dim = 16
-op_dim = 3
+type = POOL
+data_dim = 14
+op_dim = 2
 
 #========================================================================================
 #                               global vars - dont change
@@ -43,7 +43,7 @@ pool_source_path = repo_path + "Source\\HLS\\pool\\"
 hls_path = repo_path + "HLS\\"
 temp_path = hls_path + "TEMP\\"
 tclscript = "hlsProjectGen.tcl"
-tclscript_path = scripts_path + tclscript
+tclscript_path = scripts_path + "tcl\\" + tclscript
 
 
 #========================================================================================
@@ -139,5 +139,13 @@ os.system(cmd)
 os.chdir(hls_path)
 cmd = "vivado_hls -f {}".format(tclscript)
 os.system(cmd)
-cmd = "rmdir /s /q" + temp_path
+cmd = "rmdir /s /q " + temp_path
 os.system(cmd)
+cmd = "del " + hls_path + tclscript
+os.system(cmd)
+cmd = "del " + hls_path + "vivado_hls"
+os.system(cmd)
+
+print("================================")
+print("===========  DONE ==============")
+print("================================")

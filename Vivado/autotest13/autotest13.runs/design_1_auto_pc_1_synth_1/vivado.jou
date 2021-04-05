@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Mon Apr 05 23:02:19 2021
+# Process ID: 16948
+# Current directory: D:/School/Project/new_repo/Vivado/autotest13/autotest13.runs/design_1_auto_pc_1_synth_1
+# Command line: vivado.exe -log design_1_auto_pc_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_auto_pc_1.tcl
+# Log file: D:/School/Project/new_repo/Vivado/autotest13/autotest13.runs/design_1_auto_pc_1_synth_1/design_1_auto_pc_1.vds
+# Journal file: D:/School/Project/new_repo/Vivado/autotest13/autotest13.runs/design_1_auto_pc_1_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_auto_pc_1.tcl -notrace
