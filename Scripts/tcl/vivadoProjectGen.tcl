@@ -88,131 +88,79 @@ set_property board_part $project_board [current_project]
 
 ### create desgin with ps ###
 create_bd_design "design_1"
-startgroup
 create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
-endgroup
 apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
-startgroup
 set_property -dict [list CONFIG.PCW_USE_S_AXI_HP0 {1} CONFIG.PCW_USE_FABRIC_INTERRUPT {1} CONFIG.PCW_IRQ_F2P_INTR {1}] [get_bd_cells processing_system7_0]
-endgroup
 
 # add specified ips
 set_property ip_repo_paths $hls_path [current_project]
 update_ip_catalog
 
 if {$ip_count == 1} {
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip0:$ip0_ver $ip0_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip0_name/s_axi_CTRL]
 }
 
 if {$ip_count == 2} {
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip0:$ip0_ver $ip0_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip0_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip1:$ip1_ver $ip1_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip1_name/s_axi_CTRL]
 }
 
 if {$ip_count == 3} {
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip0:$ip0_ver $ip0_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip0_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip1:$ip1_ver $ip1_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip1_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip2:$ip2_ver $ip2_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip2_name/s_axi_CTRL]
 }
 
 if {$ip_count == 4} {
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip0:$ip0_ver $ip0_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip0_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip1:$ip1_ver $ip1_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip1_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip2:$ip2_ver $ip2_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip2_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip3:$ip3_ver $ip3_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip3_name/s_axi_CTRL]
 }
 
 if {$ip_count == 5} {
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip0:$ip0_ver $ip0_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip0_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip1:$ip1_ver $ip1_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip1_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip2:$ip2_ver $ip2_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip2_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip3:$ip3_ver $ip3_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip3_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip4:$ip4_ver $ip4_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip4_name/s_axi_CTRL]
 }
 
 if {$ip_count == 6} {
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip0:$ip0_ver $ip0_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip0_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip1:$ip1_ver $ip1_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip1_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip2:$ip2_ver $ip2_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip2_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip3:$ip3_ver $ip3_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip3_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip4:$ip4_ver $ip4_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip4_name/s_axi_CTRL]
-	startgroup
 	create_bd_cell -type ip -vlnv xilinx.com:hls:$ip5:$ip5_ver $ip5_name
-	endgroup
 	apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $ip5_name/s_axi_CTRL]
 }
 
 # add dma
-startgroup
 create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0
-endgroup
-startgroup
 set_property -dict [list CONFIG.c_include_sg {0} CONFIG.c_sg_length_width {23} CONFIG.c_include_mm2s {1} CONFIG.c_include_mm2s_dre {1} CONFIG.c_include_s2mm_dre {1} CONFIG.c_sg_include_stscntrl_strm {0}] [get_bd_cells axi_dma_0]
-endgroup
-startgroup
 apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/axi_dma_0/M_AXI_MM2S" Clk "Auto" }  [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
 apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
-endgroup
 apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Slave "/processing_system7_0/S_AXI_HP0" Clk "Auto" }  [get_bd_intf_pins axi_dma_0/M_AXI_S2MM]
 
 # connect ips and dma

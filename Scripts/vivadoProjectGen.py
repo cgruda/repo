@@ -27,19 +27,19 @@ POOL = 1
 #                                   IP CONFIGURATIONS
 #========================================================================================
 
-project_name = "conv_pool_test_0_1"
-ip_count = 2
+project_name = "cpx3_test_0_0"
+ip_count = 6
 ip0 = {"type": CONV, "data_dim": 30, "op_dim": 3}
 ip1 = {"type": POOL, "data_dim": 28, "op_dim": 2}
-ip2 = {}
-ip3 = {}
-ip4 = {}
-ip5 = {}
+ip2 = {"type": CONV, "data_dim": 14, "op_dim": 3}
+ip3 = {"type": POOL, "data_dim": 12, "op_dim": 2}
+ip4 = {"type": CONV, "data_dim": 6, "op_dim": 3}
+ip5 = {"type": POOL, "data_dim": 4, "op_dim": 2}
 
 run_synth = 1
 launch_sdk = 1
 
-keep_log = 0
+keep_log = 1
 
 #========================================================================================
 #                                   global vars
@@ -109,6 +109,11 @@ def prep_tcl_script(project_name, ip_count, ips_names):
 #                                         main
 #========================================================================================
 
+print("================================================")
+print("=========== GENERATING TCL SCRIPT ==============")
+print("================================================")
+
+
 os.chdir(vivado_path)
 os.system("mkdir TEMP")
 os.chdir(vivado_path + "\\TEMP")
@@ -116,12 +121,17 @@ os.chdir(vivado_path + "\\TEMP")
 # prep tcl vars
 ip0_name = ip_name_get(ip0["type"], ip0["data_dim"], ip0["op_dim"])
 ip1_name = ip_name_get(ip1["type"], ip1["data_dim"], ip1["op_dim"])
-ip2_name = "nothing"
-ip3_name = "nothing"
-ip4_name = "nothing"
-ip5_name = "nothing"
+ip2_name = ip_name_get(ip2["type"], ip2["data_dim"], ip2["op_dim"])
+ip3_name = ip_name_get(ip3["type"], ip3["data_dim"], ip3["op_dim"])
+ip4_name = ip_name_get(ip4["type"], ip4["data_dim"], ip4["op_dim"])
+ip5_name = ip_name_get(ip5["type"], ip5["data_dim"], ip5["op_dim"])
 ips_names = [ip0_name, ip1_name, ip2_name, ip3_name, ip4_name, ip5_name]
 prep_tcl_script(project_name, ip_count, ips_names)
+
+print("=============================================")
+print("=========== RUNINIG TCL SCRIPT ==============")
+print("=============================================")
+
 
 cmd = "vivado -mode batch -source {}".format(temp_path + tclscript)
 os.system(cmd)
@@ -131,6 +141,6 @@ if (not keep_log):
 	cmd = "rmdir /s /q " + temp_path
 	os.system(cmd)
 
-print("================================")
-print("===========  DONE ==============")
-print("================================")
+print("===============================")
+print("=========== DONE =============")
+print("===============================")
