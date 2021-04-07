@@ -27,7 +27,7 @@ POOL = 1
 #                                   IP CONFIGURATIONS
 #========================================================================================
 
-project_name = "cpx3_test_0_0"
+project_name = "cpx3_test_0_1"
 ip_count = 6
 ip0 = {"type": CONV, "data_dim": 30, "op_dim": 3}
 ip1 = {"type": POOL, "data_dim": 28, "op_dim": 2}

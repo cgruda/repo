@@ -204,6 +204,7 @@ if {$ip_count == 6} {
 	connect_bd_intf_net [get_bd_intf_pins $ip1_name/inStream] [get_bd_intf_pins $ip0_name/outStream]
 	connect_bd_intf_net [get_bd_intf_pins $ip2_name/inStream] [get_bd_intf_pins $ip1_name/outStream]
 	connect_bd_intf_net [get_bd_intf_pins $ip3_name/inStream] [get_bd_intf_pins $ip2_name/outStream]
+	connect_bd_intf_net [get_bd_intf_pins $ip4_name/inStream] [get_bd_intf_pins $ip3_name/outStream]
 	connect_bd_intf_net [get_bd_intf_pins $ip5_name/inStream] [get_bd_intf_pins $ip4_name/outStream]
 	connect_bd_intf_net [get_bd_intf_pins $ip5_name/outStream] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]
 }
