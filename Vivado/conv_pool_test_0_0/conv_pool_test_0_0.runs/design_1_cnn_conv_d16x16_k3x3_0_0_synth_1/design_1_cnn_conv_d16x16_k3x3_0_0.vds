@@ -1,0 +1,1022 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Wed Apr 07 15:49:30 2021
+# Process ID: 21240
+# Current directory: D:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.runs/design_1_cnn_conv_d16x16_k3x3_0_0_synth_1
+# Command line: vivado.exe -log design_1_cnn_conv_d16x16_k3x3_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_cnn_conv_d16x16_k3x3_0_0.tcl
+# Log file: D:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.runs/design_1_cnn_conv_d16x16_k3x3_0_0_synth_1/design_1_cnn_conv_d16x16_k3x3_0_0.vds
+# Journal file: D:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.runs/design_1_cnn_conv_d16x16_k3x3_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_cnn_conv_d16x16_k3x3_0_0.tcl -notrace
+Command: synth_design -top design_1_cnn_conv_d16x16_k3x3_0_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10708 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 369.156 ; gain = 159.219
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_cnn_conv_d16x16_k3x3_0_0' [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ip/design_1_cnn_conv_d16x16_k3x3_0_0/synth/design_1_cnn_conv_d16x16_k3x3_0_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'cnn_conv_d16x16_k3x3' [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:12]
+	Parameter ap_ST_fsm_state1 bound to: 9'b000000001 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 9'b000000010 
+	Parameter ap_ST_fsm_state4 bound to: 9'b000000100 
+	Parameter ap_ST_fsm_pp1_stage0 bound to: 9'b000001000 
+	Parameter ap_ST_fsm_state7 bound to: 9'b000010000 
+	Parameter ap_ST_fsm_pp2_stage0 bound to: 9'b000100000 
+	Parameter ap_ST_fsm_state10 bound to: 9'b001000000 
+	Parameter ap_ST_fsm_pp3_stage0 bound to: 9'b010000000 
+	Parameter ap_ST_fsm_state22 bound to: 9'b100000000 
+	Parameter ap_const_lv32_0 bound to: 0 - type: integer 
+	Parameter ap_const_lv2_0 bound to: 2'b00 
+	Parameter ap_const_lv2_2 bound to: 2'b10 
+	Parameter ap_const_lv2_3 bound to: 2'b11 
+	Parameter ap_const_lv2_1 bound to: 2'b01 
+	Parameter ap_const_lv32_1 bound to: 1 - type: integer 
+	Parameter ap_const_lv32_3 bound to: 3 - type: integer 
+	Parameter ap_const_lv32_7 bound to: 7 - type: integer 
+	Parameter C_S_AXI_CTRL_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ap_const_int64_8 bound to: 8 - type: integer 
+	Parameter C_S_AXI_CTRL_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ap_const_lv32_5 bound to: 5 - type: integer 
+	Parameter ap_const_lv32_6 bound to: 6 - type: integer 
+	Parameter ap_const_lv32_2 bound to: 2 - type: integer 
+	Parameter ap_const_lv32_4 bound to: 4 - type: integer 
+	Parameter ap_const_lv5_E bound to: 5'b01110 
+	Parameter ap_const_lv5_0 bound to: 5'b00000 
+	Parameter ap_const_lv3_0 bound to: 3'b000 
+	Parameter ap_const_lv9_0 bound to: 9'b000000000 
+	Parameter ap_const_lv32_12 bound to: 18 - type: integer 
+	Parameter ap_const_lv4_F bound to: 4'b1111 
+	Parameter ap_const_lv4_0 bound to: 4'b0000 
+	Parameter ap_const_lv6_0 bound to: 6'b000000 
+	Parameter ap_const_lv5_10 bound to: 5'b10000 
+	Parameter ap_const_lv5_1 bound to: 5'b00001 
+	Parameter ap_const_lv3_4 bound to: 3'b100 
+	Parameter ap_const_lv3_1 bound to: 3'b001 
+	Parameter ap_const_lv3_5 bound to: 3'b101 
+	Parameter ap_const_lv9_100 bound to: 9'b100000000 
+	Parameter ap_const_lv9_1 bound to: 9'b000000001 
+	Parameter ap_const_lv32_8 bound to: 8 - type: integer 
+	Parameter ap_const_lv32_1F bound to: 31 - type: integer 
+	Parameter ap_const_lv24_1 bound to: 24'b000000000000000000000001 
+	Parameter ap_const_lv32_1A bound to: 26 - type: integer 
+	Parameter ap_const_lv27_0 bound to: 27'b000000000000000000000000000 
+	Parameter ap_const_lv32_C4 bound to: 196 - type: integer 
+	Parameter C_S_AXI_CTRL_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:146]
+INFO: [Synth 8-638] synthesizing module 'cnn_conv_d16x16_k3x3_CTRL_s_axi' [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3_CTRL_s_axi.v:9]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_AP_CTRL bound to: 7'b0000000 
+	Parameter ADDR_GIE bound to: 7'b0000100 
+	Parameter ADDR_IER bound to: 7'b0001000 
+	Parameter ADDR_ISR bound to: 7'b0001100 
+	Parameter ADDR_CTRL_DATA_0 bound to: 7'b0010000 
+	Parameter ADDR_CTRL_CTRL bound to: 7'b0010100 
+	Parameter ADDR_KERNEL_0_DATA_0 bound to: 7'b0011000 
+	Parameter ADDR_KERNEL_0_CTRL bound to: 7'b0011100 
+	Parameter ADDR_KERNEL_1_DATA_0 bound to: 7'b0100000 
+	Parameter ADDR_KERNEL_1_CTRL bound to: 7'b0100100 
+	Parameter ADDR_KERNEL_2_DATA_0 bound to: 7'b0101000 
+	Parameter ADDR_KERNEL_2_CTRL bound to: 7'b0101100 
+	Parameter ADDR_KERNEL_3_DATA_0 bound to: 7'b0110000 
+	Parameter ADDR_KERNEL_3_CTRL bound to: 7'b0110100 
+	Parameter ADDR_KERNEL_4_DATA_0 bound to: 7'b0111000 
+	Parameter ADDR_KERNEL_4_CTRL bound to: 7'b0111100 
+	Parameter ADDR_KERNEL_5_DATA_0 bound to: 7'b1000000 
+	Parameter ADDR_KERNEL_5_CTRL bound to: 7'b1000100 
+	Parameter ADDR_KERNEL_6_DATA_0 bound to: 7'b1001000 
+	Parameter ADDR_KERNEL_6_CTRL bound to: 7'b1001100 
+	Parameter ADDR_KERNEL_7_DATA_0 bound to: 7'b1010000 
+	Parameter ADDR_KERNEL_7_CTRL bound to: 7'b1010100 
+	Parameter ADDR_KERNEL_8_DATA_0 bound to: 7'b1011000 
+	Parameter ADDR_KERNEL_8_CTRL bound to: 7'b1011100 
+	Parameter WRIDLE bound to: 2'b00 
+	Parameter WRDATA bound to: 2'b01 
+	Parameter WRRESP bound to: 2'b10 
+	Parameter RDIDLE bound to: 2'b00 
+	Parameter RDDATA bound to: 2'b01 
+	Parameter ADDR_BITS bound to: 7 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3_CTRL_s_axi.v:257]
+INFO: [Synth 8-256] done synthesizing module 'cnn_conv_d16x16_k3x3_CTRL_s_axi' (1#1) [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3_CTRL_s_axi.v:9]
+INFO: [Synth 8-638] synthesizing module 'cnn_conv_d16x16_kcud' [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kcud.v:62]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'cnn_conv_d16x16_kcud_ram' [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kcud.v:9]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kcud.v:26]
+INFO: [Synth 8-256] done synthesizing module 'cnn_conv_d16x16_kcud_ram' (2#1) [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kcud.v:9]
+INFO: [Synth 8-256] done synthesizing module 'cnn_conv_d16x16_kcud' (3#1) [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kcud.v:62]
+INFO: [Synth 8-638] synthesizing module 'fixed_point_mul' [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/fixed_point_mul.v:10]
+	Parameter ap_const_lv32_1F bound to: 31 - type: integer 
+	Parameter ap_const_lv32_0 bound to: 0 - type: integer 
+	Parameter ap_const_lv32_A bound to: 10 - type: integer 
+	Parameter ap_const_lv23_0 bound to: 23'b00000000000000000000000 
+INFO: [Synth 8-638] synthesizing module 'cnn_conv_d16x16_kbkb' [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kbkb.v:41]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 6 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'cnn_conv_d16x16_kbkb_MulnS_0' [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kbkb.v:11]
+INFO: [Synth 8-256] done synthesizing module 'cnn_conv_d16x16_kbkb_MulnS_0' (4#1) [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kbkb.v:11]
+INFO: [Synth 8-256] done synthesizing module 'cnn_conv_d16x16_kbkb' (5#1) [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kbkb.v:41]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/fixed_point_mul.v:106]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/fixed_point_mul.v:108]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/fixed_point_mul.v:110]
+INFO: [Synth 8-256] done synthesizing module 'fixed_point_mul' (6#1) [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/fixed_point_mul.v:10]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:1825]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:1969]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2031]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2033]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2043]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2051]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2057]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2059]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2061]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2063]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2065]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2067]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2069]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2071]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2073]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2081]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2093]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2099]
+INFO: [Synth 8-256] done synthesizing module 'cnn_conv_d16x16_k3x3' (7#1) [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:12]
+INFO: [Synth 8-256] done synthesizing module 'design_1_cnn_conv_d16x16_k3x3_0_0' (8#1) [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ip/design_1_cnn_conv_d16x16_k3x3_0_0/synth/design_1_cnn_conv_d16x16_k3x3_0_0.v:57]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_kbkb has unconnected port reset
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_kcud has unconnected port reset
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TKEEP[3]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TKEEP[2]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TKEEP[1]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TKEEP[0]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TSTRB[3]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TSTRB[2]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TSTRB[1]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TSTRB[0]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TUSER[1]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TUSER[0]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TLAST[0]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TID[4]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TID[3]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TID[2]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TID[1]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TID[0]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[5]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[4]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[3]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[2]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[1]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 408.023 ; gain = 198.086
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 408.023 ; gain = 198.086
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ip/design_1_cnn_conv_d16x16_k3x3_0_0/constraints/cnn_conv_d16x16_k3x3_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ip/design_1_cnn_conv_d16x16_k3x3_0_0/constraints/cnn_conv_d16x16_k3x3_ooc.xdc] for cell 'inst'
+Parsing XDC File [D:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.runs/design_1_cnn_conv_d16x16_k3x3_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.runs/design_1_cnn_conv_d16x16_k3x3_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.218 . Memory (MB): peak = 743.910 ; gain = 0.059
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 743.910 ; gain = 533.973
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 743.910 ; gain = 533.973
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 743.910 ; gain = 533.973
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'lineBuffer_1_addr_2_reg_1375_reg[3:0]' into 'lineBuffer_0_addr_2_reg_1369_reg[3:0]' [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:1277]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2009]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:1963]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2003]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2015]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2009]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:1963]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2003]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2015]
+WARNING: [Synth 8-3936] Found unconnected internal register 'ctrl_read_reg_1199_reg' and it is trimmed from '32' to '1' bits. [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:1251]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2009]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:1963]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2003]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_k3x3.v:2015]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "exitcond1_fu_604_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond4_fu_621_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "exitcond_flatten_fu_638_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "exitcond_flatten8_fu_820_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "exitcond_fu_650_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "exitcond2_fu_832_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "cond1_fu_722_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond_fu_688_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond_mid1_fu_682_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "tmp_i_fu_858_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_i_15_fu_906_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3971] The signal ram_reg was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 743.910 ; gain = 533.973
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 19    
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 2     
+	   2 Input     24 Bit       Adders := 4     
+	   2 Input     23 Bit       Adders := 9     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 5     
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 9     
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 230   
+	               25 Bit    Registers := 2     
+	               24 Bit    Registers := 1     
+	               22 Bit    Registers := 9     
+	                9 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 14    
+	                1 Bit    Registers := 53    
++---Multipliers : 
+	                32x32  Multipliers := 9     
++---RAMs : 
+	              512 Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 39    
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     23 Bit        Muxes := 9     
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 4     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   3 Input      3 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 36    
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 36    
+	   5 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module cnn_conv_d16x16_k3x3_CTRL_s_axi 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 11    
+	                7 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 10    
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
+Module cnn_conv_d16x16_kcud_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---RAMs : 
+	              512 Bit         RAMs := 1     
+Module cnn_conv_d16x16_kbkb_MulnS_0 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
++---Multipliers : 
+	                32x32  Multipliers := 1     
+Module fixed_point_mul 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     23 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 16    
+	               22 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     23 Bit        Muxes := 1     
+Module cnn_conv_d16x16_k3x3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 2     
+	   2 Input     24 Bit       Adders := 4     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 5     
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 19    
+	               25 Bit    Registers := 2     
+	               24 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 12    
+	                1 Bit    Registers := 46    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 11    
+	   2 Input     27 Bit        Muxes := 1     
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 4     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 36    
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 34    
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+WARNING: [Synth 8-3936] Found unconnected internal register 'cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff3_reg' and it is trimmed from '48' to '15' bits. [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kbkb.v:26]
+WARNING: [Synth 8-3936] Found unconnected internal register 'cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff3_reg' and it is trimmed from '48' to '17' bits. [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kbkb.v:26]
+WARNING: [Synth 8-3936] Found unconnected internal register 'cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg' and it is trimmed from '48' to '17' bits. [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kbkb.v:34]
+WARNING: [Synth 8-3936] Found unconnected internal register 'cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg' and it is trimmed from '48' to '17' bits. [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ipshared/b3a4/hdl/verilog/cnn_conv_d16x16_kbkb.v:33]
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg.
+DSP Report: Generating DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff0_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register A is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: register cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff1_reg is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+DSP Report: operator cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/tmp_product is absorbed into DSP cnn_conv_d16x16_kbkb_U0/cnn_conv_d16x16_kbkb_MulnS_0_U/buff2_reg.
+INFO: [Synth 8-5546] ROM "exitcond_flatten8_fu_820_p2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design fixed_point_mul has unconnected port ap_rst
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TKEEP[3]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TKEEP[2]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TKEEP[1]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TKEEP[0]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TSTRB[3]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TSTRB[2]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TSTRB[1]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TSTRB[0]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TUSER[1]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TUSER[0]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TLAST[0]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TID[4]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TID[3]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TID[2]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TID[1]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TID[0]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[5]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[4]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[3]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[2]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[1]
+WARNING: [Synth 8-3331] design cnn_conv_d16x16_k3x3 has unconnected port inStream_TDEST[0]
+INFO: [Synth 8-3971] The signal lineBuffer_0_U/cnn_conv_d16x16_kcud_ram_U/ram_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal lineBuffer_1_U/cnn_conv_d16x16_kcud_ram_U/ram_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3886] merging instance 'inst/outStream_V_data_V_1_payload_B_reg[26]' (FDE) to 'inst/outStream_V_data_V_1_payload_B_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/outStream_V_data_V_1_payload_A_reg[26]' (FDE) to 'inst/outStream_V_data_V_1_payload_A_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/outStream_V_data_V_1_payload_B_reg[27]' (FDE) to 'inst/outStream_V_data_V_1_payload_B_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/outStream_V_data_V_1_payload_A_reg[27]' (FDE) to 'inst/outStream_V_data_V_1_payload_A_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/outStream_V_data_V_1_payload_B_reg[28]' (FDE) to 'inst/outStream_V_data_V_1_payload_B_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/outStream_V_data_V_1_payload_A_reg[28]' (FDE) to 'inst/outStream_V_data_V_1_payload_A_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/outStream_V_data_V_1_payload_B_reg[29]' (FDE) to 'inst/outStream_V_data_V_1_payload_B_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/outStream_V_data_V_1_payload_A_reg[29]' (FDE) to 'inst/outStream_V_data_V_1_payload_A_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/outStream_V_data_V_1_payload_B_reg[30]' (FDE) to 'inst/outStream_V_data_V_1_payload_B_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/outStream_V_data_V_1_payload_A_reg[30]' (FDE) to 'inst/outStream_V_data_V_1_payload_A_reg[31]'
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[30]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[29]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[28]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[27]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[26]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[25]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[24]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[23]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[22]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[21]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[20]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[19]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[18]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[17]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[16]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[15]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[14]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[13]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[12]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[11]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[10]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[9]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[8]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[7]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[6]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[5]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[4]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[3]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[2]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[1]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (a_read_reg_122_reg[0]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[30]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[29]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[28]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[27]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[26]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[25]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[24]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[23]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[22]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[21]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[20]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[19]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[18]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[17]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[16]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[15]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[14]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[13]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[12]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[11]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[10]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[9]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[8]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[7]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[6]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[5]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[4]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[3]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[2]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[1]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter1_a_read_reg_122_reg[0]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[30]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[29]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[28]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[27]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[26]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[25]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[24]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[23]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[22]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[21]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[20]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[19]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[18]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[17]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[16]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[15]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[14]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[13]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[12]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[11]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[10]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[9]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[8]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[7]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[6]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[5]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[4]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[3]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[2]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[1]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter2_a_read_reg_122_reg[0]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter3_a_read_reg_122_reg[30]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter3_a_read_reg_122_reg[29]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter3_a_read_reg_122_reg[28]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter3_a_read_reg_122_reg[27]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter3_a_read_reg_122_reg[26]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter3_a_read_reg_122_reg[25]) is unused and will be removed from module fixed_point_mul.
+WARNING: [Synth 8-3332] Sequential element (ap_pipeline_reg_pp0_iter3_a_read_reg_122_reg[24]) is unused and will be removed from module fixed_point_mul.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 743.910 ; gain = 533.973
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++-------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name              | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|cnn_conv_d16x16_kcud_ram | ram_reg    | 16 x 32(WRITE_FIRST)   | W | R | 16 x 32(READ_FIRST)    | W |   | Port A and B     | 0      | 1      | 
+|cnn_conv_d16x16_kcud_ram | ram_reg    | 16 x 32(WRITE_FIRST)   | W | R | 16 x 32(READ_FIRST)    | W |   | Port A and B     | 0      | 1      | 
++-------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping  Report (see note below)
++----------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fixed_point_mul | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|fixed_point_mul | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|fixed_point_mul | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|fixed_point_mul | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|fixed_point_mul | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|fixed_point_mul | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|fixed_point_mul | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|fixed_point_mul | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|fixed_point_mul | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|fixed_point_mul | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fixed_point_mul | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
++----------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 758.621 ; gain = 548.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:01 . Memory (MB): peak = 776.961 ; gain = 567.023
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_0_U/cnn_conv_d16x16_kcud_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_1_U/cnn_conv_d16x16_kcud_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:01:04 . Memory (MB): peak = 806.742 ; gain = 596.805
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 806.742 ; gain = 596.805
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:59 ; elapsed = 00:01:05 . Memory (MB): peak = 806.742 ; gain = 596.805
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:59 ; elapsed = 00:01:05 . Memory (MB): peak = 806.742 ; gain = 596.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:59 ; elapsed = 00:01:05 . Memory (MB): peak = 806.742 ; gain = 596.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 806.742 ; gain = 596.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 806.742 ; gain = 596.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++---------------------+-----------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name          | RTL Name                                                                    | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++---------------------+-----------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_529/ap_pipeline_reg_pp0_iter6_a_read_reg_122_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_529/ap_pipeline_reg_pp0_iter6_b_read_reg_117_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_529/tmp_1_reg_137_reg[6]                             | 4      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_536/ap_pipeline_reg_pp0_iter6_a_read_reg_122_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_536/ap_pipeline_reg_pp0_iter6_b_read_reg_117_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_536/tmp_1_reg_137_reg[6]                             | 4      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_543/ap_pipeline_reg_pp0_iter6_a_read_reg_122_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_543/ap_pipeline_reg_pp0_iter6_b_read_reg_117_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_543/tmp_1_reg_137_reg[6]                             | 4      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_550/ap_pipeline_reg_pp0_iter6_a_read_reg_122_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_550/ap_pipeline_reg_pp0_iter6_b_read_reg_117_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_550/tmp_1_reg_137_reg[6]                             | 4      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_557/ap_pipeline_reg_pp0_iter6_a_read_reg_122_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_557/ap_pipeline_reg_pp0_iter6_b_read_reg_117_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_557/tmp_1_reg_137_reg[6]                             | 4      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_565/ap_pipeline_reg_pp0_iter6_a_read_reg_122_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_565/ap_pipeline_reg_pp0_iter6_b_read_reg_117_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_565/tmp_1_reg_137_reg[6]                             | 4      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_573/ap_pipeline_reg_pp0_iter6_a_read_reg_122_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_573/ap_pipeline_reg_pp0_iter6_b_read_reg_117_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_573/tmp_1_reg_137_reg[6]                             | 4      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_580/ap_pipeline_reg_pp0_iter6_a_read_reg_122_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_580/ap_pipeline_reg_pp0_iter6_b_read_reg_117_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_580/tmp_1_reg_137_reg[6]                             | 4      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_588/ap_pipeline_reg_pp0_iter6_a_read_reg_122_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_588/ap_pipeline_reg_pp0_iter6_b_read_reg_117_reg[31] | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|cnn_conv_d16x16_k3x3 | grp_fixed_point_mul_fu_588/tmp_1_reg_137_reg[6]                             | 4      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|cnn_conv_d16x16_k3x3 | ap_pipeline_reg_pp3_iter7_p_i_reg_1365_reg[0]                               | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++---------------------+-----------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |   277|
+|2     |DSP48E1   |     9|
+|3     |DSP48E1_2 |     9|
+|4     |DSP48E1_3 |     9|
+|5     |LUT1      |   790|
+|6     |LUT2      |   142|
+|7     |LUT3      |   902|
+|8     |LUT4      |   331|
+|9     |LUT5      |   262|
+|10    |LUT6      |   305|
+|11    |MUXF7     |     2|
+|12    |RAMB36E1  |     2|
+|13    |SRL16E    |    82|
+|14    |FDRE      |  2289|
+|15    |FDSE      |     7|
++------+----------+------+
+
+Report Instance Areas: 
++------+---------------------------------------+--------------------------------+------+
+|      |Instance                               |Module                          |Cells |
++------+---------------------------------------+--------------------------------+------+
+|1     |top                                    |                                |  5418|
+|2     |  inst                                 |cnn_conv_d16x16_k3x3            |  5418|
+|3     |    cnn_conv_d16x16_k3x3_CTRL_s_axi_U  |cnn_conv_d16x16_k3x3_CTRL_s_axi |  1511|
+|4     |    grp_fixed_point_mul_fu_529         |fixed_point_mul                 |   190|
+|5     |      cnn_conv_d16x16_kbkb_U0          |cnn_conv_d16x16_kbkb_24         |    40|
+|6     |        cnn_conv_d16x16_kbkb_MulnS_0_U |cnn_conv_d16x16_kbkb_MulnS_0_25 |    40|
+|7     |    grp_fixed_point_mul_fu_536         |fixed_point_mul_0               |   242|
+|8     |      cnn_conv_d16x16_kbkb_U0          |cnn_conv_d16x16_kbkb_22         |    40|
+|9     |        cnn_conv_d16x16_kbkb_MulnS_0_U |cnn_conv_d16x16_kbkb_MulnS_0_23 |    40|
+|10    |    grp_fixed_point_mul_fu_543         |fixed_point_mul_1               |   190|
+|11    |      cnn_conv_d16x16_kbkb_U0          |cnn_conv_d16x16_kbkb_20         |    40|
+|12    |        cnn_conv_d16x16_kbkb_MulnS_0_U |cnn_conv_d16x16_kbkb_MulnS_0_21 |    40|
+|13    |    grp_fixed_point_mul_fu_550         |fixed_point_mul_2               |   241|
+|14    |      cnn_conv_d16x16_kbkb_U0          |cnn_conv_d16x16_kbkb_18         |    40|
+|15    |        cnn_conv_d16x16_kbkb_MulnS_0_U |cnn_conv_d16x16_kbkb_MulnS_0_19 |    40|
+|16    |    grp_fixed_point_mul_fu_557         |fixed_point_mul_3               |   223|
+|17    |      cnn_conv_d16x16_kbkb_U0          |cnn_conv_d16x16_kbkb_16         |    40|
+|18    |        cnn_conv_d16x16_kbkb_MulnS_0_U |cnn_conv_d16x16_kbkb_MulnS_0_17 |    40|
+|19    |    grp_fixed_point_mul_fu_565         |fixed_point_mul_4               |   213|
+|20    |      cnn_conv_d16x16_kbkb_U0          |cnn_conv_d16x16_kbkb_14         |    40|
+|21    |        cnn_conv_d16x16_kbkb_MulnS_0_U |cnn_conv_d16x16_kbkb_MulnS_0_15 |    40|
+|22    |    grp_fixed_point_mul_fu_573         |fixed_point_mul_5               |   190|
+|23    |      cnn_conv_d16x16_kbkb_U0          |cnn_conv_d16x16_kbkb_12         |    40|
+|24    |        cnn_conv_d16x16_kbkb_MulnS_0_U |cnn_conv_d16x16_kbkb_MulnS_0_13 |    40|
+|25    |    grp_fixed_point_mul_fu_580         |fixed_point_mul_6               |   248|
+|26    |      cnn_conv_d16x16_kbkb_U0          |cnn_conv_d16x16_kbkb_10         |    40|
+|27    |        cnn_conv_d16x16_kbkb_MulnS_0_U |cnn_conv_d16x16_kbkb_MulnS_0_11 |    40|
+|28    |    grp_fixed_point_mul_fu_588         |fixed_point_mul_7               |   244|
+|29    |      cnn_conv_d16x16_kbkb_U0          |cnn_conv_d16x16_kbkb            |    41|
+|30    |        cnn_conv_d16x16_kbkb_MulnS_0_U |cnn_conv_d16x16_kbkb_MulnS_0    |    41|
+|31    |    lineBuffer_0_U                     |cnn_conv_d16x16_kcud            |    47|
+|32    |      cnn_conv_d16x16_kcud_ram_U       |cnn_conv_d16x16_kcud_ram_9      |    47|
+|33    |    lineBuffer_1_U                     |cnn_conv_d16x16_kcud_8          |    44|
+|34    |      cnn_conv_d16x16_kcud_ram_U       |cnn_conv_d16x16_kcud_ram        |    44|
++------+---------------------------------------+--------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 806.742 ; gain = 596.805
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 526 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:47 . Memory (MB): peak = 806.742 ; gain = 179.031
+Synthesis Optimization Complete : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 806.742 ; gain = 596.805
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 306 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ip/design_1_cnn_conv_d16x16_k3x3_0_0/constraints/cnn_conv_d16x16_k3x3_ooc.xdc] for cell 'inst'
+INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port ap_clk. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC.  [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ip/design_1_cnn_conv_d16x16_k3x3_0_0/constraints/cnn_conv_d16x16_k3x3_ooc.xdc:6]
+Finished Parsing XDC File [d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ip/design_1_cnn_conv_d16x16_k3x3_0_0/constraints/cnn_conv_d16x16_k3x3_ooc.xdc] for cell 'inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+74 Infos, 173 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 806.742 ; gain = 514.918
+INFO: [Common 17-1381] The checkpoint 'D:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.runs/design_1_cnn_conv_d16x16_k3x3_0_0_synth_1/design_1_cnn_conv_d16x16_k3x3_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP d:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.srcs/sources_1/bd/design_1/ip/design_1_cnn_conv_d16x16_k3x3_0_0/design_1_cnn_conv_d16x16_k3x3_0_0.xci
+INFO: [Coretcl 2-1174] Renamed 33 cell refs.
+INFO: [Common 17-1381] The checkpoint 'D:/School/Project/new_repo/Vivado/conv_pool_test_0_0/conv_pool_test_0_0.runs/design_1_cnn_conv_d16x16_k3x3_0_0_synth_1/design_1_cnn_conv_d16x16_k3x3_0_0.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.108 . Memory (MB): peak = 806.742 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 07 15:50:49 2021...

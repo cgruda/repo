@@ -1,0 +1,9 @@
+sv xil_defaultlib "AESL_axi_slave_CTRL.v"
+sv xil_defaultlib "AESL_axi_s_inStream.v"
+sv xil_defaultlib "AESL_axi_s_outStream.v"
+sv xil_defaultlib "AESL_fifo.v"
+sv xil_defaultlib "cnn_pool_d4x4_p2x2.autotb.v"
+sv xil_defaultlib "cnn_pool_d4x4_p2x2.v"
+sv xil_defaultlib "cnn_pool_d4x4_p2x2_CTRL_s_axi.v"
+sv xil_defaultlib "cnn_pool_d4x4_p2xbkb.v"
+

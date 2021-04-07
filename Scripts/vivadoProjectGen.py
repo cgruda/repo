@@ -27,17 +27,19 @@ POOL = 1
 #                                   IP CONFIGURATIONS
 #========================================================================================
 
-project_name = "autotest14"
+project_name = "conv_pool_test_0_1"
 ip_count = 2
-keep_log = 0
-
-# [type, data_dim, op_dim]
-ip0 = {"type": CONV, "data_dim": 16, "op_dim": 3}
-ip1 = {"type": POOL, "data_dim": 14, "op_dim": 2}
+ip0 = {"type": CONV, "data_dim": 30, "op_dim": 3}
+ip1 = {"type": POOL, "data_dim": 28, "op_dim": 2}
 ip2 = {}
 ip3 = {}
 ip4 = {}
 ip5 = {}
+
+run_synth = 1
+launch_sdk = 1
+
+keep_log = 0
 
 #========================================================================================
 #                                   global vars
@@ -74,7 +76,13 @@ def prep_tcl_script(project_name, ip_count, ips_names):
 			line = line.rstrip("\n")
 			new_line = ""
 			mod = False
-			if (line == "set project_name PROJECT_NAME"):
+			if (line == "set gen_bitstream GEN_BITSTREAM"):
+				new_line = "set gen_bitstream {}".format(run_synth)
+				mod = True
+			elif (line == "set lun_sdk LUN_SDK"):
+				new_line = "set lun_sdk {}".format(launch_sdk)
+				mod = True
+			elif (line == "set project_name PROJECT_NAME"):
 				new_line = "set project_name {}".format(project_name)
 				mod = True
 			elif (line == "set ip_count IP_COUNT"):

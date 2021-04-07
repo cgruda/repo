@@ -1,3 +1,1 @@
-
-vivadoGenProject.py - make it do tcl editing
 sdkGenProhect.py - check if even possible, if not atleast generate code

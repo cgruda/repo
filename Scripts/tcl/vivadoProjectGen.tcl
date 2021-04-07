@@ -25,8 +25,8 @@
 #========================================================================================
 
 # execution vars
-set gen_bitstream 0
-set lun_sdk 0
+set gen_bitstream GEN_BITSTREAM
+set lun_sdk LUN_SDK
 
 # specific project vars
 set project_name PROJECT_NAME
