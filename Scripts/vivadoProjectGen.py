@@ -4,10 +4,6 @@
 # Chaim Gruda
 # Shay Tsabar
 
-#========================================================================================
-#                                        README
-#========================================================================================
-# 
 # This script automates the creation of Vivado projects and designs.
 # in order to use it you must first add the following to system PATH
 # (assuming this is the install dir):
@@ -23,40 +19,18 @@
 CONV = 0
 POOL = 1
 
-#========================================================================================
-#                                   IP CONFIGURATIONS
-#========================================================================================
-
-project_name = "cpx3_test_0_1"
-ip_count = 6
-ip0 = {"type": CONV, "data_dim": 30, "op_dim": 3}
-ip1 = {"type": POOL, "data_dim": 28, "op_dim": 2}
-ip2 = {"type": CONV, "data_dim": 14, "op_dim": 3}
-ip3 = {"type": POOL, "data_dim": 12, "op_dim": 2}
-ip4 = {"type": CONV, "data_dim": 6, "op_dim": 3}
-ip5 = {"type": POOL, "data_dim": 4, "op_dim": 2}
+import os
 
 run_synth = 1
 launch_sdk = 1
-
-keep_log = 1
-
-#========================================================================================
-#                                   global vars
-#========================================================================================
-
-import os
+keep_log = 0
 
 repo_path = "D:\\School\\Project\\new_repo\\"
 scripts_path = repo_path + "Scripts\\"
 tclscript = "vivadoProjectGen.tcl"
 vivado_path = repo_path + "Vivado\\"
 tclscript_path = scripts_path + "tcl\\" + tclscript
-temp_path = vivado_path + "TEMP\\"
-
-#========================================================================================
-#                                         functions
-#========================================================================================
+temp_path = vivado_path + "tmp\\"
 
 def ip_name_get(type, data_dim, op_dim):
 	type_s = "conv" if type == CONV else "pool"
@@ -104,43 +78,36 @@ def prep_tcl_script(project_name, ip_count, ips_names):
 			new_lines.append(new_line)
 	create_new_temp_file(temp_path + tclscript, new_lines)
 
-
-#========================================================================================
-#                                         main
-#========================================================================================
-
-print("================================================")
-print("=========== GENERATING TCL SCRIPT ==============")
-print("================================================")
-
-
-os.chdir(vivado_path)
-os.system("mkdir TEMP")
-os.chdir(vivado_path + "\\TEMP")
-
-# prep tcl vars
-ip0_name = ip_name_get(ip0["type"], ip0["data_dim"], ip0["op_dim"])
-ip1_name = ip_name_get(ip1["type"], ip1["data_dim"], ip1["op_dim"])
-ip2_name = ip_name_get(ip2["type"], ip2["data_dim"], ip2["op_dim"])
-ip3_name = ip_name_get(ip3["type"], ip3["data_dim"], ip3["op_dim"])
-ip4_name = ip_name_get(ip4["type"], ip4["data_dim"], ip4["op_dim"])
-ip5_name = ip_name_get(ip5["type"], ip5["data_dim"], ip5["op_dim"])
-ips_names = [ip0_name, ip1_name, ip2_name, ip3_name, ip4_name, ip5_name]
-prep_tcl_script(project_name, ip_count, ips_names)
-
-print("=============================================")
-print("=========== RUNINIG TCL SCRIPT ==============")
-print("=============================================")
-
-
-cmd = "vivado -mode batch -source {}".format(temp_path + tclscript)
-os.system(cmd)
-
-if (not keep_log):
+def create_vivado_project(project_name, layers):
 	os.chdir(vivado_path)
-	cmd = "rmdir /s /q " + temp_path
+	os.system("mkdir tmp")
+	os.chdir(vivado_path + "\\tmp")
+	ip_names = []
+	for layer in layers:
+		ip_name = ip_name_get(layer["type"], layer["data_dim"], layer["op_dim"])
+		ip_names.append(ip_name)
+	prep_tcl_script(project_name, len(layers), ip_names)
+	cmd = "vivado -mode batch -source {}".format(temp_path + tclscript)
 	os.system(cmd)
+	if (not keep_log):
+		os.chdir(vivado_path)
+		cmd = "rmdir /s /q " + temp_path
+		os.system(cmd)
+	print("===============================")
+	print("=========== DONE =============")
+	print("===============================")
 
-print("===============================")
-print("=========== DONE =============")
-print("===============================")
+if __name__ == "__main__":
+	project_name = "cpx3_test_0_1"
+	layers = [\
+		{"type": CONV, "data_dim": 30, "op_dim": 3},\
+		{"type": POOL, "data_dim": 28, "op_dim": 2},\
+		{"type": CONV, "data_dim": 14, "op_dim": 3},\
+		{"type": POOL, "data_dim": 12, "op_dim": 2},\
+		{"type": CONV, "data_dim": 6, "op_dim": 3},\
+		{"type": POOL, "data_dim": 4, "op_dim": 2},\
+	]
+	create_vivado_project(project_name, layers)
+
+	
+

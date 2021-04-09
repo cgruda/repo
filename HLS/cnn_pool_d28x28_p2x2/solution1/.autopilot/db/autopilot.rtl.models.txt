@@ -1,3 +1,0 @@
-cnn_pool_d28x28_pbkb
-cnn_pool_d28x28_p2x2_CTRL_s_axi
-cnn_pool_d28x28_p2x2

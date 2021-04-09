@@ -4,10 +4,6 @@
 # Chaim Gruda
 # Shay Tsabar
 
-#========================================================================================
-#                                        README
-#========================================================================================
-# 
 # This script automates the creation of Vivado_HLS projects and code.
 # in order to use it you must first add the following to system PATH
 # (assuming this is the install dir):
@@ -21,34 +17,17 @@
 # beofre you run the script make sure to properly set repo_path and IP configuration 
 
 import os
+
 CONV = 0
 POOL = 1
 
-#========================================================================================
-#                                   IP configuration
-#========================================================================================
-
 repo_path = "D:\\School\\Project\\new_repo\\"
-type = CONV
-data_dim = 6
-op_dim = 3
-
-#========================================================================================
-#                               global vars - dont change
-#========================================================================================
-
 scripts_path = repo_path + "Scripts\\"
-conv_source_path = repo_path + "Source\\HLS\\conv\\"
-pool_source_path = repo_path + "Source\\HLS\\pool\\"
+hls_source_path = repo_path + "Source\\HLS\\"
 hls_path = repo_path + "HLS\\"
-temp_path = hls_path + "TEMP\\"
+temp_path = hls_path + "tmp\\"
 tclscript = "hlsProjectGen.tcl"
 tclscript_path = scripts_path + "tcl\\" + tclscript
-
-
-#========================================================================================
-#                                      functions
-#========================================================================================
 
 def ip_name_get(type, data_dim, op_dim):
 	type_s = "conv" if type == CONV else "pool"
@@ -57,7 +36,7 @@ def ip_name_get(type, data_dim, op_dim):
 	ip_name = "cnn_{}_{}_{}".format(type_s, data_dim_s, op_dim_s)
 	return ip_name
 
-def get_new_core_lines(orig_file, data_dim, op_dim):
+def get_new_core_lines(orig_file, ip_name, data_dim, op_dim):
 	new_lines = []
 	with open(orig_file, 'r') as fp:
 		for line in fp:
@@ -86,23 +65,14 @@ def create_new_temp_file(file_name, lines):
 		fp.writelines(lines)
 
 def prep_hls_files(type, data_dim, op_dim, ip_name):
-	if (type == CONV):
-		new_core_h_lines = get_new_core_lines(conv_source_path + "core.h", data_dim, op_dim)
-		new_core_cpp_lines = get_new_core_lines(conv_source_path + "core.cpp", data_dim, op_dim)
-		new_core_tb_cpp_lines = get_new_core_lines(conv_source_path + "core_tb.cpp", data_dim, op_dim)
-		create_new_temp_file(temp_path + "core.h", new_core_h_lines)
-		create_new_temp_file(temp_path + "core.cpp", new_core_cpp_lines)
-		create_new_temp_file(temp_path + "core_tb.cpp", new_core_tb_cpp_lines)
-	elif (type == POOL):
-		new_core_h_lines = get_new_core_lines(pool_source_path + "core.h", data_dim, op_dim)
-		new_core_cpp_lines = get_new_core_lines(pool_source_path + "core.cpp", data_dim, op_dim)
-		new_core_tb_cpp_lines = get_new_core_lines(pool_source_path + "core_tb.cpp", data_dim, op_dim)
-		create_new_temp_file(temp_path + "core.h", new_core_h_lines)
-		create_new_temp_file(temp_path + "core.cpp", new_core_cpp_lines)
-		create_new_temp_file(temp_path + "core_tb.cpp", new_core_tb_cpp_lines)
-	else:
-		print("unknown type %s" %type)
-		exit()
+	type_str = "conv" if type == CONV else "pool"
+	orig_source_path = hls_source_path + "%s//" %type_str
+	new_core_h_lines = get_new_core_lines(orig_source_path + "core.h", ip_name, data_dim, op_dim)
+	new_core_cpp_lines = get_new_core_lines(orig_source_path + "core.cpp", ip_name, data_dim, op_dim)
+	new_core_tb_cpp_lines = get_new_core_lines(orig_source_path + "core_tb.cpp", ip_name, data_dim, op_dim)
+	create_new_temp_file(temp_path + "core.h", new_core_h_lines)
+	create_new_temp_file(temp_path + "core.cpp", new_core_cpp_lines)
+	create_new_temp_file(temp_path + "core_tb.cpp", new_core_tb_cpp_lines)
 
 def prep_tcl_script(ip_name):
 	new_lines = []
@@ -120,32 +90,29 @@ def prep_tcl_script(ip_name):
 			new_lines.append(new_line)
 	create_new_temp_file(temp_path + tclscript, new_lines)
 
+def create_new_hls_ip(type, data_dim, op_dim):
+	# enter temp location
+	os.chdir(hls_path)
+	os.system("mkdir tmp")
+	os.chdir(hls_path + "\\tmp")
+	# prep files and tcl script
+	ip_name = ip_name_get(type, data_dim, op_dim)
+	prep_hls_files(type, data_dim, op_dim, ip_name)
+	prep_tcl_script(ip_name)
+	# execute creation
+	os.system("copy {} {}".format(temp_path + tclscript, hls_path + "."))
+	os.chdir(hls_path)
+	os.system("vivado_hls -f {}".format(tclscript))
+	os.system("rmdir /s /q " + temp_path)
+	os.system("del " + hls_path + tclscript)
+	os.system("del " + hls_path + "vivado_hls")
+	print("created hls ip: %s" %ip_name)
 
-#========================================================================================
-#                                         main
-#========================================================================================
+def hls_ip_exists(ip_name):
+	return os.path.exists(hls_path + ip_name)
 
-os.chdir(hls_path)
-os.system("mkdir TEMP")
-os.chdir(hls_path + "\\TEMP")
-
-# prep hls file
-ip_name = ip_name_get(type, data_dim, op_dim)
-prep_hls_files(type, data_dim, op_dim, ip_name)
-prep_tcl_script(ip_name)
-
-cmd = "copy {} {}".format(temp_path + tclscript, hls_path + ".")
-os.system(cmd)
-os.chdir(hls_path)
-cmd = "vivado_hls -f {}".format(tclscript)
-os.system(cmd)
-cmd = "rmdir /s /q " + temp_path
-os.system(cmd)
-cmd = "del " + hls_path + tclscript
-os.system(cmd)
-cmd = "del " + hls_path + "vivado_hls"
-os.system(cmd)
-
-print("================================")
-print("===========  DONE ==============")
-print("================================")
+if __name__ == "__main__":
+	type = CONV
+	data_dim = 46
+	op_dim = 3
+	create_new_hls_ip(type, data_dim, op_dim)

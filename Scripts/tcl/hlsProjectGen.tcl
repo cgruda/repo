@@ -27,9 +27,9 @@ set project_dir $project_name
 
 open_project -reset $project_name
 set_top $project_name
-file copy -force -- $repo_path/HLS/TEMP/core.cpp $project_dir/core.cpp
-file copy -force -- $repo_path/HLS/TEMP/core.h $project_dir/core.h
-file copy -force -- $repo_path/HLS/TEMP/core_tb.cpp $project_dir/core_tb.cpp
+file copy -force -- $repo_path/HLS/tmp/core.cpp $project_dir/core.cpp
+file copy -force -- $repo_path/HLS/tmp/core.h $project_dir/core.h
+file copy -force -- $repo_path/HLS/tmp/core_tb.cpp $project_dir/core_tb.cpp
 file copy -force -- $repo_path/Source/HLS/common/fixed_point.h $project_dir/fixed_point.h
 
 add_files $project_dir/core.cpp

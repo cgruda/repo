@@ -1,0 +1,13 @@
+/*
+ * cnn_hw_ops.h
+ *
+ *  Created on: Apr 9, 2021
+ *      Author: cgrud
+ */
+
+#ifndef SRC_CNN_HW_OPS_H_
+#define SRC_CNN_HW_OPS_H_
+
+
+
+#endif /* SRC_CNN_HW_OPS_H_ */

@@ -1,5 +1,0 @@
-cnn_conv_d64x64_kbkb
-cnn_conv_d64x64_kcud
-cnn_conv_d64x64_k3x3_CTRL_s_axi
-fixed_point_mul
-cnn_conv_d64x64_k3x3

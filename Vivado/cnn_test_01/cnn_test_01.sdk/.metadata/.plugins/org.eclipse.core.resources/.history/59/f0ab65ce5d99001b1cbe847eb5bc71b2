@@ -1,0 +1,93 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 18, 2021
+ *      Author: cgrud
+ */
+
+#include <stdio.h>
+#include <xparameters.h>
+#include "fixed_point.h"
+#include "cnn_config.h"
+#include "cnn_hw.h"
+
+
+// ========================================= TEST DATA SETTER =================================================
+
+void fill_tx_buffer(u32 *buffer, u32 *data)
+{
+	for (int i = 0; i < CNN_INPUT_LEN; i++) {
+		buffer[i] = data[i];
+	}
+}
+
+void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *config)
+{
+	XCnn_Set_Conv_0(&cnn_hw->conv_0, config->conv_0_ctrl, config->conv_0_kernel);
+	XCnn_Set_Pool_0(&cnn_hw->pool_0, config->pool_0_ctrl);
+	XCnn_Set_Conv_1(&cnn_hw->conv_1, config->conv_1_ctrl, config->conv_1_kernel);
+	XCnn_Set_Pool_1(&cnn_hw->pool_1, config->pool_1_ctrl);
+	XCnn_Set_Conv_2(&cnn_hw->conv_2, config->conv_2_ctrl, config->conv_2_kernel);
+	XCnn_Set_Pool_2(&cnn_hw->pool_2, config->pool_2_ctrl);
+}
+
+// ========================================= MAIN =================================================
+
+int main()
+{
+	struct cnn_hw cnn_hw;
+	struct cnn_config cnn_conf = {0};
+
+	int status = XST_SUCCESS;
+	u32 input_data[CNN_INPUT_LEN];
+	for (int i = 0; i < CNN_INPUT_LEN; i++) {
+		input_data[i] = FLOAT_2_FIXED(1);
+	}
+
+	u32 *p_dma_buffer_TX = (u32*) TX_BUFFER_BASE;
+	u32 *p_dma_buffer_RX = (u32*) RX_BUFFER_BASE;
+
+	status = cnn_hw_init(&cnn_hw);
+	if (status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	cnn_config_init(&cnn_conf);
+
+	do {
+		cnn_hw_set(&cnn_hw, &cnn_conf);
+		fill_tx_buffer(p_dma_buffer_TX, input_data);
+
+		XCnn_pool_d8x8_p2x2_Start(&cnn_hw.pool_2);
+		XCnn_conv_d10x10_k3x3_Start(&cnn_hw.conv_2);
+		XCnn_pool_d20x20_p2x2_Start(&cnn_hw.pool_1);
+		XCnn_conv_d22x22_k3x3_Start(&cnn_hw.conv_1);
+		XCnn_pool_d44x44_p2x2_Start(&cnn_hw.pool_0);
+		XCnn_conv_d46x46_k3x3_Start(&cnn_hw.conv_0);
+
+		Xil_DCacheFlushRange((u32) p_dma_buffer_TX, CNN_INPUT_LEN * sizeof(u32));
+		Xil_DCacheFlushRange((u32) p_dma_buffer_RX, CNN_OUTPUT_LEN * sizeof(u32));
+
+		XAxiDma_SimpleTransfer(&cnn_hw.axiDMA, (u32) p_dma_buffer_TX, CNN_INPUT_LEN * sizeof(u32), XAXIDMA_DMA_TO_DEVICE);
+		XAxiDma_SimpleTransfer(&cnn_hw.axiDMA, (u32) p_dma_buffer_RX, CNN_OUTPUT_LEN * sizeof(u32), XAXIDMA_DEVICE_TO_DMA);
+		while (XAxiDma_Busy(&cnn_hw.axiDMA, XAXIDMA_DEVICE_TO_DMA))
+			/* wait */ ;
+
+		Xil_DCacheInvalidateRange((u32) p_dma_buffer_RX, CNN_OUTPUT_LEN * sizeof(u32));
+
+		while (!XCnn_pool_d8x8_p2x2_IsDone(&cnn_hw.pool_2))
+			/* wait */ ;
+
+		for (int i = 0; i < CNN_OUTPUT_ROWS; i++) {
+			for (int j = 0; j < CNN_OUTPUT_ROWS; j++) {
+				fixed_point_print(p_dma_buffer_RX[i]);
+			}
+			printf("\n");
+		}
+	} while (0);
+
+	return 0;
+}
+
+
+

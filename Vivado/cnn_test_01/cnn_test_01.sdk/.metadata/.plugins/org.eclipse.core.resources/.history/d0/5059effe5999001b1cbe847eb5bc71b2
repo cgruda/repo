@@ -1,0 +1,169 @@
+/*
+ * cnn_hw.c
+ *
+ *  Created on: Apr 9, 2021
+ *      Author: cgrud
+ */
+
+#include <stdio.h>
+#include <xparameters.h>
+#include "cnn_hw.h"
+#include "cnn_config.h"
+
+void (*XCnn_Set_conv_0_kernel[CONV_0_KERNEL_LEN])(XCnn_conv_d46x46_k3x3 *InstancePtr, u32 Data) = {
+		XCnn_conv_d46x46_k3x3_Set_kernel_0,
+		XCnn_conv_d46x46_k3x3_Set_kernel_1,
+		XCnn_conv_d46x46_k3x3_Set_kernel_2,
+		XCnn_conv_d46x46_k3x3_Set_kernel_3,
+		XCnn_conv_d46x46_k3x3_Set_kernel_4,
+		XCnn_conv_d46x46_k3x3_Set_kernel_5,
+		XCnn_conv_d46x46_k3x3_Set_kernel_6,
+		XCnn_conv_d46x46_k3x3_Set_kernel_7,
+		XCnn_conv_d46x46_k3x3_Set_kernel_8,
+};
+
+void (*XCnn_Set_conv_1_kernel[CONV_1_KERNEL_LEN])(XCnn_conv_d22x22_k3x3 *InstancePtr, u32 Data) = {
+		XCnn_conv_d22x22_k3x3_Set_kernel_0,
+		XCnn_conv_d22x22_k3x3_Set_kernel_1,
+		XCnn_conv_d22x22_k3x3_Set_kernel_2,
+		XCnn_conv_d22x22_k3x3_Set_kernel_3,
+		XCnn_conv_d22x22_k3x3_Set_kernel_4,
+		XCnn_conv_d22x22_k3x3_Set_kernel_5,
+		XCnn_conv_d22x22_k3x3_Set_kernel_6,
+		XCnn_conv_d22x22_k3x3_Set_kernel_7,
+		XCnn_conv_d22x22_k3x3_Set_kernel_8,
+};
+
+void (*XCnn_Set_conv_2_kernel[CONV_2_KERNEL_LEN])(XCnn_conv_d10x10_k3x3 *InstancePtr, u32 Data) = {
+		XCnn_conv_d10x10_k3x3_Set_kernel_0,
+		XCnn_conv_d10x10_k3x3_Set_kernel_1,
+		XCnn_conv_d10x10_k3x3_Set_kernel_2,
+		XCnn_conv_d10x10_k3x3_Set_kernel_3,
+		XCnn_conv_d10x10_k3x3_Set_kernel_4,
+		XCnn_conv_d10x10_k3x3_Set_kernel_5,
+		XCnn_conv_d10x10_k3x3_Set_kernel_6,
+		XCnn_conv_d10x10_k3x3_Set_kernel_7,
+		XCnn_conv_d10x10_k3x3_Set_kernel_8,
+};
+
+int cnn_hw_init(struct cnn_hw *p_cnn_hw)
+{
+	int status = XST_SUCCESS;
+
+	// conv_0 init
+	p_cnn_hw->conv_0_cfg = XCnn_conv_d46x46_k3x3_LookupConfig(XPAR_CNN_CONV_D46X46_K3X3_0_DEVICE_ID);
+	if (!p_cnn_hw->conv_0_cfg) {
+		return XST_FAILURE;
+	}
+	status = XCnn_conv_d46x46_k3x3_CfgInitialize(&p_cnn_hw->conv_0, p_cnn_hw->conv_0_cfg);
+	if (status != XST_SUCCESS) {
+		return status;
+	}
+
+	// pool_0 init
+	p_cnn_hw->pool_0_cfg = XCnn_pool_d44x44_p2x2_LookupConfig(XPAR_CNN_POOL_D44X44_P2X2_0_DEVICE_ID);
+	if (!p_cnn_hw->pool_0_cfg) {
+		return XST_FAILURE;
+	}
+	status = XCnn_pool_d44x44_p2x2_CfgInitialize(&p_cnn_hw->pool_0, p_cnn_hw->pool_0_cfg);
+	if (status != XST_SUCCESS) {
+		return status;
+	}
+
+	// conv_1 init
+	p_cnn_hw->conv_1_cfg = XCnn_conv_d22x22_k3x3_LookupConfig(XPAR_CNN_CONV_D22X22_K3X3_0_DEVICE_ID);
+	if (!p_cnn_hw->conv_1_cfg) {
+		return XST_FAILURE;
+	}
+	status = XCnn_conv_d22x22_k3x3_CfgInitialize(&p_cnn_hw->conv_1, p_cnn_hw->conv_1_cfg);
+	if (status != XST_SUCCESS) {
+		return status;
+	}
+
+	// pool_1 init
+	p_cnn_hw->pool_1_cfg = XCnn_pool_d20x20_p2x2_LookupConfig(XPAR_CNN_POOL_D20X20_P2X2_0_DEVICE_ID);
+	if (!p_cnn_hw->pool_1_cfg) {
+		return XST_FAILURE;
+	}
+	status = XCnn_pool_d20x20_p2x2_CfgInitialize(&p_cnn_hw->pool_1, p_cnn_hw->pool_1_cfg);
+	if (status != XST_SUCCESS) {
+		return status;
+	}
+
+	// conv_2 init
+	p_cnn_hw->conv_2_cfg = XCnn_conv_d10x10_k3x3_LookupConfig(XPAR_CNN_CONV_D10X10_K3X3_0_DEVICE_ID);
+	if (!p_cnn_hw->conv_2_cfg) {
+		return XST_FAILURE;
+	}
+	status = XCnn_conv_d10x10_k3x3_CfgInitialize(&p_cnn_hw->conv_2, p_cnn_hw->conv_2_cfg);
+	if (status != XST_SUCCESS) {
+		return status;
+	}
+
+	// pool_2 init
+	p_cnn_hw->pool_2_cfg = XCnn_pool_d8x8_p2x2_LookupConfig(XPAR_CNN_POOL_D8X8_P2X2_0_DEVICE_ID);
+	if (!p_cnn_hw->pool_2_cfg) {
+		return XST_FAILURE;
+	}
+	status = XCnn_pool_d8x8_p2x2_CfgInitialize(&p_cnn_hw->pool_2, p_cnn_hw->pool_2_cfg);
+	if (status != XST_SUCCESS) {
+		return status;
+	}
+
+	// DMA init
+	p_cnn_hw->axiDMA_cfg = XAxiDma_LookupConfig(XPAR_AXIDMA_0_DEVICE_ID);
+	if (!p_cnn_hw->axiDMA_cfg) {
+		return XST_FAILURE;
+	}
+	status = XAxiDma_CfgInitialize(&p_cnn_hw->axiDMA, p_cnn_hw->axiDMA_cfg);
+	if (status != XST_SUCCESS) {
+		return status;
+	}
+
+	XAxiDma_IntrDisable(&p_cnn_hw->axiDMA, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrDisable(&p_cnn_hw->axiDMA, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+
+	printf("init status = %d\n", status);
+
+	return status;
+}
+
+void XCnn_Set_Conv_0(XCnn_conv_d46x46_k3x3 *InstancePtr, u32 ctrl, u32 *kernel)
+{
+	XCnn_conv_d46x46_k3x3_Set_ctrl(InstancePtr, ctrl);
+	for (int i = 0; i < CONV_0_KERNEL_LEN; i++) {
+		XCnn_Set_conv_0_kernel[i](InstancePtr, kernel[i]);
+	}
+}
+
+void XCnn_Set_Pool_0(XCnn_pool_d44x44_p2x2 *InstancePtr, u32 ctrl)
+{
+	XCnn_pool_d44x44_p2x2_Set_ctrl(InstancePtr, ctrl);
+}
+
+void XCnn_Set_Conv_1(XCnn_conv_d22x22_k3x3 *InstancePtr, u32 ctrl, u32 *kernel)
+{
+	XCnn_conv_d22x22_k3x3_Set_ctrl(InstancePtr, ctrl);
+	for (int i = 0; i < CONV_1_KERNEL_LEN; i++) {
+		XCnn_Set_conv_1_kernel[i](InstancePtr, kernel[i]);
+	}
+}
+
+void XCnn_Set_Pool_1(XCnn_pool_d20x20_p2x2 *InstancePtr, u32 ctrl)
+{
+	XCnn_pool_d20x20_p2x2_Set_ctrl(InstancePtr, ctrl);
+}
+
+void XCnn_Set_Conv_2(XCnn_conv_d10x10_k3x3 *InstancePtr, u32 ctrl, u32 *kernel)
+{
+	XCnn_conv_d10x10_k3x3_Set_ctrl(InstancePtr, ctrl);
+	for (int i = 0; i < CONV_2_KERNEL_LEN; i++) {
+		XCnn_Set_conv_2_kernel[i](InstancePtr, kernel[i]);
+	}
+}
+
+void XCnn_Set_Pool_2(XCnn_pool_d8x8_p2x2 *InstancePtr, u32 ctrl)
+{
+	XCnn_pool_d8x8_p2x2_Set_ctrl(InstancePtr, ctrl);
+}
+

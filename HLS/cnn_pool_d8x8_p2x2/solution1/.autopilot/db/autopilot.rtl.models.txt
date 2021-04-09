@@ -1,0 +1,3 @@
+cnn_pool_d8x8_p2xbkb
+cnn_pool_d8x8_p2x2_CTRL_s_axi
+cnn_pool_d8x8_p2x2

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;cpx3_test_bsp&apos;" deleteContents="false" description="Delete resource &apos;cpx3_test_bsp&apos;" element1="/cpx3_test_bsp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1617818987647"/>
-</session>
