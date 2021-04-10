@@ -9,6 +9,7 @@
 #include <xparameters.h>
 #include "cnn_hw.h"
 #include "cnn_config.h"
+#include "fixed_point.h"
 
 void (*XCnn_Set_conv_0_kernel[CONV_0_KERNEL_LEN])(XCnn_conv_d46x46_k3x3 *InstancePtr, u32 Data) = {
 		XCnn_conv_d46x46_k3x3_Set_kernel_0,
@@ -128,18 +129,24 @@ void XCnn_Set_Pool_2(XCnn_pool_d8x8_p2x2 *InstancePtr, u32 ctrl)
 
 void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf)
 {
-	XCnn_Set_Conv_0(&cnn_hw->conv_0, cnn_conf->conv_0_ctrl, cnn_conf->conv_0_kernel);
-	XCnn_Set_Pool_0(&cnn_hw->pool_0, cnn_conf->pool_0_ctrl);
-	XCnn_Set_Conv_1(&cnn_hw->conv_1, cnn_conf->conv_1_ctrl, cnn_conf->conv_1_kernel);
-	XCnn_Set_Pool_1(&cnn_hw->pool_1, cnn_conf->pool_1_ctrl);
-	XCnn_Set_Conv_2(&cnn_hw->conv_2, cnn_conf->conv_2_ctrl, cnn_conf->conv_2_kernel);
-	XCnn_Set_Pool_2(&cnn_hw->pool_2, cnn_conf->pool_2_ctrl);
-
-	for (int i = 0; i < CNN_INPUT_ROWS; i++) {
-		for (int j = 0; j < CNN_INPUT_COLS; j++) {
-			cnn_hw->p_dma_buffer_TX[i * CNN_INPUT_ROWS + j] = cnn_conf->input_data[i][j];
-		}
+	for (int i = 0; i < CONV_0_KERNEL_LEN; i++) {
+		cnn_hw->conv_0_kernel[i] = FLOAT_2_FIXED(cnn_conf->conv_0_kernel[i]);
 	}
+	for (int i = 0; i < CONV_1_KERNEL_LEN; i++) {
+		cnn_hw->conv_1_kernel[i] = FLOAT_2_FIXED(cnn_conf->conv_1_kernel[i]);
+	}
+	for (int i = 0; i < CONV_2_KERNEL_LEN; i++) {
+		cnn_hw->conv_2_kernel[i] = FLOAT_2_FIXED(cnn_conf->conv_2_kernel[i]);
+	}
+	for (int i = 0; i < CNN_INPUT_LEN; i++) {
+		cnn_hw->p_dma_buffer_TX[i] = FLOAT_2_FIXED(cnn_conf->input_data[i]);
+	}
+	XCnn_Set_Conv_0(&cnn_hw->conv_0, cnn_conf->conv_0_ctrl, cnn_hw->conv_0_kernel);
+	XCnn_Set_Pool_0(&cnn_hw->pool_0, cnn_conf->pool_0_ctrl);
+	XCnn_Set_Conv_1(&cnn_hw->conv_1, cnn_conf->conv_1_ctrl, cnn_hw->conv_1_kernel);
+	XCnn_Set_Pool_1(&cnn_hw->pool_1, cnn_conf->pool_1_ctrl);
+	XCnn_Set_Conv_2(&cnn_hw->conv_2, cnn_conf->conv_2_ctrl, cnn_hw->conv_2_kernel);
+	XCnn_Set_Pool_2(&cnn_hw->pool_2, cnn_conf->pool_2_ctrl);
 }
 
 void cnn_hw_start(struct cnn_hw *cnn_hw)

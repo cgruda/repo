@@ -33,6 +33,9 @@ struct cnn_hw {
 	XAxiDma axiDMA;
 	u32 *p_dma_buffer_TX;
 	u32 *p_dma_buffer_RX;
+	uint32_t conv_0_kernel[CONV_0_KERNEL_LEN];
+	uint32_t conv_1_kernel[CONV_1_KERNEL_LEN];
+	uint32_t conv_2_kernel[CONV_2_KERNEL_LEN];
 	XTime tStart;
 	XTime tEnd;
 };
