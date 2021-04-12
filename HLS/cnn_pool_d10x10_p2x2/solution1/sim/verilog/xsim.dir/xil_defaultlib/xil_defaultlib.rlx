@@ -1,0 +1,12 @@
+0.6
+2016.4
+Jan 23 2017
+19:37:30
+D:/School/Project/new_repo/HLS/cnn_pool_d10x10_p2x2/solution1/sim/verilog/AESL_axi_s_inStream.v,1618229277,systemVerilog,,,,AESL_axi_s_inStream,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_pool_d10x10_p2x2/solution1/sim/verilog/AESL_axi_s_outStream.v,1618229277,systemVerilog,,,,AESL_axi_s_outStream,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_pool_d10x10_p2x2/solution1/sim/verilog/AESL_axi_slave_CTRL.v,1618229277,systemVerilog,,,,AESL_axi_slave_CTRL,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_pool_d10x10_p2x2/solution1/sim/verilog/AESL_fifo.v,1618229277,systemVerilog,,,,fifo,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_pool_d10x10_p2x2/solution1/sim/verilog/cnn_pool_d10x10_p2x2.autotb.v,1618229278,systemVerilog,,,,apatb_cnn_pool_d10x10_p2x2_top,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_pool_d10x10_p2x2/solution1/sim/verilog/cnn_pool_d10x10_p2x2.v,1618229226,systemVerilog,,,,cnn_pool_d10x10_p2x2,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_pool_d10x10_p2x2/solution1/sim/verilog/cnn_pool_d10x10_p2x2_CTRL_s_axi.v,1618229227,systemVerilog,,,,cnn_pool_d10x10_p2x2_CTRL_s_axi,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_pool_d10x10_p2x2/solution1/sim/verilog/cnn_pool_d10x10_pbkb.v,1618229227,systemVerilog,,,,cnn_pool_d10x10_pbkb;cnn_pool_d10x10_pbkb_ram,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,

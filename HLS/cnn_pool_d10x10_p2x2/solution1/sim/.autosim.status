@@ -1,0 +1,10 @@
+set status(tv_done) 0
+set status(tvin) "cnn_pool_d10x10_p2x2.autotvin.dat"
+set status(wrapc_done) 1
+set status(bc_done) 0
+set status(bc_tb_done) 0
+set status(tvout) "cnn_pool_d10x10_p2x2.autotvout.dat"
+set status(sc_done) 0
+set status(cas_done) 0
+set status(hdl_tvin) ""
+set status(hdl_tvout) ""

@@ -1,0 +1,5 @@
+cnn_conv_d26x26_kbkb
+cnn_conv_d26x26_kcud
+cnn_conv_d26x26_k3x3_CTRL_s_axi
+fixed_point_mul
+cnn_conv_d26x26_k3x3

@@ -1,0 +1,14 @@
+0.6
+2016.4
+Jan 23 2017
+19:37:30
+D:/School/Project/new_repo/HLS/cnn_conv_d54x54_k3x3/solution1/sim/verilog/AESL_axi_s_inStream.v,1618228547,systemVerilog,,,,AESL_axi_s_inStream,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_conv_d54x54_k3x3/solution1/sim/verilog/AESL_axi_s_outStream.v,1618228547,systemVerilog,,,,AESL_axi_s_outStream,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_conv_d54x54_k3x3/solution1/sim/verilog/AESL_axi_slave_CTRL.v,1618228547,systemVerilog,,,,AESL_axi_slave_CTRL,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_conv_d54x54_k3x3/solution1/sim/verilog/AESL_fifo.v,1618228547,systemVerilog,,,,fifo,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_conv_d54x54_k3x3/solution1/sim/verilog/cnn_conv_d54x54_k3x3.autotb.v,1618228548,systemVerilog,,,,apatb_cnn_conv_d54x54_k3x3_top,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_conv_d54x54_k3x3/solution1/sim/verilog/cnn_conv_d54x54_k3x3.v,1618228496,systemVerilog,,,,cnn_conv_d54x54_k3x3,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_conv_d54x54_k3x3/solution1/sim/verilog/cnn_conv_d54x54_k3x3_CTRL_s_axi.v,1618228497,systemVerilog,,,,cnn_conv_d54x54_k3x3_CTRL_s_axi,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_conv_d54x54_k3x3/solution1/sim/verilog/cnn_conv_d54x54_kbkb.v,1618228497,systemVerilog,,,,cnn_conv_d54x54_kbkb;cnn_conv_d54x54_kbkb_MulnS_0,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_conv_d54x54_k3x3/solution1/sim/verilog/cnn_conv_d54x54_kcud.v,1618228497,systemVerilog,,,,cnn_conv_d54x54_kcud;cnn_conv_d54x54_kcud_ram,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,
+D:/School/Project/new_repo/HLS/cnn_conv_d54x54_k3x3/solution1/sim/verilog/fixed_point_mul.v,1618228495,systemVerilog,,,,fixed_point_mul,C:/Xilinx/Vivado/2016.4/data/xsim/ip/xsim_ip.ini,ieee_proposed=./ieee_proposed,,,,,,

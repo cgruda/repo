@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Mon Apr 12 15:05:46 2021
+# Process ID: 7276
+# Current directory: D:/School/Project/new_repo/HLS/cnn_conv_d12x12_k3x3/solution1/sim/verilog
+# Command line: wbtcv.exe -mode batch -source D:/School/Project/new_repo/HLS/cnn_conv_d12x12_k3x3/solution1/sim/verilog/xsim.dir/cnn_conv_d12x12_k3x3/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/School/Project/new_repo/HLS/cnn_conv_d12x12_k3x3/solution1/sim/verilog/webtalk.log
+# Journal file: D:/School/Project/new_repo/HLS/cnn_conv_d12x12_k3x3/solution1/sim/verilog\webtalk.jou
+#-----------------------------------------------------------
+source D:/School/Project/new_repo/HLS/cnn_conv_d12x12_k3x3/solution1/sim/verilog/xsim.dir/cnn_conv_d12x12_k3x3/webtalk/xsim_webtalk.tcl -notrace

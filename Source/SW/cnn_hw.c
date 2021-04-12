@@ -1,8 +1,10 @@
-/*
- * cnn_hw.c
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
  *
- *  Created on: Apr 9, 2021
- *      Author: cgrud
+ * Chaim Gruda
+ * Shay Tsabar
+ *
  */
 
 #include "cnn_config.h"
@@ -15,40 +17,40 @@
 #endif
 
 #if (PLATFORM == FPGA)
-void (*XCnn_Set_conv_0_kernel[CONV_0_KERNEL_LEN])(XCnn_conv_d46x46_k3x3 *InstancePtr, uint32_t Data) = {
-		XCnn_conv_d46x46_k3x3_Set_kernel_0,
-		XCnn_conv_d46x46_k3x3_Set_kernel_1,
-		XCnn_conv_d46x46_k3x3_Set_kernel_2,
-		XCnn_conv_d46x46_k3x3_Set_kernel_3,
-		XCnn_conv_d46x46_k3x3_Set_kernel_4,
-		XCnn_conv_d46x46_k3x3_Set_kernel_5,
-		XCnn_conv_d46x46_k3x3_Set_kernel_6,
-		XCnn_conv_d46x46_k3x3_Set_kernel_7,
-		XCnn_conv_d46x46_k3x3_Set_kernel_8,
+void (*XCnn_Set_conv_0_kernel[CONV_0_KERNEL_LEN])(XCnn_conv_d54x54_k3x3 *InstancePtr, uint32_t Data) = {
+		XCnn_conv_d54x54_k3x3_Set_kernel_0,
+		XCnn_conv_d54x54_k3x3_Set_kernel_1,
+		XCnn_conv_d54x54_k3x3_Set_kernel_2,
+		XCnn_conv_d54x54_k3x3_Set_kernel_3,
+		XCnn_conv_d54x54_k3x3_Set_kernel_4,
+		XCnn_conv_d54x54_k3x3_Set_kernel_5,
+		XCnn_conv_d54x54_k3x3_Set_kernel_6,
+		XCnn_conv_d54x54_k3x3_Set_kernel_7,
+		XCnn_conv_d54x54_k3x3_Set_kernel_8,
 };
 
-void (*XCnn_Set_conv_1_kernel[CONV_1_KERNEL_LEN])(XCnn_conv_d22x22_k3x3 *InstancePtr, uint32_t Data) = {
-		XCnn_conv_d22x22_k3x3_Set_kernel_0,
-		XCnn_conv_d22x22_k3x3_Set_kernel_1,
-		XCnn_conv_d22x22_k3x3_Set_kernel_2,
-		XCnn_conv_d22x22_k3x3_Set_kernel_3,
-		XCnn_conv_d22x22_k3x3_Set_kernel_4,
-		XCnn_conv_d22x22_k3x3_Set_kernel_5,
-		XCnn_conv_d22x22_k3x3_Set_kernel_6,
-		XCnn_conv_d22x22_k3x3_Set_kernel_7,
-		XCnn_conv_d22x22_k3x3_Set_kernel_8,
+void (*XCnn_Set_conv_1_kernel[CONV_1_KERNEL_LEN])(XCnn_conv_d26x26_k3x3 *InstancePtr, uint32_t Data) = {
+		XCnn_conv_d26x26_k3x3_Set_kernel_0,
+		XCnn_conv_d26x26_k3x3_Set_kernel_1,
+		XCnn_conv_d26x26_k3x3_Set_kernel_2,
+		XCnn_conv_d26x26_k3x3_Set_kernel_3,
+		XCnn_conv_d26x26_k3x3_Set_kernel_4,
+		XCnn_conv_d26x26_k3x3_Set_kernel_5,
+		XCnn_conv_d26x26_k3x3_Set_kernel_6,
+		XCnn_conv_d26x26_k3x3_Set_kernel_7,
+		XCnn_conv_d26x26_k3x3_Set_kernel_8,
 };
 
-void (*XCnn_Set_conv_2_kernel[CONV_2_KERNEL_LEN])(XCnn_conv_d10x10_k3x3 *InstancePtr, uint32_t Data) = {
-		XCnn_conv_d10x10_k3x3_Set_kernel_0,
-		XCnn_conv_d10x10_k3x3_Set_kernel_1,
-		XCnn_conv_d10x10_k3x3_Set_kernel_2,
-		XCnn_conv_d10x10_k3x3_Set_kernel_3,
-		XCnn_conv_d10x10_k3x3_Set_kernel_4,
-		XCnn_conv_d10x10_k3x3_Set_kernel_5,
-		XCnn_conv_d10x10_k3x3_Set_kernel_6,
-		XCnn_conv_d10x10_k3x3_Set_kernel_7,
-		XCnn_conv_d10x10_k3x3_Set_kernel_8,
+void (*XCnn_Set_conv_2_kernel[CONV_2_KERNEL_LEN])(XCnn_conv_d12x12_k3x3 *InstancePtr, uint32_t Data) = {
+		XCnn_conv_d12x12_k3x3_Set_kernel_0,
+		XCnn_conv_d12x12_k3x3_Set_kernel_1,
+		XCnn_conv_d12x12_k3x3_Set_kernel_2,
+		XCnn_conv_d12x12_k3x3_Set_kernel_3,
+		XCnn_conv_d12x12_k3x3_Set_kernel_4,
+		XCnn_conv_d12x12_k3x3_Set_kernel_5,
+		XCnn_conv_d12x12_k3x3_Set_kernel_6,
+		XCnn_conv_d12x12_k3x3_Set_kernel_7,
+		XCnn_conv_d12x12_k3x3_Set_kernel_8,
 };
 #endif
 
@@ -57,27 +59,27 @@ int cnn_hw_init(struct cnn_hw *p_cnn_hw)
 {
 	int status = XST_SUCCESS;
 
-	status = XCnn_conv_d46x46_k3x3_Initialize(&p_cnn_hw->conv_0, XPAR_CNN_CONV_D46X46_K3X3_0_DEVICE_ID);
+	status = XCnn_conv_d54x54_k3x3_Initialize(&p_cnn_hw->conv_0, XPAR_CNN_CONV_D54X54_K3X3_0_DEVICE_ID);
 	if (status != XST_SUCCESS)
 		return status;
 
-	status = XCnn_pool_d44x44_p2x2_Initialize(&p_cnn_hw->pool_0, XPAR_CNN_POOL_D44X44_P2X2_0_DEVICE_ID);
+	status = XCnn_pool_d52x52_p2x2_Initialize(&p_cnn_hw->pool_0, XPAR_CNN_POOL_D52X52_P2X2_0_DEVICE_ID);
 	if (status != XST_SUCCESS)
 		return status;
 
-	status = XCnn_conv_d22x22_k3x3_Initialize(&p_cnn_hw->conv_1, XPAR_CNN_CONV_D22X22_K3X3_0_DEVICE_ID);
+	status = XCnn_conv_d26x26_k3x3_Initialize(&p_cnn_hw->conv_1, XPAR_CNN_CONV_D26X26_K3X3_0_DEVICE_ID);
 	if (status != XST_SUCCESS)
 		return status;
 
-	status = XCnn_pool_d20x20_p2x2_Initialize(&p_cnn_hw->pool_1, XPAR_CNN_POOL_D20X20_P2X2_0_DEVICE_ID);
+	status = XCnn_pool_d24x24_p2x2_Initialize(&p_cnn_hw->pool_1, XPAR_CNN_POOL_D24X24_P2X2_0_DEVICE_ID);
 	if (status != XST_SUCCESS)
 		return status;
 
-	status = XCnn_conv_d10x10_k3x3_Initialize(&p_cnn_hw->conv_2, XPAR_CNN_CONV_D10X10_K3X3_0_DEVICE_ID);
+	status = XCnn_conv_d12x12_k3x3_Initialize(&p_cnn_hw->conv_2, XPAR_CNN_CONV_D12X12_K3X3_0_DEVICE_ID);
 	if (status != XST_SUCCESS)
 		return status;
 
-	status = XCnn_pool_d8x8_p2x2_Initialize(&p_cnn_hw->pool_2, XPAR_CNN_POOL_D8X8_P2X2_0_DEVICE_ID);
+	status = XCnn_pool_d10x10_p2x2_Initialize(&p_cnn_hw->pool_2, XPAR_CNN_POOL_D10X10_P2X2_0_DEVICE_ID);
 	if (status != XST_SUCCESS)
 		return status;
 
@@ -97,40 +99,40 @@ int cnn_hw_init(struct cnn_hw *p_cnn_hw)
 	return status;
 }
 
-void XCnn_Set_Conv_0(XCnn_conv_d46x46_k3x3 *InstancePtr, uint32_t ctrl, uint32_t *kernel)
+void XCnn_Set_Conv_0(XCnn_conv_d54x54_k3x3 *InstancePtr, uint32_t ctrl, uint32_t *kernel)
 {
-	XCnn_conv_d46x46_k3x3_Set_ctrl(InstancePtr, ctrl);
+	XCnn_conv_d54x54_k3x3_Set_ctrl(InstancePtr, ctrl);
 	for (int i = 0; i < CONV_0_KERNEL_LEN; i++)
 		XCnn_Set_conv_0_kernel[i](InstancePtr, kernel[i]);
 }
 
-void XCnn_Set_Conv_1(XCnn_conv_d22x22_k3x3 *InstancePtr, uint32_t ctrl, uint32_t *kernel)
+void XCnn_Set_Conv_1(XCnn_conv_d26x26_k3x3 *InstancePtr, uint32_t ctrl, uint32_t *kernel)
 {
-	XCnn_conv_d22x22_k3x3_Set_ctrl(InstancePtr, ctrl);
+	XCnn_conv_d26x26_k3x3_Set_ctrl(InstancePtr, ctrl);
 	for (int i = 0; i < CONV_1_KERNEL_LEN; i++)
 		XCnn_Set_conv_1_kernel[i](InstancePtr, kernel[i]);
 }
 
-void XCnn_Set_Conv_2(XCnn_conv_d10x10_k3x3 *InstancePtr, uint32_t ctrl, uint32_t *kernel)
+void XCnn_Set_Conv_2(XCnn_conv_d12x12_k3x3 *InstancePtr, uint32_t ctrl, uint32_t *kernel)
 {
-	XCnn_conv_d10x10_k3x3_Set_ctrl(InstancePtr, ctrl);
+	XCnn_conv_d12x12_k3x3_Set_ctrl(InstancePtr, ctrl);
 	for (int i = 0; i < CONV_2_KERNEL_LEN; i++)
 		XCnn_Set_conv_2_kernel[i](InstancePtr, kernel[i]);
 }
 
-void XCnn_Set_Pool_0(XCnn_pool_d44x44_p2x2 *InstancePtr, uint32_t ctrl)
+void XCnn_Set_Pool_0(XCnn_pool_d52x52_p2x2 *InstancePtr, uint32_t ctrl)
 {
-	XCnn_pool_d44x44_p2x2_Set_ctrl(InstancePtr, ctrl);
+	XCnn_pool_d52x52_p2x2_Set_ctrl(InstancePtr, ctrl);
 }
 
-void XCnn_Set_Pool_1(XCnn_pool_d20x20_p2x2 *InstancePtr, uint32_t ctrl)
+void XCnn_Set_Pool_1(XCnn_pool_d24x24_p2x2 *InstancePtr, uint32_t ctrl)
 {
-	XCnn_pool_d20x20_p2x2_Set_ctrl(InstancePtr, ctrl);
+	XCnn_pool_d24x24_p2x2_Set_ctrl(InstancePtr, ctrl);
 }
 
-void XCnn_Set_Pool_2(XCnn_pool_d8x8_p2x2 *InstancePtr, uint32_t ctrl)
+void XCnn_Set_Pool_2(XCnn_pool_d10x10_p2x2 *InstancePtr, uint32_t ctrl)
 {
-	XCnn_pool_d8x8_p2x2_Set_ctrl(InstancePtr, ctrl);
+	XCnn_pool_d10x10_p2x2_Set_ctrl(InstancePtr, ctrl);
 }
 
 void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf)
@@ -157,12 +159,12 @@ void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf)
 
 void cnn_hw_start(struct cnn_hw *cnn_hw)
 {
-	XCnn_pool_d8x8_p2x2_Start(&cnn_hw->pool_2);
-	XCnn_conv_d10x10_k3x3_Start(&cnn_hw->conv_2);
-	XCnn_pool_d20x20_p2x2_Start(&cnn_hw->pool_1);
-	XCnn_conv_d22x22_k3x3_Start(&cnn_hw->conv_1);
-	XCnn_pool_d44x44_p2x2_Start(&cnn_hw->pool_0);
-	XCnn_conv_d46x46_k3x3_Start(&cnn_hw->conv_0);
+	XCnn_pool_d10x10_p2x2_Start(&cnn_hw->pool_2);
+	XCnn_conv_d12x12_k3x3_Start(&cnn_hw->conv_2);
+	XCnn_pool_d24x24_p2x2_Start(&cnn_hw->pool_1);
+	XCnn_conv_d26x26_k3x3_Start(&cnn_hw->conv_1);
+	XCnn_pool_d52x52_p2x2_Start(&cnn_hw->pool_0);
+	XCnn_conv_d54x54_k3x3_Start(&cnn_hw->conv_0);
 
 	Xil_DCacheFlushRange((uint32_t) cnn_hw->p_dma_buffer_TX, CNN_INPUT_LEN * sizeof(uint32_t));
 	Xil_DCacheFlushRange((uint32_t) cnn_hw->p_dma_buffer_RX, CNN_OUTPUT_LEN * sizeof(uint32_t));
@@ -176,7 +178,7 @@ void cnn_hw_start(struct cnn_hw *cnn_hw)
 
 void cnn_hw_wait(struct cnn_hw *cnn_hw)
 {
-	while (!XCnn_pool_d8x8_p2x2_IsDone(&cnn_hw->pool_2));
+	while (!XCnn_pool_d10x10_p2x2_IsDone(&cnn_hw->pool_2));
 	XTime_GetTime(&cnn_hw->tEnd);
 }
 #endif // (PLATFORM == FPGA)

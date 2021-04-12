@@ -123,8 +123,9 @@ void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
 	cnn_sw_set(cnn_sw, cnn_conf);
 	cnn_sw_start(cnn_sw);
 #if (PLATFORM == FPGA)
-	printf("cnn sw took %llu clock cycles\n", 2 * (cnn_sw.tEnd - cnn_sw.tStart));
-	printf("which are %.2f us.\n", 1.0 * (cnn_sw.tEnd - cnn_sw.tStart) / (COUNTS_PER_SECOND/1000000));
+	XTime timediff = cnn_sw->tEnd - cnn_sw->tStart;
+	printf("cnn sw took %llu clock cycles\n", 2 * timediff);
+	printf("which are %.2f us.\n", 1.0 * timediff / (COUNTS_PER_SECOND / 1000000));
 #else
 	uint32_t sec = cnn_sw->tEnd.tv_sec - cnn_sw->tStart.tv_sec;
 	uint32_t nsec = cnn_sw->tEnd.tv_nsec - cnn_sw->tStart.tv_nsec + (sec * 1000000000);
