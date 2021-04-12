@@ -1,8 +1,10 @@
-/*
- * cnn_config.h
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
  *
- *  Created on: Apr 9, 2021
- *      Author: cgrud
+ * Chaim Gruda
+ * Shay Tsabar
+ *
  */
 
 #ifndef SRC_CNN_CONFIG_H_

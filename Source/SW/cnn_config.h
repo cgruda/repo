@@ -1,12 +1,18 @@
-/*
- * cnn_config.h
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
  *
- *  Created on: Apr 9, 2021
- *      Author: cgrud
+ * Chaim Gruda
+ * Shay Tsabar
+ *
  */
 
 #ifndef SRC_CNN_CONFIG_H_
 #define SRC_CNN_CONFIG_H_
+
+#define FPGA 0
+#define PC 1
+#define PLATFORM PC
 
 #include <stdint.h>
 
@@ -37,7 +43,7 @@
 #define POOL_0_INPUT_ROWS	CONV_0_OUTPUT_ROWS
 #define POOL_0_INPUT_COLS	CONV_0_OUTPUT_COLS
 #define POOL_0_INPUT_LEN	(POOL_0_INPUT_ROWS * POOL0_INPUT_COLS)
-#define POOL_0_TYPE		MAX_POOL
+#define POOL_0_TYPE		AVG_POOL
 #define POOL_0_DIM		2
 #define POOL_0_ROWS		POOL_0_DIM
 #define POOL_0_COLS		POOL_0_DIM
@@ -59,7 +65,7 @@
 #define CONV_1_OUTPUT_LEN	(CONV_1_OUTPUT_ROWS * CONV_1_OUTPUT_COLS)
 
 // pool_1
-#define POOL_1_TYPE		MAX_POOL
+#define POOL_1_TYPE		AVG_POOL
 #define POOL_1_INPUT_ROWS	CONV_1_OUTPUT_ROWS
 #define POOL_1_INPUT_COLS	CONV_1_OUTPUT_COLS
 #define POOL_1_INPUT_LEN	(POOL_1_INPUT_ROWS * POOL_1_INPUT_COLS)
@@ -84,7 +90,7 @@
 #define CONV_2_OUTPUT_LEN	(CONV_2_OUTPUT_ROWS * CONV_2_OUTPUT_COLS)
 
 // pool_2
-#define POOL_2_TYPE		MAX_POOL
+#define POOL_2_TYPE		AVG_POOL
 #define POOL_2_INPUT_ROWS	CONV_2_OUTPUT_ROWS
 #define POOL_2_INPUT_COLS	CONV_2_OUTPUT_COLS
 #define POOL_2_INPUT_LEN	(POOL_2_INPUT_ROWS * POOL_2_INPUT_COLS)

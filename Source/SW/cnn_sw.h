@@ -1,9 +1,31 @@
-#include <stdint.h>
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
+ *
+ * Chaim Gruda
+ * Shay Tsabar
+ *
+ */
+
+#ifndef SRC_CNN_SW_H_
+#define SRC_CNN_SW_H_
+
 #include "cnn_config.h"
+#include <stdint.h>
+#if (PLATFORM == FPGA)
+#include "xtime_l.h"
+#else
+#include <time.h>
+#endif
 
 struct cnn_sw {
-	//XTime tStart;
-	//XTime tEnd;
+#if (PLATFORM == FPGA)
+	XTime tStart;
+	XTime tEnd;
+#else
+	struct timespec tStart;
+	struct timespec tEnd;
+#endif
 	uint32_t conv_0_ctrl;
 	uint32_t pool_0_ctrl;
 	uint32_t conv_1_ctrl;
@@ -23,7 +45,11 @@ struct cnn_sw {
 	float *output_data;
 };
 
-int pool(float *input, float *output, uint32_t ctrl);
-int conv(float *input, float *kernel, float *output, uint32_t ctrl);
-int cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);
-int cnn_sw_start(struct cnn_sw *cnn_sw);
+void pool(float *input, float *output, uint32_t ctrl);
+void conv(float *input, float *kernel, float *output, uint32_t ctrl);
+void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);
+void cnn_sw_start(struct cnn_sw *cnn_sw);
+void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);
+
+
+#endif /* SRC_CNN_SW_H_ */

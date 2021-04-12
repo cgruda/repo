@@ -1,17 +1,18 @@
-/*
- * cnn_config.c
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
  *
- *  Created on: Apr 9, 2021
- *      Author: cgrud
+ * Chaim Gruda
+ * Shay Tsabar
+ *
  */
 
 #include "cnn_config.h"
 #include "fixed_point.h"
-#include "dbg.h"
+#include <stdio.h>
 
 void cnn_config_init(struct cnn_config *cnn_conf)
 {
-	DBG_LOG_PRINT(TRACE, "%s\n", __func__);
 	for (int i = 0; i < CNN_INPUT_LEN; i++) {
 		cnn_conf->input_data[i] = 0.25;
 	}
@@ -34,7 +35,7 @@ void cnn_config_init(struct cnn_config *cnn_conf)
 	CONV_CTRL_KERNEL_DIM_SET(cnn_conf->conv_1_ctrl, CONV_1_KERNEL_DIM);
 	CONV_CTRL_INPUT_ROWS_SET(cnn_conf->conv_1_ctrl, CONV_1_INPUT_ROWS);
 	CONV_CTRL_INPUT_COLS_SET(cnn_conf->conv_1_ctrl, CONV_1_INPUT_COLS);
-	
+
 	CONV_CTRL_ACTIVATION_SET(cnn_conf->conv_2_ctrl, CONV_2_ACTIVATION);
 	CONV_CTRL_KERNEL_DIM_SET(cnn_conf->conv_2_ctrl, CONV_2_KERNEL_DIM);
 	CONV_CTRL_INPUT_ROWS_SET(cnn_conf->conv_2_ctrl, CONV_2_INPUT_ROWS);
@@ -62,29 +63,31 @@ void cnn_config_print(struct cnn_config *cnn_conf)
 	printf("---------------------------------------------------------------------\n");
 	printf("                           cnn configuration                         \n");
 	printf("---------------------------------------------------------------------\n");
-	printf("conv_0: input [%dx%d], kernel_dim [%d], activation [%d]\n", CONV_CTRL_INPUT_ROWS_GET(cnn_conf->conv_0_ctrl),
-									    CONV_CTRL_INPUT_COLS_GET(cnn_conf->conv_0_ctrl),
-									    CONV_CTRL_KERNEL_DIM_GET(cnn_conf->conv_0_ctrl),
-									    CONV_CTRL_ACTIVATION_GET(cnn_conf->conv_0_ctrl));
-	printf("pool_0: input [%dx%d], pool_dim [%d], type [%d]\n", POOL_CTRL_INPUT_ROWS_GET(cnn_conf->pool_0_ctrl),
-								    POOL_CTRL_INPUT_COLS_GET(cnn_conf->pool_0_ctrl),
-								    POOL_CTRL_DIM_GET(cnn_conf->pool_0_ctrl),
-								    POOL_CTRL_TYPE_GET(cnn_conf->pool_0_ctrl));
-	printf("conv_1: input [%dx%d], kernel_dim [%d], activation [%d]\n", CONV_CTRL_INPUT_ROWS_GET(cnn_conf->conv_1_ctrl),
-									    CONV_CTRL_INPUT_COLS_GET(cnn_conf->conv_1_ctrl),
-									    CONV_CTRL_KERNEL_DIM_GET(cnn_conf->conv_1_ctrl),
-									    CONV_CTRL_ACTIVATION_GET(cnn_conf->conv_1_ctrl));
-	printf("pool_1: input [%dx%d], pool_dim [%d], type [%d]\n", POOL_CTRL_INPUT_ROWS_GET(cnn_conf->pool_1_ctrl),
-								    POOL_CTRL_INPUT_COLS_GET(cnn_conf->pool_1_ctrl),
-								    POOL_CTRL_DIM_GET(cnn_conf->pool_1_ctrl),
-								    POOL_CTRL_TYPE_GET(cnn_conf->pool_1_ctrl));
-	printf("conv_2: input [%dx%d], kernel_dim [%d], activation [%d]\n", CONV_CTRL_INPUT_ROWS_GET(cnn_conf->conv_2_ctrl),
-									    CONV_CTRL_INPUT_COLS_GET(cnn_conf->conv_2_ctrl),
-									    CONV_CTRL_KERNEL_DIM_GET(cnn_conf->conv_2_ctrl),
-									    CONV_CTRL_ACTIVATION_GET(cnn_conf->conv_2_ctrl));
-	printf("pool_2: input [%dx%d], pool_dim [%d], type [%d]\n", POOL_CTRL_INPUT_ROWS_GET(cnn_conf->pool_2_ctrl),
-								    POOL_CTRL_INPUT_COLS_GET(cnn_conf->pool_2_ctrl),
-								    POOL_CTRL_DIM_GET(cnn_conf->pool_2_ctrl),
-								    POOL_CTRL_TYPE_GET(cnn_conf->pool_2_ctrl));
+	printf("conv_0: input [%2ux%2u], kernel_dim [%u], activation [%u]\n", CONV_CTRL_INPUT_ROWS_GET(cnn_conf->conv_0_ctrl),
+									      CONV_CTRL_INPUT_COLS_GET(cnn_conf->conv_0_ctrl),
+									      CONV_CTRL_KERNEL_DIM_GET(cnn_conf->conv_0_ctrl),
+									      CONV_CTRL_ACTIVATION_GET(cnn_conf->conv_0_ctrl));
+	printf("pool_0: input [%2ux%2u], pool_dim   [%u], pool type  [%u]\n", POOL_CTRL_INPUT_ROWS_GET(cnn_conf->pool_0_ctrl),
+									      POOL_CTRL_INPUT_COLS_GET(cnn_conf->pool_0_ctrl),
+									      POOL_CTRL_DIM_GET(cnn_conf->pool_0_ctrl),
+									      POOL_CTRL_TYPE_GET(cnn_conf->pool_0_ctrl));
+	printf("conv_1: input [%2ux%2u], kernel_dim [%u], activation [%u]\n", CONV_CTRL_INPUT_ROWS_GET(cnn_conf->conv_1_ctrl),
+									      CONV_CTRL_INPUT_COLS_GET(cnn_conf->conv_1_ctrl),
+									      CONV_CTRL_KERNEL_DIM_GET(cnn_conf->conv_1_ctrl),
+									      CONV_CTRL_ACTIVATION_GET(cnn_conf->conv_1_ctrl));
+	printf("pool_1: input [%2ux%2u], pool_dim   [%u], pool type  [%u]\n", POOL_CTRL_INPUT_ROWS_GET(cnn_conf->pool_1_ctrl),
+									      POOL_CTRL_INPUT_COLS_GET(cnn_conf->pool_1_ctrl),
+									      POOL_CTRL_DIM_GET(cnn_conf->pool_1_ctrl),
+									      POOL_CTRL_TYPE_GET(cnn_conf->pool_1_ctrl));
+	printf("conv_2: input [%2ux%2u], kernel_dim [%u], activation [%u]\n", CONV_CTRL_INPUT_ROWS_GET(cnn_conf->conv_2_ctrl),
+									      CONV_CTRL_INPUT_COLS_GET(cnn_conf->conv_2_ctrl),
+									      CONV_CTRL_KERNEL_DIM_GET(cnn_conf->conv_2_ctrl),
+									      CONV_CTRL_ACTIVATION_GET(cnn_conf->conv_2_ctrl));
+	printf("pool_2: input [%2ux%2u], pool_dim   [%u], pool type  [%u]\n", POOL_CTRL_INPUT_ROWS_GET(cnn_conf->pool_2_ctrl),
+									      POOL_CTRL_INPUT_COLS_GET(cnn_conf->pool_2_ctrl),
+									      POOL_CTRL_DIM_GET(cnn_conf->pool_2_ctrl),
+									      POOL_CTRL_TYPE_GET(cnn_conf->pool_2_ctrl));
+	printf("---------------------------------------------------------------------\n");
+	printf("activations: 0 - none, 1 - ReLU; pooling type: 0 - MAX, 1 - AVG      \n");
 	printf("---------------------------------------------------------------------\n\n");
 }

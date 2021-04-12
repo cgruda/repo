@@ -1,61 +1,73 @@
-/*
- * main.c
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
  *
- *  Created on: Mar 18, 2021
- *      Author: cgrud
+ * Chaim Gruda
+ * Shay Tsabar
+ *
  */
 
-#include <stdio.h>
-#include "fixed_point.h"
 #include "cnn_config.h"
-#include <stdint.h>
-#include "stdbool.h"
+#include "cnn_hw.h"
 #include "cnn_sw.h"
-#include "dbg.h"
+#include "fixed_point.h"
+#include <stdio.h>
+#include <stdbool.h>
+#if (PLATFORM == FPGA)
+#include <xparameters.h>
+#endif
 
 enum user_choise {
 	UC_EXIT,
-	UC_RUN_SW,
-	UC_RUN_HW
+	UC_RUN_HW,
+	UC_RUN_SW
 };
 
 int get_user_option()
 {
 	int choise;
-	printf("options:       \n" \
-		   "0. exit    \n" \
-		   "1. run sw  \n"
-		   "2. run hw  \n\n");
+	printf("choose option:\n" \
+	       "--------------\n" \
+	       "0. exit       \n" \
+	       "1. run hw     \n" \
+	       "2. run sw     \n" \
+	       "--------------\n");
 	scanf("%d", &choise);
 	return choise;
 }
 
 int main()
 {
-	printf("\n\nwelcome!\n\n");
+	printf("\nwelcome!\n");
 
 	bool exit = false;
-	struct cnn_config cnn_conf = {0};
+	struct cnn_hw cnn_hw = {0};
 	struct cnn_sw cnn_sw = {0};
+	struct cnn_config cnn_conf = {0};
 
 	cnn_config_init(&cnn_conf);
 	cnn_config_print(&cnn_conf);
+
+#if (PLATFORM == FPGA)
+	int status = cnn_hw_init(&cnn_hw);
+	if (status != XST_SUCCESS)
+		return XST_FAILURE;
+#endif
 
 	do {
 		switch (get_user_option()) {
 		case UC_EXIT:
 			exit = true;
 			break;
-		case UC_RUN_SW:
-			cnn_sw_set(&cnn_sw, &cnn_conf);
-			cnn_sw_start(&cnn_sw);
-			for (int i = 0; i < CNN_OUTPUT_ROWS; i++) {
-				for (int j = 0; j < CNN_OUTPUT_ROWS; j++) {
-					printf("%.6f  ", cnn_sw.output_data[i * CNN_OUTPUT_ROWS + j]);
-				}
-				printf("\n");
-			}
+
+		case UC_RUN_HW:
+			cnn_hw_exec(&cnn_hw, &cnn_conf);
 			break;
+
+		case UC_RUN_SW:
+			cnn_sw_exec(&cnn_sw, &cnn_conf);
+			break;
+
 		default:
 			printf("action not supported\n\n");
 			break;
@@ -63,7 +75,7 @@ int main()
 
 	} while (!exit);
 
-	printf("goodby!\n\n");
+	printf("\n\ngoodby!\n\n");
 
 	return 0;
 }

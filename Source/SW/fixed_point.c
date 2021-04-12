@@ -1,26 +1,17 @@
-/*
- * fixed_point.c
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
  *
- *  Created on: Apr 3, 2021
- *      Author: cgrud
- */
-
-
-/*
- * INCLUDES
- ******************************************************************************
+ * Chaim Gruda
+ * Shay Tsabar
+ *
  */
 
 #include "fixed_point.h"
 #include <stdint.h>
 #include <stdio.h>
 
-/*
- * FUNCTIONS
- ******************************************************************************
- */
-
-void fixed_point_print(ufixp32_t num)
+void fixed_point_print(uint32_t num)
 {
 	if (num & SIGN_BIT) {
 		printf("-%.6f ", FIXED_2_FLOAT(-num));
@@ -29,9 +20,9 @@ void fixed_point_print(ufixp32_t num)
 	}
 }
 
-ufixp32_t fixed_point_mul(ufixp32_t a, ufixp32_t b)
+uint32_t fixed_point_mul(uint32_t a, uint32_t b)
 {
-	ufixp32_t result = 0;
+	uint32_t result = 0;
 	int sign = !SIGN_EQ(a, b);
 
 	a = (a & SIGN_BIT) ? -a : a;
@@ -42,9 +33,9 @@ ufixp32_t fixed_point_mul(ufixp32_t a, ufixp32_t b)
 	return sign ? -result : result;
 }
 
-ufixp32_t fixed_point_div(ufixp32_t a, ufixp32_t b)
+uint32_t fixed_point_div(uint32_t a, uint32_t b)
 {
-	ufixp32_t result = 0;
+	uint32_t result = 0;
 	int sign = !SIGN_EQ(a, b);
 
 	a = (a & SIGN_BIT) ? -a : a;

@@ -1,8 +1,10 @@
-/*
- * cnn_sw.c
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
  *
- *  Created on: Apr 10, 2021
- *      Author: cgrud
+ * Chaim Gruda
+ * Shay Tsabar
+ *
  */
 
 #include "cnn_sw.h"

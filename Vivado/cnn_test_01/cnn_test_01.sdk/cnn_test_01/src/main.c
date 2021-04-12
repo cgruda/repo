@@ -1,8 +1,10 @@
-/*
- * main.c
+/**
+ * Project 20-1-1-2187
+ * CNN accelerator
  *
- *  Created on: Mar 18, 2021
- *      Author: cgrud
+ * Chaim Gruda
+ * Shay Tsabar
+ *
  */
 
 #include <stdio.h>
@@ -78,7 +80,7 @@ int main()
 
 			for (int i = 0; i < CNN_OUTPUT_ROWS; i++) {
 				for (int j = 0; j < CNN_OUTPUT_ROWS; j++) {
-					printf("%.6f ", cnn_sw.output_data[i]);
+					printf("%.6f  ", cnn_sw.output_data[i * CNN_OUTPUT_ROWS + j]);
 				}
 				printf("\n");
 			}
