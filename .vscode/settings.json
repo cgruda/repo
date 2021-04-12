@@ -1,6 +1,0 @@
-{
-	"files.associations": {
-		"fixed_point.h": "c",
-		"time.h": "c"
-	}
-}
