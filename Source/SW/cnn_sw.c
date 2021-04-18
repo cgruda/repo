@@ -170,9 +170,9 @@ void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
 	cnn_sw->fc_0_bias = cnn_conf->fc_0_bias;
 
 	// fc_1
-	cnn_sw->fc_1_weight = cnn_conf->fc_1_ctrl;
-	cnn_sw->fc_1_bias = cnn_conf->fc_1_weight;
-	cnn_sw->fc_1_ctrl = cnn_conf->fc_1_bias;
+	cnn_sw->fc_1_ctrl = cnn_conf->fc_1_ctrl;
+	cnn_sw->fc_1_weight = cnn_conf->fc_1_weight;
+	cnn_sw->fc_1_bias = cnn_conf->fc_1_bias;
 }
 
 void cnn_sw_start(struct cnn_sw *cnn_sw)
