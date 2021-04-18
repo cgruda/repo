@@ -53,7 +53,7 @@ struct cnn_sw {
 void pool(float *input, float *output, uint32_t ctrl);
 void conv(float *input, float *kernel, float *output, uint32_t ctrl);
 void fully_connected(float *input, float *weight, float *bias, float *output, uint32_t ctrl);
-float softmax(float x);
+float softmax(float *input, float *output);
 void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);
 void cnn_sw_start(struct cnn_sw *cnn_sw);
 void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);

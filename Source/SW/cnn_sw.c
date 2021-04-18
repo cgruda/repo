@@ -11,6 +11,7 @@
 #include "cnn_sw.h"
 #include <stdint.h>
 #include <stdio.h>
+#include <math.h>
 #if (PLATFORM == FPGA)
 #include "xtime_l.h"
 #else
@@ -165,13 +166,13 @@ void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
 
 	// fc_0
 	cnn_sw->fc_0_ctrl = cnn_conf->fc_0_ctrl;
-	cnn_sw->fc_0_weight = cnn_conf->fc_0_ctrl;
-	cnn_sw->fc_0_bias = cnn_conf->fc_0_ctrl;
+	cnn_sw->fc_0_weight = cnn_conf->fc_0_weight;
+	cnn_sw->fc_0_bias = cnn_conf->fc_0_bias;
 
 	// fc_1
 	cnn_sw->fc_1_weight = cnn_conf->fc_1_ctrl;
-	cnn_sw->fc_1_bias = cnn_conf->fc_1_ctrl;
-	cnn_sw->fc_1_ctrl = cnn_conf->fc_1_ctrl;
+	cnn_sw->fc_1_bias = cnn_conf->fc_1_weight;
+	cnn_sw->fc_1_ctrl = cnn_conf->fc_1_bias;
 }
 
 void cnn_sw_start(struct cnn_sw *cnn_sw)
