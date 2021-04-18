@@ -31,12 +31,10 @@
 #define CONV_0_INPUT_COLS	CNN_INPUT_COLS
 #define CONV_0_INPUT_LEN	(CONV_0_INPUT_ROWS * CONV_0_INPUT_COLS)
 #define CONV_0_KERNEL_DIM	3
-#define CONV_0_KERNEL_ROWS	CONV_0_KERNEL_DIM
-#define CONV_0_KERNEL_COLS	CONV_0_KERNEL_DIM
-#define CONV_0_KERNEL_LEN 	(CONV_0_KERNEL_ROWS * CONV_0_KERNEL_COLS)
+#define CONV_0_KERNEL_LEN 	(CONV_0_KERNEL_DIM * CONV_0_KERNEL_DIM)
 #define CONV_0_ACTIVATION	ACTIVATION_NONE
-#define CONV_0_OUTPUT_ROWS	(CONV_0_INPUT_ROWS - CONV_0_KERNEL_ROWS + 1)
-#define CONV_0_OUTPUT_COLS	(CONV_0_INPUT_COLS - CONV_0_KERNEL_COLS + 1)
+#define CONV_0_OUTPUT_ROWS	(CONV_0_INPUT_ROWS - CONV_0_KERNEL_DIM + 1)
+#define CONV_0_OUTPUT_COLS	(CONV_0_INPUT_COLS - CONV_0_KERNEL_DIM + 1)
 #define CONV_0_OUTPUT_LEN	(CONV_0_OUTPUT_ROWS * CONV_0_OUTPUT_COLS)
 
 // pool_0
@@ -56,12 +54,10 @@
 #define CONV_1_INPUT_COLS	POOL_0_OUTPUT_COLS
 #define CONV_1_INPUT_LEN	(CONV_1_INPUT_ROWS * CONV_1_INPUT_COLS)
 #define CONV_1_KERNEL_DIM	3
-#define CONV_1_KERNEL_ROWS	CONV_1_KERNEL_DIM
-#define CONV_1_KERNEL_COLS	CONV_1_KERNEL_DIM
-#define CONV_1_KERNEL_LEN 	(CONV_1_KERNEL_ROWS * CONV_1_KERNEL_COLS)
+#define CONV_1_KERNEL_LEN 	(CONV_1_KERNEL_DIM * CONV_1_KERNEL_DIM)
 #define CONV_1_ACTIVATION	ACTIVATION_NONE
-#define CONV_1_OUTPUT_ROWS	(CONV_1_INPUT_ROWS - CONV_1_KERNEL_ROWS + 1)
-#define CONV_1_OUTPUT_COLS	(CONV_1_INPUT_COLS - CONV_1_KERNEL_COLS + 1)
+#define CONV_1_OUTPUT_ROWS	(CONV_1_INPUT_ROWS - CONV_1_KERNEL_DIM + 1)
+#define CONV_1_OUTPUT_COLS	(CONV_1_INPUT_COLS - CONV_1_KERNEL_DIM + 1)
 #define CONV_1_OUTPUT_LEN	(CONV_1_OUTPUT_ROWS * CONV_1_OUTPUT_COLS)
 
 // pool_1
@@ -76,36 +72,28 @@
 #define POOL_1_OUTPUT_COLS	(POOL_1_INPUT_COLS / POOL_1_COLS)
 #define POOL_1_OUTPUT_LEN 	(POOL_1_OUTPUT_ROWS * POOL_1_OUTPUT_COLS)
 
-// conv_2
-#define CONV_2_INPUT_ROWS	POOL_1_OUTPUT_ROWS
-#define CONV_2_INPUT_COLS	POOL_1_OUTPUT_COLS
-#define CONV_2_INPUT_LEN	(CONV_2_INPUT_ROWS * CONV_2_INPUT_COLS)
-#define CONV_2_KERNEL_DIM	3
-#define CONV_2_KERNEL_ROWS	CONV_2_KERNEL_DIM
-#define CONV_2_KERNEL_COLS	CONV_2_KERNEL_DIM
-#define CONV_2_KERNEL_LEN 	(CONV_2_KERNEL_ROWS * CONV_2_KERNEL_COLS)
-#define CONV_2_ACTIVATION	ACTIVATION_NONE
-#define CONV_2_OUTPUT_ROWS	(CONV_2_INPUT_ROWS - CONV_2_KERNEL_ROWS + 1)
-#define CONV_2_OUTPUT_COLS	(CONV_2_INPUT_COLS - CONV_2_KERNEL_COLS + 1)
-#define CONV_2_OUTPUT_LEN	(CONV_2_OUTPUT_ROWS * CONV_2_OUTPUT_COLS)
+// fc_0
+#define FC_0_INPUT_LEN		(POOL_1_OUTPUT_ROWS * POOL_1_OUTPUT_COLS)
+#define FC_0_OUTPUT_LEN		(50)
+#define FC_0_WEIGHT_ROWS	FC_0_OUTPUT_LEN
+#define FC_0_WEIGHT_COLS	FC_0_INPUT_LEN
+#define FC_0_WEIGHT_LEN		(FC_0_WEIGHT_ROWS * FC_0_WEIGHT_COLS)
+#define FC_0_ACTIVATION		ACTIVATION_RELU
+#define FC_0_BIAS_LEN		FC_0_OUTPUT_LEN
 
-// pool_2
-#define POOL_2_TYPE		MAX_POOL
-#define POOL_2_INPUT_ROWS	CONV_2_OUTPUT_ROWS
-#define POOL_2_INPUT_COLS	CONV_2_OUTPUT_COLS
-#define POOL_2_INPUT_LEN	(POOL_2_INPUT_ROWS * POOL_2_INPUT_COLS)
-#define POOL_2_DIM		2
-#define POOL_2_ROWS		POOL_2_DIM
-#define POOL_2_COLS		POOL_2_DIM
-#define POOL_2_OUTPUT_ROWS	(POOL_2_INPUT_ROWS / POOL_2_ROWS)
-#define POOL_2_OUTPUT_COLS	(POOL_2_INPUT_COLS / POOL_2_COLS)
-#define POOL_2_OUTPUT_LEN 	(POOL_2_OUTPUT_ROWS * POOL_2_OUTPUT_COLS)
+// fc_1
+#define FC_1_INPUT_LEN		FC_0_OUTPUT_LEN
+#define FC_1_OUTPUT_LEN		(10)
+#define FC_1_WEIGHT_ROWS	FC_1_OUTPUT_LEN
+#define FC_1_WEIGHT_COLS	FC_1_INPUT_LEN
+#define FC_1_WEIGHT_LEN		(FC_1_WEIGHT_ROWS * FC_1_WEIGHT_COLS)
+#define FC_1_ACTIVATION		ACTIVATION_NONE
+#define FC_1_BIAS_LEN		FC_1_OUTPUT_LEN
 
 // cnn output
-#define CNN_OUTPUT_ROWS		POOL_2_OUTPUT_ROWS
-#define CNN_OUTPUT_COLS		POOL_2_OUTPUT_COLS
-#define CNN_OUTPUT_LEN 		(CNN_OUTPUT_ROWS * CNN_OUTPUT_COLS)
+#define CNN_OUTPUT_LEN 		FC_1_OUTPUT_LEN
 
+// conv_ctrl
 #define CONV_CTRL_ACTIVATION_MSK 0x0000000F
 #define CONV_CTRL_ACTIVATION_OFT 0
 #define CONV_CTRL_KERNEL_DIM_MSK 0x000000F0
@@ -125,6 +113,7 @@
 #define CONV_CTRL_INPUT_ROWS_SET(conv_ctrl, input_rows) conv_ctrl = (((conv_ctrl) & ~CONV_CTRL_INPUT_ROWS_MSK) | ((input_rows) << CONV_CTRL_INPUT_ROWS_OFT))
 #define CONV_CTRL_INPUT_COLS_SET(conv_ctrl, input_cols) conv_ctrl = (((conv_ctrl) & ~CONV_CTRL_INPUT_COLS_MSK) | ((input_cols) << CONV_CTRL_INPUT_COLS_OFT))
 
+// pool_ctrl
 #define POOL_CTRL_TYPE_MSK 0x0000000F
 #define POOL_CTRL_TYPE_OFT 0
 #define POOL_CTRL_POOL_DIM_MSK 0x000000F0
@@ -134,27 +123,62 @@
 #define POOL_CTRL_INPUT_COLS_MSK 0x00FF0000
 #define POOL_CTRL_INPUT_COLS_OFT 16
 
-#define POOL_CTRL_TYPE_GET(pool_ctrl) 		(((pool_ctrl) & POOL_CTRL_TYPE_MSK) >> POOL_CTRL_TYPE_OFT)
-#define POOL_CTRL_DIM_GET(pool_ctrl) 		(((pool_ctrl) & POOL_CTRL_POOL_DIM_MSK) >> POOL_CTRL_POOL_DIM_OFT)
-#define POOL_CTRL_INPUT_ROWS_GET(pool_ctrl) 	(((pool_ctrl) & POOL_CTRL_INPUT_ROWS_MSK) >> POOL_CTRL_INPUT_ROWS_OFT)
-#define POOL_CTRL_INPUT_COLS_GET(pool_ctrl) 	(((pool_ctrl) & POOL_CTRL_INPUT_COLS_MSK) >> POOL_CTRL_INPUT_COLS_OFT)
+#define POOL_CTRL_TYPE_GET(pool_ctrl) (((pool_ctrl) & POOL_CTRL_TYPE_MSK) >> POOL_CTRL_TYPE_OFT)
+#define POOL_CTRL_DIM_GET(pool_ctrl) (((pool_ctrl) & POOL_CTRL_POOL_DIM_MSK) >> POOL_CTRL_POOL_DIM_OFT)
+#define POOL_CTRL_INPUT_ROWS_GET(pool_ctrl) (((pool_ctrl) & POOL_CTRL_INPUT_ROWS_MSK) >> POOL_CTRL_INPUT_ROWS_OFT)
+#define POOL_CTRL_INPUT_COLS_GET(pool_ctrl) (((pool_ctrl) & POOL_CTRL_INPUT_COLS_MSK) >> POOL_CTRL_INPUT_COLS_OFT)
 
-#define POOL_CTRL_TYPE_SET(pool_ctrl, pool_type) 	pool_ctrl = (((pool_ctrl) & ~POOL_CTRL_TYPE_MSK) | ((pool_type) << POOL_CTRL_TYPE_OFT))
-#define POOL_CTRL_DIM_SET(pool_ctrl, pool_dim) 		pool_ctrl = (((pool_ctrl) & ~POOL_CTRL_POOL_DIM_MSK) | ((pool_dim) << POOL_CTRL_POOL_DIM_OFT))
+#define POOL_CTRL_TYPE_SET(pool_ctrl, pool_type) pool_ctrl = (((pool_ctrl) & ~POOL_CTRL_TYPE_MSK) | ((pool_type) << POOL_CTRL_TYPE_OFT))
+#define POOL_CTRL_DIM_SET(pool_ctrl, pool_dim) pool_ctrl = (((pool_ctrl) & ~POOL_CTRL_POOL_DIM_MSK) | ((pool_dim) << POOL_CTRL_POOL_DIM_OFT))
 #define POOL_CTRL_INPUT_ROWS_SET(pool_ctrl, input_rows) pool_ctrl = (((pool_ctrl) & ~POOL_CTRL_INPUT_ROWS_MSK) | ((input_rows) << POOL_CTRL_INPUT_ROWS_OFT))
 #define POOL_CTRL_INPUT_COLS_SET(pool_ctrl, input_cols) pool_ctrl = (((pool_ctrl) & ~POOL_CTRL_INPUT_COLS_MSK) | ((input_cols) << POOL_CTRL_INPUT_COLS_OFT))
 
+// fc_ctrl
+#define FC_CTRL_ACTIVATION_MSK 0x0000000F
+#define FC_CTRL_ACTIVATION_OFT 0
+#define FC_CTRL_INPUT_LEN_MSK 0x0000FFF0
+#define FC_CTRL_INPUT_LEN_OFT 4
+#define FC_CTRL_OUTPUT_LEN_MSK 0x0FFF0000
+#define FC_CTRL_OUTPUT_LEN_OFT 16
+
+#define FC_CTRL_ACTIVATION_GET(fc_ctrl) (((fc_ctrl) & FC_CTRL_ACTIVATION_MSK) >> FC_CTRL_ACTIVATION_OFT)
+#define FC_CTRL_INPUT_LEN_GET(fc_ctrl) 	(((fc_ctrl) & FC_CTRL_INPUT_LEN_MSK) >> FC_CTRL_INPUT_LEN_OFT)
+#define FC_CTRL_OUTPUT_LEN_GET(fc_ctrl) (((fc_ctrl) & FC_CTRL_OUTPUT_LEN_MSK) >> FC_CTRL_OUTPUT_LEN_OFT)
+#define FC_CTRL_WEIGHT_ROWS_GET(fc_ctrl) FC_CTRL_OUTPUT_LEN_GET(fc_ctrl)
+#define FC_CTRL_WEIGHT_COLS_GET(fc_ctrl) FC_CTRL_INPUT_LEN_GET(fc_ctrl)
+#define FC_CTRL_BIAS_LEN_GET(fc_ctrl) FC_CTRL_OUTPUT_LEN_GET(fc_ctrl)
+
+#define FC_CTRL_ACTIVATION_SET(fc_ctrl, activation) fc_ctrl = (((fc_ctrl) & ~FC_CTRL_ACTIVATION_MSK) | ((activation) << FC_CTRL_ACTIVATION_OFT))
+#define FC_CTRL_INPUT_LEN_SET(fc_ctrl, input_len) fc_ctrl = (((fc_ctrl) & ~FC_CTRL_INPUT_LEN_MSK) | ((input_len) << FC_CTRL_INPUT_LEN_OFT))
+#define FC_CTRL_OUTPUT_LEN_SET(fc_ctrl, output_len) fc_ctrl = (((fc_ctrl) & ~FC_CTRL_OUTPUT_LEN_MSK) | ((output_len) << FC_CTRL_OUTPUT_LEN_OFT))
+
 struct cnn_config {
+	// input
 	float input_data[CNN_INPUT_LEN];
-	float conv_0_kernel[CONV_0_KERNEL_LEN];
+
+	// conv_0
 	uint32_t conv_0_ctrl;
-	float conv_1_kernel[CONV_1_KERNEL_LEN];
-	uint32_t conv_1_ctrl;
-	float conv_2_kernel[CONV_2_KERNEL_LEN];
-	uint32_t conv_2_ctrl;
+	float conv_0_kernel[CONV_0_KERNEL_LEN];
+	
+	// pool_0
 	uint32_t pool_0_ctrl;
+
+	// conv_1
+	uint32_t conv_1_ctrl;
+	float conv_1_kernel[CONV_1_KERNEL_LEN];
+	
+	// pool_1
 	uint32_t pool_1_ctrl;
-	uint32_t pool_2_ctrl;
+
+	// fc_0
+	uint32_t fc_0_ctrl;
+	float fc_0_weight[FC_0_WEIGHT_LEN];
+	float fc_0_bias[FC_0_BIAS_LEN];
+	
+	// fc_1
+	uint32_t fc_1_ctrl;
+	float fc_1_weight[FC_1_WEIGHT_LEN];
+	float fc_1_bias[FC_1_BIAS_LEN];
 };
 
 void cnn_config_init(struct cnn_config *cnn_conf);

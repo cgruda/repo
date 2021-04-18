@@ -79,19 +79,99 @@ void pool(float *input, float *output, uint32_t ctrl)
 	}
 }
 
+void fully_connected(float *input, float *weight, float *bias, float *output, uint32_t ctrl)
+{
+	int input_len = FC_CTRL_INPUT_LEN_GET(ctrl);
+	int output_len = FC_CTRL_OUTPUT_LEN_GET(ctrl);
+	int weight_cols = FC_CTRL_WEIGHT_COLS_GET(ctrl);
+	int activation = FC_CTRL_ACTIVATION_GET(ctrl);
+
+	for (int i = 0; i < input_len; i++) {
+		for (int j; j < output_len; j++) {
+			output[j] += weight[i * weight_cols + j] * input[i];
+		}
+	}
+
+	for (int i = 0; i < output_len; i++) {
+		output[i] += bias[i];
+		switch (activation) {
+		case ACTIVATION_NONE:
+			break;
+		case ACTIVATION_RELU:
+			output[i] = max(output[i], 0);
+			break;
+		}
+	}
+}
+
+float expo(float y)
+{
+	if(y > 80) {
+		y = 80;
+	}
+	return exp(y);
+}
+
+float softmax(float *input, float *output)
+{
+	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
+		float sum = 0;
+		for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
+			sum += expo(input[i]);
+		}
+		if (sum == 0) {
+			sum = 0.001;
+		}
+		output[i] = expo(input[i])/sum;
+	}
+}
+
+void cnn_result(float *cnn_output_data, int *first_guess, int *second_guess)
+{
+	float max_val = cnn_output_data[0];
+	float sec_val = 0;
+
+	for (int i = 1; i < CNN_OUTPUT_LEN; i++) {
+		if (cnn_output_data[i] > max_val) {
+			sec_val = max_val;
+			*second_guess = *first_guess;
+			max_val = cnn_output_data[i];
+			*first_guess = i;
+		} else if (cnn_output_data[i] > sec_val) {
+			sec_val = cnn_output_data[i];
+			*second_guess = i;
+		}
+	}
+}
+
 void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
 {
+	// input
 	cnn_sw->input_data = cnn_conf->input_data;
-	cnn_sw->conv_0_kernel = cnn_conf->conv_0_kernel;
-	cnn_sw->conv_1_kernel = cnn_conf->conv_1_kernel;
-	cnn_sw->conv_2_kernel = cnn_conf->conv_2_kernel;
+	
+	// conv_0
 	cnn_sw->conv_0_ctrl = cnn_conf->conv_0_ctrl;
-	cnn_sw->conv_1_ctrl = cnn_conf->conv_1_ctrl;
-	cnn_sw->conv_2_ctrl = cnn_conf->conv_2_ctrl;
+	cnn_sw->conv_0_kernel = cnn_conf->conv_0_kernel;
+	
+	// pool_0
 	cnn_sw->pool_0_ctrl = cnn_conf->pool_0_ctrl;
+	
+	// conv_1
+	cnn_sw->conv_1_ctrl = cnn_conf->conv_1_ctrl;
+	cnn_sw->conv_1_kernel = cnn_conf->conv_1_kernel;
+
+	// pool_1
 	cnn_sw->pool_1_ctrl = cnn_conf->pool_1_ctrl;
-	cnn_sw->pool_2_ctrl = cnn_conf->pool_2_ctrl;
-	cnn_sw->output_data = cnn_sw->pool_2_output;
+
+	// fc_0
+	cnn_sw->fc_0_ctrl = cnn_conf->fc_0_ctrl;
+	cnn_sw->fc_0_weight = cnn_conf->fc_0_ctrl;
+	cnn_sw->fc_0_bias = cnn_conf->fc_0_ctrl;
+
+	// fc_1
+	cnn_sw->fc_1_weight = cnn_conf->fc_1_ctrl;
+	cnn_sw->fc_1_bias = cnn_conf->fc_1_ctrl;
+	cnn_sw->fc_1_ctrl = cnn_conf->fc_1_ctrl;
 }
 
 void cnn_sw_start(struct cnn_sw *cnn_sw)
@@ -105,8 +185,10 @@ void cnn_sw_start(struct cnn_sw *cnn_sw)
 	pool(cnn_sw->conv_0_output, cnn_sw->pool_0_output, cnn_sw->pool_0_ctrl);
 	conv(cnn_sw->pool_0_output, cnn_sw->conv_1_kernel, cnn_sw->conv_1_output, cnn_sw->conv_1_ctrl);
 	pool(cnn_sw->conv_1_output, cnn_sw->pool_1_output, cnn_sw->pool_1_ctrl);
-	conv(cnn_sw->pool_1_output, cnn_sw->conv_2_kernel, cnn_sw->conv_2_output, cnn_sw->conv_2_ctrl);
-	pool(cnn_sw->conv_2_output, cnn_sw->pool_2_output, cnn_sw->pool_2_ctrl);
+	fully_connected(cnn_sw->pool_1_output, cnn_sw->fc_0_weight, cnn_sw->fc_0_bias, cnn_sw->fc_0_output, cnn_sw->fc_0_ctrl);
+	fully_connected(cnn_sw->fc_0_output, cnn_sw->fc_1_weight, cnn_sw->fc_1_bias, cnn_sw->fc_1_output, cnn_sw->fc_1_ctrl);
+	softmax(cnn_sw->fc_1_output, cnn_sw->output_data);
+	cnn_result(cnn_sw->output_data, &cnn_sw->cnn_result, &cnn_sw->cnn_second_result);
 #if (PLATFORM == FPGA)
 	XTime_GetTime(&cnn_sw->tEnd);
 #else
@@ -131,11 +213,12 @@ void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
 	uint32_t nsec = cnn_sw->tEnd.tv_nsec - cnn_sw->tStart.tv_nsec + (sec * 1000000000);
 	printf("cnn took %u nsec\n", nsec);
 #endif
-	for (int i = 0; i < CNN_OUTPUT_ROWS; i++) {
-		for (int j = 0; j < CNN_OUTPUT_ROWS; j++) {
-			printf("%.6f  ", cnn_sw->output_data[i * CNN_OUTPUT_ROWS + j]);
-		}
-		printf("\n");
+	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
+		printf("[%d] %.6f\n", i, cnn_sw->output_data[i]);
 	}
+
+	printf("first guess = %d\n", cnn_sw->cnn_result);
+	printf("second guess = %d\n", cnn_sw->cnn_second_result);
+
 	printf("---------------------------------------------------------------------\n\n");
 }

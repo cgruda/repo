@@ -30,26 +30,32 @@ struct cnn_sw {
 	uint32_t pool_0_ctrl;
 	uint32_t conv_1_ctrl;
 	uint32_t pool_1_ctrl;
-	uint32_t conv_2_ctrl;
-	uint32_t pool_2_ctrl;
+	uint32_t fc_0_ctrl;
+	uint32_t fc_1_ctrl;
 	float *input_data;
 	float *conv_0_kernel;
 	float *conv_1_kernel;
-	float *conv_2_kernel;
+	float *fc_0_weight;
+	float *fc_1_weight;
+	float *fc_0_bias;
+	float *fc_1_bias;
 	float conv_0_output[CONV_0_OUTPUT_LEN];
 	float pool_0_output[POOL_0_OUTPUT_LEN];
 	float conv_1_output[CONV_1_OUTPUT_LEN];
 	float pool_1_output[POOL_1_OUTPUT_LEN];
-	float conv_2_output[CONV_2_OUTPUT_LEN];
-	float pool_2_output[POOL_2_OUTPUT_LEN];
-	float *output_data;
+	float fc_0_output[FC_0_OUTPUT_LEN];
+	float fc_1_output[FC_1_OUTPUT_LEN];
+	float output_data[CNN_OUTPUT_LEN];
+	int cnn_result;
+	int cnn_second_result;
 };
 
 void pool(float *input, float *output, uint32_t ctrl);
 void conv(float *input, float *kernel, float *output, uint32_t ctrl);
+void fully_connected(float *input, float *weight, float *bias, float *output, uint32_t ctrl);
+float softmax(float x);
 void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);
 void cnn_sw_start(struct cnn_sw *cnn_sw);
 void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);
-
 
 #endif /* SRC_CNN_SW_H_ */
