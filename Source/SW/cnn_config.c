@@ -12,7 +12,6 @@
 #include "fixed_point.h"
 #include <stdio.h>
 
-#if (CONFIG_TRACE)
 void cnn_config_trace_vals(char *text, float *data, int rows, int cols)
 {
 	printf("\n----------------------------------------------\n");
@@ -25,7 +24,23 @@ void cnn_config_trace_vals(char *text, float *data, int rows, int cols)
 	}
 	printf("----------------------------------------------\n\n");
 }
-#endif
+
+void cnn_print_image(char *text, float *data)
+{
+	printf("\n----------------------------------------------\n");
+	printf("%s\n", text);
+	for (int i = 0; i < CNN_INPUT_ROWS; i++) {
+		for (int j = 0; j < CNN_INPUT_COLS; j++) {
+			if (data[i * CNN_INPUT_COLS + j]) {
+				printf("+");
+			} else {
+				printf(" ");
+			}
+		}
+		printf("\n");
+	}
+	printf("----------------------------------------------\n\n");
+}
 
 int cnn_config_conv_0_set(float *kernel, uint32_t *ctrl)
 {
@@ -145,7 +160,14 @@ int cnn_config_init(struct cnn_config *cnn_conf)
 	return err;
 }
 
-int cnn_config_input_data_set(float *input_data, struct cnn_sim *cnn_sim)
+void cnn_config_normalize_input_data(float *input_data)
+{
+	for (int i = 0; i < CNN_INPUT_LEN; i++) {
+		input_data[i] /= 255;
+	}
+}
+
+int cnn_config_input_data_set(float *input_data, char *csv_path)
 {
 	int err = 0;
 #if (CNN_SIM_MODE == PRODUCTION)
@@ -153,9 +175,8 @@ int cnn_config_input_data_set(float *input_data, struct cnn_sim *cnn_sim)
 		input_data[i] = 0.25;
 	}
 #else
-	char csv_data_path[CNN_SIM_DATA_FILE_PATH_MAX_LEN] = {0};
-	err |= get_next_data_file_path(cnn_sim, csv_data_path)
-	err |= load_csv_data(csv_data_path, input_data, CNN_INPUT_ROWS, CNN_INPUT_COLS);
+	err |= load_csv_data(csv_path, input_data, CNN_INPUT_ROWS, CNN_INPUT_COLS);
+	// cnn_config_normalize_input_data(input_data);
 #endif
 	return err;
 }
@@ -185,7 +206,7 @@ void cnn_config_print(struct cnn_config *cnn_conf)
 	printf("fc_0  : input [%5u], output [%u], activation [%u]\n",         FC_CTRL_INPUT_LEN_GET(cnn_conf->fc_0_ctrl),
 									      FC_CTRL_OUTPUT_LEN_GET(cnn_conf->fc_0_ctrl),
 									      FC_CTRL_ACTIVATION_GET(cnn_conf->fc_0_ctrl));
-	printf("fc_1  : input [%5u], output [%u], pool type  [%u]\n",         FC_CTRL_INPUT_LEN_GET(cnn_conf->fc_1_ctrl),
+	printf("fc_1  : input [%5u], output [%u], activation [%u]\n",         FC_CTRL_INPUT_LEN_GET(cnn_conf->fc_1_ctrl),
 									      FC_CTRL_OUTPUT_LEN_GET(cnn_conf->fc_1_ctrl),
 									      FC_CTRL_ACTIVATION_GET(cnn_conf->fc_1_ctrl));
 	printf("---------------------------------------------------------------------\n");

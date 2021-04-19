@@ -51,11 +51,11 @@ int main()
 		printf("cnn_config error!");
 		return -1;
 	}
-	if (sim_open_data_index(&cnn_sim, 0)) {
+	if (sim_open_data_index(&cnn_sim, 8)) {
 		return -1;
 	}
 
-	cnn_config_print(&cnn_conf);
+	// cnn_config_print(&cnn_conf);
 
 #if (PLATFORM == FPGA)
 	int status = cnn_hw_init(&cnn_hw);

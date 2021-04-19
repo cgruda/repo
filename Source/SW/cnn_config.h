@@ -35,7 +35,7 @@
 #define CONV_0_INPUT_LEN	(CONV_0_INPUT_ROWS * CONV_0_INPUT_COLS)
 #define CONV_0_KERNEL_DIM	3
 #define CONV_0_KERNEL_LEN 	(CONV_0_KERNEL_DIM * CONV_0_KERNEL_DIM)
-#define CONV_0_ACTIVATION	ACTIVATION_NONE
+#define CONV_0_ACTIVATION	ACTIVATION_RELU
 #define CONV_0_OUTPUT_ROWS	(CONV_0_INPUT_ROWS - CONV_0_KERNEL_DIM + 1)
 #define CONV_0_OUTPUT_COLS	(CONV_0_INPUT_COLS - CONV_0_KERNEL_DIM + 1)
 #define CONV_0_OUTPUT_LEN	(CONV_0_OUTPUT_ROWS * CONV_0_OUTPUT_COLS)
@@ -58,7 +58,7 @@
 #define CONV_1_INPUT_LEN	(CONV_1_INPUT_ROWS * CONV_1_INPUT_COLS)
 #define CONV_1_KERNEL_DIM	3
 #define CONV_1_KERNEL_LEN 	(CONV_1_KERNEL_DIM * CONV_1_KERNEL_DIM)
-#define CONV_1_ACTIVATION	ACTIVATION_NONE
+#define CONV_1_ACTIVATION	ACTIVATION_RELU
 #define CONV_1_OUTPUT_ROWS	(CONV_1_INPUT_ROWS - CONV_1_KERNEL_DIM + 1)
 #define CONV_1_OUTPUT_COLS	(CONV_1_INPUT_COLS - CONV_1_KERNEL_DIM + 1)
 #define CONV_1_OUTPUT_LEN	(CONV_1_OUTPUT_ROWS * CONV_1_OUTPUT_COLS)
@@ -78,8 +78,8 @@
 // fc_0
 #define FC_0_INPUT_LEN		(POOL_1_OUTPUT_ROWS * POOL_1_OUTPUT_COLS)
 #define FC_0_OUTPUT_LEN		(50)
-#define FC_0_WEIGHT_ROWS	FC_0_OUTPUT_LEN
-#define FC_0_WEIGHT_COLS	FC_0_INPUT_LEN
+#define FC_0_WEIGHT_ROWS	FC_0_INPUT_LEN
+#define FC_0_WEIGHT_COLS	FC_0_OUTPUT_LEN
 #define FC_0_WEIGHT_LEN		(FC_0_WEIGHT_ROWS * FC_0_WEIGHT_COLS)
 #define FC_0_ACTIVATION		ACTIVATION_RELU
 #define FC_0_BIAS_LEN		FC_0_OUTPUT_LEN
@@ -87,8 +87,8 @@
 // fc_1
 #define FC_1_INPUT_LEN		FC_0_OUTPUT_LEN
 #define FC_1_OUTPUT_LEN		(10)
-#define FC_1_WEIGHT_ROWS	FC_1_OUTPUT_LEN
-#define FC_1_WEIGHT_COLS	FC_1_INPUT_LEN
+#define FC_1_WEIGHT_ROWS	FC_1_INPUT_LEN
+#define FC_1_WEIGHT_COLS	FC_1_OUTPUT_LEN
 #define FC_1_WEIGHT_LEN		(FC_1_WEIGHT_ROWS * FC_1_WEIGHT_COLS)
 #define FC_1_ACTIVATION		ACTIVATION_NONE
 #define FC_1_BIAS_LEN		FC_1_OUTPUT_LEN
@@ -147,8 +147,8 @@
 #define FC_CTRL_ACTIVATION_GET(fc_ctrl) (((fc_ctrl) & FC_CTRL_ACTIVATION_MSK) >> FC_CTRL_ACTIVATION_OFT)
 #define FC_CTRL_INPUT_LEN_GET(fc_ctrl) 	(((fc_ctrl) & FC_CTRL_INPUT_LEN_MSK) >> FC_CTRL_INPUT_LEN_OFT)
 #define FC_CTRL_OUTPUT_LEN_GET(fc_ctrl) (((fc_ctrl) & FC_CTRL_OUTPUT_LEN_MSK) >> FC_CTRL_OUTPUT_LEN_OFT)
-#define FC_CTRL_WEIGHT_ROWS_GET(fc_ctrl) FC_CTRL_OUTPUT_LEN_GET(fc_ctrl)
-#define FC_CTRL_WEIGHT_COLS_GET(fc_ctrl) FC_CTRL_INPUT_LEN_GET(fc_ctrl)
+#define FC_CTRL_WEIGHT_ROWS_GET(fc_ctrl) FC_CTRL_INPUT_LEN_GET(fc_ctrl)
+#define FC_CTRL_WEIGHT_COLS_GET(fc_ctrl) FC_CTRL_OUTPUT_LEN_GET(fc_ctrl)
 #define FC_CTRL_BIAS_LEN_GET(fc_ctrl) FC_CTRL_OUTPUT_LEN_GET(fc_ctrl)
 
 #define FC_CTRL_ACTIVATION_SET(fc_ctrl, activation) fc_ctrl = (((fc_ctrl) & ~FC_CTRL_ACTIVATION_MSK) | ((activation) << FC_CTRL_ACTIVATION_OFT))
@@ -186,6 +186,8 @@ struct cnn_config {
 
 int cnn_config_init(struct cnn_config *cnn_conf);
 void cnn_config_print(struct cnn_config *cnn_conf);
-int cnn_config_input_data_set(float *input_data, struct cnn_sim *cnn_sim);
+int cnn_config_input_data_set(float *input_data, char *csv_path);
+void cnn_config_trace_vals(char *text, float *data, int rows, int cols);
+void cnn_print_image(char *text, float *data);
 
 #endif /* SRC_CNN_CONFIG_H_ */

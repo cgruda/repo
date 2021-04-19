@@ -21,7 +21,7 @@
 
 #define PRODUCTION 0
 #define OPERATIONAL 1
-#define CNN_SIM_MODE PRODUCTION
+#define CNN_SIM_MODE OPERATIONAL
 
 #if (PLATFORM == PC)
 #define CNN_SIM_PATH			"/home/cgruda/repo/Simulation/"
@@ -31,8 +31,8 @@
 #define CNN_SIM_CNN_VALS_PATH		CNN_SIM_PATH "cnn_vals/"
 #define CNN_SIM_DATA_PATH		CNN_SIM_PATH "data/"
 #define CNN_SIM_DATA_INDEX		"index.txt"
-#define CNN_SIM_DATA_INDEX_PATH_LEN 	62
-#define CNN_SIM_DATA_FILE_PATH_MAX_LEN	65
+#define CNN_SIM_DATA_INDEX_PATH_LEN 	63
+#define CNN_SIM_DATA_FILE_PATH_MAX_LEN	66
 
 #define CNN_SIM_CONV_0_KERNEL_VALS_PATH		CNN_SIM_CNN_VALS_PATH "conv0kernel.csv"
 #define CNN_SIM_CONV_1_KERNEL_VALS_PATH		CNN_SIM_CNN_VALS_PATH "conv1kernel.csv"

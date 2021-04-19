@@ -12,6 +12,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #if (PLATFORM == FPGA)
 #include "xtime_l.h"
 #else
@@ -88,7 +89,7 @@ void fully_connected(float *input, float *weight, float *bias, float *output, ui
 	int activation = FC_CTRL_ACTIVATION_GET(ctrl);
 
 	for (int i = 0; i < input_len; i++) {
-		for (int j; j < output_len; j++) {
+		for (int j = 0; j < output_len; j++) {
 			output[j] += weight[i * weight_cols + j] * input[i];
 		}
 	}
@@ -182,12 +183,19 @@ void cnn_sw_start(struct cnn_sw *cnn_sw)
 #else
 	timespec_get(&cnn_sw->tStart, TIME_UTC);
 #endif
+	// cnn_config_trace_vals("input:", cnn_sw->input_data, CNN_INPUT_ROWS, CNN_INPUT_COLS);
 	conv(cnn_sw->input_data, cnn_sw->conv_0_kernel, cnn_sw->conv_0_output, cnn_sw->conv_0_ctrl);
+	// cnn_config_trace_vals("conv_0_output:", cnn_sw->conv_0_output, CONV_0_OUTPUT_ROWS, CONV_0_OUTPUT_COLS);
 	pool(cnn_sw->conv_0_output, cnn_sw->pool_0_output, cnn_sw->pool_0_ctrl);
+	// cnn_config_trace_vals("pool_0_output:", cnn_sw->pool_0_output, POOL_0_OUTPUT_ROWS, POOL_0_OUTPUT_COLS);
 	conv(cnn_sw->pool_0_output, cnn_sw->conv_1_kernel, cnn_sw->conv_1_output, cnn_sw->conv_1_ctrl);
+	// cnn_config_trace_vals("conv_1_output:", cnn_sw->conv_1_output, CONV_1_OUTPUT_ROWS, CONV_1_OUTPUT_COLS);
 	pool(cnn_sw->conv_1_output, cnn_sw->pool_1_output, cnn_sw->pool_1_ctrl);
+	// cnn_config_trace_vals("pool_1_output:", cnn_sw->pool_1_output, POOL_1_OUTPUT_ROWS, POOL_1_OUTPUT_COLS);
 	fully_connected(cnn_sw->pool_1_output, cnn_sw->fc_0_weight, cnn_sw->fc_0_bias, cnn_sw->fc_0_output, cnn_sw->fc_0_ctrl);
+	// cnn_config_trace_vals("fc_0_output:", cnn_sw->fc_0_output, 1, FC_0_OUTPUT_LEN);
 	fully_connected(cnn_sw->fc_0_output, cnn_sw->fc_1_weight, cnn_sw->fc_1_bias, cnn_sw->fc_1_output, cnn_sw->fc_1_ctrl);
+	// cnn_config_trace_vals("fc_1_output:", cnn_sw->fc_1_output, 1, FC_1_OUTPUT_LEN);
 	softmax(cnn_sw->fc_1_output, cnn_sw->output_data);
 	cnn_result(cnn_sw->output_data, &cnn_sw->cnn_result, &cnn_sw->cnn_second_result);
 #if (PLATFORM == FPGA)
@@ -197,34 +205,83 @@ void cnn_sw_start(struct cnn_sw *cnn_sw)
 #endif
 }
 
+void cnn_sw_reset(struct cnn_sw *cnn_sw)
+{
+	for (int i = 0; i < CONV_0_OUTPUT_LEN; i++) {
+		cnn_sw->conv_0_output[i] = 0;
+	}
+	for (int i = 0; i < POOL_0_OUTPUT_LEN; i++) {
+		cnn_sw->pool_0_output[i] = 0;
+	}
+	for (int i = 0; i < CONV_1_OUTPUT_LEN; i++) {
+		cnn_sw->conv_1_output[i] = 0;
+	}
+	for (int i = 0; i < POOL_1_OUTPUT_LEN; i++) {
+		cnn_sw->pool_1_output[i] = 0;
+	}
+	for (int i = 0; i < FC_0_OUTPUT_LEN; i++) {
+		cnn_sw->fc_0_output[i] = 0;
+	}
+	for (int i = 0; i < FC_1_OUTPUT_LEN; i++) {
+		cnn_sw->fc_1_output[i] = 0;
+	}
+	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
+		cnn_sw->output_data[i] = 0;
+	}
+	cnn_sw->cnn_result = 0;
+	cnn_sw->cnn_second_result = 0;
+}
+
 void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf, struct cnn_sim *cnn_sim)
 {
 	printf("\n");
 	printf("---------------------------------------------------------------------\n");
 	printf("                           cnn software run                          \n");
 	printf("---------------------------------------------------------------------\n");
-	if (cnn_config_input_data_set(cnn_conf->input_data, cnn_sim)) {
-		printf("load_data failure\n");
-		printf("---------------------------------------------------------------------\n\n");
-		return;
-	}
-	cnn_sw_set(cnn_sw, cnn_conf);
-	cnn_sw_start(cnn_sw);
+	
+	int histogram[10] = {0};
+	int histogram2[10] = {0};
+
+	for (int iter = 0; iter < 100; iter++) {
+
+		char csv_data_path[CNN_SIM_DATA_FILE_PATH_MAX_LEN] = {0};
+		int err = get_next_data_file_path(cnn_sim, csv_data_path);
+		if (err || cnn_config_input_data_set(cnn_conf->input_data, csv_data_path)) {
+			printf("load_data failure\n");
+			printf("---------------------------------------------------------------------\n\n");
+			return;
+		}
+
+		// cnn_config_input_data_set(cnn_conf->input_data, "/home/cgruda/repo/Simulation/data/0/img3.csv");
+		// cnn_print_image("img3.csv:", cnn_conf->input_data);
+		cnn_sw_reset(cnn_sw);
+		// cnn_config_trace_vals("fc_1_out after reset:", cnn_sw->fc_1_output, 1, FC_1_OUTPUT_LEN);
+		cnn_sw_set(cnn_sw, cnn_conf);
+		cnn_sw_start(cnn_sw);
 #if (PLATFORM == FPGA)
-	XTime timediff = cnn_sw->tEnd - cnn_sw->tStart;
-	printf("cnn sw took %llu clock cycles\n", 2 * timediff);
-	printf("which are %.2f us.\n", 1.0 * timediff / (COUNTS_PER_SECOND / 1000000));
+		XTime timediff = cnn_sw->tEnd - cnn_sw->tStart;
+		printf("cnn sw took %llu clock cycles\n", 2 * timediff);
+		printf("which are %.2f us.\n", 1.0 * timediff / (COUNTS_PER_SECOND / 1000000));
 #else
-	uint32_t sec = cnn_sw->tEnd.tv_sec - cnn_sw->tStart.tv_sec;
-	uint32_t nsec = cnn_sw->tEnd.tv_nsec - cnn_sw->tStart.tv_nsec + (sec * 1000000000);
-	printf("cnn took %u nsec\n", nsec);
+		uint32_t sec = cnn_sw->tEnd.tv_sec - cnn_sw->tStart.tv_sec;
+		uint32_t nsec = cnn_sw->tEnd.tv_nsec - cnn_sw->tStart.tv_nsec + (sec * 1000000000);
+		// printf("cnn took %u nsec\n", nsec);
 #endif
-	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
-		printf("[%d] %.6f\n", i, cnn_sw->output_data[i]);
+		// for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
+		// 	printf("[%d] %.5f\n", i, cnn_sw->output_data[i] * 100);
+		// }
+
+		histogram[cnn_sw->cnn_result]++;
+		histogram2[cnn_sw->cnn_second_result]++;
+
+		// printf("1st guess = %d (%.2f)\n", cnn_sw->cnn_result, cnn_sw->output_data[cnn_sw->cnn_result] * 100);
+		// printf("2nd guess = %d (%.2f)\n", cnn_sw->cnn_second_result, cnn_sw->output_data[cnn_sw->cnn_second_result] * 100);
+
 	}
 
-	printf("first guess = %d\n", cnn_sw->cnn_result);
-	printf("second guess = %d\n", cnn_sw->cnn_second_result);
+	for (int i = 0; i < 10; i++) {
+		printf("[%d] %d  %d\n", i, histogram[i], histogram2[i]);
+	}
 
 	printf("---------------------------------------------------------------------\n\n");
 }
