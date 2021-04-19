@@ -10,6 +10,7 @@
 #include "cnn_config.h"
 #include "cnn_hw.h"
 #include "cnn_sw.h"
+#include "cnn_sim.h"
 #include "fixed_point.h"
 #include <stdio.h>
 #include <stdbool.h>
@@ -43,9 +44,14 @@ int main()
 	bool exit = false;
 	struct cnn_hw cnn_hw = {0};
 	struct cnn_sw cnn_sw = {0};
+	struct cnn_sim cnn_sim = {0};
 	struct cnn_config cnn_conf = {0};
 
-	cnn_config_init(&cnn_conf);
+	cnn_sim_init(&cnn_sim);
+	if (cnn_config_init(&cnn_conf)) {
+		printf("cnn_config error!");
+		return -1;
+	}
 	cnn_config_print(&cnn_conf);
 
 #if (PLATFORM == FPGA)
