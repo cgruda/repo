@@ -47,7 +47,6 @@ int main()
 	struct cnn_sim cnn_sim = {0};
 	struct cnn_config cnn_conf = {0};
 
-	cnn_sim_init(&cnn_sim);
 	if (cnn_config_init(&cnn_conf)) {
 		printf("cnn_config error!");
 		return -1;

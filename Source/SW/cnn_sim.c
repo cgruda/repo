@@ -20,11 +20,6 @@
 #include <time.h>
 #endif
 
-int sim_init(struct cnn_sim *cnn_sim)
-{
-	return 0;
-}
-
 int sim_open_data_index(struct cnn_sim *cnn_sim, int idx)
 {
 	char index_path[CNN_SIM_DATA_INDEX_PATH_LEN] = {0};
