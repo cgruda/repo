@@ -23,7 +23,7 @@
 int sim_open_data_index(struct cnn_sim *cnn_sim, int idx)
 {
 	char index_path[CNN_SIM_DATA_INDEX_PATH_LEN] = {0};
-	sprintf(index_path, "%s%d\\%s", CNN_SIM_DATA_PATH, idx, CNN_SIM_DATA_INDEX);
+	sprintf(index_path, "%s%d/%s", CNN_SIM_DATA_PATH, idx, CNN_SIM_DATA_INDEX);
 	cnn_sim->index_fptr = fopen(index_path, "r");
 	if (!cnn_sim->index_fptr) {
 		printf("opening \"%s\" failed!\n", index_path);

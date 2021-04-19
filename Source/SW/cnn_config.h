@@ -14,8 +14,9 @@
 #define PC 1
 #define PLATFORM PC
 
-#define CONFIG_TRACE 1
+#define CONFIG_TRACE 0
 
+#include "cnn_sim.h"
 #include <stdint.h>
 
 #define MAX_POOL 0
@@ -185,5 +186,6 @@ struct cnn_config {
 
 int cnn_config_init(struct cnn_config *cnn_conf);
 void cnn_config_print(struct cnn_config *cnn_conf);
+int cnn_config_input_data_set(float *input_data, struct cnn_sim *cnn_sim);
 
 #endif /* SRC_CNN_CONFIG_H_ */

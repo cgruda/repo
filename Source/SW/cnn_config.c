@@ -136,19 +136,27 @@ int cnn_config_fc_1_set(float *weight, float *bias, uint32_t *ctrl)
 int cnn_config_init(struct cnn_config *cnn_conf)
 {
 	int err = 0;
-
-	// input // FIXME: move to different method
-	for (int i = 0; i < CNN_INPUT_LEN; i++) {
-		cnn_conf->input_data[i] = 0.25;
-	}
-
 	err |= cnn_config_conv_0_set(cnn_conf->conv_0_kernel, &cnn_conf->conv_0_ctrl);
 	err |= cnn_config_pool_0_set(&cnn_conf->pool_0_ctrl);
 	err |= cnn_config_conv_1_set(cnn_conf->conv_1_kernel, &cnn_conf->conv_1_ctrl);
 	err |= cnn_config_pool_1_set(&cnn_conf->pool_1_ctrl);
 	err |= cnn_config_fc_0_set(cnn_conf->fc_0_weight, cnn_conf->fc_0_bias, &cnn_conf->fc_0_ctrl);
 	err |= cnn_config_fc_1_set(cnn_conf->fc_1_weight, cnn_conf->fc_1_bias, &cnn_conf->fc_1_ctrl);
+	return err;
+}
 
+int cnn_config_input_data_set(float *input_data, struct cnn_sim *cnn_sim)
+{
+	int err = 0;
+#if (CNN_SIM_MODE == PRODUCTION)
+	for (int i = 0; i < CNN_INPUT_LEN; i++) {
+		input_data[i] = 0.25;
+	}
+#else
+	char csv_data_path[CNN_SIM_DATA_FILE_PATH_MAX_LEN] = {0};
+	err |= get_next_data_file_path(cnn_sim, csv_data_path)
+	err |= load_csv_data(csv_data_path, input_data, CNN_INPUT_ROWS, CNN_INPUT_COLS);
+#endif
 	return err;
 }
 

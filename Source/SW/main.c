@@ -51,6 +51,10 @@ int main()
 		printf("cnn_config error!");
 		return -1;
 	}
+	if (sim_open_data_index(&cnn_sim, 0)) {
+		return -1;
+	}
+
 	cnn_config_print(&cnn_conf);
 
 #if (PLATFORM == FPGA)
@@ -70,7 +74,7 @@ int main()
 			break;
 
 		case UC_RUN_SW:
-			cnn_sw_exec(&cnn_sw, &cnn_conf);
+			cnn_sw_exec(&cnn_sw, &cnn_conf, &cnn_sim);
 			break;
 
 		default:

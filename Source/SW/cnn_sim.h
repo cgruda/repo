@@ -24,22 +24,22 @@
 #define CNN_SIM_MODE PRODUCTION
 
 #if (PLATFORM == PC)
-#define CNN_SIM_PATH			"D:\\School\\Project\\new_repo\\Simulation\\"
+#define CNN_SIM_PATH			"/home/cgruda/repo/Simulation/"
 #else
 #define CNN_SIM_PATH			// TODO:
 #endif
-#define CNN_SIM_CNN_VALS_PATH		CNN_SIM_PATH "cnn_vals\\"
-#define CNN_SIM_DATA_PATH		CNN_SIM_PATH "data\\"
+#define CNN_SIM_CNN_VALS_PATH		CNN_SIM_PATH "cnn_vals/"
+#define CNN_SIM_DATA_PATH		CNN_SIM_PATH "data/"
 #define CNN_SIM_DATA_INDEX		"index.txt"
 #define CNN_SIM_DATA_INDEX_PATH_LEN 	62
 #define CNN_SIM_DATA_FILE_PATH_MAX_LEN	65
 
 #define CNN_SIM_CONV_0_KERNEL_VALS_PATH		CNN_SIM_CNN_VALS_PATH "conv0kernel.csv"
 #define CNN_SIM_CONV_1_KERNEL_VALS_PATH		CNN_SIM_CNN_VALS_PATH "conv1kernel.csv"
-#define CNN_SIM_FC_0_WEIGHT_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc0weight"
-#define CNN_SIM_FC_0_BIAS_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc0bias"
-#define CNN_SIM_FC_1_WEIGHT_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc1weight"
-#define CNN_SIM_FC_1_BIAS_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc1bias"
+#define CNN_SIM_FC_0_WEIGHT_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc0weight.csv"
+#define CNN_SIM_FC_0_BIAS_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc0bias.csv"
+#define CNN_SIM_FC_1_WEIGHT_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc1weight.csv"
+#define CNN_SIM_FC_1_BIAS_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc1bias.csv"
 
 struct cnn_sim {
 	FILE *index_fptr;
@@ -54,6 +54,8 @@ struct cnn_sim {
 };
 
 int load_csv_data(char *csv_file_path, float *read_buffer, int rows, int cols);
+int sim_open_data_index(struct cnn_sim *cnn_sim, int idx);
+int get_next_data_file_path(struct cnn_sim *cnn_sim, char *path_buffer);
 
 
 #endif /* SRC_CNN_SIM_H_ */

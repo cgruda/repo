@@ -197,12 +197,17 @@ void cnn_sw_start(struct cnn_sw *cnn_sw)
 #endif
 }
 
-void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
+void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf, struct cnn_sim *cnn_sim)
 {
 	printf("\n");
 	printf("---------------------------------------------------------------------\n");
 	printf("                           cnn software run                          \n");
 	printf("---------------------------------------------------------------------\n");
+	if (cnn_config_input_data_set(cnn_conf->input_data, cnn_sim)) {
+		printf("load_data failure\n");
+		printf("---------------------------------------------------------------------\n\n");
+		return;
+	}
 	cnn_sw_set(cnn_sw, cnn_conf);
 	cnn_sw_start(cnn_sw);
 #if (PLATFORM == FPGA)
