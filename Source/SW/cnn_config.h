@@ -18,6 +18,7 @@
 
 #include "cnn_sim.h"
 #include <stdint.h>
+#include <string.h>
 
 #define MAX_POOL 0
 #define AVG_POOL 1
@@ -156,38 +157,45 @@
 #define FC_CTRL_OUTPUT_LEN_SET(fc_ctrl, output_len) fc_ctrl = (((fc_ctrl) & ~FC_CTRL_OUTPUT_LEN_MSK) | ((output_len) << FC_CTRL_OUTPUT_LEN_OFT))
 
 struct cnn_config {
-	// input
-	float input_data[CNN_INPUT_LEN];
-
 	// conv_0
 	uint32_t conv_0_ctrl;
 	float conv_0_kernel[CONV_0_KERNEL_LEN];
-	
 	// pool_0
 	uint32_t pool_0_ctrl;
-
 	// conv_1
 	uint32_t conv_1_ctrl;
 	float conv_1_kernel[CONV_1_KERNEL_LEN];
-	
 	// pool_1
 	uint32_t pool_1_ctrl;
-
 	// fc_0
 	uint32_t fc_0_ctrl;
 	float fc_0_weight[FC_0_WEIGHT_LEN];
 	float fc_0_bias[FC_0_BIAS_LEN];
-	
 	// fc_1
 	uint32_t fc_1_ctrl;
 	float fc_1_weight[FC_1_WEIGHT_LEN];
 	float fc_1_bias[FC_1_BIAS_LEN];
 };
 
-int cnn_config_init(struct cnn_config *cnn_conf);
+struct cnn_run {
+	int idx;
+	float input_data[CNN_INPUT_LEN];
+	int cnn_guess_1;
+	int cnn_guess_2;
+#if (PLATFORM == FPGA)
+	XTime tStart;
+	XTime tEnd;
+#else
+	struct timespec tStart;
+	struct timespec tEnd;
+#endif
+};
+
+int cnn_config_set(struct cnn_config *cnn_conf);
 void cnn_config_print(struct cnn_config *cnn_conf);
-int cnn_config_input_data_set(float *input_data, char *csv_path);
 void cnn_config_trace_vals(char *text, float *data, int rows, int cols);
 void cnn_print_image(char *text, float *data);
+int cnn_run_prep(struct cnn_run *cnn_run, char *csv_data_path, int idx);
+
 
 #endif /* SRC_CNN_CONFIG_H_ */

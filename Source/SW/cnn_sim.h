@@ -41,6 +41,9 @@
 #define CNN_SIM_FC_1_WEIGHT_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc1weight.csv"
 #define CNN_SIM_FC_1_BIAS_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc1bias.csv"
 
+#define DEFAULT_FILE_PATH			CNN_SIM_DATA_PATH "0/img10.csv"
+#define DEFAULT_IDX				0
+
 struct cnn_sim {
 	FILE *index_fptr;
 	int hit_cnt;

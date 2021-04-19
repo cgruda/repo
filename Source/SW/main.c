@@ -20,42 +20,58 @@
 
 enum user_choise {
 	UC_EXIT,
-	UC_RUN_HW,
-	UC_RUN_SW
+	UC_RUN_HW_SINGLE,
+	UC_RUN_SW_SINGLE,
+	UC_HW_VS_SW_SINGLE,
+	UC_RUN_HW_ALL,
+	UC_RUN_SW_ALL,
+	UC_HW_VS_SW_ALL
 };
 
-int get_user_option()
+int get_user_choice()
 {
-	int choise;
-	printf("choose option:\n" \
-	       "--------------\n" \
-	       "0. exit       \n" \
-	       "1. run hw     \n" \
-	       "2. run sw     \n" \
+	int choice;
+	printf("choose option:    \n" \
+	       "--------------    \n" \
+	       "0. exit           \n" \
+	       "1. run hw single  \n" \
+	       "2. run sw single  \n" \
+	       "3. hw vs sw single\n" \
+	       "4. run hw all     \n" \
+	       "5. run sw all     \n" \
+	       "6. hw vs sw all   \n" \
 	       "--------------\n");
-	scanf("%d", &choise);
-	return choise;
+	scanf("%d", &choice);
+	return choice;
 }
 
 int main()
 {
-	printf("\nwelcome!\n");
-
+	int err = 0;
 	bool exit = false;
 	struct cnn_hw cnn_hw = {0};
 	struct cnn_sw cnn_sw = {0};
 	struct cnn_sim cnn_sim = {0};
+	struct cnn_run cnn_run = {0};
 	struct cnn_config cnn_conf = {0};
 
-	if (cnn_config_init(&cnn_conf)) {
-		printf("cnn_config error!");
-		return -1;
-	}
-	if (sim_open_data_index(&cnn_sim, 8)) {
-		return -1;
-	}
+	printf("\nwelcome!\n");
 
-	// cnn_config_print(&cnn_conf);
+	err = cnn_config_set(&cnn_conf);
+	if (err) {
+		return -1;
+	}
+	cnn_sw_set(&cnn_sw, &cnn_conf);
+
+	// err = sim_open_data_index(&cnn_sim, 8);
+	// if (err) {
+	// 	return -1;
+	// }
+	//char csv_data_path[CNN_SIM_DATA_FILE_PATH_MAX_LEN];
+
+#if (CONFIG_TRACE)
+	cnn_config_print(&cnn_conf);
+#endif
 
 #if (PLATFORM == FPGA)
 	int status = cnn_hw_init(&cnn_hw);
@@ -64,21 +80,29 @@ int main()
 #endif
 
 	do {
-		switch (get_user_option()) {
+		switch (get_user_choice()) {
 		case UC_EXIT:
 			exit = true;
 			break;
 
-		case UC_RUN_HW:
+		case UC_RUN_HW_SINGLE:
 			cnn_hw_exec(&cnn_hw, &cnn_conf);
 			break;
 
-		case UC_RUN_SW:
-			cnn_sw_exec(&cnn_sw, &cnn_conf, &cnn_sim);
+		case UC_RUN_SW_SINGLE:
+			err = cnn_run_prep(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
+			if (err) {
+				break;
+			}
+			cnn_sw_exec(&cnn_sw, &cnn_run);
 			break;
 
+		case UC_HW_VS_SW_SINGLE:
+		case UC_RUN_HW_ALL:
+		case UC_RUN_SW_ALL:
+		case UC_HW_VS_SW_ALL:
 		default:
-			printf("action not supported\n\n");
+			printf("action not supported!\n\n");
 			break;
 		}
 

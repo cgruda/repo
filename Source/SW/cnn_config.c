@@ -148,7 +148,7 @@ int cnn_config_fc_1_set(float *weight, float *bias, uint32_t *ctrl)
 	return err;
 }
 
-int cnn_config_init(struct cnn_config *cnn_conf)
+int cnn_config_set(struct cnn_config *cnn_conf)
 {
 	int err = 0;
 	err |= cnn_config_conv_0_set(cnn_conf->conv_0_kernel, &cnn_conf->conv_0_ctrl);
@@ -157,27 +157,6 @@ int cnn_config_init(struct cnn_config *cnn_conf)
 	err |= cnn_config_pool_1_set(&cnn_conf->pool_1_ctrl);
 	err |= cnn_config_fc_0_set(cnn_conf->fc_0_weight, cnn_conf->fc_0_bias, &cnn_conf->fc_0_ctrl);
 	err |= cnn_config_fc_1_set(cnn_conf->fc_1_weight, cnn_conf->fc_1_bias, &cnn_conf->fc_1_ctrl);
-	return err;
-}
-
-void cnn_config_normalize_input_data(float *input_data)
-{
-	for (int i = 0; i < CNN_INPUT_LEN; i++) {
-		input_data[i] /= 255;
-	}
-}
-
-int cnn_config_input_data_set(float *input_data, char *csv_path)
-{
-	int err = 0;
-#if (CNN_SIM_MODE == PRODUCTION)
-	for (int i = 0; i < CNN_INPUT_LEN; i++) {
-		input_data[i] = 0.25;
-	}
-#else
-	err |= load_csv_data(csv_path, input_data, CNN_INPUT_ROWS, CNN_INPUT_COLS);
-	// cnn_config_normalize_input_data(input_data);
-#endif
 	return err;
 }
 
@@ -212,4 +191,19 @@ void cnn_config_print(struct cnn_config *cnn_conf)
 	printf("---------------------------------------------------------------------\n");
 	printf("activations: 0 - none, 1 - ReLU; pooling type: 0 - MAX, 1 - AVG      \n");
 	printf("---------------------------------------------------------------------\n\n");
+}
+
+int cnn_run_prep(struct cnn_run *cnn_run, char *csv_data_path, int idx)
+{
+	int err = 0;
+	memset(cnn_run, 0, sizeof(*cnn_run));
+	cnn_run->idx = idx;
+#if (CNN_SIM_MODE == PRODUCTION)
+	for (int i = 0; i < CNN_INPUT_LEN; i++) {
+		cnn_run->input_data[i] = 0.25;
+	}
+#else
+	err = load_csv_data(csv_data_path, cnn_run->input_data, CNN_INPUT_ROWS, CNN_INPUT_COLS);
+#endif
+	return err;
 }

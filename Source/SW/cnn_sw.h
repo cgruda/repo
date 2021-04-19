@@ -19,13 +19,6 @@
 #endif
 
 struct cnn_sw {
-#if (PLATFORM == FPGA)
-	XTime tStart;
-	XTime tEnd;
-#else
-	struct timespec tStart;
-	struct timespec tEnd;
-#endif
 	uint32_t conv_0_ctrl;
 	uint32_t pool_0_ctrl;
 	uint32_t conv_1_ctrl;
@@ -46,8 +39,6 @@ struct cnn_sw {
 	float fc_0_output[FC_0_OUTPUT_LEN];
 	float fc_1_output[FC_1_OUTPUT_LEN];
 	float output_data[CNN_OUTPUT_LEN];
-	int cnn_result;
-	int cnn_second_result;
 };
 
 void pool(float *input, float *output, uint32_t ctrl);
@@ -55,7 +46,7 @@ void conv(float *input, float *kernel, float *output, uint32_t ctrl);
 void fully_connected(float *input, float *weight, float *bias, float *output, uint32_t ctrl);
 float softmax(float *input, float *output);
 void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);
-void cnn_sw_start(struct cnn_sw *cnn_sw);
-void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf, struct cnn_sim *cnn_sim);
+void cnn_sw_eval(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run);
+void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run);
 
 #endif /* SRC_CNN_SW_H_ */
