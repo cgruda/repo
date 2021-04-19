@@ -2,13 +2,8 @@
  * Project 20-1-1-2187
  * CNN accelerator
  *
- * This header file holds fixed point defines and macros.
- * the data type used when using this header is uint32_t,
- * which is also typdefed to be 'ufixp32_t'
- *
  * Chaim Gruda
  * Shay Tsabar
- *
  */
 
 #ifndef __FIXED_POINT_H__
