@@ -7,17 +7,13 @@
  *
  */
 
-#ifndef SRC_CNN_SIM_H_
-#define SRC_CNN_SIM_H_
+#ifndef SRC_CNN_TASK_H_
+#define SRC_CNN_TASK_H_
 
 #include "cnn_config.h"
 #include <stdint.h>
 #include <stdio.h>
-#if (PLATFORM == FPGA)
-#include "xtime_l.h"
-#else
-#include <time.h>
-#endif
+#include <stdbool.h>
 
 #if (PLATFORM == PC)
 #define CNN_SIM_PATH			"/home/cgruda/repo/Simulation/"
@@ -40,6 +36,8 @@
 #define DEFAULT_FILE_PATH			CNN_SIM_DATA_PATH "0/img10.csv"
 #define DEFAULT_IDX				0
 
+#define max(a, b) ((a) > (b) ? (a) : (b))
+
 struct cnn_sim {
 	int hit1_cnt;
 	int hit2_cnt;
@@ -47,9 +45,25 @@ struct cnn_sim {
 	float tot_cnn_time;
 };
 
-int load_csv_data(char *csv_file_path, float *read_buffer, int rows, int cols);
-FILE *sim_open_data_index(int idx);
-int get_next_data_file_path(FILE *idx_fptr, char *path_buffer);
+struct cnn_run {
+	int idx;
+	float input_data[CNN_INPUT_LEN];
+	int cnn_guess_1;
+	int cnn_guess_2;
+	float timediff_us;
+	bool hit1;
+	bool hit2;
+	cnn_time_t tStart;
+	cnn_time_t tEnd;
+};
+
+FILE *index_file_open(int idx);
+int csv_read(char *csv_path, float *buffer, int rows, int cols);
+int next_csv_path_get(FILE *idx_fptr, char *path_buffer);
+int cnn_prep_run(struct cnn_run *cnn_run, char *csv_data_path, int idx);
+void capture_time(cnn_time_t *time_val);
+void cnn_stat_run(struct cnn_run *cnn_run, bool verbose);
+void print_csv_image(char *text, float *data);
 
 
-#endif /* SRC_CNN_SIM_H_ */
+#endif /* SRC_CNN_TASK_H_ */

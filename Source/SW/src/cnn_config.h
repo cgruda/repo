@@ -16,13 +16,18 @@
 
 #define CONFIG_TRACE 0
 
-#include "cnn_sim.h"
 #include <stdint.h>
-#include <string.h>
-#include <stdbool.h>
+#if (PLATFORM == FPGA)
+#include "xtime_l.h"
+#else
+#include <time.h>
+#endif
 
+// pool types
 #define MAX_POOL 0
 #define AVG_POOL 1
+
+// activation types
 #define ACTIVATION_NONE 0
 #define ACTIVATION_RELU 1
 
@@ -157,49 +162,36 @@
 #define FC_CTRL_INPUT_LEN_SET(fc_ctrl, input_len) fc_ctrl = (((fc_ctrl) & ~FC_CTRL_INPUT_LEN_MSK) | ((input_len) << FC_CTRL_INPUT_LEN_OFT))
 #define FC_CTRL_OUTPUT_LEN_SET(fc_ctrl, output_len) fc_ctrl = (((fc_ctrl) & ~FC_CTRL_OUTPUT_LEN_MSK) | ((output_len) << FC_CTRL_OUTPUT_LEN_OFT))
 
-struct cnn_config {
-	// conv_0
-	uint32_t conv_0_ctrl;
-	float conv_0_kernel[CONV_0_KERNEL_LEN];
-	// pool_0
-	uint32_t pool_0_ctrl;
-	// conv_1
-	uint32_t conv_1_ctrl;
-	float conv_1_kernel[CONV_1_KERNEL_LEN];
-	// pool_1
-	uint32_t pool_1_ctrl;
-	// fc_0
-	uint32_t fc_0_ctrl;
-	float fc_0_weight[FC_0_WEIGHT_LEN];
-	float fc_0_bias[FC_0_BIAS_LEN];
-	// fc_1
-	uint32_t fc_1_ctrl;
-	float fc_1_weight[FC_1_WEIGHT_LEN];
-	float fc_1_bias[FC_1_BIAS_LEN];
-};
-
-struct cnn_run {
-	int idx;
-	float input_data[CNN_INPUT_LEN];
-	int cnn_guess_1;
-	int cnn_guess_2;
-	float timediff_us;
-	bool hit1;
-	bool hit2;
 #if (PLATFORM == FPGA)
-	XTime tStart;
-	XTime tEnd;
+typedef XTime cnn_time_t;
 #else
-	struct timespec tStart;
-	struct timespec tEnd;
+typedef struct timespec cnn_time_t;
 #endif
+
+struct cnn_config {
+	// ----------------- conv_0 -----------------
+	uint32_t conv_0_ctrl;
+	float    conv_0_kernel[CONV_0_KERNEL_LEN];
+	// ----------------- pool_0 -----------------
+	uint32_t pool_0_ctrl;
+	// ----------------- conv_1 -----------------
+	uint32_t conv_1_ctrl;
+	float    conv_1_kernel[CONV_1_KERNEL_LEN];
+	// ----------------- pool_1 -----------------
+	uint32_t pool_1_ctrl;
+	// -----------------  fc_0  -----------------
+	uint32_t fc_0_ctrl;
+	float    fc_0_weight[FC_0_WEIGHT_LEN];
+	float    fc_0_bias[FC_0_BIAS_LEN];
+	// -----------------  fc_1  -----------------
+	uint32_t fc_1_ctrl;
+	float    fc_1_weight[FC_1_WEIGHT_LEN];
+	float    fc_1_bias[FC_1_BIAS_LEN];
 };
 
 int cnn_config_set(struct cnn_config *cnn_conf);
 void cnn_config_print(struct cnn_config *cnn_conf);
 void cnn_config_trace_vals(char *text, float *data, int rows, int cols);
-void cnn_print_image(char *text, float *data);
-int cnn_run_prep(struct cnn_run *cnn_run, char *csv_data_path, int idx);
 
 
 #endif /* SRC_CNN_CONFIG_H_ */

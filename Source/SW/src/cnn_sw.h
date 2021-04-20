@@ -4,20 +4,16 @@
  *
  * Chaim Gruda
  * Shay Tsabar
- *
+ * 
  */
 
 #ifndef SRC_CNN_SW_H_
 #define SRC_CNN_SW_H_
 
 #include "cnn_config.h"
+#include "cnn_task.h"
 #include <stdint.h>
 #include <stdbool.h>
-#if (PLATFORM == FPGA)
-#include "xtime_l.h"
-#else
-#include <time.h>
-#endif
 
 struct cnn_sw {
 	uint32_t conv_0_ctrl;
@@ -45,9 +41,10 @@ struct cnn_sw {
 void pool(float *input, float *output, uint32_t ctrl);
 void conv(float *input, float *kernel, float *output, uint32_t ctrl);
 void fully_connected(float *input, float *weight, float *bias, float *output, uint32_t ctrl);
-float softmax(float *input, float *output);
+void softmax(float *input, float *output);
 void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);
 void cnn_sw_eval(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run);
 void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run, bool verbose);
+
 
 #endif /* SRC_CNN_SW_H_ */

@@ -1,6 +1,5 @@
 {
 	"files.associations": {
-		"cnn_config.h": "c",
-		"time.h": "c"
+		"stdint.h": "c"
 	}
 }

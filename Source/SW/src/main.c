@@ -10,10 +10,11 @@
 #include "cnn_config.h"
 #include "cnn_hw.h"
 #include "cnn_sw.h"
-#include "cnn_sim.h"
+#include "cnn_task.h"
 #include "fixed_point.h"
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 #if (PLATFORM == FPGA)
 #include <xparameters.h>
 #endif
@@ -85,7 +86,7 @@ int main()
 			break;
 
 		case UC_RUN_SW_SINGLE:
-			err = cnn_run_prep(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
+			err = cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
 			if (err) {
 				break;
 			}
@@ -107,12 +108,12 @@ int main()
 			struct cnn_sim cnn_sim_all = {0};
 			struct cnn_sim cnn_sim_idx = {0};
 			for (int i = 0; i < 10; i++) {
-				FILE *idx_fptr = sim_open_data_index(i);
+				FILE *idx_fptr = index_file_open(i);
 				if (!idx_fptr) {
 					printf("failed to open index %d!\n", i);
 					continue;
 				}
-				while (get_next_data_file_path(idx_fptr, csv_data_path) == 0) {
+				while (next_csv_path_get(idx_fptr, csv_data_path) == 0) {
 					if (!*csv_data_path) {
 						printf("index %d processed %d images: hit1 %d, hit2 %d, miss %d (accuracy = %.2f%%), time %.2f ms (avg %.2f us per image).\n", i, img_cnt,
 							cnn_sim_idx.hit1_cnt, cnn_sim_idx.hit2_cnt, cnn_sim_idx.miss_cnt, ((cnn_sim_idx.hit1_cnt / (float)img_cnt) * 100),
@@ -127,7 +128,7 @@ int main()
 						break;
 					}
 					img_cnt++;
-					err = cnn_run_prep(&cnn_run, csv_data_path, i);
+					err = cnn_prep_run(&cnn_run, csv_data_path, i);
 					if (err) {
 						printf("run_prep failed!");
 						continue;

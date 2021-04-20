@@ -8,9 +8,9 @@
  */
 
 #include "cnn_config.h"
-#include "cnn_sim.h"
-#include "fixed_point.h"
+#include "cnn_task.h"
 #include <stdio.h>
+#include <string.h>
 
 void cnn_config_trace_vals(char *text, float *data, int rows, int cols)
 {
@@ -25,23 +25,6 @@ void cnn_config_trace_vals(char *text, float *data, int rows, int cols)
 	printf("----------------------------------------------\n\n");
 }
 
-void cnn_print_image(char *text, float *data)
-{
-	printf("\n----------------------------------------------\n");
-	printf("%s\n", text);
-	for (int i = 0; i < CNN_INPUT_ROWS; i++) {
-		for (int j = 0; j < CNN_INPUT_COLS; j++) {
-			if (data[i * CNN_INPUT_COLS + j]) {
-				printf("+");
-			} else {
-				printf(" ");
-			}
-		}
-		printf("\n");
-	}
-	printf("----------------------------------------------\n\n");
-}
-
 int cnn_config_conv_0_set(float *kernel, uint32_t *ctrl)
 {
 	int err = 0;
@@ -50,7 +33,7 @@ int cnn_config_conv_0_set(float *kernel, uint32_t *ctrl)
 		kernel[i] = 1;
 	}
 #else
-	err |= load_csv_data(CNN_SIM_CONV_0_KERNEL_VALS_PATH, kernel, CONV_0_KERNEL_DIM, CONV_0_KERNEL_DIM);
+	err |= csv_read(CNN_SIM_CONV_0_KERNEL_VALS_PATH, kernel, CONV_0_KERNEL_DIM, CONV_0_KERNEL_DIM);
 #endif
 	CONV_CTRL_ACTIVATION_SET(*ctrl, CONV_0_ACTIVATION);
 	CONV_CTRL_KERNEL_DIM_SET(*ctrl, CONV_0_KERNEL_DIM);
@@ -70,7 +53,7 @@ int cnn_config_conv_1_set(float *kernel, uint32_t *ctrl)
 		kernel[i] = 1;
 	}
 #else
-	err |= load_csv_data(CNN_SIM_CONV_1_KERNEL_VALS_PATH, kernel, CONV_1_KERNEL_DIM, CONV_1_KERNEL_DIM);
+	err |= csv_read(CNN_SIM_CONV_1_KERNEL_VALS_PATH, kernel, CONV_1_KERNEL_DIM, CONV_1_KERNEL_DIM);
 #endif
 	CONV_CTRL_ACTIVATION_SET(*ctrl, CONV_1_ACTIVATION);
 	CONV_CTRL_KERNEL_DIM_SET(*ctrl, CONV_1_KERNEL_DIM);
@@ -111,8 +94,8 @@ int cnn_config_fc_0_set(float *weight, float *bias, uint32_t *ctrl)
 		bias[i] = 0;
 	}
 #else
-	err |= load_csv_data(CNN_SIM_FC_0_WEIGHT_VALS_PATH, weight, FC_0_WEIGHT_ROWS, FC_0_WEIGHT_COLS);
-	err |= load_csv_data(CNN_SIM_FC_0_BIAS_VALS_PATH, bias, FC_0_BIAS_LEN, 1);
+	err |= csv_read(CNN_SIM_FC_0_WEIGHT_VALS_PATH, weight, FC_0_WEIGHT_ROWS, FC_0_WEIGHT_COLS);
+	err |= csv_read(CNN_SIM_FC_0_BIAS_VALS_PATH, bias, FC_0_BIAS_LEN, 1);
 #endif
 	FC_CTRL_ACTIVATION_SET(*ctrl, FC_0_ACTIVATION);
 	FC_CTRL_INPUT_LEN_SET(*ctrl, FC_0_INPUT_LEN);
@@ -135,8 +118,8 @@ int cnn_config_fc_1_set(float *weight, float *bias, uint32_t *ctrl)
 		bias[i] = 0;
 	}
 #else
-	err |= load_csv_data(CNN_SIM_FC_1_WEIGHT_VALS_PATH, weight, FC_1_WEIGHT_ROWS, FC_1_WEIGHT_COLS);
-	err |= load_csv_data(CNN_SIM_FC_1_BIAS_VALS_PATH, bias, FC_1_BIAS_LEN, 1);
+	err |= csv_read(CNN_SIM_FC_1_WEIGHT_VALS_PATH, weight, FC_1_WEIGHT_ROWS, FC_1_WEIGHT_COLS);
+	err |= csv_read(CNN_SIM_FC_1_BIAS_VALS_PATH, bias, FC_1_BIAS_LEN, 1);
 #endif
 	FC_CTRL_ACTIVATION_SET(*ctrl, FC_1_ACTIVATION);
 	FC_CTRL_INPUT_LEN_SET(*ctrl, FC_1_INPUT_LEN);
@@ -191,19 +174,4 @@ void cnn_config_print(struct cnn_config *cnn_conf)
 	printf("---------------------------------------------------------------------\n");
 	printf("activations: 0 - none, 1 - ReLU; pooling type: 0 - MAX, 1 - AVG      \n");
 	printf("---------------------------------------------------------------------\n\n");
-}
-
-int cnn_run_prep(struct cnn_run *cnn_run, char *csv_data_path, int idx)
-{
-	int err = 0;
-	memset(cnn_run, 0, sizeof(*cnn_run));
-	cnn_run->idx = idx;
-#ifdef PRODUCTION
-	for (int i = 0; i < CNN_INPUT_LEN; i++) {
-		cnn_run->input_data[i] = 0.25;
-	}
-#else
-	err = load_csv_data(csv_data_path, cnn_run->input_data, CNN_INPUT_ROWS, CNN_INPUT_COLS);
-#endif
-	return err;
 }

@@ -7,20 +7,13 @@
  *
  */
 
-#include "cnn_config.h"
 #include "cnn_sw.h"
+#include "cnn_config.h"
+#include "cnn_task.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <math.h>
-#include <string.h>
 #include <stdbool.h>
-#if (PLATFORM == FPGA)
-#include "xtime_l.h"
-#else
-#include <time.h>
-#endif
-
-#define max(a, b) ((a) > (b) ? (a) : (b))
 
 void conv(float *input, float *kernel, float *output, uint32_t ctrl)
 {
@@ -115,7 +108,7 @@ float expo(float y)
 	return exp(y);
 }
 
-float softmax(float *input, float *output)
+void softmax(float *input, float *output)
 {
 	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
 		float sum = 0;
@@ -149,21 +142,21 @@ void cnn_result(float *cnn_output_data, int *first_guess, int *second_guess)
 
 void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
 {
-	// conv_0
+	// ----------------- conv_0 -----------------
 	cnn_sw->conv_0_ctrl = cnn_conf->conv_0_ctrl;
 	cnn_sw->conv_0_kernel = cnn_conf->conv_0_kernel;
-	// pool_0
+	// ----------------- pool_0 -----------------
 	cnn_sw->pool_0_ctrl = cnn_conf->pool_0_ctrl;
-	// conv_1
+	// ----------------- conv_1 -----------------
 	cnn_sw->conv_1_ctrl = cnn_conf->conv_1_ctrl;
 	cnn_sw->conv_1_kernel = cnn_conf->conv_1_kernel;
-	// pool_1
+	// ----------------- pool_1 -----------------
 	cnn_sw->pool_1_ctrl = cnn_conf->pool_1_ctrl;
-	// fc_0
+	// -----------------  fc_0  -----------------
 	cnn_sw->fc_0_ctrl = cnn_conf->fc_0_ctrl;
 	cnn_sw->fc_0_weight = cnn_conf->fc_0_weight;
 	cnn_sw->fc_0_bias = cnn_conf->fc_0_bias;
-	// fc_1
+	// -----------------  fc_1  -----------------
 	cnn_sw->fc_1_ctrl = cnn_conf->fc_1_ctrl;
 	cnn_sw->fc_1_weight = cnn_conf->fc_1_weight;
 	cnn_sw->fc_1_bias = cnn_conf->fc_1_bias;
@@ -171,11 +164,7 @@ void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
 
 void cnn_sw_eval(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run)
 {
-#if (PLATFORM == FPGA)
-	XTime_GetTime(&cnn_run->tStart);
-#else
-	timespec_get(&cnn_run->tStart, TIME_UTC);
-#endif
+	capture_time(&cnn_run->tStart);
 	conv(cnn_run->input_data, cnn_sw->conv_0_kernel, cnn_sw->conv_0_output, cnn_sw->conv_0_ctrl);
 	pool(cnn_sw->conv_0_output, cnn_sw->pool_0_output, cnn_sw->pool_0_ctrl);
 	conv(cnn_sw->pool_0_output, cnn_sw->conv_1_kernel, cnn_sw->conv_1_output, cnn_sw->conv_1_ctrl);
@@ -184,11 +173,7 @@ void cnn_sw_eval(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run)
 	fully_connected(cnn_sw->fc_0_output, cnn_sw->fc_1_weight, cnn_sw->fc_1_bias, cnn_sw->fc_1_output, cnn_sw->fc_1_ctrl);
 	softmax(cnn_sw->fc_1_output, cnn_sw->output_data);
 	cnn_result(cnn_sw->output_data, &cnn_run->cnn_guess_1, &cnn_run->cnn_guess_2);
-#if (PLATFORM == FPGA)
-	XTime_GetTime(&cnn_run->tEnd);
-#else
-	timespec_get(&cnn_run->tEnd, TIME_UTC);
-#endif
+	capture_time(&cnn_run->tEnd);
 }
 
 void cnn_sw_reset(struct cnn_sw *cnn_sw)
@@ -216,27 +201,6 @@ void cnn_sw_reset(struct cnn_sw *cnn_sw)
 	}
 }
 
-void cnn_sw_stats(struct cnn_run *cnn_run, bool verbose)
-{
-	uint32_t usec = 0;
-#if (PLATFORM == FPGA)
-	XTime timediff = cnn_run->tEnd - cnn_run->tStart;
-	cnn_run->timediff_us = 1.0 * timediff / (COUNTS_PER_SECOND / 1000000);
-#else
-	uint32_t sec = cnn_run->tEnd.tv_sec - cnn_run->tStart.tv_sec;
-	uint32_t nsec = cnn_run->tEnd.tv_nsec - cnn_run->tStart.tv_nsec + (sec * 1000000000);
-	cnn_run->timediff_us = (nsec / 1000.0);
-#endif
-	cnn_run->hit1 = cnn_run->idx == cnn_run->cnn_guess_1;
-	cnn_run->hit2 = cnn_run->idx == cnn_run->cnn_guess_2;
-
-	if (verbose) {
-		printf("cnn took %.2f us\n", cnn_run->timediff_us);
-		printf("1st guess = %d (%s)\n", cnn_run->cnn_guess_1, cnn_run->hit1 ? "hit" : "miss");
-		printf("2nd guess = %d (%s)\n", cnn_run->cnn_guess_2, cnn_run->hit1 ? "N/A" : (cnn_run->hit2 ? "hit" : "miss"));
-	}
-}
-
 void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run, bool verbose)
 {	
 	if (verbose) {
@@ -247,7 +211,7 @@ void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run, bool verbose)
 	}
 	cnn_sw_reset(cnn_sw);
 	cnn_sw_eval(cnn_sw, cnn_run);
-	cnn_sw_stats(cnn_run, verbose);
+	cnn_stat_run(cnn_run, verbose);
 	if (verbose) {
 		printf("--------------------------------------\n\n");
 	}
