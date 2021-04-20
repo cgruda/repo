@@ -216,31 +216,39 @@ void cnn_sw_reset(struct cnn_sw *cnn_sw)
 	}
 }
 
-void cnn_sw_stats(struct cnn_run *cnn_run)
+void cnn_sw_stats(struct cnn_run *cnn_run, bool verbose)
 {
+	uint32_t usec = 0;
 #if (PLATFORM == FPGA)
 	XTime timediff = cnn_run->tEnd - cnn_run->tStart;
-	printf("cnn sw took %llu clock cycles\n", 2 * timediff);
-	printf("which are %.2f us.\n", 1.0 * timediff / (COUNTS_PER_SECOND / 1000000));
+	cnn_run->timediff_us = 1.0 * timediff / (COUNTS_PER_SECOND / 1000000);
 #else
 	uint32_t sec = cnn_run->tEnd.tv_sec - cnn_run->tStart.tv_sec;
 	uint32_t nsec = cnn_run->tEnd.tv_nsec - cnn_run->tStart.tv_nsec + (sec * 1000000000);
-	printf("cnn took %.2f usec\n", (nsec / 1000.0));
+	cnn_run->timediff_us = (nsec / 1000.0);
 #endif
-	bool hit = cnn_run->idx == cnn_run->cnn_guess_1;
-	bool hit2 = cnn_run->idx == cnn_run->cnn_guess_2;
-	printf("1st guess = %d (%s)\n", cnn_run->cnn_guess_1, hit ? "hit" : "miss");
-	printf("2nd guess = %d (%s)\n", cnn_run->cnn_guess_2, hit ? "N/A" : (hit2 ? "hit" : "miss"));
+	cnn_run->hit1 = cnn_run->idx == cnn_run->cnn_guess_1;
+	cnn_run->hit2 = cnn_run->idx == cnn_run->cnn_guess_2;
+
+	if (verbose) {
+		printf("cnn took %.2f us\n", cnn_run->timediff_us);
+		printf("1st guess = %d (%s)\n", cnn_run->cnn_guess_1, cnn_run->hit1 ? "hit" : "miss");
+		printf("2nd guess = %d (%s)\n", cnn_run->cnn_guess_2, cnn_run->hit1 ? "N/A" : (cnn_run->hit2 ? "hit" : "miss"));
+	}
 }
 
-void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run)
+void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run, bool verbose)
 {	
-	printf("\n");
-	printf("--------------------------------------\n");
-	printf("          cnn software run            \n");
-	printf("--------------------------------------\n");
+	if (verbose) {
+		printf("\n");
+		printf("--------------------------------------\n");
+		printf("          cnn software run            \n");
+		printf("--------------------------------------\n");
+	}
 	cnn_sw_reset(cnn_sw);
 	cnn_sw_eval(cnn_sw, cnn_run);
-	cnn_sw_stats(cnn_run);
-	printf("--------------------------------------\n\n");
+	cnn_sw_stats(cnn_run, verbose);
+	if (verbose) {
+		printf("--------------------------------------\n\n");
+	}
 }

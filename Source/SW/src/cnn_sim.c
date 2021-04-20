@@ -21,21 +21,20 @@
 #include <time.h>
 #endif
 
-int sim_open_data_index(struct cnn_sim *cnn_sim, int idx)
+FILE *sim_open_data_index(int idx)
 {
 	char index_path[CNN_SIM_DATA_INDEX_PATH_LEN] = {0};
 	sprintf(index_path, "%s%d/%s", CNN_SIM_DATA_PATH, idx, CNN_SIM_DATA_INDEX);
-	cnn_sim->index_fptr = fopen(index_path, "r"); // FIXME: close me
-	if (!cnn_sim->index_fptr) {
-		printf("opening \"%s\" failed!\n", index_path);
-		return errno;
-	}
-	return 0;
+	return fopen(index_path, "r"); // FIXME: close me
 }
 
-int get_next_data_file_path(struct cnn_sim *cnn_sim, char *path_buffer)
+int get_next_data_file_path(FILE *idx_fptr, char *path_buffer)
 {
-	if (!fgets(path_buffer, CNN_SIM_DATA_FILE_PATH_MAX_LEN, cnn_sim->index_fptr)) {
+	memset(path_buffer, 0, CNN_SIM_DATA_FILE_PATH_MAX_LEN);
+	if (!fgets(path_buffer, CNN_SIM_DATA_FILE_PATH_MAX_LEN, idx_fptr)) {
+		if (feof(idx_fptr)) {
+			return 0;
+		}
 		return -1;
 	}
 	path_buffer[strlen(path_buffer) - 1] = 0;
@@ -57,12 +56,17 @@ int load_csv_data(char *csv_file_path, float *read_buffer, int rows, int cols)
 			read_val = fscanf(fptr, "%g,", &read_buffer[i * cols + j]);
 			if (!read_val) {
 				printf("read file error!\n");
+				fclose(fptr);
 				return -1;
 			}
 		}
 	}
 
 	fclose(fptr);
+#else
+	for (int i = 0; i < rows * cols; i++) {
+		read_buffer[i] = 1;
+	}
 #endif
 	return 0;
 }

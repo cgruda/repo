@@ -12,6 +12,7 @@
 
 #include "cnn_config.h"
 #include <stdint.h>
+#include <stdbool.h>
 #if (PLATFORM == FPGA)
 #include "xtime_l.h"
 #else
@@ -47,6 +48,6 @@ void fully_connected(float *input, float *weight, float *bias, float *output, ui
 float softmax(float *input, float *output);
 void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);
 void cnn_sw_eval(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run);
-void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run);
+void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run, bool verbose);
 
 #endif /* SRC_CNN_SW_H_ */

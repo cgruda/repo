@@ -19,10 +19,6 @@
 #include <time.h>
 #endif
 
-#define PRODUCTION 0
-#define OPERATIONAL 1
-#define CNN_SIM_MODE OPERATIONAL
-
 #if (PLATFORM == PC)
 #define CNN_SIM_PATH			"/home/cgruda/repo/Simulation/"
 #else
@@ -45,20 +41,15 @@
 #define DEFAULT_IDX				0
 
 struct cnn_sim {
-	FILE *index_fptr;
-	int hit_cnt;
-	int hit_sec_cnt;
+	int hit1_cnt;
+	int hit2_cnt;
 	int miss_cnt;
-#if (PLATFORM == FPGA)
-	XTime accm_cnn_time;
-#else
-	struct timespec accm_cnn_time;
-#endif
+	float tot_cnn_time;
 };
 
 int load_csv_data(char *csv_file_path, float *read_buffer, int rows, int cols);
-int sim_open_data_index(struct cnn_sim *cnn_sim, int idx);
-int get_next_data_file_path(struct cnn_sim *cnn_sim, char *path_buffer);
+FILE *sim_open_data_index(int idx);
+int get_next_data_file_path(FILE *idx_fptr, char *path_buffer);
 
 
 #endif /* SRC_CNN_SIM_H_ */

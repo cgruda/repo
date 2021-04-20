@@ -45,7 +45,7 @@ void cnn_print_image(char *text, float *data)
 int cnn_config_conv_0_set(float *kernel, uint32_t *ctrl)
 {
 	int err = 0;
-#if (CNN_SIM_MODE == PRODUCTION)
+#ifdef PRODUCTION
 	for (int i = 0; i < CONV_0_KERNEL_LEN; i++) {
 		kernel[i] = 1;
 	}
@@ -65,7 +65,7 @@ int cnn_config_conv_0_set(float *kernel, uint32_t *ctrl)
 int cnn_config_conv_1_set(float *kernel, uint32_t *ctrl)
 {
 	int err = 0;
-#if (CNN_SIM_MODE == PRODUCTION)
+#ifdef PRODUCTION
 	for (int i = 0; i < CONV_1_KERNEL_LEN; i++) {
 		kernel[i] = 1;
 	}
@@ -103,7 +103,7 @@ int cnn_config_pool_1_set(uint32_t *ctrl)
 int cnn_config_fc_0_set(float *weight, float *bias, uint32_t *ctrl)
 {
 	int err = 0;
-#if (CNN_SIM_MODE == PRODUCTION)
+#ifdef PRODUCTION
 	for (int i = 0; i < FC_0_WEIGHT_LEN; i++) {
 		weight[i] = 1;
 	}
@@ -127,7 +127,7 @@ int cnn_config_fc_0_set(float *weight, float *bias, uint32_t *ctrl)
 int cnn_config_fc_1_set(float *weight, float *bias, uint32_t *ctrl)
 {
 	int err = 0;
-#if (CNN_SIM_MODE == PRODUCTION)
+#ifdef PRODUCTION
 	for (int i = 0; i < FC_1_WEIGHT_LEN; i++) {
 		weight[i] = 1;
 	}
@@ -198,7 +198,7 @@ int cnn_run_prep(struct cnn_run *cnn_run, char *csv_data_path, int idx)
 	int err = 0;
 	memset(cnn_run, 0, sizeof(*cnn_run));
 	cnn_run->idx = idx;
-#if (CNN_SIM_MODE == PRODUCTION)
+#ifdef PRODUCTION
 	for (int i = 0; i < CNN_INPUT_LEN; i++) {
 		cnn_run->input_data[i] = 0.25;
 	}

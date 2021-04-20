@@ -19,6 +19,7 @@
 #include "cnn_sim.h"
 #include <stdint.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define MAX_POOL 0
 #define AVG_POOL 1
@@ -182,6 +183,9 @@ struct cnn_run {
 	float input_data[CNN_INPUT_LEN];
 	int cnn_guess_1;
 	int cnn_guess_2;
+	float timediff_us;
+	bool hit1;
+	bool hit2;
 #if (PLATFORM == FPGA)
 	XTime tStart;
 	XTime tEnd;
