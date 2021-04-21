@@ -48,13 +48,6 @@ enum user_choise {
 	UC_RUN_SW_ALL,
 };
 
-struct cnn_sim {
-	int hit1_cnt;
-	int hit2_cnt;
-	int miss_cnt;
-	float tot_cnn_time;
-};
-
 struct cnn_run {
 	bool valid;
 	int idx;
@@ -76,7 +69,7 @@ struct cnn_stat {
 	int miss_cnt;
 	float accm_cnn_time_us;
 	float accm_hit1_certainty;
-	float accm_hit2_certainty;
+	double accm_hit2_certainty;
 };
 
 struct cnn_hw;
