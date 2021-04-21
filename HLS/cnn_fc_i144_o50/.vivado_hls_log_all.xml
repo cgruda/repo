@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('weight_0_load_1', cnn_fc_i144_o50/core.cpp:56) on array 'weight_0' due to limited memory ports." projectName="cnn_fc_i144_o50" solutionName="solution1" date="2021-04-21T17:41:59.222+0300" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-104] Completely partitioning array 'result' (cnn_fc_i144_o50/core.cpp:34) accessed through non-constant indices on dimension 1 (cnn_fc_i144_o50/core.cpp:72:30), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead." projectName="cnn_fc_i144_o50" solutionName="solution1" date="2021-04-21T17:41:56.925+0300" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

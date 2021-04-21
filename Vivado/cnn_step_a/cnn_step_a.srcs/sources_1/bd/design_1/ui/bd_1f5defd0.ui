@@ -1,0 +1,46 @@
+{
+   guistr: "# # String gsaved with Nlview 6.6.5b  2016-09-06 bk=1.3687 VDI=39 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -y 340 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 360 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 9 -y 410 -defaultsOSRD
+preplace inst cnn_pool_d24x24_p2x2_0 -pg 1 -lvl 6 -y 420 -defaultsOSRD
+preplace inst cnn_pool_d52x52_p2x2_0 -pg 1 -lvl 4 -y 380 -defaultsOSRD
+preplace inst cnn_fc_i50_o10_0 -pg 1 -lvl 8 -y 420 -defaultsOSRD
+preplace inst cnn_conv_d26x26_k3x3_0 -pg 1 -lvl 5 -y 400 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 510 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 10 -y 140 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -y 200 -defaultsOSRD
+preplace inst cnn_conv_d54x54_k3x3_0 -pg 1 -lvl 3 -y 210 -defaultsOSRD
+preplace inst cnn_fc_i144_o50_0 -pg 1 -lvl 7 -y 420 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 11 -y 420 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 11 1 NJ
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 3 NJ 490 NJ 490 1290
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 11 380 270 640J 300 950J 290 NJ 290 NJ 290 NJ 290 NJ 290 NJ 290 NJ 290 NJ 290 3610
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 9 350 230 660 340 980 230 1270 230 1580 230 1890 230 2220 230 2490 230 2910
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 12 20 290 360J 260 650J 310 990J 300 NJ 300 NJ 300 NJ 300 NJ 300 NJ 300 NJ 300 3190J 280 3620
+preplace netloc axi_mem_intercon_M00_AXI 1 10 1 3180
+preplace netloc ps7_0_axi_periph_M03_AXI 1 2 4 NJ 510 NJ 510 NJ 510 1600
+preplace netloc cnn_pool_d52x52_p2x2_0_outStream 1 4 1 1280
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 2 N 470 990J
+preplace netloc axi_dma_0_M_AXI_MM2S 1 9 1 2880
+preplace netloc ps7_0_axi_periph_M06_AXI 1 2 6 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 2230
+preplace netloc processing_system7_0_FIXED_IO 1 11 1 NJ
+preplace netloc cnn_pool_d24x24_p2x2_0_outStream 1 6 1 N
+preplace netloc cnn_conv_d54x54_k3x3_0_outStream 1 3 1 960
+preplace netloc axi_dma_0_M_AXI_S2MM 1 9 1 2900
+preplace netloc ps7_0_axi_periph_M05_AXI 1 2 5 NJ 550 NJ 550 NJ 550 NJ 550 1900
+preplace netloc cnn_conv_d26x26_k3x3_0_outStream 1 5 1 1590
+preplace netloc ps7_0_axi_periph_M04_AXI 1 2 7 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 2500
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 12 20 90 340 90 680 90 970 90 1300 90 1610 90 1910 90 2240 90 2520 90 2890 420 3190 550 3610
+preplace netloc cnn_fc_i50_o10_0_outStream 1 8 1 2510
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 8 690 290 940J 280 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 2870
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 670
+preplace netloc cnn_fc_i144_o50_0_outStream 1 7 1 N
+preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 1 9 370 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 N
+levelinfo -pg 1 0 180 510 830 1160 1470 1780 2080 2380 2710 3050 3400 3640 -top 0 -bot 740
+",
+}
+{
+   da_axi4_cnt: "2",
+}

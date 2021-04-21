@@ -29,15 +29,13 @@ import vivadoProjectGen as vivgen
 CONV = 0
 POOL = 1
 
-project_name = "cnn_0"
+project_name = "cnn_step_a"
 
 layers = [ \
  {"type": CONV, "data_dim": 54, "op_dim": 3},\
  {"type": POOL, "data_dim": 52, "op_dim": 2},\
  {"type": CONV, "data_dim": 26, "op_dim": 3},\
  {"type": POOL, "data_dim": 24, "op_dim": 2},\
- {"type": CONV, "data_dim": 12, "op_dim": 3},\
- {"type": POOL, "data_dim": 10, "op_dim": 2},\
 ]
 
 # create IPs

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <core name="" type="" target="">
+    <kernel name="cnn_fc_i50_o10" language="c" vlnv="xilinx.com:hls:cnn_fc_i50_o10:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false">
+      <port name="S_AXI_CTRL" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x00000000"/>
+      <arg name="weight0" addressQualifier="0" id="0" port="S_AXI_CTRL" size="0x4" offset="0x100" hostOffset="0x0" hostSize="0x4" type=""/>
+      <arg name="weight1" addressQualifier="0" id="1" port="S_AXI_CTRL" size="0x4" offset="0x200" hostOffset="0x0" hostSize="0x4" type=""/>
+      <arg name="weight2" addressQualifier="0" id="2" port="S_AXI_CTRL" size="0x4" offset="0x300" hostOffset="0x0" hostSize="0x4" type=""/>
+      <arg name="weight3" addressQualifier="0" id="3" port="S_AXI_CTRL" size="0x4" offset="0x400" hostOffset="0x0" hostSize="0x4" type=""/>
+      <arg name="weight4" addressQualifier="0" id="4" port="S_AXI_CTRL" size="0x4" offset="0x500" hostOffset="0x0" hostSize="0x4" type=""/>
+      <arg name="weight5" addressQualifier="0" id="5" port="S_AXI_CTRL" size="0x4" offset="0x600" hostOffset="0x0" hostSize="0x4" type=""/>
+      <arg name="weight6" addressQualifier="0" id="6" port="S_AXI_CTRL" size="0x4" offset="0x700" hostOffset="0x0" hostSize="0x4" type=""/>
+      <arg name="weight7" addressQualifier="0" id="7" port="S_AXI_CTRL" size="0x4" offset="0x800" hostOffset="0x0" hostSize="0x4" type=""/>
+      <arg name="weight8" addressQualifier="0" id="8" port="S_AXI_CTRL" size="0x4" offset="0x900" hostOffset="0x0" hostSize="0x4" type=""/>
+      <arg name="weight9" addressQualifier="0" id="9" port="S_AXI_CTRL" size="0x4" offset="0xA00" hostOffset="0x0" hostSize="0x4" type=""/>
+      <arg name="bias" addressQualifier="0" id="10" port="S_AXI_CTRL" size="0x4" offset="0xB00" hostOffset="0x0" hostSize="0x4" type="unsigned int[]"/>
+      <arg name="ctrl" addressQualifier="0" id="11" port="S_AXI_CTRL" size="0x4" offset="0xB40" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <compileWorkGroupSize x="1" y="1" z="1"/>
+    </kernel>
+  </core>
+</project>

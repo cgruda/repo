@@ -1,0 +1,5 @@
+cnn_fc_i50_o10_mubkb
+cnn_fc_i50_o10_mucud
+cnn_fc_i50_o10_CTRL_s_axi
+fixed_point_mul
+cnn_fc_i50_o10

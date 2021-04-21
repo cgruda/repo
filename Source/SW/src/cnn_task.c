@@ -9,8 +9,6 @@
 
 #include "cnn_config.h"
 #include "cnn_task.h"
-#include "cnn_hw.h"
-#include "cnn_sw.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <errno.h>
@@ -198,16 +196,14 @@ int get_user_choice()
 	       "0. exit \n" \
 	       "1. run hw single \n" \
 	       "2. run sw single \n" \
-	       "3. hw vs sw single \n" \
-	       "4. run hw all \n" \
-	       "5. run sw all \n" \
-	       "6. hw vs sw all \n" \
+	       "3. run hw all \n" \
+	       "4. run sw all \n" \
 	       "--------------\n");
 	scanf("%d", &choice);
 	return choice;
 }
 
-int init(struct cnn_config *conf, struct cnn_hw *hw)
+int init(struct cnn_config *conf, struct cnn_hw *hw) // problem here
 {
 	int err = 0;
 

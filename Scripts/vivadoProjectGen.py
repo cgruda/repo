@@ -21,8 +21,8 @@ POOL = 1
 
 import os
 
-run_synth = 1
-launch_sdk = 1
+run_synth = 0
+launch_sdk = 0
 keep_log = 0
 
 repo_path = "D:\\School\\Project\\new_repo\\"

@@ -1,0 +1,5 @@
+cnn_fc_i144_o50_mbkb
+cnn_fc_i144_o50_mcud
+cnn_fc_i144_o50_CTRL_s_axi
+fixed_point_mul
+cnn_fc_i144_o50

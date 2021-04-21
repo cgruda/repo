@@ -1,0 +1,1348 @@
+
+
+================================================================
+== Vivado HLS Report for 'cnn_fc_i50_o10'
+================================================================
+* Date:           Wed Apr 21 16:09:29 2021
+
+* Version:        2016.4 (Build 1756540 on Mon Jan 23 19:31:01 MST 2017)
+* Project:        cnn_fc_i50_o10
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      7.57|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   96|   96|   97|   97|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   10|   10|         1|          1|          1|    10|    yes   |
+        |- Loop 2  |   10|   10|         2|          1|          1|    10|    yes   |
+        |- Loop 3  |   57|   57|         9|          1|          1|    50|    yes   |
+        |- Loop 4  |   11|   11|         3|          1|          1|    10|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+  * Pipeline-2: initiation interval (II) = 1, depth = 9
+  * Pipeline-3: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 20
+* Pipeline: 4
+  Pipeline-0: II = 1, D = 1, States = { 2 }
+  Pipeline-1: II = 1, D = 2, States = { 4 5 }
+  Pipeline-2: II = 1, D = 9, States = { 7 8 9 10 11 12 13 14 15 }
+  Pipeline-3: II = 1, D = 3, States = { 17 18 19 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (exitcond1)
+	2  / (!exitcond1)
+3 --> 
+	4  / true
+4 --> 
+	6  / (exitcond2)
+	5  / (!exitcond2)
+5 --> 
+	4  / true
+6 --> 
+	7  / true
+7 --> 
+	16  / (exitcond3)
+	8  / (!exitcond3)
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	7  / true
+16 --> 
+	17  / true
+17 --> 
+	20  / (exitcond)
+	18  / (!exitcond)
+18 --> 
+	19  / true
+19 --> 
+	17  / true
+20 --> 
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: StgValue_21 (27)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap([50 x i32]* %weight_9), !map !54
+
+ST_1: StgValue_22 (28)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap([50 x i32]* %weight_8), !map !61
+
+ST_1: StgValue_23 (29)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap([50 x i32]* %weight_7), !map !67
+
+ST_1: StgValue_24 (30)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap([50 x i32]* %weight_6), !map !73
+
+ST_1: StgValue_25 (31)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap([50 x i32]* %weight_5), !map !79
+
+ST_1: StgValue_26 (32)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap([50 x i32]* %weight_4), !map !85
+
+ST_1: StgValue_27 (33)  [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap([50 x i32]* %weight_3), !map !91
+
+ST_1: StgValue_28 (34)  [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecBitsMap([50 x i32]* %weight_2), !map !97
+
+ST_1: StgValue_29 (35)  [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecBitsMap([50 x i32]* %weight_1), !map !103
+
+ST_1: StgValue_30 (36)  [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecBitsMap([50 x i32]* %weight_0), !map !109
+
+ST_1: StgValue_31 (37)  [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecBitsMap(i32* %inStream_V_data_V), !map !115
+
+ST_1: StgValue_32 (38)  [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_SpecBitsMap(i4* %inStream_V_keep_V), !map !119
+
+ST_1: StgValue_33 (39)  [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_SpecBitsMap(i4* %inStream_V_strb_V), !map !123
+
+ST_1: StgValue_34 (40)  [1/1] 0.00ns
+:13  call void (...)* @_ssdm_op_SpecBitsMap(i2* %inStream_V_user_V), !map !127
+
+ST_1: StgValue_35 (41)  [1/1] 0.00ns
+:14  call void (...)* @_ssdm_op_SpecBitsMap(i1* %inStream_V_last_V), !map !131
+
+ST_1: StgValue_36 (42)  [1/1] 0.00ns
+:15  call void (...)* @_ssdm_op_SpecBitsMap(i5* %inStream_V_id_V), !map !135
+
+ST_1: StgValue_37 (43)  [1/1] 0.00ns
+:16  call void (...)* @_ssdm_op_SpecBitsMap(i6* %inStream_V_dest_V), !map !139
+
+ST_1: StgValue_38 (44)  [1/1] 0.00ns
+:17  call void (...)* @_ssdm_op_SpecBitsMap(i32* %outStream_V_data_V), !map !143
+
+ST_1: StgValue_39 (45)  [1/1] 0.00ns
+:18  call void (...)* @_ssdm_op_SpecBitsMap(i4* %outStream_V_keep_V), !map !147
+
+ST_1: StgValue_40 (46)  [1/1] 0.00ns
+:19  call void (...)* @_ssdm_op_SpecBitsMap(i4* %outStream_V_strb_V), !map !151
+
+ST_1: StgValue_41 (47)  [1/1] 0.00ns
+:20  call void (...)* @_ssdm_op_SpecBitsMap(i2* %outStream_V_user_V), !map !155
+
+ST_1: StgValue_42 (48)  [1/1] 0.00ns
+:21  call void (...)* @_ssdm_op_SpecBitsMap(i1* %outStream_V_last_V), !map !159
+
+ST_1: StgValue_43 (49)  [1/1] 0.00ns
+:22  call void (...)* @_ssdm_op_SpecBitsMap(i5* %outStream_V_id_V), !map !163
+
+ST_1: StgValue_44 (50)  [1/1] 0.00ns
+:23  call void (...)* @_ssdm_op_SpecBitsMap(i6* %outStream_V_dest_V), !map !167
+
+ST_1: StgValue_45 (51)  [1/1] 0.00ns
+:24  call void (...)* @_ssdm_op_SpecBitsMap([10 x i32]* %bias), !map !171
+
+ST_1: StgValue_46 (52)  [1/1] 0.00ns
+:25  call void (...)* @_ssdm_op_SpecBitsMap(i32 %ctrl), !map !177
+
+ST_1: StgValue_47 (53)  [1/1] 0.00ns
+:26  call void (...)* @_ssdm_op_SpecTopModule([15 x i8]* @cnn_fc_i50_o10_str) nounwind
+
+ST_1: ctrl_read (54)  [1/1] 1.00ns
+:27  %ctrl_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %ctrl)
+
+ST_1: StgValue_49 (55)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:25
+:28  call void (...)* @_ssdm_op_SpecInterface(i32* %outStream_V_data_V, i4* %outStream_V_keep_V, i4* %outStream_V_strb_V, i2* %outStream_V_user_V, i1* %outStream_V_last_V, i5* %outStream_V_id_V, i6* %outStream_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_50 (56)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:26
+:29  call void (...)* @_ssdm_op_SpecInterface(i32* %inStream_V_data_V, i4* %inStream_V_keep_V, i4* %inStream_V_strb_V, i2* %inStream_V_user_V, i1* %inStream_V_last_V, i5* %inStream_V_id_V, i6* %inStream_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: empty (57)  [1/1] 0.00ns
+:30  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([50 x i32]* %weight_0, [1 x i8]* @p_str5, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str5, i32 -1, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5)
+
+ST_1: empty_4 (58)  [1/1] 0.00ns
+:31  %empty_4 = call i32 (...)* @_ssdm_op_SpecMemCore([50 x i32]* %weight_1, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+
+ST_1: empty_5 (59)  [1/1] 0.00ns
+:32  %empty_5 = call i32 (...)* @_ssdm_op_SpecMemCore([50 x i32]* %weight_2, [1 x i8]* @p_str11, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str11, i32 -1, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11)
+
+ST_1: empty_6 (60)  [1/1] 0.00ns
+:33  %empty_6 = call i32 (...)* @_ssdm_op_SpecMemCore([50 x i32]* %weight_3, [1 x i8]* @p_str12, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str12, i32 -1, [1 x i8]* @p_str12, [1 x i8]* @p_str12, [1 x i8]* @p_str12, [1 x i8]* @p_str12, [1 x i8]* @p_str12)
+
+ST_1: empty_7 (61)  [1/1] 0.00ns
+:34  %empty_7 = call i32 (...)* @_ssdm_op_SpecMemCore([50 x i32]* %weight_4, [1 x i8]* @p_str13, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str13, i32 -1, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13, [1 x i8]* @p_str13)
+
+ST_1: empty_8 (62)  [1/1] 0.00ns
+:35  %empty_8 = call i32 (...)* @_ssdm_op_SpecMemCore([50 x i32]* %weight_5, [1 x i8]* @p_str14, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str14, i32 -1, [1 x i8]* @p_str14, [1 x i8]* @p_str14, [1 x i8]* @p_str14, [1 x i8]* @p_str14, [1 x i8]* @p_str14)
+
+ST_1: empty_9 (63)  [1/1] 0.00ns
+:36  %empty_9 = call i32 (...)* @_ssdm_op_SpecMemCore([50 x i32]* %weight_6, [1 x i8]* @p_str15, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str15, i32 -1, [1 x i8]* @p_str15, [1 x i8]* @p_str15, [1 x i8]* @p_str15, [1 x i8]* @p_str15, [1 x i8]* @p_str15)
+
+ST_1: empty_10 (64)  [1/1] 0.00ns
+:37  %empty_10 = call i32 (...)* @_ssdm_op_SpecMemCore([50 x i32]* %weight_7, [1 x i8]* @p_str16, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str16, i32 -1, [1 x i8]* @p_str16, [1 x i8]* @p_str16, [1 x i8]* @p_str16, [1 x i8]* @p_str16, [1 x i8]* @p_str16)
+
+ST_1: empty_11 (65)  [1/1] 0.00ns
+:38  %empty_11 = call i32 (...)* @_ssdm_op_SpecMemCore([50 x i32]* %weight_8, [1 x i8]* @p_str17, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str17, i32 -1, [1 x i8]* @p_str17, [1 x i8]* @p_str17, [1 x i8]* @p_str17, [1 x i8]* @p_str17, [1 x i8]* @p_str17)
+
+ST_1: empty_12 (66)  [1/1] 0.00ns
+:39  %empty_12 = call i32 (...)* @_ssdm_op_SpecMemCore([50 x i32]* %weight_9, [1 x i8]* @p_str18, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str18, i32 -1, [1 x i8]* @p_str18, [1 x i8]* @p_str18, [1 x i8]* @p_str18, [1 x i8]* @p_str18, [1 x i8]* @p_str18)
+
+ST_1: StgValue_61 (67)  [1/1] 0.00ns
+:40  call void (...)* @_ssdm_op_SpecInterface([50 x i32]* %weight_0, [50 x i32]* %weight_1, [50 x i32]* %weight_2, [50 x i32]* %weight_3, [50 x i32]* %weight_4, [50 x i32]* %weight_5, [50 x i32]* %weight_6, [50 x i32]* %weight_7, [50 x i32]* %weight_8, [50 x i32]* %weight_9, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: empty_13 (68)  [1/1] 0.00ns
+:41  %empty_13 = call i32 (...)* @_ssdm_op_SpecMemCore([10 x i32]* %bias, [1 x i8]* @p_str19, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str19, i32 -1, [1 x i8]* @p_str19, [1 x i8]* @p_str19, [1 x i8]* @p_str19, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
+
+ST_1: StgValue_63 (69)  [1/1] 0.00ns
+:42  call void (...)* @_ssdm_op_SpecInterface([10 x i32]* %bias, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_64 (70)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:29
+:43  call void (...)* @_ssdm_op_SpecInterface(i32 %ctrl, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_65 (71)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:30
+:44  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+
+ST_1: StgValue_66 (72)  [1/1] 1.57ns  loc: cnn_fc_i50_o10/core.cpp:37
+:45  br label %1
+
+
+ <State 2>: 7.36ns
+ST_2: result_9 (74)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:0  %result_9 = phi i32 [ undef, %0 ], [ %newSel1, %_ifconv ]
+
+ST_2: result_8 (75)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:1  %result_8 = phi i32 [ undef, %0 ], [ %newSel3, %_ifconv ]
+
+ST_2: result_7 (76)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:2  %result_7 = phi i32 [ undef, %0 ], [ %newSel7, %_ifconv ]
+
+ST_2: result_6 (77)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:3  %result_6 = phi i32 [ undef, %0 ], [ %newSel10, %_ifconv ]
+
+ST_2: result_5 (78)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:4  %result_5 = phi i32 [ undef, %0 ], [ %newSel13, %_ifconv ]
+
+ST_2: result_4 (79)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:5  %result_4 = phi i32 [ undef, %0 ], [ %newSel15, %_ifconv ]
+
+ST_2: result_3 (80)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:6  %result_3 = phi i32 [ undef, %0 ], [ %newSel18, %_ifconv ]
+
+ST_2: result_2 (81)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:7  %result_2 = phi i32 [ undef, %0 ], [ %newSel20, %_ifconv ]
+
+ST_2: result_1 (82)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:8  %result_1 = phi i32 [ undef, %0 ], [ %result_1_s, %_ifconv ]
+
+ST_2: result_0 (83)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:9  %result_0 = phi i32 [ undef, %0 ], [ %result_0_s, %_ifconv ]
+
+ST_2: i (84)  [1/1] 0.00ns
+:10  %i = phi i4 [ 0, %0 ], [ %i_1, %_ifconv ]
+
+ST_2: exitcond1 (85)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:37
+:11  %exitcond1 = icmp eq i4 %i, -6
+
+ST_2: i_1 (86)  [1/1] 0.80ns  loc: cnn_fc_i50_o10/core.cpp:37
+:12  %i_1 = add i4 %i, 1
+
+ST_2: StgValue_80 (87)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+:13  br i1 %exitcond1, label %.preheader73.preheader, label %_ifconv
+
+ST_2: empty_14 (89)  [1/1] 0.00ns
+_ifconv:0  %empty_14 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)
+
+ST_2: tmp_2 (90)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:1  %tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str6)
+
+ST_2: StgValue_83 (91)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:38
+_ifconv:2  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_2: sel_tmp (92)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:3  %sel_tmp = icmp eq i4 %i, -8
+
+ST_2: sel_tmp1 (93)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:4  %sel_tmp1 = icmp eq i4 %i, 7
+
+ST_2: sel_tmp2 (94)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:5  %sel_tmp2 = icmp eq i4 %i, 6
+
+ST_2: sel_tmp3 (95)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:6  %sel_tmp3 = icmp eq i4 %i, 5
+
+ST_2: sel_tmp4 (96)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:7  %sel_tmp4 = icmp eq i4 %i, 4
+
+ST_2: sel_tmp5 (97)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:8  %sel_tmp5 = icmp eq i4 %i, 3
+
+ST_2: sel_tmp6 (98)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:9  %sel_tmp6 = icmp eq i4 %i, 2
+
+ST_2: sel_tmp7 (99)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:10  %sel_tmp7 = icmp eq i4 %i, 1
+
+ST_2: sel_tmp8 (100)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:11  %sel_tmp8 = icmp eq i4 %i, 0
+
+ST_2: or_cond (101)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:12  %or_cond = or i1 %sel_tmp8, %sel_tmp7
+
+ST_2: or_cond1 (102)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node or_cond4)
+_ifconv:13  %or_cond1 = or i1 %sel_tmp6, %sel_tmp5
+
+ST_2: or_cond2 (103)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:14  %or_cond2 = or i1 %sel_tmp4, %sel_tmp3
+
+ST_2: or_cond3 (104)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node or_cond6)
+_ifconv:15  %or_cond3 = or i1 %sel_tmp2, %sel_tmp1
+
+ST_2: newSel (105)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel1)
+_ifconv:16  %newSel = select i1 %sel_tmp, i32 %result_9, i32 0
+
+ST_2: or_cond4 (106)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:17  %or_cond4 = or i1 %or_cond, %or_cond1
+
+ST_2: or_cond5 (107)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node or_cond6)
+_ifconv:18  %or_cond5 = or i1 %or_cond2, %or_cond3
+
+ST_2: or_cond6 (108)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:19  %or_cond6 = or i1 %or_cond4, %or_cond5
+
+ST_2: newSel1 (109)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:20  %newSel1 = select i1 %or_cond6, i32 %result_9, i32 %newSel
+
+ST_2: newSel2 (110)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel3)
+_ifconv:21  %newSel2 = select i1 %sel_tmp, i32 0, i32 %result_8
+
+ST_2: newSel3 (111)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:22  %newSel3 = select i1 %or_cond6, i32 %result_8, i32 %newSel2
+
+ST_2: newSel4 (112)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel6)
+_ifconv:23  %newSel4 = select i1 %sel_tmp2, i32 %result_7, i32 0
+
+ST_2: newSel5 (113)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel6)
+_ifconv:24  %newSel5 = select i1 %or_cond2, i32 %result_7, i32 %newSel4
+
+ST_2: newSel6 (114)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:25  %newSel6 = select i1 %or_cond4, i32 %result_7, i32 %newSel5
+
+ST_2: newSel7 (115)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:26  %newSel7 = select i1 %or_cond6, i32 %newSel6, i32 %result_7
+
+ST_2: newSel8 (116)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel10)
+_ifconv:27  %newSel8 = select i1 %sel_tmp2, i32 0, i32 %result_6
+
+ST_2: newSel9 (117)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel10)
+_ifconv:28  %newSel9 = select i1 %or_cond2, i32 %result_6, i32 %newSel8
+
+ST_2: newSel10 (118)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:29  %newSel10 = select i1 %or_cond4, i32 %result_6, i32 %newSel9
+
+ST_2: newSel11 (119)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel13)
+_ifconv:30  %newSel11 = select i1 %sel_tmp4, i32 %result_5, i32 0
+
+ST_2: newSel12 (120)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel13)
+_ifconv:31  %newSel12 = select i1 %or_cond2, i32 %newSel11, i32 %result_5
+
+ST_2: newSel13 (121)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:32  %newSel13 = select i1 %or_cond4, i32 %result_5, i32 %newSel12
+
+ST_2: newSel14 (122)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel15)
+_ifconv:33  %newSel14 = select i1 %sel_tmp4, i32 0, i32 %result_4
+
+ST_2: newSel15 (123)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:34  %newSel15 = select i1 %or_cond4, i32 %result_4, i32 %newSel14
+
+ST_2: newSel16 (124)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel18)
+_ifconv:35  %newSel16 = select i1 %sel_tmp6, i32 %result_3, i32 0
+
+ST_2: newSel17 (125)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel18)
+_ifconv:36  %newSel17 = select i1 %or_cond, i32 %result_3, i32 %newSel16
+
+ST_2: newSel18 (126)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:37  %newSel18 = select i1 %or_cond4, i32 %newSel17, i32 %result_3
+
+ST_2: newSel19 (127)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node newSel20)
+_ifconv:38  %newSel19 = select i1 %sel_tmp6, i32 0, i32 %result_2
+
+ST_2: newSel20 (128)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:39  %newSel20 = select i1 %or_cond, i32 %result_2, i32 %newSel19
+
+ST_2: sel_tmp9 (129)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37 (grouped into LUT with out node result_1_s)
+_ifconv:40  %sel_tmp9 = select i1 %sel_tmp7, i32 0, i32 %result_1
+
+ST_2: result_1_s (130)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37 (out node of the LUT)
+_ifconv:41  %result_1_s = select i1 %sel_tmp8, i32 %result_1, i32 %sel_tmp9
+
+ST_2: result_0_s (131)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:42  %result_0_s = select i1 %sel_tmp8, i32 0, i32 %result_0
+
+ST_2: empty_15 (132)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:40
+_ifconv:43  %empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str6, i32 %tmp_2)
+
+ST_2: StgValue_125 (133)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:37
+_ifconv:44  br label %1
+
+
+ <State 3>: 1.57ns
+ST_3: StgValue_126 (135)  [1/1] 1.57ns  loc: cnn_fc_i50_o10/core.cpp:43
+.preheader73.preheader:0  br label %.preheader73
+
+
+ <State 4>: 3.25ns
+ST_4: result_9_2 (137)  [1/1] 0.00ns
+.preheader73:0  %result_9_2 = phi i32 [ %result_9_5, %_ifconv191 ], [ %result_9, %.preheader73.preheader ]
+
+ST_4: result_8_2 (138)  [1/1] 0.00ns
+.preheader73:1  %result_8_2 = phi i32 [ %result_9_6, %_ifconv191 ], [ %result_8, %.preheader73.preheader ]
+
+ST_4: result_9_7 (139)  [1/1] 0.00ns
+.preheader73:2  %result_9_7 = phi i32 [ %result_9_8, %_ifconv191 ], [ %result_7, %.preheader73.preheader ]
+
+ST_4: result_9_9 (140)  [1/1] 0.00ns
+.preheader73:3  %result_9_9 = phi i32 [ %result_9_10, %_ifconv191 ], [ %result_6, %.preheader73.preheader ]
+
+ST_4: result_9_20 (141)  [1/1] 0.00ns
+.preheader73:4  %result_9_20 = phi i32 [ %result_9_12, %_ifconv191 ], [ %result_5, %.preheader73.preheader ]
+
+ST_4: result_9_3 (142)  [1/1] 0.00ns
+.preheader73:5  %result_9_3 = phi i32 [ %result_9_14, %_ifconv191 ], [ %result_4, %.preheader73.preheader ]
+
+ST_4: result_9_11 (143)  [1/1] 0.00ns
+.preheader73:6  %result_9_11 = phi i32 [ %result_9_16, %_ifconv191 ], [ %result_3, %.preheader73.preheader ]
+
+ST_4: result_9_13 (144)  [1/1] 0.00ns
+.preheader73:7  %result_9_13 = phi i32 [ %result_9_18, %_ifconv191 ], [ %result_2, %.preheader73.preheader ]
+
+ST_4: result_9_15 (145)  [1/1] 0.00ns
+.preheader73:8  %result_9_15 = phi i32 [ %result_9_22, %_ifconv191 ], [ %result_1, %.preheader73.preheader ]
+
+ST_4: result_9_17 (146)  [1/1] 0.00ns
+.preheader73:9  %result_9_17 = phi i32 [ %result_9_23, %_ifconv191 ], [ %result_0, %.preheader73.preheader ]
+
+ST_4: i1 (147)  [1/1] 0.00ns
+.preheader73:10  %i1 = phi i4 [ %i_2, %_ifconv191 ], [ 0, %.preheader73.preheader ]
+
+ST_4: exitcond2 (148)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:43
+.preheader73:11  %exitcond2 = icmp eq i4 %i1, -6
+
+ST_4: i_2 (149)  [1/1] 0.80ns  loc: cnn_fc_i50_o10/core.cpp:43
+.preheader73:12  %i_2 = add i4 %i1, 1
+
+ST_4: StgValue_140 (150)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43
+.preheader73:13  br i1 %exitcond2, label %.preheader72.preheader, label %_ifconv191
+
+ST_4: i1_cast (152)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:0  %i1_cast = zext i4 %i1 to i32
+
+ST_4: bias_addr (156)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:45
+_ifconv191:4  %bias_addr = getelementptr [10 x i32]* %bias, i32 0, i32 %i1_cast
+
+ST_4: bias_load (157)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:45
+_ifconv191:5  %bias_load = load i32* %bias_addr, align 4
+
+
+ <State 5>: 7.57ns
+ST_5: empty_16 (153)  [1/1] 0.00ns
+_ifconv191:1  %empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)
+
+ST_5: tmp_3 (154)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:2  %tmp_3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str7)
+
+ST_5: StgValue_146 (155)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:44
+_ifconv191:3  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_5: bias_load (157)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:45
+_ifconv191:5  %bias_load = load i32* %bias_addr, align 4
+
+ST_5: tmp_1 (158)  [1/1] 2.23ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:6  %tmp_1 = call i32 @_ssdm_op_Mux.ap_auto.10i32.i4(i32 %result_9_17, i32 %result_9_15, i32 %result_9_13, i32 %result_9_11, i32 %result_9_3, i32 %result_9_20, i32 %result_9_9, i32 %result_9_7, i32 %result_8_2, i32 %result_9_2, i4 %i1)
+
+ST_5: result_9_24 (159)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:45
+_ifconv191:7  %result_9_24 = add i32 %bias_load, %tmp_1
+
+ST_5: sel_tmp10 (160)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:8  %sel_tmp10 = icmp eq i4 %i1, -8
+
+ST_5: sel_tmp11 (161)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:9  %sel_tmp11 = icmp eq i4 %i1, 7
+
+ST_5: sel_tmp12 (162)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:10  %sel_tmp12 = icmp eq i4 %i1, 6
+
+ST_5: sel_tmp13 (163)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:11  %sel_tmp13 = icmp eq i4 %i1, 5
+
+ST_5: sel_tmp14 (164)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:12  %sel_tmp14 = icmp eq i4 %i1, 4
+
+ST_5: sel_tmp15 (165)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:13  %sel_tmp15 = icmp eq i4 %i1, 3
+
+ST_5: sel_tmp16 (166)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:14  %sel_tmp16 = icmp eq i4 %i1, 2
+
+ST_5: sel_tmp17 (167)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:15  %sel_tmp17 = icmp eq i4 %i1, 1
+
+ST_5: sel_tmp18 (168)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:16  %sel_tmp18 = icmp eq i4 %i1, 0
+
+ST_5: or_cond7 (169)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:17  %or_cond7 = or i1 %sel_tmp18, %sel_tmp17
+
+ST_5: or_cond8 (170)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node or_cond11)
+_ifconv191:18  %or_cond8 = or i1 %sel_tmp16, %sel_tmp15
+
+ST_5: or_cond9 (171)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:19  %or_cond9 = or i1 %sel_tmp14, %sel_tmp13
+
+ST_5: or_cond10 (172)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node or_cond13)
+_ifconv191:20  %or_cond10 = or i1 %sel_tmp12, %sel_tmp11
+
+ST_5: newSel21 (173)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node result_9_5)
+_ifconv191:21  %newSel21 = select i1 %sel_tmp10, i32 %result_9_2, i32 %result_9_24
+
+ST_5: or_cond11 (174)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:22  %or_cond11 = or i1 %or_cond7, %or_cond8
+
+ST_5: or_cond12 (175)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node or_cond13)
+_ifconv191:23  %or_cond12 = or i1 %or_cond9, %or_cond10
+
+ST_5: or_cond13 (176)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:24  %or_cond13 = or i1 %or_cond11, %or_cond12
+
+ST_5: result_9_5 (177)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:25  %result_9_5 = select i1 %or_cond13, i32 %result_9_2, i32 %newSel21
+
+ST_5: newSel22 (178)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node result_9_6)
+_ifconv191:26  %newSel22 = select i1 %sel_tmp10, i32 %result_9_24, i32 %result_8_2
+
+ST_5: result_9_6 (179)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:27  %result_9_6 = select i1 %or_cond13, i32 %result_8_2, i32 %newSel22
+
+ST_5: newSel23 (180)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node newSel24)
+_ifconv191:28  %newSel23 = select i1 %sel_tmp12, i32 %result_9_7, i32 %result_9_24
+
+ST_5: newSel24 (181)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:29  %newSel24 = select i1 %or_cond9, i32 %result_9_7, i32 %newSel23
+
+ST_5: newSel25 (182)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node result_9_8)
+_ifconv191:30  %newSel25 = select i1 %or_cond11, i32 %result_9_7, i32 %newSel24
+
+ST_5: result_9_8 (183)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:31  %result_9_8 = select i1 %or_cond13, i32 %newSel25, i32 %result_9_7
+
+ST_5: newSel26 (184)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node newSel27)
+_ifconv191:32  %newSel26 = select i1 %sel_tmp12, i32 %result_9_24, i32 %result_9_9
+
+ST_5: newSel27 (185)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:33  %newSel27 = select i1 %or_cond9, i32 %result_9_9, i32 %newSel26
+
+ST_5: result_9_10 (186)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:34  %result_9_10 = select i1 %or_cond11, i32 %result_9_9, i32 %newSel27
+
+ST_5: newSel28 (187)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node newSel29)
+_ifconv191:35  %newSel28 = select i1 %sel_tmp14, i32 %result_9_20, i32 %result_9_24
+
+ST_5: newSel29 (188)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:36  %newSel29 = select i1 %or_cond9, i32 %newSel28, i32 %result_9_20
+
+ST_5: result_9_12 (189)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:37  %result_9_12 = select i1 %or_cond11, i32 %result_9_20, i32 %newSel29
+
+ST_5: newSel30 (190)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node result_9_14)
+_ifconv191:38  %newSel30 = select i1 %sel_tmp14, i32 %result_9_24, i32 %result_9_3
+
+ST_5: result_9_14 (191)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:39  %result_9_14 = select i1 %or_cond11, i32 %result_9_3, i32 %newSel30
+
+ST_5: newSel31 (192)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node newSel32)
+_ifconv191:40  %newSel31 = select i1 %sel_tmp16, i32 %result_9_11, i32 %result_9_24
+
+ST_5: newSel32 (193)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:41  %newSel32 = select i1 %or_cond7, i32 %result_9_11, i32 %newSel31
+
+ST_5: result_9_16 (194)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:42  %result_9_16 = select i1 %or_cond11, i32 %newSel32, i32 %result_9_11
+
+ST_5: newSel33 (195)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node result_9_18)
+_ifconv191:43  %newSel33 = select i1 %sel_tmp16, i32 %result_9_24, i32 %result_9_13
+
+ST_5: result_9_18 (196)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:44  %result_9_18 = select i1 %or_cond7, i32 %result_9_13, i32 %newSel33
+
+ST_5: result_9_21 (197)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43 (grouped into LUT with out node result_9_22)
+_ifconv191:45  %result_9_21 = select i1 %sel_tmp17, i32 %result_9_24, i32 %result_9_15
+
+ST_5: result_9_22 (198)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43 (out node of the LUT)
+_ifconv191:46  %result_9_22 = select i1 %sel_tmp18, i32 %result_9_15, i32 %result_9_21
+
+ST_5: result_9_23 (199)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:47  %result_9_23 = select i1 %sel_tmp18, i32 %result_9_24, i32 %result_9_17
+
+ST_5: empty_17 (200)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:46
+_ifconv191:48  %empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str7, i32 %tmp_3)
+
+ST_5: StgValue_191 (201)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:43
+_ifconv191:49  br label %.preheader73
+
+
+ <State 6>: 1.57ns
+ST_6: StgValue_192 (203)  [1/1] 1.57ns  loc: cnn_fc_i50_o10/core.cpp:49
+.preheader72.preheader:0  br label %.preheader72
+
+
+ <State 7>: 3.31ns
+ST_7: result_9_4 (205)  [1/1] 0.00ns
+.preheader72:0  %result_9_4 = phi i32 [ %result_9_1, %2 ], [ %result_9_2, %.preheader72.preheader ]
+
+ST_7: result_8_4 (206)  [1/1] 0.00ns
+.preheader72:1  %result_8_4 = phi i32 [ %result_8_1, %2 ], [ %result_8_2, %.preheader72.preheader ]
+
+ST_7: result_7_4 (207)  [1/1] 0.00ns
+.preheader72:2  %result_7_4 = phi i32 [ %result_7_1, %2 ], [ %result_9_7, %.preheader72.preheader ]
+
+ST_7: result_6_4 (208)  [1/1] 0.00ns
+.preheader72:3  %result_6_4 = phi i32 [ %result_6_1, %2 ], [ %result_9_9, %.preheader72.preheader ]
+
+ST_7: result_5_4 (209)  [1/1] 0.00ns
+.preheader72:4  %result_5_4 = phi i32 [ %result_5_1, %2 ], [ %result_9_20, %.preheader72.preheader ]
+
+ST_7: result_4_4 (210)  [1/1] 0.00ns
+.preheader72:5  %result_4_4 = phi i32 [ %result_4_1, %2 ], [ %result_9_3, %.preheader72.preheader ]
+
+ST_7: result_3_4 (211)  [1/1] 0.00ns
+.preheader72:6  %result_3_4 = phi i32 [ %result_3_1, %2 ], [ %result_9_11, %.preheader72.preheader ]
+
+ST_7: result_2_4 (212)  [1/1] 0.00ns
+.preheader72:7  %result_2_4 = phi i32 [ %result_2_1, %2 ], [ %result_9_13, %.preheader72.preheader ]
+
+ST_7: result_1_4 (213)  [1/1] 0.00ns
+.preheader72:8  %result_1_4 = phi i32 [ %result_1_1, %2 ], [ %result_9_15, %.preheader72.preheader ]
+
+ST_7: result_0_4 (214)  [1/1] 0.00ns
+.preheader72:9  %result_0_4 = phi i32 [ %result_0_1, %2 ], [ %result_9_17, %.preheader72.preheader ]
+
+ST_7: row (215)  [1/1] 0.00ns
+.preheader72:10  %row = phi i6 [ %row_1, %2 ], [ 0, %.preheader72.preheader ]
+
+ST_7: exitcond3 (216)  [1/1] 1.94ns  loc: cnn_fc_i50_o10/core.cpp:49
+.preheader72:11  %exitcond3 = icmp eq i6 %row, -14
+
+ST_7: row_1 (217)  [1/1] 1.72ns  loc: cnn_fc_i50_o10/core.cpp:49
+.preheader72:12  %row_1 = add i6 %row, 1
+
+ST_7: StgValue_206 (218)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+.preheader72:13  br i1 %exitcond3, label %.preheader.preheader, label %2
+
+ST_7: row_cast (220)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:0  %row_cast = zext i6 %row to i32
+
+ST_7: empty_19 (224)  [2/2] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:52
+:4  %empty_19 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %inStream_V_data_V, i4* %inStream_V_keep_V, i4* %inStream_V_strb_V, i2* %inStream_V_user_V, i1* %inStream_V_last_V, i5* %inStream_V_id_V, i6* %inStream_V_dest_V)
+
+ST_7: weight_0_addr (226)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:6  %weight_0_addr = getelementptr [50 x i32]* %weight_0, i32 0, i32 %row_cast
+
+ST_7: weight_0_load (227)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:7  %weight_0_load = load i32* %weight_0_addr, align 4
+
+ST_7: weight_1_addr (231)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:11  %weight_1_addr = getelementptr [50 x i32]* %weight_1, i32 0, i32 %row_cast
+
+ST_7: weight_1_load (232)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:12  %weight_1_load = load i32* %weight_1_addr, align 4
+
+ST_7: weight_2_addr (236)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:16  %weight_2_addr = getelementptr [50 x i32]* %weight_2, i32 0, i32 %row_cast
+
+ST_7: weight_2_load (237)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:17  %weight_2_load = load i32* %weight_2_addr, align 4
+
+ST_7: weight_3_addr (241)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:21  %weight_3_addr = getelementptr [50 x i32]* %weight_3, i32 0, i32 %row_cast
+
+ST_7: weight_3_load (242)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:22  %weight_3_load = load i32* %weight_3_addr, align 4
+
+ST_7: weight_4_addr (246)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:26  %weight_4_addr = getelementptr [50 x i32]* %weight_4, i32 0, i32 %row_cast
+
+ST_7: weight_4_load (247)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:27  %weight_4_load = load i32* %weight_4_addr, align 4
+
+ST_7: weight_5_addr (251)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:31  %weight_5_addr = getelementptr [50 x i32]* %weight_5, i32 0, i32 %row_cast
+
+ST_7: weight_5_load (252)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:32  %weight_5_load = load i32* %weight_5_addr, align 4
+
+ST_7: weight_6_addr (256)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:36  %weight_6_addr = getelementptr [50 x i32]* %weight_6, i32 0, i32 %row_cast
+
+ST_7: weight_6_load (257)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:37  %weight_6_load = load i32* %weight_6_addr, align 4
+
+ST_7: weight_7_addr (261)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:41  %weight_7_addr = getelementptr [50 x i32]* %weight_7, i32 0, i32 %row_cast
+
+ST_7: weight_7_load (262)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:42  %weight_7_load = load i32* %weight_7_addr, align 4
+
+ST_7: weight_8_addr (266)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:46  %weight_8_addr = getelementptr [50 x i32]* %weight_8, i32 0, i32 %row_cast
+
+ST_7: weight_8_load (267)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:47  %weight_8_load = load i32* %weight_8_addr, align 4
+
+ST_7: weight_9_addr (271)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:51  %weight_9_addr = getelementptr [50 x i32]* %weight_9, i32 0, i32 %row_cast
+
+ST_7: weight_9_load (272)  [2/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:52  %weight_9_load = load i32* %weight_9_addr, align 4
+
+
+ <State 8>: 6.20ns
+ST_8: empty_19 (224)  [1/2] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:52
+:4  %empty_19 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %inStream_V_data_V, i4* %inStream_V_keep_V, i4* %inStream_V_strb_V, i2* %inStream_V_user_V, i1* %inStream_V_last_V, i5* %inStream_V_id_V, i6* %inStream_V_dest_V)
+
+ST_8: tmp_data_V_1 (225)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:52
+:5  %tmp_data_V_1 = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_19, 0
+
+ST_8: weight_0_load (227)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:7  %weight_0_load = load i32* %weight_0_addr, align 4
+
+ST_8: tmp_7 (228)  [8/8] 3.81ns  loc: cnn_fc_i50_o10/core.cpp:56
+:8  %tmp_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_0_load)
+
+ST_8: weight_1_load (232)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:12  %weight_1_load = load i32* %weight_1_addr, align 4
+
+ST_8: tmp_2_1 (233)  [8/8] 3.81ns  loc: cnn_fc_i50_o10/core.cpp:56
+:13  %tmp_2_1 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_1_load)
+
+ST_8: weight_2_load (237)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:17  %weight_2_load = load i32* %weight_2_addr, align 4
+
+ST_8: tmp_2_2 (238)  [8/8] 3.81ns  loc: cnn_fc_i50_o10/core.cpp:56
+:18  %tmp_2_2 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_2_load)
+
+ST_8: weight_3_load (242)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:22  %weight_3_load = load i32* %weight_3_addr, align 4
+
+ST_8: tmp_2_3 (243)  [8/8] 3.81ns  loc: cnn_fc_i50_o10/core.cpp:56
+:23  %tmp_2_3 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_3_load)
+
+ST_8: weight_4_load (247)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:27  %weight_4_load = load i32* %weight_4_addr, align 4
+
+ST_8: tmp_2_4 (248)  [8/8] 3.81ns  loc: cnn_fc_i50_o10/core.cpp:56
+:28  %tmp_2_4 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_4_load)
+
+ST_8: weight_5_load (252)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:32  %weight_5_load = load i32* %weight_5_addr, align 4
+
+ST_8: tmp_2_5 (253)  [8/8] 3.81ns  loc: cnn_fc_i50_o10/core.cpp:56
+:33  %tmp_2_5 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_5_load)
+
+ST_8: weight_6_load (257)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:37  %weight_6_load = load i32* %weight_6_addr, align 4
+
+ST_8: tmp_2_6 (258)  [8/8] 3.81ns  loc: cnn_fc_i50_o10/core.cpp:56
+:38  %tmp_2_6 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_6_load)
+
+ST_8: weight_7_load (262)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:42  %weight_7_load = load i32* %weight_7_addr, align 4
+
+ST_8: tmp_2_7 (263)  [8/8] 3.81ns  loc: cnn_fc_i50_o10/core.cpp:56
+:43  %tmp_2_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_7_load)
+
+ST_8: weight_8_load (267)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:47  %weight_8_load = load i32* %weight_8_addr, align 4
+
+ST_8: tmp_2_8 (268)  [8/8] 3.81ns  loc: cnn_fc_i50_o10/core.cpp:56
+:48  %tmp_2_8 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_8_load)
+
+ST_8: weight_9_load (272)  [1/2] 2.39ns  loc: cnn_fc_i50_o10/core.cpp:56
+:52  %weight_9_load = load i32* %weight_9_addr, align 4
+
+ST_8: tmp_2_9 (273)  [8/8] 3.81ns  loc: cnn_fc_i50_o10/core.cpp:56
+:53  %tmp_2_9 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_9_load)
+
+
+ <State 9>: 6.08ns
+ST_9: tmp_7 (228)  [7/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:8  %tmp_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_0_load)
+
+ST_9: tmp_2_1 (233)  [7/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:13  %tmp_2_1 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_1_load)
+
+ST_9: tmp_2_2 (238)  [7/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:18  %tmp_2_2 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_2_load)
+
+ST_9: tmp_2_3 (243)  [7/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:23  %tmp_2_3 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_3_load)
+
+ST_9: tmp_2_4 (248)  [7/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:28  %tmp_2_4 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_4_load)
+
+ST_9: tmp_2_5 (253)  [7/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:33  %tmp_2_5 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_5_load)
+
+ST_9: tmp_2_6 (258)  [7/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:38  %tmp_2_6 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_6_load)
+
+ST_9: tmp_2_7 (263)  [7/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:43  %tmp_2_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_7_load)
+
+ST_9: tmp_2_8 (268)  [7/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:48  %tmp_2_8 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_8_load)
+
+ST_9: tmp_2_9 (273)  [7/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:53  %tmp_2_9 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_9_load)
+
+
+ <State 10>: 6.08ns
+ST_10: tmp_7 (228)  [6/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:8  %tmp_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_0_load)
+
+ST_10: tmp_2_1 (233)  [6/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:13  %tmp_2_1 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_1_load)
+
+ST_10: tmp_2_2 (238)  [6/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:18  %tmp_2_2 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_2_load)
+
+ST_10: tmp_2_3 (243)  [6/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:23  %tmp_2_3 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_3_load)
+
+ST_10: tmp_2_4 (248)  [6/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:28  %tmp_2_4 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_4_load)
+
+ST_10: tmp_2_5 (253)  [6/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:33  %tmp_2_5 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_5_load)
+
+ST_10: tmp_2_6 (258)  [6/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:38  %tmp_2_6 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_6_load)
+
+ST_10: tmp_2_7 (263)  [6/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:43  %tmp_2_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_7_load)
+
+ST_10: tmp_2_8 (268)  [6/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:48  %tmp_2_8 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_8_load)
+
+ST_10: tmp_2_9 (273)  [6/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:53  %tmp_2_9 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_9_load)
+
+
+ <State 11>: 6.08ns
+ST_11: tmp_7 (228)  [5/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:8  %tmp_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_0_load)
+
+ST_11: tmp_2_1 (233)  [5/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:13  %tmp_2_1 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_1_load)
+
+ST_11: tmp_2_2 (238)  [5/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:18  %tmp_2_2 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_2_load)
+
+ST_11: tmp_2_3 (243)  [5/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:23  %tmp_2_3 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_3_load)
+
+ST_11: tmp_2_4 (248)  [5/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:28  %tmp_2_4 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_4_load)
+
+ST_11: tmp_2_5 (253)  [5/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:33  %tmp_2_5 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_5_load)
+
+ST_11: tmp_2_6 (258)  [5/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:38  %tmp_2_6 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_6_load)
+
+ST_11: tmp_2_7 (263)  [5/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:43  %tmp_2_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_7_load)
+
+ST_11: tmp_2_8 (268)  [5/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:48  %tmp_2_8 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_8_load)
+
+ST_11: tmp_2_9 (273)  [5/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:53  %tmp_2_9 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_9_load)
+
+
+ <State 12>: 6.08ns
+ST_12: tmp_7 (228)  [4/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:8  %tmp_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_0_load)
+
+ST_12: tmp_2_1 (233)  [4/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:13  %tmp_2_1 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_1_load)
+
+ST_12: tmp_2_2 (238)  [4/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:18  %tmp_2_2 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_2_load)
+
+ST_12: tmp_2_3 (243)  [4/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:23  %tmp_2_3 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_3_load)
+
+ST_12: tmp_2_4 (248)  [4/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:28  %tmp_2_4 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_4_load)
+
+ST_12: tmp_2_5 (253)  [4/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:33  %tmp_2_5 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_5_load)
+
+ST_12: tmp_2_6 (258)  [4/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:38  %tmp_2_6 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_6_load)
+
+ST_12: tmp_2_7 (263)  [4/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:43  %tmp_2_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_7_load)
+
+ST_12: tmp_2_8 (268)  [4/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:48  %tmp_2_8 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_8_load)
+
+ST_12: tmp_2_9 (273)  [4/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:53  %tmp_2_9 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_9_load)
+
+
+ <State 13>: 6.08ns
+ST_13: tmp_7 (228)  [3/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:8  %tmp_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_0_load)
+
+ST_13: tmp_2_1 (233)  [3/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:13  %tmp_2_1 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_1_load)
+
+ST_13: tmp_2_2 (238)  [3/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:18  %tmp_2_2 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_2_load)
+
+ST_13: tmp_2_3 (243)  [3/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:23  %tmp_2_3 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_3_load)
+
+ST_13: tmp_2_4 (248)  [3/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:28  %tmp_2_4 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_4_load)
+
+ST_13: tmp_2_5 (253)  [3/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:33  %tmp_2_5 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_5_load)
+
+ST_13: tmp_2_6 (258)  [3/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:38  %tmp_2_6 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_6_load)
+
+ST_13: tmp_2_7 (263)  [3/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:43  %tmp_2_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_7_load)
+
+ST_13: tmp_2_8 (268)  [3/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:48  %tmp_2_8 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_8_load)
+
+ST_13: tmp_2_9 (273)  [3/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:53  %tmp_2_9 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_9_load)
+
+
+ <State 14>: 6.08ns
+ST_14: tmp_7 (228)  [2/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:8  %tmp_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_0_load)
+
+ST_14: tmp_2_1 (233)  [2/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:13  %tmp_2_1 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_1_load)
+
+ST_14: tmp_2_2 (238)  [2/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:18  %tmp_2_2 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_2_load)
+
+ST_14: tmp_2_3 (243)  [2/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:23  %tmp_2_3 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_3_load)
+
+ST_14: tmp_2_4 (248)  [2/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:28  %tmp_2_4 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_4_load)
+
+ST_14: tmp_2_5 (253)  [2/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:33  %tmp_2_5 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_5_load)
+
+ST_14: tmp_2_6 (258)  [2/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:38  %tmp_2_6 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_6_load)
+
+ST_14: tmp_2_7 (263)  [2/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:43  %tmp_2_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_7_load)
+
+ST_14: tmp_2_8 (268)  [2/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:48  %tmp_2_8 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_8_load)
+
+ST_14: tmp_2_9 (273)  [2/8] 6.08ns  loc: cnn_fc_i50_o10/core.cpp:56
+:53  %tmp_2_9 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_9_load)
+
+
+ <State 15>: 6.01ns
+ST_15: empty_18 (221)  [1/1] 0.00ns
+:1  %empty_18 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 50, i64 50, i64 50)
+
+ST_15: tmp_6 (222)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:2  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str8)
+
+ST_15: StgValue_313 (223)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:50
+:3  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_15: tmp_7 (228)  [1/8] 3.57ns  loc: cnn_fc_i50_o10/core.cpp:56
+:8  %tmp_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_0_load)
+
+ST_15: result_0_1_trunc_ex (229)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:56
+:9  %result_0_1_trunc_ex = sext i23 %tmp_7 to i32
+
+ST_15: result_0_1 (230)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:56
+:10  %result_0_1 = add i32 %result_0_1_trunc_ex, %result_0_4
+
+ST_15: tmp_2_1 (233)  [1/8] 3.57ns  loc: cnn_fc_i50_o10/core.cpp:56
+:13  %tmp_2_1 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_1_load)
+
+ST_15: result_1_1_trunc_ex (234)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:56
+:14  %result_1_1_trunc_ex = sext i23 %tmp_2_1 to i32
+
+ST_15: result_1_1 (235)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:56
+:15  %result_1_1 = add i32 %result_1_1_trunc_ex, %result_1_4
+
+ST_15: tmp_2_2 (238)  [1/8] 3.57ns  loc: cnn_fc_i50_o10/core.cpp:56
+:18  %tmp_2_2 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_2_load)
+
+ST_15: result_2_1_trunc_ex (239)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:56
+:19  %result_2_1_trunc_ex = sext i23 %tmp_2_2 to i32
+
+ST_15: result_2_1 (240)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:56
+:20  %result_2_1 = add i32 %result_2_1_trunc_ex, %result_2_4
+
+ST_15: tmp_2_3 (243)  [1/8] 3.57ns  loc: cnn_fc_i50_o10/core.cpp:56
+:23  %tmp_2_3 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_3_load)
+
+ST_15: result_3_1_trunc_ex (244)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:56
+:24  %result_3_1_trunc_ex = sext i23 %tmp_2_3 to i32
+
+ST_15: result_3_1 (245)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:56
+:25  %result_3_1 = add i32 %result_3_1_trunc_ex, %result_3_4
+
+ST_15: tmp_2_4 (248)  [1/8] 3.57ns  loc: cnn_fc_i50_o10/core.cpp:56
+:28  %tmp_2_4 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_4_load)
+
+ST_15: result_4_1_trunc_ex (249)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:56
+:29  %result_4_1_trunc_ex = sext i23 %tmp_2_4 to i32
+
+ST_15: result_4_1 (250)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:56
+:30  %result_4_1 = add i32 %result_4_1_trunc_ex, %result_4_4
+
+ST_15: tmp_2_5 (253)  [1/8] 3.57ns  loc: cnn_fc_i50_o10/core.cpp:56
+:33  %tmp_2_5 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_5_load)
+
+ST_15: result_5_1_trunc_ex (254)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:56
+:34  %result_5_1_trunc_ex = sext i23 %tmp_2_5 to i32
+
+ST_15: result_5_1 (255)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:56
+:35  %result_5_1 = add i32 %result_5_1_trunc_ex, %result_5_4
+
+ST_15: tmp_2_6 (258)  [1/8] 3.57ns  loc: cnn_fc_i50_o10/core.cpp:56
+:38  %tmp_2_6 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_6_load)
+
+ST_15: result_6_1_trunc_ex (259)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:56
+:39  %result_6_1_trunc_ex = sext i23 %tmp_2_6 to i32
+
+ST_15: result_6_1 (260)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:56
+:40  %result_6_1 = add i32 %result_6_1_trunc_ex, %result_6_4
+
+ST_15: tmp_2_7 (263)  [1/8] 3.57ns  loc: cnn_fc_i50_o10/core.cpp:56
+:43  %tmp_2_7 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_7_load)
+
+ST_15: result_7_1_trunc_ex (264)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:56
+:44  %result_7_1_trunc_ex = sext i23 %tmp_2_7 to i32
+
+ST_15: result_7_1 (265)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:56
+:45  %result_7_1 = add i32 %result_7_1_trunc_ex, %result_7_4
+
+ST_15: tmp_2_8 (268)  [1/8] 3.57ns  loc: cnn_fc_i50_o10/core.cpp:56
+:48  %tmp_2_8 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_8_load)
+
+ST_15: result_8_1_trunc_ex (269)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:56
+:49  %result_8_1_trunc_ex = sext i23 %tmp_2_8 to i32
+
+ST_15: result_8_1 (270)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:56
+:50  %result_8_1 = add i32 %result_8_1_trunc_ex, %result_8_4
+
+ST_15: tmp_2_9 (273)  [1/8] 3.57ns  loc: cnn_fc_i50_o10/core.cpp:56
+:53  %tmp_2_9 = call fastcc i23 @fixed_point_mul(i32 %tmp_data_V_1, i32 %weight_9_load)
+
+ST_15: result_9_1_trunc_ex (274)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:56
+:54  %result_9_1_trunc_ex = sext i23 %tmp_2_9 to i32
+
+ST_15: result_9_1 (275)  [1/1] 2.44ns  loc: cnn_fc_i50_o10/core.cpp:56
+:55  %result_9_1 = add i32 %result_9_1_trunc_ex, %result_9_4
+
+ST_15: empty_20 (276)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:58
+:56  %empty_20 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str8, i32 %tmp_6)
+
+ST_15: StgValue_345 (277)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:49
+:57  br label %.preheader72
+
+
+ <State 16>: 1.57ns
+ST_16: tmp_8 (279)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:73
+.preheader.preheader:0  %tmp_8 = trunc i32 %ctrl_read to i1
+
+ST_16: StgValue_347 (280)  [1/1] 1.57ns  loc: cnn_fc_i50_o10/core.cpp:60
+.preheader.preheader:1  br label %.preheader
+
+
+ <State 17>: 1.88ns
+ST_17: writeCount_assign (282)  [1/1] 0.00ns
+.preheader:0  %writeCount_assign = phi i4 [ %col, %_ifconv372 ], [ 0, %.preheader.preheader ]
+
+ST_17: exitcond (283)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:60
+.preheader:1  %exitcond = icmp eq i4 %writeCount_assign, -6
+
+ST_17: col (284)  [1/1] 0.80ns  loc: cnn_fc_i50_o10/core.cpp:60
+.preheader:2  %col = add i4 %writeCount_assign, 1
+
+ST_17: StgValue_351 (285)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:60
+.preheader:3  br i1 %exitcond, label %3, label %_ifconv372
+
+
+ <State 18>: 3.61ns
+ST_18: tmp_last_V (290)  [1/1] 1.88ns  loc: cnn_fc_i50_o10/core.cpp:16->cnn_fc_i50_o10/core.cpp:70
+_ifconv372:3  %tmp_last_V = icmp eq i4 %writeCount_assign, -7
+
+ST_18: data_1 (291)  [1/1] 2.23ns  loc: cnn_fc_i50_o10/core.cpp:56
+_ifconv372:4  %data_1 = call i32 @_ssdm_op_Mux.ap_auto.10i32.i4(i32 %result_0_4, i32 %result_1_4, i32 %result_2_4, i32 %result_3_4, i32 %result_4_4, i32 %result_5_4, i32 %result_6_4, i32 %result_7_4, i32 %result_8_4, i32 %result_9_4, i4 %writeCount_assign)
+
+ST_18: tmp_9 (292)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:72 (grouped into LUT with out node data)
+_ifconv372:5  %tmp_9 = trunc i32 %data_1 to i31
+
+ST_18: tmp_10 (293)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:74 (grouped into LUT with out node data)
+_ifconv372:6  %tmp_10 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %data_1, i32 31)
+
+ST_18: data_2 (294)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:74 (grouped into LUT with out node data)
+_ifconv372:7  %data_2 = select i1 %tmp_10, i31 0, i31 %tmp_9
+
+ST_18: data_2_cast (295)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:74 (grouped into LUT with out node data)
+_ifconv372:8  %data_2_cast = zext i31 %data_2 to i32
+
+ST_18: data (296)  [1/1] 1.37ns  loc: cnn_fc_i50_o10/core.cpp:78 (out node of the LUT)
+_ifconv372:9  %data = select i1 %tmp_8, i32 %data_2_cast, i32 %data_1
+
+ST_18: StgValue_359 (297)  [2/2] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:78
+_ifconv372:10  call void @_ssdm_op_Write.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %outStream_V_data_V, i4* %outStream_V_keep_V, i4* %outStream_V_strb_V, i2* %outStream_V_user_V, i1* %outStream_V_last_V, i5* %outStream_V_id_V, i6* %outStream_V_dest_V, i32 %data, i4 -1, i4 0, i2 0, i1 %tmp_last_V, i5 0, i6 0)
+
+
+ <State 19>: 0.00ns
+ST_19: empty_21 (287)  [1/1] 0.00ns
+_ifconv372:0  %empty_21 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)
+
+ST_19: tmp (288)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:60
+_ifconv372:1  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str9)
+
+ST_19: StgValue_362 (289)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:61
+_ifconv372:2  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_19: StgValue_363 (297)  [1/2] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:78
+_ifconv372:10  call void @_ssdm_op_Write.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %outStream_V_data_V, i4* %outStream_V_keep_V, i4* %outStream_V_strb_V, i2* %outStream_V_user_V, i1* %outStream_V_last_V, i5* %outStream_V_id_V, i6* %outStream_V_dest_V, i32 %data, i4 -1, i4 0, i2 0, i1 %tmp_last_V, i5 0, i6 0)
+
+ST_19: empty_22 (298)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:79
+_ifconv372:11  %empty_22 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str9, i32 %tmp)
+
+ST_19: StgValue_365 (299)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:60
+_ifconv372:12  br label %.preheader
+
+
+ <State 20>: 0.00ns
+ST_20: StgValue_366 (301)  [1/1] 0.00ns  loc: cnn_fc_i50_o10/core.cpp:80
+:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.57ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('result_9', cnn_fc_i50_o10/core.cpp:37) with incoming values : ('newSel1', cnn_fc_i50_o10/core.cpp:37) [74]  (1.57 ns)
+
+ <State 2>: 7.36ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', cnn_fc_i50_o10/core.cpp:37) [84]  (0 ns)
+	'icmp' operation ('sel_tmp7', cnn_fc_i50_o10/core.cpp:37) [99]  (1.88 ns)
+	'or' operation ('or_cond', cnn_fc_i50_o10/core.cpp:37) [101]  (1.37 ns)
+	'or' operation ('or_cond4', cnn_fc_i50_o10/core.cpp:37) [106]  (1.37 ns)
+	'or' operation ('or_cond6', cnn_fc_i50_o10/core.cpp:37) [108]  (1.37 ns)
+	'select' operation ('newSel1', cnn_fc_i50_o10/core.cpp:37) [109]  (1.37 ns)
+
+ <State 3>: 1.57ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('result[9]') with incoming values : ('newSel1', cnn_fc_i50_o10/core.cpp:37) ('result[9]', cnn_fc_i50_o10/core.cpp:43) [137]  (1.57 ns)
+
+ <State 4>: 3.25ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond2', cnn_fc_i50_o10/core.cpp:43) [148]  (1.88 ns)
+	blocking operation 1.37 ns on control path)
+
+ <State 5>: 7.57ns
+The critical path consists of the following:
+	'load' operation ('bias_load', cnn_fc_i50_o10/core.cpp:45) on array 'bias' [157]  (2.39 ns)
+	'add' operation ('result[9]', cnn_fc_i50_o10/core.cpp:45) [159]  (2.44 ns)
+	'select' operation ('newSel23', cnn_fc_i50_o10/core.cpp:43) [180]  (0 ns)
+	'select' operation ('newSel24', cnn_fc_i50_o10/core.cpp:43) [181]  (1.37 ns)
+	'select' operation ('newSel25', cnn_fc_i50_o10/core.cpp:43) [182]  (0 ns)
+	'select' operation ('result[9]', cnn_fc_i50_o10/core.cpp:43) [183]  (1.37 ns)
+
+ <State 6>: 1.57ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('result[9]') with incoming values : ('newSel1', cnn_fc_i50_o10/core.cpp:37) ('result[9]', cnn_fc_i50_o10/core.cpp:43) ('result[9]', cnn_fc_i50_o10/core.cpp:56) [205]  (1.57 ns)
+
+ <State 7>: 3.31ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond3', cnn_fc_i50_o10/core.cpp:49) [216]  (1.94 ns)
+	blocking operation 1.37 ns on control path)
+
+ <State 8>: 6.2ns
+The critical path consists of the following:
+	'load' operation ('weight_0_load', cnn_fc_i50_o10/core.cpp:56) on array 'weight_0' [227]  (2.39 ns)
+	'call' operation ('tmp_7', cnn_fc_i50_o10/core.cpp:56) to 'fixed_point_mul' [228]  (3.81 ns)
+
+ <State 9>: 6.08ns
+The critical path consists of the following:
+	'call' operation ('tmp_7', cnn_fc_i50_o10/core.cpp:56) to 'fixed_point_mul' [228]  (6.08 ns)
+
+ <State 10>: 6.08ns
+The critical path consists of the following:
+	'call' operation ('tmp_7', cnn_fc_i50_o10/core.cpp:56) to 'fixed_point_mul' [228]  (6.08 ns)
+
+ <State 11>: 6.08ns
+The critical path consists of the following:
+	'call' operation ('tmp_7', cnn_fc_i50_o10/core.cpp:56) to 'fixed_point_mul' [228]  (6.08 ns)
+
+ <State 12>: 6.08ns
+The critical path consists of the following:
+	'call' operation ('tmp_7', cnn_fc_i50_o10/core.cpp:56) to 'fixed_point_mul' [228]  (6.08 ns)
+
+ <State 13>: 6.08ns
+The critical path consists of the following:
+	'call' operation ('tmp_7', cnn_fc_i50_o10/core.cpp:56) to 'fixed_point_mul' [228]  (6.08 ns)
+
+ <State 14>: 6.08ns
+The critical path consists of the following:
+	'call' operation ('tmp_7', cnn_fc_i50_o10/core.cpp:56) to 'fixed_point_mul' [228]  (6.08 ns)
+
+ <State 15>: 6.01ns
+The critical path consists of the following:
+	'call' operation ('tmp_7', cnn_fc_i50_o10/core.cpp:56) to 'fixed_point_mul' [228]  (3.57 ns)
+	'add' operation ('result[0]', cnn_fc_i50_o10/core.cpp:56) [230]  (2.44 ns)
+
+ <State 16>: 1.57ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('col') with incoming values : ('col', cnn_fc_i50_o10/core.cpp:60) [282]  (1.57 ns)
+
+ <State 17>: 1.88ns
+The critical path consists of the following:
+	'phi' operation ('col') with incoming values : ('col', cnn_fc_i50_o10/core.cpp:60) [282]  (0 ns)
+	'icmp' operation ('exitcond', cnn_fc_i50_o10/core.cpp:60) [283]  (1.88 ns)
+
+ <State 18>: 3.61ns
+The critical path consists of the following:
+	'mux' operation ('data', cnn_fc_i50_o10/core.cpp:56) [291]  (2.23 ns)
+	'select' operation ('data', cnn_fc_i50_o10/core.cpp:78) [296]  (1.37 ns)
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+ <State 20>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

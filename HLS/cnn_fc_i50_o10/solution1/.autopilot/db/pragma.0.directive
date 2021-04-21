@@ -1,0 +1,69 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outStream"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="inStream"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="weight"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="bias"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="ctrl"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="weight"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="result"/>
+<option name="complete" positionalBoolean="type" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="cnn_fc_i50_o10" label="">
+<pragma name="PIPELINE"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

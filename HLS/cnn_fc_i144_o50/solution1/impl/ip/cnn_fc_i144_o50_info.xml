@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <core name="" type="" target="">
+    <kernel name="cnn_fc_i144_o50" language="c" vlnv="xilinx.com:hls:cnn_fc_i144_o50:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false">
+      <port name="S_AXI_CTRL" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x00000000"/>
+      <arg name="weight" addressQualifier="0" id="0" port="S_AXI_CTRL" size="0x4" offset="0x800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="1" port="S_AXI_CTRL" size="0x4" offset="0x1000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="2" port="S_AXI_CTRL" size="0x4" offset="0x1800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="3" port="S_AXI_CTRL" size="0x4" offset="0x2000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="4" port="S_AXI_CTRL" size="0x4" offset="0x2800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="5" port="S_AXI_CTRL" size="0x4" offset="0x3000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="6" port="S_AXI_CTRL" size="0x4" offset="0x3800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="7" port="S_AXI_CTRL" size="0x4" offset="0x4000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="8" port="S_AXI_CTRL" size="0x4" offset="0x4800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="9" port="S_AXI_CTRL" size="0x4" offset="0x5000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="10" port="S_AXI_CTRL" size="0x4" offset="0x5800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="11" port="S_AXI_CTRL" size="0x4" offset="0x6000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="12" port="S_AXI_CTRL" size="0x4" offset="0x6800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="13" port="S_AXI_CTRL" size="0x4" offset="0x7000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="14" port="S_AXI_CTRL" size="0x4" offset="0x7800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="15" port="S_AXI_CTRL" size="0x4" offset="0x8000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="16" port="S_AXI_CTRL" size="0x4" offset="0x8800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="17" port="S_AXI_CTRL" size="0x4" offset="0x9000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="18" port="S_AXI_CTRL" size="0x4" offset="0x9800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="19" port="S_AXI_CTRL" size="0x4" offset="0xA000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="20" port="S_AXI_CTRL" size="0x4" offset="0xA800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="21" port="S_AXI_CTRL" size="0x4" offset="0xB000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="22" port="S_AXI_CTRL" size="0x4" offset="0xB800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="23" port="S_AXI_CTRL" size="0x4" offset="0xC000" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="weight" addressQualifier="0" id="24" port="S_AXI_CTRL" size="0x4" offset="0xC800" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="bias" addressQualifier="0" id="25" port="S_AXI_CTRL" size="0x4" offset="0xD000" hostOffset="0x0" hostSize="0x4" type="unsigned int[]"/>
+      <arg name="ctrl" addressQualifier="0" id="26" port="S_AXI_CTRL" size="0x4" offset="0xD100" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <compileWorkGroupSize x="1" y="1" z="1"/>
+    </kernel>
+  </core>
+</project>

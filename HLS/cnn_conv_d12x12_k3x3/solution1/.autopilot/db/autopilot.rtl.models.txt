@@ -1,5 +1,0 @@
-cnn_conv_d12x12_kbkb
-cnn_conv_d12x12_kcud
-cnn_conv_d12x12_k3x3_CTRL_s_axi
-fixed_point_mul
-cnn_conv_d12x12_k3x3
