@@ -4,7 +4,7 @@
  *
  * Chaim Gruda
  * Shay Tsabar
- * 
+ *
  */
 
 #ifndef _CNN_SW_H_

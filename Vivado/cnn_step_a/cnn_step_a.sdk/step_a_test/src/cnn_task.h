@@ -11,7 +11,6 @@
 #define _CNN_TASK_H_
 
 #include "cnn_config.h"
-#include "cnn_hw.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -79,6 +78,8 @@ struct cnn_stat {
 	float accm_hit1_certainty;
 	float accm_hit2_certainty;
 };
+
+struct cnn_hw;
 
 FILE *index_file_open(int idx);
 int csv_read(char *csv_path, float *buffer, int rows, int cols);

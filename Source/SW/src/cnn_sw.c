@@ -185,7 +185,7 @@ void cnn_sw_reset(struct cnn_sw *cnn_sw)
 }
 
 void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run, bool verbose)
-{	
+{
 	if (!cnn_run->valid) {
 		return;
 	}
@@ -201,7 +201,7 @@ void cnn_sw_run_single(struct cnn_sw *cnn_sw)
 	printf("--------------------------------------\n");
 	printf("          cnn software run            \n");
 	printf("--------------------------------------\n");
-	
+
 	struct cnn_run cnn_run = {0};
 	cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
 	cnn_sw_exec(cnn_sw, &cnn_run, true);
@@ -224,7 +224,7 @@ void cnn_sw_run_all(struct cnn_sw *cnn_sw)
 	printf("--------------------------------------\n");
 	printf("          cnn software run            \n");
 	printf("--------------------------------------\n");
-	
+
 	char csv_data_path[CNN_SIM_DATA_FILE_PATH_MAX_LEN];
 	struct cnn_stat all_stat = {0};
 	struct cnn_run cnn_run = {0};

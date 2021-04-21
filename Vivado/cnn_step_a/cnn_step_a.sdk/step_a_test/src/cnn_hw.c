@@ -252,7 +252,6 @@ void cnn_hw_reset(struct cnn_hw *cnn_hw)
 {
 	// TODO
 }
-#endif // (PLATFORM == FPGA)
 
 
 void cnn_hw_exec(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run, bool verbose)
@@ -265,6 +264,7 @@ void cnn_hw_exec(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run, bool verbose)
 	cnn_hw_eval(cnn_hw, cnn_run);
 	cnn_result(cnn_hw->output_data, cnn_run);
 }
+#endif // (PLATFORM == FPGA)
 
 void cnn_hw_run_single(struct cnn_hw *cnn_hw)
 {

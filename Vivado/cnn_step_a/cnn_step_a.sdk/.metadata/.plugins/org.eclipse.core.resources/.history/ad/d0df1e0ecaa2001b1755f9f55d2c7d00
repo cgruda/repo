@@ -9,7 +9,6 @@
 
 #include "cnn_config.h"
 #include "cnn_task.h"
-#include "cnn_hw.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <errno.h>
