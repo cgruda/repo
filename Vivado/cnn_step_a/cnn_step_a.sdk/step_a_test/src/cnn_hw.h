@@ -48,8 +48,8 @@ struct cnn_hw {
 
 #if (PLATFORM == FPGA)
 int cnn_hw_init(struct cnn_hw *p_cnn_hw);
-void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf);
 #endif
+void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf);
 void cnn_hw_run_single(struct cnn_hw *cnn_hw);
 void cnn_hw_run_all(struct cnn_hw *cnn_hw);
 

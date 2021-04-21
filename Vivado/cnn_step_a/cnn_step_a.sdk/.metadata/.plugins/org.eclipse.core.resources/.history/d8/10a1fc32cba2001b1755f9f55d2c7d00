@@ -239,6 +239,7 @@ void cnn_hw_reset(struct cnn_hw *cnn_hw)
 	// TODO
 }
 
+
 void cnn_hw_exec(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run, bool verbose)
 {
 	if (!cnn_run->valid) {

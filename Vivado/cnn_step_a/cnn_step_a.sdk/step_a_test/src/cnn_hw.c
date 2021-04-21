@@ -200,20 +200,6 @@ void cnn_hw_fc_1_set(XCnn_fc_i50_o10 *InstancePtr, uint32_t ctrl, float *weight,
 	}
 }
 
-void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf)
-{
-#if (PLATFORM == FPGA)
-	cnn_hw_conv_0_set(&cnn_hw->conv_0, cnn_conf->conv_0_ctrl, cnn_conf->conv_0_kernel);
-	cnn_hw_pool_0_set(&cnn_hw->pool_0, cnn_conf->pool_0_ctrl);
-	cnn_hw_conv_1_set(&cnn_hw->conv_1, cnn_conf->conv_1_ctrl, cnn_conf->conv_1_kernel);
-	cnn_hw_pool_1_set(&cnn_hw->pool_1, cnn_conf->pool_1_ctrl);
-	cnn_hw_fc_0_set(&cnn_hw->fc_0, cnn_conf->fc_0_ctrl, cnn_conf->fc_0_bias, cnn_conf->fc_0_weight);
-	cnn_hw_fc_1_set(&cnn_hw->fc_1, cnn_conf->fc_1_ctrl, cnn_conf->fc_1_bias, cnn_conf->fc_1_weight);
-#else
-	return;
-#endif
-}
-
 void cnn_hw_eval(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run)
 {
 	float pre_softmax_output[CNN_OUTPUT_LEN] = {0};
@@ -253,7 +239,6 @@ void cnn_hw_reset(struct cnn_hw *cnn_hw)
 	// TODO
 }
 
-
 void cnn_hw_exec(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run, bool verbose)
 {
 	if (!cnn_run->valid) {
@@ -265,6 +250,20 @@ void cnn_hw_exec(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run, bool verbose)
 	cnn_result(cnn_hw->output_data, cnn_run);
 }
 #endif // (PLATFORM == FPGA)
+
+void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf)
+{
+#if (PLATFORM == FPGA)
+	cnn_hw_conv_0_set(&cnn_hw->conv_0, cnn_conf->conv_0_ctrl, cnn_conf->conv_0_kernel);
+	cnn_hw_pool_0_set(&cnn_hw->pool_0, cnn_conf->pool_0_ctrl);
+	cnn_hw_conv_1_set(&cnn_hw->conv_1, cnn_conf->conv_1_ctrl, cnn_conf->conv_1_kernel);
+	cnn_hw_pool_1_set(&cnn_hw->pool_1, cnn_conf->pool_1_ctrl);
+	cnn_hw_fc_0_set(&cnn_hw->fc_0, cnn_conf->fc_0_ctrl, cnn_conf->fc_0_bias, cnn_conf->fc_0_weight);
+	cnn_hw_fc_1_set(&cnn_hw->fc_1, cnn_conf->fc_1_ctrl, cnn_conf->fc_1_bias, cnn_conf->fc_1_weight);
+#else
+	return;
+#endif
+}
 
 void cnn_hw_run_single(struct cnn_hw *cnn_hw)
 {
