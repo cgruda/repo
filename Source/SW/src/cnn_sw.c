@@ -122,24 +122,6 @@ void softmax(float *input, float *output)
 	}
 }
 
-void cnn_result(float *cnn_output_data, int *first_guess, int *second_guess)
-{
-	float max_val = cnn_output_data[0];
-	float sec_val = 0;
-
-	for (int i = 1; i < CNN_OUTPUT_LEN; i++) {
-		if (cnn_output_data[i] > max_val) {
-			sec_val = max_val;
-			*second_guess = *first_guess;
-			max_val = cnn_output_data[i];
-			*first_guess = i;
-		} else if (cnn_output_data[i] > sec_val) {
-			sec_val = cnn_output_data[i];
-			*second_guess = i;
-		}
-	}
-}
-
 void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
 {
 	// ----------------- conv_0 -----------------
@@ -165,6 +147,7 @@ void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
 void cnn_sw_eval(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run)
 {
 	capture_time(&cnn_run->tStart);
+
 	conv(cnn_run->input_data, cnn_sw->conv_0_kernel, cnn_sw->conv_0_output, cnn_sw->conv_0_ctrl);
 	pool(cnn_sw->conv_0_output, cnn_sw->pool_0_output, cnn_sw->pool_0_ctrl);
 	conv(cnn_sw->pool_0_output, cnn_sw->conv_1_kernel, cnn_sw->conv_1_output, cnn_sw->conv_1_ctrl);
@@ -172,7 +155,7 @@ void cnn_sw_eval(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run)
 	fully_connected(cnn_sw->pool_1_output, cnn_sw->fc_0_weight, cnn_sw->fc_0_bias, cnn_sw->fc_0_output, cnn_sw->fc_0_ctrl);
 	fully_connected(cnn_sw->fc_0_output, cnn_sw->fc_1_weight, cnn_sw->fc_1_bias, cnn_sw->fc_1_output, cnn_sw->fc_1_ctrl);
 	softmax(cnn_sw->fc_1_output, cnn_sw->output_data);
-	cnn_result(cnn_sw->output_data, &cnn_run->cnn_guess_1, &cnn_run->cnn_guess_2);
+
 	capture_time(&cnn_run->tEnd);
 }
 
@@ -203,16 +186,87 @@ void cnn_sw_reset(struct cnn_sw *cnn_sw)
 
 void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run, bool verbose)
 {	
-	if (verbose) {
-		printf("\n");
-		printf("--------------------------------------\n");
-		printf("          cnn software run            \n");
-		printf("--------------------------------------\n");
+	if (!cnn_run->valid) {
+		return;
 	}
+
 	cnn_sw_reset(cnn_sw);
 	cnn_sw_eval(cnn_sw, cnn_run);
-	cnn_stat_run(cnn_run, verbose);
-	if (verbose) {
-		printf("--------------------------------------\n\n");
+	cnn_result(cnn_sw->output_data, cnn_run);
+}
+
+void cnn_sw_run_single(struct cnn_sw *cnn_sw)
+{
+	printf("\n");
+	printf("--------------------------------------\n");
+	printf("          cnn software run            \n");
+	printf("--------------------------------------\n");
+	
+	struct cnn_run cnn_run = {0};
+	cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
+	cnn_sw_exec(cnn_sw, &cnn_run, true);
+
+	printf("index %d processed 1 image: \n"
+		"    hit1: %d, hit2: %d, miss: %d \n"
+		"    hit1 certainty: %.2f%%, hit2: %.2f%% \n"
+		"    time: %.2f us \n",
+		DEFAULT_IDX,
+		cnn_run.hit1, cnn_run.hit2, !cnn_run.hit1,
+		(cnn_run.hit1_certainty * 100), (cnn_run.hit2_certainty * 100),
+		cnn_run.timediff_us);
+
+	printf("--------------------------------------\n\n");
+}
+
+void cnn_sw_run_all(struct cnn_sw *cnn_sw)
+{
+	printf("\n");
+	printf("--------------------------------------\n");
+	printf("          cnn software run            \n");
+	printf("--------------------------------------\n");
+	
+	char csv_data_path[CNN_SIM_DATA_FILE_PATH_MAX_LEN];
+	struct cnn_stat all_stat = {0};
+	struct cnn_run cnn_run = {0};
+
+	for (int i = 0; i < 10; i++) {
+		struct cnn_stat idx_stat = {0};
+		FILE *idx_fptr = index_file_open(i);
+		if (!idx_fptr) {
+			printf("failed to open index %d!\n", i);
+			continue;
+		}
+		while (next_csv_path_get(idx_fptr, csv_data_path) == 0) {
+			if (!*csv_data_path) {
+				printf("index %d processed %d images: \n"
+					"    hit1: %d, hit2: %d, miss: %d \n"
+					"    accuracy: %.2f%%, with 2nd guess: %.2f%% \n"
+					"    hit1 certainty avg: %.2f%%, hit2: %.2f%% \n"
+					"    time: %.2f ms (avg %.2f us per image) \n\n",
+					i, idx_stat.img_cnt,
+					idx_stat.hit1_cnt, idx_stat.hit2_cnt, idx_stat.miss_cnt,
+					((idx_stat.hit1_cnt / (float)idx_stat.img_cnt) * 100), (((idx_stat.hit1_cnt + idx_stat.hit2_cnt) / (float)idx_stat.img_cnt) * 100),
+					((idx_stat.accm_hit1_certainty / idx_stat.hit1_cnt) * 100), ((idx_stat.accm_hit2_certainty / idx_stat.hit2_cnt) * 100),
+					(idx_stat.accm_cnn_time_us / 1000), (idx_stat.accm_cnn_time_us / idx_stat.img_cnt) );
+				cnn_stat(&all_stat, NULL, &idx_stat);
+				break;
+			}
+			cnn_prep_run(&cnn_run, csv_data_path, i);
+			cnn_sw_exec(cnn_sw, &cnn_run, false);
+			cnn_stat(&idx_stat, &cnn_run, NULL);
+		}
+		fclose(idx_fptr);
 	}
+	printf("total of %d images processed by cnn: \n"
+		"    hit1: %d, hit2: %d, miss: %d \n"
+		"    accuracy: %.2f%%, with 2nd guess: %.2f%% \n"
+		"    hit1 certainty avg: %.2f%%, hit2: %.2f%% \n"
+		"    time: %.2f sec (avg %.2f ms per idx, %.2f per image) \n",
+		all_stat.img_cnt,
+		all_stat.hit1_cnt, all_stat.hit2_cnt, all_stat.miss_cnt,
+		((all_stat.hit1_cnt / (float)all_stat.img_cnt) * 100), (((all_stat.hit1_cnt + all_stat.hit2_cnt) / (float)all_stat.img_cnt) * 100),
+		((all_stat.accm_hit1_certainty / all_stat.hit1_cnt) * 100), ((all_stat.accm_hit2_certainty / all_stat.hit2_cnt) * 100),
+		(all_stat.accm_cnn_time_us / 1000000), ((all_stat.accm_cnn_time_us / 1000) / 10), (all_stat.accm_cnn_time_us / all_stat.img_cnt));
+
+	printf("--------------------------------------\n\n");
 }

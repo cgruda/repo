@@ -7,8 +7,8 @@
  *
  */
 
-#ifndef __FIXED_POINT_H__
-#define __FIXED_POINT_H__
+#ifndef _FIXED_POINT_H_
+#define _FIXED_POINT_H_
 
 #include <stdint.h>
 
@@ -25,4 +25,4 @@ uint32_t fixed_point_mul(uint32_t a, uint32_t b);
 uint32_t fixed_point_div(uint32_t a, uint32_t b);
 
 
-#endif // __FIXED_POINT_H__
+#endif // _FIXED_POINT_H_

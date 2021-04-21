@@ -7,8 +7,8 @@
  *
  */
 
-#ifndef SRC_CNN_CONFIG_H_
-#define SRC_CNN_CONFIG_H_
+#ifndef _CNN_CONFIG_H_
+#define _CNN_CONFIG_H_
 
 #define FPGA 0
 #define PC 1
@@ -194,4 +194,4 @@ void cnn_config_print(struct cnn_config *cnn_conf);
 void cnn_config_trace_vals(char *text, float *data, int rows, int cols);
 
 
-#endif /* SRC_CNN_CONFIG_H_ */
+#endif // _CNN_CONFIG_H_

@@ -7,18 +7,19 @@
  *
  */
 
-#ifndef SRC_CNN_TASK_H_
-#define SRC_CNN_TASK_H_
+#ifndef _CNN_TASK_H_
+#define _CNN_TASK_H_
 
 #include "cnn_config.h"
+#include "cnn_hw.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
 
 #if (PLATFORM == PC)
-#define CNN_SIM_PATH			"/home/cgruda/repo/Simulation/"
+#define CNN_SIM_PATH "/home/cgruda/repo/Simulation/"
 #else
-#define CNN_SIM_PATH			// TODO:
+#define CNN_SIM_PATH // TODO:
 #endif
 #define CNN_SIM_CNN_VALS_PATH		CNN_SIM_PATH "cnn_vals/"
 #define CNN_SIM_DATA_PATH		CNN_SIM_PATH "data/"
@@ -33,10 +34,22 @@
 #define CNN_SIM_FC_1_WEIGHT_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc1weight.csv"
 #define CNN_SIM_FC_1_BIAS_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc1bias.csv"
 
-#define DEFAULT_FILE_PATH			CNN_SIM_DATA_PATH "0/img10.csv"
-#define DEFAULT_IDX				0
+#define DEFAULT_FILE_PATH	CNN_SIM_DATA_PATH "0/img10.csv"
+#define DEFAULT_IDX		0
 
 #define max(a, b) ((a) > (b) ? (a) : (b))
+#define sec2nsec(sec) ((sec) * 1000000000)
+#define nsec2usec(nsec) ((nsec) / 1000.0)
+
+enum user_choise {
+	UC_EXIT,
+	UC_RUN_HW_SINGLE,
+	UC_RUN_SW_SINGLE,
+	UC_HW_VS_SW_SINGLE,
+	UC_RUN_HW_ALL,
+	UC_RUN_SW_ALL,
+	UC_HW_VS_SW_ALL
+};
 
 struct cnn_sim {
 	int hit1_cnt;
@@ -46,24 +59,40 @@ struct cnn_sim {
 };
 
 struct cnn_run {
+	bool valid;
 	int idx;
 	float input_data[CNN_INPUT_LEN];
-	int cnn_guess_1;
-	int cnn_guess_2;
-	float timediff_us;
 	bool hit1;
 	bool hit2;
+	float hit1_certainty;
+	float hit2_certainty;
 	cnn_time_t tStart;
 	cnn_time_t tEnd;
+	float timediff_us;
+};
+
+struct cnn_stat {
+	int idx;
+	int img_cnt;
+	int hit1_cnt;
+	int hit2_cnt;
+	int miss_cnt;
+	float accm_cnn_time_us;
+	float accm_hit1_certainty;
+	float accm_hit2_certainty;
 };
 
 FILE *index_file_open(int idx);
 int csv_read(char *csv_path, float *buffer, int rows, int cols);
 int next_csv_path_get(FILE *idx_fptr, char *path_buffer);
-int cnn_prep_run(struct cnn_run *cnn_run, char *csv_data_path, int idx);
+void cnn_prep_run(struct cnn_run *cnn_run, char *csv_data_path, int idx);
 void capture_time(cnn_time_t *time_val);
-void cnn_stat_run(struct cnn_run *cnn_run, bool verbose);
 void print_csv_image(char *text, float *data);
+void cnn_result(float *cnn_output_data, struct cnn_run *cnn_run);
+void cnn_stat(struct cnn_stat *cnn_stat, struct cnn_run *cnn_run, struct cnn_stat *cnn_stat_add);
+int init(struct cnn_config *conf, struct cnn_hw *hw);
+void cleanup();
+int get_user_choice();
 
 
-#endif /* SRC_CNN_TASK_H_ */
+#endif // _CNN_TASK_H_

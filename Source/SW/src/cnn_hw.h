@@ -7,8 +7,8 @@
  *
  */
 
-#ifndef SRC_CNN_HW_H_
-#define SRC_CNN_HW_H_
+#ifndef _CNN_HW_H_
+#define _CNN_HW_H_
 
 #include "cnn_config.h"
 #include <stdint.h>
@@ -63,4 +63,4 @@ void cnn_hw_wait(struct cnn_hw *p_cnn_hw);
 void cnn_hw_exec(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf);
 
 
-#endif /* SRC_CNN_HW_H_ */
+#endif // _CNN_HW_H_

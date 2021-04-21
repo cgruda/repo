@@ -140,6 +140,11 @@ int cnn_config_set(struct cnn_config *cnn_conf)
 	err |= cnn_config_pool_1_set(&cnn_conf->pool_1_ctrl);
 	err |= cnn_config_fc_0_set(cnn_conf->fc_0_weight, cnn_conf->fc_0_bias, &cnn_conf->fc_0_ctrl);
 	err |= cnn_config_fc_1_set(cnn_conf->fc_1_weight, cnn_conf->fc_1_bias, &cnn_conf->fc_1_ctrl);
+	
+#if (CONFIG_TRACE)
+	cnn_config_print(conf);
+#endif
+
 	return err;
 }
 

@@ -9,6 +9,7 @@
 
 #include "cnn_config.h"
 #include "cnn_task.h"
+#include "cnn_hw.h"
 #include "cnn_sw.h"
 #include <stdint.h>
 #include <stdio.h>
@@ -71,10 +72,22 @@ int csv_read(char *csv_path, float *buffer, int rows, int cols)
 	return 0;
 }
 
-int cnn_prep_run(struct cnn_run *cnn_run, char *csv_data_path, int idx)
+void cnn_run_reset(struct cnn_run *cnn_run)
 {
-	int err = 0;
 	memset(cnn_run, 0, sizeof(*cnn_run));
+	for (int i = 0; i < CNN_INPUT_LEN; i++) {
+		cnn_run->input_data[i] = 0;
+	}
+	cnn_run->hit1_certainty = 0;
+	cnn_run->hit2_certainty = 0;
+	cnn_run->timediff_us = 0;
+}
+
+void cnn_prep_run(struct cnn_run *cnn_run, char *csv_data_path, int idx)
+{
+	uint err = 0;
+	cnn_run_reset(cnn_run);
+	cnn_run->valid = true;
 	cnn_run->idx = idx;
 #ifdef PRODUCTION
 	for (int i = 0; i < CNN_INPUT_LEN; i++) {
@@ -83,7 +96,9 @@ int cnn_prep_run(struct cnn_run *cnn_run, char *csv_data_path, int idx)
 #else
 	err = csv_read(csv_data_path, cnn_run->input_data, CNN_INPUT_ROWS, CNN_INPUT_COLS);
 #endif
-	return err;
+	if (err) {
+		cnn_run->valid = false;
+	}
 }
 
 void capture_time(cnn_time_t *time_val)
@@ -93,26 +108,6 @@ void capture_time(cnn_time_t *time_val)
 #else
 	timespec_get(time_val, TIME_UTC);
 #endif
-}
-
-void cnn_stat_run(struct cnn_run *cnn_run, bool verbose)
-{
-#if (PLATFORM == FPGA)
-	XTime timediff = cnn_run->tEnd - cnn_run->tStart;
-	cnn_run->timediff_us = 1.0 * timediff / (COUNTS_PER_SECOND / 1000000);
-#else
-	uint32_t sec = cnn_run->tEnd.tv_sec - cnn_run->tStart.tv_sec;
-	uint32_t nsec = cnn_run->tEnd.tv_nsec - cnn_run->tStart.tv_nsec + (sec * 1000000000);
-	cnn_run->timediff_us = (nsec / 1000.0);
-#endif
-	cnn_run->hit1 = cnn_run->idx == cnn_run->cnn_guess_1;
-	cnn_run->hit2 = cnn_run->idx == cnn_run->cnn_guess_2;
-
-	if (verbose) {
-		printf("cnn took %.2f us\n", cnn_run->timediff_us);
-		printf("1st guess = %d (%s)\n", cnn_run->cnn_guess_1, cnn_run->hit1 ? "hit" : "miss");
-		printf("2nd guess = %d (%s)\n", cnn_run->cnn_guess_2, cnn_run->hit1 ? "N/A" : (cnn_run->hit2 ? "hit" : "miss"));
-	}
 }
 
 void print_csv_image(char *text, float *data)
@@ -130,4 +125,110 @@ void print_csv_image(char *text, float *data)
 		printf("\n");
 	}
 	printf("----------------------------------------------\n\n");
+}
+
+void cnn_result(float *cnn_output_data, struct cnn_run *cnn_run)
+{
+	float guess1_certainty = cnn_output_data[0];
+	float guess2_certainty = 0;
+	int guess1 = 0;
+	int guess2;
+
+	for (int i = 1; i < CNN_OUTPUT_LEN; i++) {
+		if (cnn_output_data[i] > guess1_certainty) {
+			guess2_certainty = guess1_certainty;
+			guess2 = guess1;
+			guess1_certainty = cnn_output_data[i];
+			guess1 = i;
+		} else if (cnn_output_data[i] > guess2_certainty) {
+			guess2_certainty = cnn_output_data[i];
+			guess2 = i;
+		}
+	}
+
+	cnn_run->hit1 = cnn_run->idx == guess1;
+	cnn_run->hit2 = cnn_run->idx == guess2;
+
+	if (cnn_run->hit1)
+		cnn_run->hit1_certainty = guess1_certainty;
+	if (cnn_run->hit2)
+		cnn_run->hit2_certainty = guess2_certainty;
+
+#if (PLATFORM == FPGA)
+	XTime timediff = cnn_run->tEnd - cnn_run->tStart;
+	cnn_run->timediff_us = 1.0 * timediff / (COUNTS_PER_SECOND / 1000000);
+#else
+	uint32_t sec = cnn_run->tEnd.tv_sec - cnn_run->tStart.tv_sec;
+	uint32_t nsec = cnn_run->tEnd.tv_nsec - cnn_run->tStart.tv_nsec + sec2nsec(sec);
+	cnn_run->timediff_us = nsec2usec(nsec);
+#endif
+}
+
+void cnn_stat(struct cnn_stat *cnn_stat, struct cnn_run *cnn_run, struct cnn_stat *cnn_stat_add)
+{
+	if (cnn_run && cnn_stat_add)
+		return;
+
+	if (cnn_run) {
+		cnn_stat->img_cnt++;
+		cnn_stat->hit1_cnt += cnn_run->hit1;
+		cnn_stat->hit2_cnt += cnn_run->hit2;
+		cnn_stat->miss_cnt += !cnn_run->hit1;
+		cnn_stat->accm_hit1_certainty += cnn_run->hit1_certainty;
+		cnn_stat->accm_hit2_certainty += cnn_run->hit2_certainty;
+		cnn_stat->accm_cnn_time_us += cnn_run->timediff_us;
+	}
+
+	if (cnn_stat_add) {
+		cnn_stat->img_cnt += cnn_stat_add->img_cnt;
+		cnn_stat->hit1_cnt += cnn_stat_add->hit1_cnt;
+		cnn_stat->hit2_cnt += cnn_stat_add->hit2_cnt;
+		cnn_stat->miss_cnt += cnn_stat_add->miss_cnt;
+		cnn_stat->accm_hit1_certainty += cnn_stat_add->accm_hit1_certainty;
+		cnn_stat->accm_hit2_certainty += cnn_stat_add->accm_hit2_certainty;
+		cnn_stat->accm_cnn_time_us += cnn_stat_add->accm_cnn_time_us;
+	}
+}
+
+int get_user_choice()
+{
+	int choice;
+	printf("choose option: \n" \
+	       "-------------- \n" \
+	       "0. exit \n" \
+	       "1. run hw single \n" \
+	       "2. run sw single \n" \
+	       "3. hw vs sw single \n" \
+	       "4. run hw all \n" \
+	       "5. run sw all \n" \
+	       "6. hw vs sw all \n" \
+	       "--------------\n");
+	scanf("%d", &choice);
+	return choice;
+}
+
+int init(struct cnn_config *conf, struct cnn_hw *hw)
+{
+	int err = 0;
+
+	err = cnn_config_set(conf);
+	if (err) {
+		printf("conf_set failed!");
+		return -1;
+	}
+#if (PLATFORM == FPGA)
+	err = cnn_hw_init(hw);
+	if (err) {
+		printf("hw_init failed!");
+		return -1;
+	}
+#endif
+	printf("\nwelcome!\n");
+
+	return 0;
+}
+
+void cleanup()
+{
+	printf("\n\ngoodby!\n\n");
 }
