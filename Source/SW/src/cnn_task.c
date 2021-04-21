@@ -11,13 +11,14 @@
 #include "cnn_task.h"
 #include "cnn_hw.h"
 #include <stdint.h>
-#include <stdio.h>
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
 #if (PLATFORM == FPGA)
+#include "xil_printf.h"
 #include "xtime_l.h"
 #else
+#include <stdio.h>
 #include <time.h>
 #endif
 
@@ -46,7 +47,7 @@ int csv_read(char *csv_path, float *buffer, int rows, int cols)
 #if (PLATFORM == PC)
 	FILE *fptr = fopen(csv_path, "r");
 	if (!fptr) {
-		printf("opening file \"%s\" failed! (errno=%d)\n", csv_path, errno);
+		PRINT_UI("opening file \"%s\" failed! (errno=%d)\r\n", csv_path, errno);
 		return errno;
 	}
 
@@ -55,7 +56,7 @@ int csv_read(char *csv_path, float *buffer, int rows, int cols)
 		for (int j = 0; j < cols; j++) {
 			read_val = fscanf(fptr, "%g,", &buffer[i * cols + j]);
 			if (!read_val) {
-				printf("read file error!\n");
+				PRINT_UI("read file error!\r\n");
 				fclose(fptr);
 				return -1;
 			}
@@ -111,19 +112,19 @@ void capture_time(cnn_time_t *time_val)
 
 void print_csv_image(char *text, float *data)
 {
-	printf("\n----------------------------------------------\n");
-	printf("%s\n", text);
+	PRINT_UI("\r\n----------------------------------------------\r\n");
+	PRINT_UI("%s\r\n", text);
 	for (int i = 0; i < CNN_INPUT_ROWS; i++) {
 		for (int j = 0; j < CNN_INPUT_COLS; j++) {
 			if (data[i * CNN_INPUT_COLS + j]) {
-				printf("+");
+				PRINT_UI("+");
 			} else {
-				printf(" ");
+				PRINT_UI(" ");
 			}
 		}
-		printf("\n");
+		PRINT_UI("\r\n");
 	}
-	printf("----------------------------------------------\n\n");
+	PRINT_UI("----------------------------------------------\r\n\r\n");
 }
 
 void cnn_result(float *cnn_output_data, struct cnn_run *cnn_run)
@@ -192,14 +193,14 @@ void cnn_stat(struct cnn_stat *cnn_stat, struct cnn_run *cnn_run, struct cnn_sta
 int get_user_choice()
 {
 	int choice;
-	printf("choose option: \n" \
-	       "-------------- \n" \
-	       "0. exit \n" \
-	       "1. run hw single \n" \
-	       "2. run sw single \n" \
-	       "3. run hw all \n" \
-	       "4. run sw all \n" \
-	       "--------------\n");
+	PRINT_UI("choose option: \r\n" \
+	       "-------------- \r\n" \
+	       "0. exit \r\n" \
+		   "1. run hw single \r\n" \
+	       "2. run sw single \r\n" \
+	       "3. run hw all \r\n" \
+	       "4. run sw all \r\n" \
+	       "--------------\r\n");
 	scanf("%d", &choice);
 	return choice;
 }
@@ -210,22 +211,98 @@ int init(struct cnn_config *conf, struct cnn_hw *hw) // problem here
 
 	err = cnn_config_set(conf);
 	if (err) {
-		printf("conf_set failed!");
+		PRINT_UI("conf_set failed!");
 		return -1;
 	}
 #if (PLATFORM == FPGA)
 	err = cnn_hw_init(hw);
 	if (err) {
-		printf("hw_init failed!");
+		PRINT_UI("hw_init failed!");
 		return -1;
 	}
 #endif
-	printf("\nwelcome!\n");
+	PRINT_UI("\r\nwelcome!\r\n");
 
 	return 0;
 }
 
-void cleanup()
+void my_cleanup()
 {
-	printf("\n\ngoodby!\n\n");
+	PRINT_UI("\r\n\r\ngoodby!\r\n\r\n");
+}
+
+void cnn_run_print_result(struct cnn_run *cnn_run)
+{
+	float hit1_certainty_percent = cnn_run->hit1_certainty * 100;
+	int hit1_certainty_percent_w = hit1_certainty_percent;
+	int hit1_certainty_percent_f = (hit1_certainty_percent - hit1_certainty_percent_w) * 100;
+
+	float hit2_certainty_percent = cnn_run->hit2_certainty * 100;
+	int hit2_certainty_percent_w = hit2_certainty_percent;
+	int hit2_certainty_percent_f = (hit2_certainty_percent - hit2_certainty_percent_w) * 100;
+
+	float timediff_us = cnn_run->timediff_us;
+	int timediff_us_w = timediff_us;
+	int timediff_us_f = (timediff_us - timediff_us_w) * 100;
+
+	PRINT_UI("index %d processed 1 image: \n\r"
+			 "    hit1: %d, hit2: %d, miss: %d \n\r"
+			 "    hit1 certainty: %d.%02d%%, hit2: %d.%02d%% \n\r"
+			 "    time: %d.%02d us \n\r",
+			  cnn_run->idx,
+			  cnn_run->hit1, cnn_run->hit2, !cnn_run->hit1,
+			  hit1_certainty_percent_w, hit1_certainty_percent_f,
+			  hit2_certainty_percent_w, hit2_certainty_percent_f,
+			  timediff_us_w, timediff_us_f);
+}
+
+void cnn_stat_print_idx(struct cnn_stat *cnn_stat)
+{
+	float acuuracy = (cnn_stat->hit1_cnt / (float)cnn_stat->img_cnt) * 100;
+	int acuuracy_w = acuuracy;
+	int acuuracy_f = (acuuracy - acuuracy_w) * 100;
+
+	float acuuracy_with_hit2 = ((cnn_stat->hit1_cnt + cnn_stat->hit2_cnt) / (float)cnn_stat->img_cnt) * 100;
+	int acuuracy_with_hit2_w = acuuracy_with_hit2;
+	int acuuracy_with_hit2_f = (acuuracy_with_hit2 - acuuracy_with_hit2_w) * 100;
+
+	float certainty_avg = (cnn_stat->accm_hit1_certainty / cnn_stat->hit1_cnt) * 100;
+	int certainty_avg_w = certainty_avg;
+	int certainty_avg_f = (certainty_avg - certainty_avg_w) * 100;
+
+	float certainty_hit2_avg = (cnn_stat->accm_hit2_certainty / cnn_stat->hit2_cnt) * 100;
+	int certainty_hit2_avg_w = certainty_hit2_avg;
+	int certainty_hit2_avg_f = (certainty_hit2_avg - certainty_hit2_avg_w) * 100;
+
+	float tot_time_ms = cnn_stat->accm_cnn_time_us / 1000;
+	int tot_time_ms_w = tot_time_ms;
+	int tot_time_ms_f = (tot_time_ms - tot_time_ms_w) * 100;
+
+	float img_time_avg_us = cnn_stat->accm_cnn_time_us / cnn_stat->img_cnt;
+	int img_time_avg_us_w = img_time_avg_us;
+	int img_time_avg_us_f = (img_time_avg_us - img_time_avg_us_w) * 100;
+
+	PRINT_UI("index %d processed %d images: \n\r"
+			 "    hit1: %d, hit2: %d, miss: %d \n\r"
+			 "    accuracy: %d.%02d%%, with 2nd guess: %d.%02d%% \n\r"
+			 "    hit1 certainty avg: %d.%02d%%, hit2: %d.%02d%% \n\r"
+			 "    time: %d.%02d ms (avg %d.%02d us per image) \n\r\n\r",
+			  cnn_stat->idx, cnn_stat->img_cnt,
+			  cnn_stat->hit1_cnt, cnn_stat->hit2_cnt, cnn_stat->miss_cnt,
+			  acuuracy_w, acuuracy_f, acuuracy_with_hit2_w, acuuracy_with_hit2_f,
+			  certainty_avg_w, certainty_avg_f, certainty_hit2_avg_w, certainty_hit2_avg_f,
+			  tot_time_ms_w, tot_time_ms_f, img_time_avg_us_w, img_time_avg_us_f);
+}
+
+void print_header(char *text)
+{
+	PRINT_UI("\n\r");
+	PRINT_UI("--------------------------------------\n\r");
+	PRINT_UI("          cnn %s run            \n\r", text);
+	PRINT_UI("--------------------------------------\n\r");
+}
+
+void print_tail()
+{
+	PRINT_UI("--------------------------------------\n\r\n\r");
 }

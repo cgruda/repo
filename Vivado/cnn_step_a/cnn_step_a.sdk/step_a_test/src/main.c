@@ -11,7 +11,11 @@
 #include "cnn_task.h"
 #include "cnn_hw.h"
 #include "cnn_sw.h"
+#if (PLATFORM == FPGA)
+#include "xil_printf.h"
+#else
 #include <stdio.h>
+#endif
 #include <stdbool.h>
 
 int main()
@@ -51,13 +55,13 @@ int main()
 			break;
 
 		default:
-			printf("invalid option!\n\n");
+			PRINT_UI("invalid option!\r\n\r\n");
 			break;
 		}
 
 	} while (!exit);
 
-	cleanup();
+	my_cleanup();
 
 	return 0;
 }

@@ -9,20 +9,24 @@
 
 #include "cnn_config.h"
 #include "cnn_task.h"
+#if (PLATFORM == FPGA)
+#include "xil_printf.h"
+#else
 #include <stdio.h>
+#endif
 #include <string.h>
 
 void cnn_config_trace_vals(char *text, float *data, int rows, int cols)
 {
-	printf("\n----------------------------------------------\n");
-	printf("%s\n", text);
+	PRINT_UI("\n\r----------------------------------------------\n\r");
+	PRINT_UI("%s\n\r", text);
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			printf("%6.5f ", data[i * cols + j]);
+			PRINT_UI("%d.%05d ", (int)data[i * cols + j], (int)(data[i * cols + j] * 100000));
 		}
-		printf("\n");
+		PRINT_UI("\n\r");
 	}
-	printf("----------------------------------------------\n\n");
+	PRINT_UI("----------------------------------------------\n\r\n\r");
 }
 
 int cnn_config_conv_0_set(float *kernel, uint32_t *ctrl)
@@ -150,33 +154,33 @@ int cnn_config_set(struct cnn_config *cnn_conf)
 
 void cnn_config_print(struct cnn_config *cnn_conf)
 {
-	printf("\n");
-	printf("---------------------------------------------------------------------\n");
-	printf("                           cnn configuration                         \n");
-	printf("---------------------------------------------------------------------\n");
-	printf("conv_0: input [%2ux%2u], kernel_dim [%u], activation [%u]\n", CONV_CTRL_INPUT_ROWS_GET(cnn_conf->conv_0_ctrl),
+	PRINT_UI("\n\r");
+	PRINT_UI("---------------------------------------------------------------------\n\r");
+	PRINT_UI("                           cnn configuration                         \n\r");
+	PRINT_UI("---------------------------------------------------------------------\n\r");
+	PRINT_UI("conv_0: input [%2ux%2u], kernel_dim [%u], activation [%u]\n\r", CONV_CTRL_INPUT_ROWS_GET(cnn_conf->conv_0_ctrl),
 									      CONV_CTRL_INPUT_COLS_GET(cnn_conf->conv_0_ctrl),
 									      CONV_CTRL_KERNEL_DIM_GET(cnn_conf->conv_0_ctrl),
 									      CONV_CTRL_ACTIVATION_GET(cnn_conf->conv_0_ctrl));
-	printf("pool_0: input [%2ux%2u], pool_dim   [%u], pool type  [%u]\n", POOL_CTRL_INPUT_ROWS_GET(cnn_conf->pool_0_ctrl),
+	PRINT_UI("pool_0: input [%2ux%2u], pool_dim   [%u], pool type  [%u]\n\r", POOL_CTRL_INPUT_ROWS_GET(cnn_conf->pool_0_ctrl),
 									      POOL_CTRL_INPUT_COLS_GET(cnn_conf->pool_0_ctrl),
 									      POOL_CTRL_DIM_GET(cnn_conf->pool_0_ctrl),
 									      POOL_CTRL_TYPE_GET(cnn_conf->pool_0_ctrl));
-	printf("conv_1: input [%2ux%2u], kernel_dim [%u], activation [%u]\n", CONV_CTRL_INPUT_ROWS_GET(cnn_conf->conv_1_ctrl),
+	PRINT_UI("conv_1: input [%2ux%2u], kernel_dim [%u], activation [%u]\n\r", CONV_CTRL_INPUT_ROWS_GET(cnn_conf->conv_1_ctrl),
 									      CONV_CTRL_INPUT_COLS_GET(cnn_conf->conv_1_ctrl),
 									      CONV_CTRL_KERNEL_DIM_GET(cnn_conf->conv_1_ctrl),
 									      CONV_CTRL_ACTIVATION_GET(cnn_conf->conv_1_ctrl));
-	printf("pool_1: input [%2ux%2u], pool_dim   [%u], pool type  [%u]\n", POOL_CTRL_INPUT_ROWS_GET(cnn_conf->pool_1_ctrl),
+	PRINT_UI("pool_1: input [%2ux%2u], pool_dim   [%u], pool type  [%u]\n\r", POOL_CTRL_INPUT_ROWS_GET(cnn_conf->pool_1_ctrl),
 									      POOL_CTRL_INPUT_COLS_GET(cnn_conf->pool_1_ctrl),
 									      POOL_CTRL_DIM_GET(cnn_conf->pool_1_ctrl),
 									      POOL_CTRL_TYPE_GET(cnn_conf->pool_1_ctrl));
-	printf("fc_0  : input [%5u], output [%u], activation [%u]\n",         FC_CTRL_INPUT_LEN_GET(cnn_conf->fc_0_ctrl),
+	PRINT_UI("fc_0  : input [%5u], output [%u], activation [%u]\n\r",         FC_CTRL_INPUT_LEN_GET(cnn_conf->fc_0_ctrl),
 									      FC_CTRL_OUTPUT_LEN_GET(cnn_conf->fc_0_ctrl),
 									      FC_CTRL_ACTIVATION_GET(cnn_conf->fc_0_ctrl));
-	printf("fc_1  : input [%5u], output [%u], activation [%u]\n",         FC_CTRL_INPUT_LEN_GET(cnn_conf->fc_1_ctrl),
+	PRINT_UI("fc_1  : input [%5u], output [%u], activation [%u]\n\r",         FC_CTRL_INPUT_LEN_GET(cnn_conf->fc_1_ctrl),
 									      FC_CTRL_OUTPUT_LEN_GET(cnn_conf->fc_1_ctrl),
 									      FC_CTRL_ACTIVATION_GET(cnn_conf->fc_1_ctrl));
-	printf("---------------------------------------------------------------------\n");
-	printf("activations: 0 - none, 1 - ReLU; pooling type: 0 - MAX, 1 - AVG      \n");
-	printf("---------------------------------------------------------------------\n\n");
+	PRINT_UI("---------------------------------------------------------------------\n\r");
+	PRINT_UI("activations: 0 - none, 1 - ReLU; pooling type: 0 - MAX, 1 - AVG      \n\r");
+	PRINT_UI("---------------------------------------------------------------------\n\r\n\r");
 }

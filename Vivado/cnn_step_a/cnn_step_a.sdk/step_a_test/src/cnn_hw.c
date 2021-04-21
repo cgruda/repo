@@ -12,7 +12,11 @@
 #include "cnn_sw.h"
 #include "cnn_task.h"
 #include "fixed_point.h"
+#if (PLATFORM == FPGA)
+#include "xil_printf.h"
+#else
 #include <stdio.h>
+#endif
 #include <stdint.h>
 #if (PLATFORM == FPGA)
 #include <xparameters.h>
@@ -267,61 +271,38 @@ void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf)
 
 void cnn_hw_run_single(struct cnn_hw *cnn_hw)
 {
-	printf("\n");
-	printf("--------------------------------------\n");
-	printf("          cnn hardware run            \n");
-	printf("--------------------------------------\n");
-
+	print_header("hardware");
 #if (PLATFORM == FPGA)
 	struct cnn_run cnn_run = {0};
 	cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
 	cnn_hw_exec(cnn_hw, &cnn_run, true);
-
-	printf("index %d processed 1 image: \n"
-		"    hit1: %d, hit2: %d, miss: %d \n"
-		"    hit1 certainty: %.2f%%, hit2: %.2f%% \n"
-		"    time: %.2f us \n",
-		DEFAULT_IDX,
-		cnn_run.hit1, cnn_run.hit2, !cnn_run.hit1,
-		(cnn_run.hit1_certainty * 100), (cnn_run.hit2_certainty * 100),
-		cnn_run.timediff_us);
+	cnn_run_print_result(&cnn_run);
 #else
-	printf("        unsupported platform \n");
+	PRINT_UI("        unsupported platform \n\r");
 #endif
-	printf("--------------------------------------\n\n");
+	print_tail();
 }
 
 void cnn_hw_run_all(struct cnn_hw *cnn_hw)
 {
-	printf("\n");
-	printf("--------------------------------------\n");
-	printf("          cnn hardware run            \n");
-	printf("--------------------------------------\n");
-
+	print_header("hardware");
 #if (PLATFORM == FPGA)
 	char csv_data_path[CNN_SIM_DATA_FILE_PATH_MAX_LEN];
 	struct cnn_stat all_stat = {0};
+	all_stat.idx = -1;
 	struct cnn_run cnn_run = {0};
 
 	for (int i = 0; i < 10; i++) {
 		struct cnn_stat idx_stat = {0};
+		idx_stat.idx = i;
 		FILE *idx_fptr = index_file_open(i);
 		if (!idx_fptr) {
-			printf("failed to open index %d!\n", i);
+			PRINT_UI("failed to open index %d!\n\r", i);
 			continue;
 		}
 		while (next_csv_path_get(idx_fptr, csv_data_path) == 0) {
 			if (!*csv_data_path) {
-				printf("index %d processed %d images: \n"
-					"    hit1: %d, hit2: %d, miss: %d \n"
-					"    accuracy: %.2f%%, with 2nd guess: %.2f%% \n"
-					"    hit1 certainty avg: %.2f%%, hit2: %.2f%% \n"
-					"    time: %.2f ms (avg %.2f us per image) \n\n",
-					i, idx_stat.img_cnt,
-					idx_stat.hit1_cnt, idx_stat.hit2_cnt, idx_stat.miss_cnt,
-					((idx_stat.hit1_cnt / (float)idx_stat.img_cnt) * 100), (((idx_stat.hit1_cnt + idx_stat.hit2_cnt) / (float)idx_stat.img_cnt) * 100),
-					((idx_stat.accm_hit1_certainty / idx_stat.hit1_cnt) * 100), ((idx_stat.accm_hit2_certainty / idx_stat.hit2_cnt) * 100),
-					(idx_stat.accm_cnn_time_us / 1000), (idx_stat.accm_cnn_time_us / idx_stat.img_cnt) );
+				cnn_stat_print_idx(&idx_stat);
 				cnn_stat(&all_stat, NULL, &idx_stat);
 				break;
 			}
@@ -331,20 +312,11 @@ void cnn_hw_run_all(struct cnn_hw *cnn_hw)
 		}
 		fclose(idx_fptr);
 	}
-	printf("total of %d images processed by cnn: \n"
-		"    hit1: %d, hit2: %d, miss: %d \n"
-		"    accuracy: %.2f%%, with 2nd guess: %.2f%% \n"
-		"    hit1 certainty avg: %.2f%%, hit2: %.2f%% \n"
-		"    time: %.2f sec (avg %.2f ms per idx, %.2f per image) \n",
-		all_stat.img_cnt,
-		all_stat.hit1_cnt, all_stat.hit2_cnt, all_stat.miss_cnt,
-		((all_stat.hit1_cnt / (float)all_stat.img_cnt) * 100), (((all_stat.hit1_cnt + all_stat.hit2_cnt) / (float)all_stat.img_cnt) * 100),
-		((all_stat.accm_hit1_certainty / all_stat.hit1_cnt) * 100), ((all_stat.accm_hit2_certainty / all_stat.hit2_cnt) * 100),
-		(all_stat.accm_cnn_time_us / 1000000), ((all_stat.accm_cnn_time_us / 1000) / 10), (all_stat.accm_cnn_time_us / all_stat.img_cnt));
-#else
-	printf("        unsupported platform \n");
+	cnn_stat_print_idx(&all_stat);
+	#else
+	PRINT_UI("        unsupported platform \n\r");
 #endif
-	printf("--------------------------------------\n\n");
+	print_tail();
 }
 
 

@@ -40,6 +40,12 @@
 #define sec2nsec(sec) ((sec) * 1000000000)
 #define nsec2usec(nsec) ((nsec) / 1000.0)
 
+#if (PLATFORM == FPGA)
+#define PRINT_UI xil_printf
+#else
+#define PRINT_UI printf
+#endif
+
 enum user_choise {
 	UC_EXIT,
 	UC_RUN_HW_SINGLE,
@@ -83,8 +89,11 @@ void print_csv_image(char *text, float *data);
 void cnn_result(float *cnn_output_data, struct cnn_run *cnn_run);
 void cnn_stat(struct cnn_stat *cnn_stat, struct cnn_run *cnn_run, struct cnn_stat *cnn_stat_add);
 int init(struct cnn_config *conf, struct cnn_hw *hw);
-void cleanup();
+void my_cleanup();
 int get_user_choice();
-
+void cnn_run_print_result(struct cnn_run *cnn_run);
+void cnn_stat_print_idx(struct cnn_stat *cnn_stat);
+void print_header(char *text);
+void print_tail();
 
 #endif // _CNN_TASK_H_

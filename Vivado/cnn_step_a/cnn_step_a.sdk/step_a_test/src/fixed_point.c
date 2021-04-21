@@ -7,16 +7,21 @@
  *
  */
 
+#include "cnn_task.h"
 #include "fixed_point.h"
 #include <stdint.h>
+#if (PLATFORM == FPGA)
+#include "xil_printf.h"
+#else
 #include <stdio.h>
+#endif
 
 void fixed_point_print(uint32_t num)
 {
 	if (num & SIGN_BIT) {
-		printf("-%.6f ", FIXED_2_FLOAT(-num));
+		PRINT_UI("-%d.%06d ", (int)FIXED_2_FLOAT(-num), (int)(FIXED_2_FLOAT(-num) * 1000000));
 	} else {
-		printf("%.6f ", FIXED_2_FLOAT(num));
+		PRINT_UI("%d.%06d ", (int)FIXED_2_FLOAT(num), (int)(FIXED_2_FLOAT(num) * 1000000));
 	}
 }
 
