@@ -37,7 +37,6 @@
 #define CNN_SIM_FC_1_WEIGHT_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc1weight.csv"
 #define CNN_SIM_FC_1_BIAS_VALS_PATH		CNN_SIM_CNN_VALS_PATH "fc1bias.csv"
 
-//#define DEFAULT_FILE_PATH	CNN_SIM_CNN_VALS_PATH "img10.csv"
 #define DEFAULT_FILE_PATH	CNN_SIM_DATA_PATH "0/img10.csv"
 #define DEFAULT_IDX		0
 
@@ -60,6 +59,10 @@ enum user_choise {
 	UC_RUN_SW_SINGLE,
 	UC_RUN_HW_ALL,
 	UC_RUN_SW_ALL,
+#if (PLATFORM == PC)
+	UC_RUN_HW_SIM_SINGLE,
+	UC_RUN_HW_SIM_ALL
+#endif
 };
 
 struct cnn_run {

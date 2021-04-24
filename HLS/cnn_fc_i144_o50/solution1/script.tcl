@@ -5,9 +5,9 @@
 ############################################################
 open_project cnn_fc_i144_o50
 set_top cnn_fc_i144_o50
-add_files cnn_fc_i144_o50/fixed_point.h
-add_files cnn_fc_i144_o50/core.h
 add_files cnn_fc_i144_o50/core.cpp
+add_files cnn_fc_i144_o50/core.h
+add_files cnn_fc_i144_o50/fixed_point.h
 add_files -tb cnn_fc_i144_o50/core_tb.cpp
 open_solution "solution1"
 set_part {xc7z020clg484-1} -tool vivado

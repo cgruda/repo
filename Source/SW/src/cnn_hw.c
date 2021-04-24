@@ -90,22 +90,22 @@ u32 (*cnn_hw_fc_1_weight_write[FC_1_WEIGHT_COLS])(XCnn_fc_i50_o10 *InstancePtr, 
 
 void cnn_hw_fc_0_weight_set(XCnn_fc_i144_o50 *InstancePtr, int row, int col, uint32_t data)
 {
-	cnn_hw_fc_0_weight_write[col / 2](InstancePtr, ((FC_0_WEIGHT_ROWS * (col % 2) + row) * 4), (int*)&data, 1);
+	cnn_hw_fc_0_weight_write[col / 2](InstancePtr, (((row * 2) + (col % 2))), (int*)&data, 1);
 }
 
 void cnn_hw_fc_0_bias_set(XCnn_fc_i144_o50 *InstancePtr, int col, uint32_t data)
 {
-	XCnn_fc_i144_o50_Write_bias_Words(InstancePtr, (col * 4), (int*)&data, 1);
+	XCnn_fc_i144_o50_Write_bias_Words(InstancePtr, col, (int*)&data, 1);
 }
 
 void cnn_hw_fc_1_weight_set(XCnn_fc_i50_o10 *InstancePtr, int row, int col, uint32_t data)
 {
-	cnn_hw_fc_1_weight_write[col](InstancePtr, (row * 4), (int*)&data, 1);
+	cnn_hw_fc_1_weight_write[col](InstancePtr, row, (int*)&data, 1);
 }
 
 void cnn_hw_fc_1_bias_set(XCnn_fc_i50_o10 *InstancePtr, int col, uint32_t data)
 {
-	XCnn_fc_i50_o10_Write_bias_Words(InstancePtr, (col * 4), (int*)&data, 1);
+	XCnn_fc_i50_o10_Write_bias_Words(InstancePtr, col, (int*)&data, 1);
 }
 
 int cnn_hw_init(struct cnn_hw *p_cnn_hw)
@@ -229,19 +229,17 @@ void cnn_hw_eval(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run)
 	Xil_DCacheInvalidateRange((uint32_t) cnn_hw->p_dma_buffer_RX, CNN_OUTPUT_LEN * sizeof(uint32_t));
 
 	while (!XCnn_fc_i50_o10_IsDone(&cnn_hw->fc_1));
-	print_fixed_arr("fc_1_out:", cnn_hw->p_dma_buffer_RX);
 	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
 		pre_softmax_output[i] = fixed_2_float(cnn_hw->p_dma_buffer_RX[i]);
 	}
 	softmax(pre_softmax_output, cnn_hw->output_data);
-	print_float_arr("softmax:", cnn_hw->output_data);
 	capture_time(&cnn_run->tEnd);
 }
 
 void cnn_hw_reset(struct cnn_hw *cnn_hw)
 {
 	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
-		cnn_hw->outtput_data = 0;
+		cnn_hw->output_data[i] = 0;
 	}
 }
 
@@ -264,8 +262,8 @@ void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf)
 	cnn_hw_pool_0_set(&cnn_hw->pool_0, cnn_conf->pool_0_ctrl);
 	cnn_hw_conv_1_set(&cnn_hw->conv_1, cnn_conf->conv_1_ctrl, cnn_conf->conv_1_kernel);
 	cnn_hw_pool_1_set(&cnn_hw->pool_1, cnn_conf->pool_1_ctrl);
-	cnn_hw_fc_0_set(&cnn_hw->fc_0, cnn_conf->fc_0_ctrl, cnn_conf->fc_0_bias, cnn_conf->fc_0_weight);
-	cnn_hw_fc_1_set(&cnn_hw->fc_1, cnn_conf->fc_1_ctrl, cnn_conf->fc_1_bias, cnn_conf->fc_1_weight);
+	cnn_hw_fc_0_set(&cnn_hw->fc_0, cnn_conf->fc_0_ctrl, cnn_conf->fc_0_weight, cnn_conf->fc_0_bias);
+	cnn_hw_fc_1_set(&cnn_hw->fc_1, cnn_conf->fc_1_ctrl, cnn_conf->fc_1_weight, cnn_conf->fc_1_bias);
 #else
 	return;
 #endif
@@ -277,7 +275,6 @@ void cnn_hw_run_single(struct cnn_hw *cnn_hw)
 #if (PLATFORM == FPGA)
 	struct cnn_run cnn_run = {0};
 	cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
-	//print_csv_image("img:", cnn_run.input_data);
 	cnn_hw_exec(cnn_hw, &cnn_run, true);
 	cnn_run_print_result(&cnn_run);
 #else

@@ -151,29 +151,13 @@ void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf)
 void cnn_sw_eval(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run)
 {
 	capture_time(&cnn_run->tStart);
-
 	conv(cnn_run->input_data, cnn_sw->conv_0_kernel, cnn_sw->conv_0_output, cnn_sw->conv_0_ctrl);
 	pool(cnn_sw->conv_0_output, cnn_sw->pool_0_output, cnn_sw->pool_0_ctrl);
 	conv(cnn_sw->pool_0_output, cnn_sw->conv_1_kernel, cnn_sw->conv_1_output, cnn_sw->conv_1_ctrl);
-
-
 	pool(cnn_sw->conv_1_output, cnn_sw->pool_1_output, cnn_sw->pool_1_ctrl);
-
 	fully_connected(cnn_sw->pool_1_output, cnn_sw->fc_0_weight, cnn_sw->fc_0_bias, cnn_sw->fc_0_output, cnn_sw->fc_0_ctrl);
-
-	// for (int i = 0; i < FC_0_OUTPUT_LEN; i++) {
-	// 	if (cnn_sw->fc_0_output[i]) {
-	// 		PRINT_UI("[%d]  ", i);
-	// 		print_float(cnn_sw->fc_0_output[i]);
-	// 		PRINT_UI("\r\n");
-	// 	}
-	// }
-
-
 	fully_connected(cnn_sw->fc_0_output, cnn_sw->fc_1_weight, cnn_sw->fc_1_bias, cnn_sw->fc_1_output, cnn_sw->fc_1_ctrl);
-	//print_float_arr("fc_1_out:", cnn_sw->fc_1_output);
 	softmax(cnn_sw->fc_1_output, cnn_sw->output_data);
-	//print_float_arr("softmax:", cnn_sw->output_data);
 	capture_time(&cnn_run->tEnd);
 }
 
@@ -218,7 +202,6 @@ void cnn_sw_run_single(struct cnn_sw *cnn_sw)
 	print_header("software");
 	struct cnn_run cnn_run = {0};
 	cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
-	//print_csv_image("img:", cnn_run.input_data);
 	cnn_sw_exec(cnn_sw, &cnn_run, true);
 	cnn_run_print_result(&cnn_run);
 	print_tail();

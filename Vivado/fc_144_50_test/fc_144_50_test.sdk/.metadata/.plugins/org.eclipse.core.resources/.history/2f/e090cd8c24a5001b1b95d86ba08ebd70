@@ -1,0 +1,13 @@
+/*
+ * cnn_config.h
+ *
+ *  Created on: Apr 24, 2021
+ *      Author: cgrud
+ */
+
+#ifndef SRC_CNN_CONFIG_H_
+#define SRC_CNN_CONFIG_H_
+
+
+
+#endif /* SRC_CNN_CONFIG_H_ */

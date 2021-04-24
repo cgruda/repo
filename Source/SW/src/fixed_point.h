@@ -26,4 +26,5 @@ uint32_t fixed_point_div(uint32_t a, uint32_t b);
 uint32_t float_2_fixed(float flt);
 float fixed_2_float(uint32_t fixed);
 
+
 #endif // _FIXED_POINT_H_

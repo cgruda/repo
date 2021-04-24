@@ -314,10 +314,12 @@ int get_user_choice()
 	PRINT_UI("choose option: \r\n" \
 	       "-------------- \r\n" \
 	       "0. exit \r\n" \
-		   "1. run hw single \r\n" \
+	       "1. run hw single \r\n" \
 	       "2. run sw single \r\n" \
 	       "3. run hw all \r\n" \
 	       "4. run sw all \r\n" \
+	       "5. run hw sim single \r\n" \
+	       "6. run hw sim all \r\n" \
 	       "--------------\r\n");
 	scanf("%d", &choice);
 	return choice;
@@ -412,6 +414,7 @@ void cnn_stat_print_idx(struct cnn_stat *cnn_stat)
 	int img_time_avg_us_w = img_time_avg_us;
 	int img_time_avg_us_f = (img_time_avg_us - img_time_avg_us_w) * 100;
 
+	PRINT_UI("\r\n");
 	PRINT_UI("index %d processed %d images: \n\r"
 			 "    hit1: %d, hit2: %d, miss: %d \n\r"
 			 "    accuracy: %d.%02d%%, with 2nd guess: %d.%02d%% \n\r"
@@ -440,12 +443,12 @@ void print_tail()
 void print_float(float fnum)
 {
 	bool negative = fnum < 0;
-	int w = abs(fnum);
-	int f = abs((fnum - w) * 100000);
+	int w = fnum;
+	int f = (fnum - w) * 100000;
 	if (negative) {
-		xil_printf("-%d.%05d", w, f);
+		PRINT_UI("-%d.%05d  ", -w, -f);
 	} else {
-		xil_printf("%d.%05d", w, f);
+		PRINT_UI("%d.%05d  ", w, f);
 	}
 }
 

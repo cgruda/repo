@@ -1,0 +1,245 @@
+welcome!
+choose option: 
+-------------- 
+0. exit 
+1. run hw single 
+2. run sw single 
+3. run hw all 
+4. run sw all 
+5. run hw sim single 
+6. run hw sim all 
+--------------
+
+--------------------------------------
+          cnn hardware run            
+--------------------------------------
+index 0 processed 1 image: 
+    hit1: 1, hit2: 0, miss: 0 
+    hit1 certainty: 99.98%, hit2: 0.00% 
+    time: 77.97 us 
+--------------------------------------
+
+choose option: 
+-------------- 
+0. exit 
+1. run hw single 
+2. run sw single 
+3. run hw all 
+4. run sw all 
+5. run hw sim single 
+6. run hw sim all 
+--------------
+
+--------------------------------------
+          cnn software run            
+--------------------------------------
+index 0 processed 1 image: 
+    hit1: 1, hit2: 0, miss: 0 
+    hit1 certainty: 99.98%, hit2: 0.00% 
+    time: 3091.19 us 
+--------------------------------------
+
+choose option: 
+-------------- 
+0. exit 
+1. run hw single 
+2. run sw single 
+3. run hw all 
+4. run sw all 
+5. run hw sim single 
+6. run hw sim all 
+--------------
+
+--------------------------------------
+          cnn hardware run            
+--------------------------------------
+..........................
+index 0 processed 980 images: 
+    hit1: 963, hit2: 12, miss: 17 
+    accuracy: 98.26%, with 2nd guess: 99.48% 
+    hit1 certainty avg: 98.60%, hit2: 20.99% 
+    time: 75.58 ms (avg 77.12 us per image) 
+
+..............................
+index 1 processed 1135 images: 
+    hit1: 1112, hit2: 16, miss: 23 
+    accuracy: 97.97%, with 2nd guess: 99.38% 
+    hit1 certainty avg: 98.45%, hit2: 27.76% 
+    time: 87.13 ms (avg 76.77 us per image) 
+
+............................
+index 2 processed 1032 images: 
+    hit1: 993, hit2: 25, miss: 39 
+    accuracy: 96.22%, with 2nd guess: 98.64% 
+    hit1 certainty avg: 96.97%, hit2: 21.46% 
+    time: 79.52 ms (avg 77.06 us per image) 
+
+...........................
+index 3 processed 1010 images: 
+    hit1: 950, hit2: 48, miss: 60 
+    accuracy: 94.05%, with 2nd guess: 98.81% 
+    hit1 certainty avg: 95.90%, hit2: 21.83% 
+    time: 77.90 ms (avg 77.13 us per image) 
+
+..........................
+index 4 processed 982 images: 
+    hit1: 938, hit2: 34, miss: 44 
+    accuracy: 95.51%, with 2nd guess: 98.98% 
+    hit1 certainty avg: 96.10%, hit2: 23.54% 
+    time: 75.71 ms (avg 77.10 us per image) 
+
+........................
+index 5 processed 892 images: 
+    hit1: 838, hit2: 42, miss: 54 
+    accuracy: 93.94%, with 2nd guess: 98.65% 
+    hit1 certainty avg: 96.73%, hit2: 24.16% 
+    time: 68.77 ms (avg 77.10 us per image) 
+
+..........................
+index 6 processed 958 images: 
+    hit1: 932, hit2: 15, miss: 26 
+    accuracy: 97.28%, with 2nd guess: 98.85% 
+    hit1 certainty avg: 98.21%, hit2: 26.77% 
+    time: 73.82 ms (avg 77.06 us per image) 
+
+............................
+index 7 processed 1028 images: 
+    hit1: 996, hit2: 23, miss: 32 
+    accuracy: 96.88%, with 2nd guess: 99.12% 
+    hit1 certainty avg: 98.14%, hit2: 23.20% 
+    time: 79.37 ms (avg 77.21 us per image) 
+
+..........................
+index 8 processed 974 images: 
+    hit1: 925, hit2: 29, miss: 49 
+    accuracy: 94.96%, with 2nd guess: 97.94% 
+    hit1 certainty avg: 95.26%, hit2: 24.94% 
+    time: 74.97 ms (avg 76.97 us per image) 
+
+...........................
+index 9 processed 1009 images: 
+    hit1: 960, hit2: 33, miss: 49 
+    accuracy: 95.14%, with 2nd guess: 98.41% 
+    hit1 certainty avg: 96.72%, hit2: 21.38% 
+    time: 77.76 ms (avg 77.06 us per image) 
+
++++++++++++ summary ++++++++++
+index -1 processed 10000 images: 
+    hit1: 9607, hit2: 277, miss: 393 
+    accuracy: 96.06%, with 2nd guess: 98.83% 
+    hit1 certainty avg: 97.15%, hit2: 23.32% 
+    time: 770.59 ms (avg 77.05 us per image) 
+
+--------------------------------------
+
+choose option: 
+-------------- 
+0. exit 
+1. run hw single 
+2. run sw single 
+3. run hw all 
+4. run sw all 
+5. run hw sim single 
+6. run hw sim all 
+--------------
+
+--------------------------------------
+          cnn software run            
+--------------------------------------
+..........................
+index 0 processed 980 images: 
+    hit1: 963, hit2: 12, miss: 17 
+    accuracy: 98.26%, with 2nd guess: 99.48% 
+    hit1 certainty avg: 98.64%, hit2: 21.48% 
+    time: 3025.55 ms (avg 3087.30 us per image) 
+
+..............................
+index 1 processed 1135 images: 
+    hit1: 1112, hit2: 16, miss: 23 
+    accuracy: 97.97%, with 2nd guess: 99.38% 
+    hit1 certainty avg: 98.46%, hit2: 27.25% 
+    time: 3516.89 ms (avg 3098.58 us per image) 
+
+............................
+index 2 processed 1032 images: 
+    hit1: 994, hit2: 24, miss: 38 
+    accuracy: 96.31%, with 2nd guess: 98.64% 
+    hit1 certainty avg: 97.04%, hit2: 20.88% 
+    time: 3188.75 ms (avg 3089.88 us per image) 
+
+...........................
+index 3 processed 1010 images: 
+    hit1: 951, hit2: 47, miss: 59 
+    accuracy: 94.15%, with 2nd guess: 98.81% 
+    hit1 certainty avg: 95.91%, hit2: 21.13% 
+    time: 3121.47 ms (avg 3090.56 us per image) 
+
+..........................
+index 4 processed 982 images: 
+    hit1: 940, hit2: 32, miss: 42 
+    accuracy: 95.72%, with 2nd guess: 98.98% 
+    hit1 certainty avg: 96.12%, hit2: 22.64% 
+    time: 3037.24 ms (avg 3092.91 us per image) 
+
+........................
+index 5 processed 892 images: 
+    hit1: 836, hit2: 44, miss: 56 
+    accuracy: 93.72%, with 2nd guess: 98.65% 
+    hit1 certainty avg: 96.88%, hit2: 24.79% 
+    time: 2758.02 ms (avg 3091.95 us per image) 
+
+..........................
+index 6 processed 958 images: 
+    hit1: 932, hit2: 15, miss: 26 
+    accuracy: 97.28%, with 2nd guess: 98.85% 
+    hit1 certainty avg: 98.18%, hit2: 25.92% 
+    time: 2960.98 ms (avg 3090.80 us per image) 
+
+............................
+index 7 processed 1028 images: 
+    hit1: 995, hit2: 24, miss: 33 
+    accuracy: 96.78%, with 2nd guess: 99.12% 
+    hit1 certainty avg: 98.22%, hit2: 24.32% 
+    time: 3180.96 ms (avg 3094.32 us per image) 
+
+..........................
+index 8 processed 974 images: 
+    hit1: 925, hit2: 30, miss: 49 
+    accuracy: 94.96%, with 2nd guess: 98.04% 
+    hit1 certainty avg: 95.27%, hit2: 24.64% 
+    time: 3009.33 ms (avg 3089.66 us per image) 
+
+...........................
+index 9 processed 1009 images: 
+    hit1: 960, hit2: 33, miss: 49 
+    accuracy: 95.14%, with 2nd guess: 98.41% 
+    hit1 certainty avg: 96.74%, hit2: 21.34% 
+    time: 3120.67 ms (avg 3092.84 us per image) 
+
++++++++++++ summary ++++++++++
+index -1 processed 10000 images: 
+    hit1: 9608, hit2: 277, miss: 392 
+    accuracy: 96.08%, with 2nd guess: 98.84% 
+    hit1 certainty avg: 97.18%, hit2: 23.17% 
+    time: 30919.91 ms (avg 3091.99 us per image) 
+
+--------------------------------------
+
+choose option: 
+-------------- 
+0. exit 
+1. run hw single 
+2. run sw single 
+3. run hw all 
+4. run sw all 
+5. run hw sim single 
+6. run hw sim all 
+--------------
+
+
+goodby!
+
+cu: Got hangup signal
+
+Disconnected.
+
