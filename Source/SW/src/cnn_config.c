@@ -9,6 +9,7 @@
 
 #include "cnn_config.h"
 #include "cnn_task.h"
+#include "fixed_point.h"
 #include <stdlib.h>
 #if (PLATFORM == FPGA)
 #include "xil_printf.h"
@@ -23,13 +24,20 @@ void cnn_config_trace_vals(char *text, float *data, int rows, int cols)
 	PRINT_UI("%s\n\r", text);
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			int w = data[i * cols + j];
-			int f = abs((data[i * cols + j] - w) * 100000);
-			if (data[i * cols + j] < 0) {
-				PRINT_UI("-%d.%05d ", w, f);
-			} else {
-				PRINT_UI("%d.%05d ", w, f);
-			}
+			print_float(data[i * cols + j]);
+		}
+		PRINT_UI("\n\r");
+	}
+	PRINT_UI("----------------------------------------------\n\r\n\r");
+}
+
+void fp_cnn_config_trace_vals(char *text, uint32_t *data, int rows, int cols)
+{
+	PRINT_UI("\n\r----------------------------------------------\n\r");
+	PRINT_UI("%s\n\r", text);
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			fixed_point_print(data[i * cols + j]);
 		}
 		PRINT_UI("\n\r");
 	}

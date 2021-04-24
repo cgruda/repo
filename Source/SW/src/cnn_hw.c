@@ -240,7 +240,9 @@ void cnn_hw_eval(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run)
 
 void cnn_hw_reset(struct cnn_hw *cnn_hw)
 {
-	// TODO
+	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
+		cnn_hw->outtput_data = 0;
+	}
 }
 
 void cnn_hw_exec(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run, bool verbose)
@@ -302,6 +304,9 @@ void cnn_hw_run_all(struct cnn_hw *cnn_hw)
 			continue;
 		}
 		while (next_csv_path_get(idx_fptr, csv_data_path) == 0) {
+			if (!(idx_stat.img_cnt % 38)) {
+				PRINT_UI(".");
+			}
 			if (!*csv_data_path) {
 				cnn_stat_print_idx(&idx_stat);
 				cnn_stat(&all_stat, NULL, &idx_stat);
@@ -313,6 +318,7 @@ void cnn_hw_run_all(struct cnn_hw *cnn_hw)
 		}
 		close_file(idx_fptr);
 	}
+	PRINT_UI("+++++++++++ summary ++++++++++");
 	cnn_stat_print_idx(&all_stat);
 	#else
 	PRINT_UI("        unsupported platform \n\r");

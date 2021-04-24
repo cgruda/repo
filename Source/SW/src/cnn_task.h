@@ -60,6 +60,10 @@ enum user_choise {
 	UC_RUN_SW_SINGLE,
 	UC_RUN_HW_ALL,
 	UC_RUN_SW_ALL,
+#if (PLATFORM == PC)
+	UC_RUN_HW_SIM_SINGLE,
+	UC_RUN_HW_SIM_ALL
+#endif
 };
 
 struct cnn_run {

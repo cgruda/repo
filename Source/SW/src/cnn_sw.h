@@ -22,7 +22,6 @@ struct cnn_sw {
 	uint32_t pool_1_ctrl;
 	uint32_t fc_0_ctrl;
 	uint32_t fc_1_ctrl;
-	float *input_data;
 	float *conv_0_kernel;
 	float *conv_1_kernel;
 	float *fc_0_weight;

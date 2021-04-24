@@ -10,6 +10,9 @@
 #include "cnn_config.h"
 #include "cnn_task.h"
 #include "cnn_hw.h"
+#if (PLATFORM == PC)
+#include "cnn_hw_sim.h"
+#endif
 #include "cnn_sw.h"
 #if (PLATFORM == FPGA)
 #include "xil_printf.h"
@@ -23,6 +26,9 @@ int main()
 	struct cnn_config cnn_conf = {0};
 	struct cnn_hw cnn_hw = {0};
 	struct cnn_sw cnn_sw = {0};
+#if (PLATFORM == PC)
+	struct cnn_hw_sim cnn_hw_sim = {0};
+#endif
 	bool exit = false;
 
 	if (init(&cnn_conf, &cnn_hw) < 0) {
@@ -31,6 +37,9 @@ int main()
 
 	cnn_hw_set(&cnn_hw, &cnn_conf);
 	cnn_sw_set(&cnn_sw, &cnn_conf);
+#if (PLATFORM == PC)
+	cnn_hw_sim_set(&cnn_hw_sim, &cnn_conf);
+#endif
 
 	do {
 		switch (get_user_choice()) {
@@ -53,6 +62,16 @@ int main()
 		case UC_RUN_SW_ALL:
 			cnn_sw_run_all(&cnn_sw);
 			break;
+
+#if (PLATFORM == PC)
+		case UC_RUN_HW_SIM_SINGLE:
+			cnn_hw_sim_run_single(&cnn_hw_sim);
+			break;
+
+		case UC_RUN_HW_SIM_ALL:
+			cnn_hw_sim_run_all(&cnn_hw_sim);
+			break;
+#endif
 
 		default:
 			PRINT_UI("invalid option!\r\n\r\n");

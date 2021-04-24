@@ -192,6 +192,6 @@ struct cnn_config {
 int cnn_config_set(struct cnn_config *cnn_conf);
 void cnn_config_print(struct cnn_config *cnn_conf);
 void cnn_config_trace_vals(char *text, float *data, int rows, int cols);
-
+void fp_cnn_config_trace_vals(char *text, uint32_t *data, int rows, int cols);
 
 #endif // _CNN_CONFIG_H_
