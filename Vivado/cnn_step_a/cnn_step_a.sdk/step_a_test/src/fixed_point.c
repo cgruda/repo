@@ -9,6 +9,7 @@
 
 #include "cnn_task.h"
 #include "fixed_point.h"
+#include <stdlib.h>
 #include <stdint.h>
 #if (PLATFORM == FPGA)
 #include "xil_printf.h"
@@ -18,11 +19,8 @@
 
 void fixed_point_print(uint32_t num)
 {
-	if (num & SIGN_BIT) {
-		PRINT_UI("-%d.%06d ", (int)FIXED_2_FLOAT(-num), (int)(FIXED_2_FLOAT(-num) * 1000000));
-	} else {
-		PRINT_UI("%d.%06d ", (int)FIXED_2_FLOAT(num), (int)(FIXED_2_FLOAT(num) * 1000000));
-	}
+	float fltnum = fixed_2_float(num);
+	print_float(fltnum);
 }
 
 uint32_t fixed_point_mul(uint32_t a, uint32_t b)
@@ -49,4 +47,23 @@ uint32_t fixed_point_div(uint32_t a, uint32_t b)
 	result = ((a << FIXP_FRACTION_WIDTH) / b);
 
 	return sign ? -result : result;
+}
+
+float fixed_2_float(uint32_t fixed)
+{
+	if (fixed & SIGN_BIT) {
+		return -FIXED_2_FLOAT(-fixed);
+	} else {
+		return FIXED_2_FLOAT(fixed);
+	}
+}
+
+uint32_t float_2_fixed(float flt)
+{
+	if (flt < 0) {
+		float absflt = flt * -1;
+		return -FLOAT_2_FIXED(absflt);
+	} else {
+		return FLOAT_2_FIXED(flt);
+	}
 }

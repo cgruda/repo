@@ -10,28 +10,58 @@
 #include "cnn_config.h"
 #include "cnn_task.h"
 #include "cnn_hw.h"
+#include "fixed_point.h"
 #include <stdint.h>
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
+#include <stdbool.h>
 #if (PLATFORM == FPGA)
 #include "xil_printf.h"
 #include "xtime_l.h"
+#include "ff.h"
+#include "xdevcfg.h"
 #else
-#include <stdio.h>
 #include <time.h>
 #endif
 
-FILE *index_file_open(int idx)
+#if (PLATFORM == FPGA)
+static FATFS fatfs;
+FIL g_idx_fptr;
+#endif
+
+FILEO *index_file_open(int idx)
 {
 	char index_path[CNN_SIM_DATA_INDEX_PATH_LEN] = {0};
 	sprintf(index_path, "%s%d/%s", CNN_SIM_DATA_PATH, idx, CNN_SIM_DATA_INDEX);
+#if (PLATFORM == PC)
 	return fopen(index_path, "r");
+#else
+	int err = f_open(&g_idx_fptr, index_path, FA_OPEN_EXISTING | FA_READ);
+	if(err) {
+		PRINT_UI("opening \"%s\" failed! (fres=%d)\r\n", index_path, err);
+		return NULL;
+	}
+
+	err = f_lseek(&g_idx_fptr, 0);
+	if(err) {
+		PRINT_UI("f_lseek returned %d!\r\n", err);
+		return NULL;
+	}
+	return &g_idx_fptr;
+#endif
 }
 
-int next_csv_path_get(FILE *idx_fptr, char *path_buffer)
+#define GET_CSV_SUCCESS 0
+#define LAST_CSV_OF_INDEX 1
+#define GET_CSV_PATH_ERROR 2
+
+
+int next_csv_path_get(FILEO *idx_fptr, char *path_buffer)
 {
 	memset(path_buffer, 0, CNN_SIM_DATA_FILE_PATH_MAX_LEN);
+#if (PLATFORM == PC)
 	if (!fgets(path_buffer, CNN_SIM_DATA_FILE_PATH_MAX_LEN, idx_fptr)) {
 		if (feof(idx_fptr)) {
 			return 0;
@@ -39,6 +69,50 @@ int next_csv_path_get(FILE *idx_fptr, char *path_buffer)
 		return -1;
 	}
 	path_buffer[strlen(path_buffer) - 1] = 0;
+#else
+	int err = 0;
+	UINT br;
+	char *p = path_buffer;
+	int skip_chars = 29;
+	while (1) {
+		err = f_read(idx_fptr, (void*)p, 1, &br);
+		if(err) {
+			PRINT_UI("f_read returned %d!\r\n", err);
+			return -1;
+		}
+		if (!br) {
+			*p = 0;
+			return 0;
+		}
+		if (*p == '\n') {
+			*p = 0;
+			break;
+		}
+		if (skip_chars) {
+			skip_chars--;
+		} else {
+			p++;
+		}
+		if ((p - path_buffer) == CNN_SIM_DATA_FILE_PATH_MAX_LEN) {
+			PRINT_UI("temp buffer overrun!\r\n", err);
+			return -1;
+		}
+	}
+#endif
+	return 0;
+}
+
+int close_file(FILEO *fptr)
+{
+#if (PLATFORM == PC)
+	fclose(fptr);
+#else
+	int err = f_close(fptr);
+	if(err) {
+		PRINT_UI("f_close returned %d\r\n", err);
+		return -1;
+	}
+#endif
 	return 0;
 }
 
@@ -47,7 +121,7 @@ int csv_read(char *csv_path, float *buffer, int rows, int cols)
 #if (PLATFORM == PC)
 	FILE *fptr = fopen(csv_path, "r");
 	if (!fptr) {
-		PRINT_UI("opening file \"%s\" failed! (errno=%d)\r\n", csv_path, errno);
+		PRINT_UI("opening \"%s\" failed! (errno=%d)\r\n", csv_path, errno);
 		return errno;
 	}
 
@@ -65,8 +139,52 @@ int csv_read(char *csv_path, float *buffer, int rows, int cols)
 
 	fclose(fptr);
 #else
-	for (int i = 0; i < rows * cols; i++) {
-		buffer[i] = 1;
+	FIL fptr;
+	FRESULT err;
+	UINT br;
+	char temp[TEMP_LEN] = {0};
+	char *p;
+
+	err = f_open(&fptr, csv_path, FA_OPEN_EXISTING | FA_READ);
+	if(err) {
+		PRINT_UI("opening \"%s\" failed! (fres=%d)\r\n", csv_path, err);
+		return err;
+	}
+
+	err = f_lseek(&fptr, 0);
+	if(err) {
+		PRINT_UI("f_lseek returned %d!\r\n", err);
+		return err;
+	}
+
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			memset(temp, 0, TEMP_LEN);
+			p = temp;
+			while (1) {
+				err = f_read(&fptr, (void*)p, 1, &br);
+				if(err) {
+					PRINT_UI("f_read returned %d!\r\n", err);
+					return -1;
+				}
+				if (*p == ',' || *p == '\n') {
+					*p = 0;
+					break;
+				}
+				p++;
+				if ((p - temp) == TEMP_LEN) {
+					PRINT_UI("temp buffer overrun!\r\n", err);
+					return -1;
+				}
+			}
+			sscanf(temp, "%g", &buffer[i * cols +j]);
+		}
+	}
+
+	err = f_close(&fptr);
+	if(err) {
+		PRINT_UI("f_close returned %d\r\n", err);
+		return -1;
 	}
 #endif
 	return 0;
@@ -209,18 +327,26 @@ int init(struct cnn_config *conf, struct cnn_hw *hw) // problem here
 {
 	int err = 0;
 
-	err = cnn_config_set(conf);
-	if (err) {
-		PRINT_UI("conf_set failed!");
-		return -1;
-	}
 #if (PLATFORM == FPGA)
 	err = cnn_hw_init(hw);
 	if (err) {
-		PRINT_UI("hw_init failed!");
+		PRINT_UI("hw_init failed!\r\n");
+		return -1;
+	}
+
+	err = f_mount(&fatfs, "", 0);
+	if(err) {
+		PRINT_UI("sd card mount failed\r\n");
 		return -1;
 	}
 #endif
+
+	err = cnn_config_set(conf);
+	if (err) {
+		PRINT_UI("conf_set failed!\r\n");
+		return -1;
+	}
+
 	PRINT_UI("\r\nwelcome!\r\n");
 
 	return 0;
@@ -233,6 +359,10 @@ void my_cleanup()
 
 void cnn_run_print_result(struct cnn_run *cnn_run)
 {
+	if (!cnn_run->valid) {
+		return;
+	}
+
 	float hit1_certainty_percent = cnn_run->hit1_certainty * 100;
 	int hit1_certainty_percent_w = hit1_certainty_percent;
 	int hit1_certainty_percent_f = (hit1_certainty_percent - hit1_certainty_percent_w) * 100;
@@ -305,4 +435,36 @@ void print_header(char *text)
 void print_tail()
 {
 	PRINT_UI("--------------------------------------\n\r\n\r");
+}
+
+void print_float(float fnum)
+{
+	bool negative = fnum < 0;
+	int w = abs(fnum);
+	int f = abs((fnum - w) * 100000);
+	if (negative) {
+		xil_printf("-%d.%05d", w, f);
+	} else {
+		xil_printf("%d.%05d", w, f);
+	}
+}
+
+void print_fixed_arr(char *text, uint32_t *data)
+{
+	PRINT_UI("%s\r\n", text);
+	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
+		PRINT_UI("[%d] ", i);
+		fixed_point_print(data[i]);
+		PRINT_UI("\r\n");
+	}
+}
+
+void print_float_arr(char *text, float *data)
+{
+	PRINT_UI("%s\r\n", text);
+	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
+		PRINT_UI("[%d] ", i);
+		print_float(data[i]);
+		PRINT_UI("\r\n");
+	}
 }

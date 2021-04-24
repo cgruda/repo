@@ -9,6 +9,7 @@
 
 #include "cnn_config.h"
 #include "cnn_task.h"
+#include <stdlib.h>
 #if (PLATFORM == FPGA)
 #include "xil_printf.h"
 #else
@@ -22,7 +23,13 @@ void cnn_config_trace_vals(char *text, float *data, int rows, int cols)
 	PRINT_UI("%s\n\r", text);
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			PRINT_UI("%d.%05d ", (int)data[i * cols + j], (int)(data[i * cols + j] * 100000));
+			int w = data[i * cols + j];
+			int f = abs((data[i * cols + j] - w) * 100000);
+			if (data[i * cols + j] < 0) {
+				PRINT_UI("-%d.%05d ", w, f);
+			} else {
+				PRINT_UI("%d.%05d ", w, f);
+			}
 		}
 		PRINT_UI("\n\r");
 	}

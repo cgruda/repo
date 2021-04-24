@@ -158,8 +158,9 @@ void cnn_sw_eval(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run)
 	pool(cnn_sw->conv_1_output, cnn_sw->pool_1_output, cnn_sw->pool_1_ctrl);
 	fully_connected(cnn_sw->pool_1_output, cnn_sw->fc_0_weight, cnn_sw->fc_0_bias, cnn_sw->fc_0_output, cnn_sw->fc_0_ctrl);
 	fully_connected(cnn_sw->fc_0_output, cnn_sw->fc_1_weight, cnn_sw->fc_1_bias, cnn_sw->fc_1_output, cnn_sw->fc_1_ctrl);
+	//print_float_arr("fc_1_out:", cnn_sw->fc_1_output);
 	softmax(cnn_sw->fc_1_output, cnn_sw->output_data);
-
+	//print_float_arr("softmax:", cnn_sw->output_data);
 	capture_time(&cnn_run->tEnd);
 }
 
@@ -204,6 +205,7 @@ void cnn_sw_run_single(struct cnn_sw *cnn_sw)
 	print_header("software");
 	struct cnn_run cnn_run = {0};
 	cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
+	//print_csv_image("img:", cnn_run.input_data);
 	cnn_sw_exec(cnn_sw, &cnn_run, true);
 	cnn_run_print_result(&cnn_run);
 	print_tail();
@@ -220,13 +222,15 @@ void cnn_sw_run_all(struct cnn_sw *cnn_sw)
 	for (int i = 0; i < 10; i++) {
 		struct cnn_stat idx_stat = {0};
 		idx_stat.idx = i;
-		FILE *idx_fptr = index_file_open(i);
+		FILEO *idx_fptr = index_file_open(i);
 		if (!idx_fptr) {
 			PRINT_UI("failed to open index %d!\n\r", i);
 			continue;
 		}
 		while (next_csv_path_get(idx_fptr, csv_data_path) == 0) {
+			PRINT_UI(".");
 			if (!*csv_data_path) {
+				PRINT_UI("\r\n");
 				cnn_stat_print_idx(&idx_stat);
 				cnn_stat(&all_stat, NULL, &idx_stat);
 				break;
@@ -235,7 +239,7 @@ void cnn_sw_run_all(struct cnn_sw *cnn_sw)
 			cnn_sw_exec(cnn_sw, &cnn_run, false);
 			cnn_stat(&idx_stat, &cnn_run, NULL);
 		}
-		fclose(idx_fptr);
+		close_file(idx_fptr);
 	}
 	cnn_stat_print_idx(&all_stat);
 	print_tail();

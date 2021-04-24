@@ -156,7 +156,7 @@ void cnn_hw_conv_0_set(XCnn_conv_d54x54_k3x3 *InstancePtr, uint32_t ctrl, float 
 {
 	XCnn_conv_d54x54_k3x3_Set_ctrl(InstancePtr, ctrl);
 	for (int i = 0; i < CONV_0_KERNEL_LEN; i++) {
-		cnn_hw_conv_0_kernel_set[i](InstancePtr, FLOAT_2_FIXED(kernel[i]));
+		cnn_hw_conv_0_kernel_set[i](InstancePtr, float_2_fixed(kernel[i]));
 	}
 }
 
@@ -164,7 +164,7 @@ void cnn_hw_conv_1_set(XCnn_conv_d26x26_k3x3 *InstancePtr, uint32_t ctrl, float 
 {
 	XCnn_conv_d26x26_k3x3_Set_ctrl(InstancePtr, ctrl);
 	for (int i = 0; i < CONV_1_KERNEL_LEN; i++) {
-		cnn_hw_conv_1_kernel_set[i](InstancePtr, FLOAT_2_FIXED(kernel[i]));
+		cnn_hw_conv_1_kernel_set[i](InstancePtr, float_2_fixed(kernel[i]));
 	}
 }
 
@@ -182,11 +182,11 @@ void cnn_hw_fc_0_set(XCnn_fc_i144_o50 *InstancePtr, uint32_t ctrl, float *weight
 {
 	XCnn_fc_i144_o50_Set_ctrl(InstancePtr, ctrl);
 	for (int i = 0; i < FC_0_BIAS_LEN; i++) {
-		cnn_hw_fc_0_bias_set(InstancePtr, i, FLOAT_2_FIXED(bias[i]));
+		cnn_hw_fc_0_bias_set(InstancePtr, i, float_2_fixed(bias[i]));
 	}
 	for (int i = 0; i < FC_0_WEIGHT_ROWS; i++) {
 		for (int j = 0; j < FC_0_WEIGHT_COLS; j++) {
-			cnn_hw_fc_0_weight_set(InstancePtr, i, j, FLOAT_2_FIXED(weight[i * FC_0_WEIGHT_COLS + j]));
+			cnn_hw_fc_0_weight_set(InstancePtr, i, j, float_2_fixed(weight[i * FC_0_WEIGHT_COLS + j]));
 		}
 	}
 }
@@ -195,11 +195,11 @@ void cnn_hw_fc_1_set(XCnn_fc_i50_o10 *InstancePtr, uint32_t ctrl, float *weight,
 {
 	XCnn_fc_i50_o10_Set_ctrl(InstancePtr, ctrl);
 	for (int i = 0; i < FC_1_BIAS_LEN; i++) {
-		cnn_hw_fc_1_bias_set(InstancePtr, i, FLOAT_2_FIXED(bias[i]));
+		cnn_hw_fc_1_bias_set(InstancePtr, i, float_2_fixed(bias[i]));
 	}
 	for (int i = 0; i < FC_1_WEIGHT_ROWS; i++) {
 		for (int j = 0; j < FC_1_WEIGHT_COLS; j++) {
-			cnn_hw_fc_1_weight_set(InstancePtr, i, j, FLOAT_2_FIXED(weight[i * FC_1_WEIGHT_COLS + j]));
+			cnn_hw_fc_1_weight_set(InstancePtr, i, j, float_2_fixed(weight[i * FC_1_WEIGHT_COLS + j]));
 		}
 	}
 }
@@ -209,7 +209,7 @@ void cnn_hw_eval(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run)
 	float pre_softmax_output[CNN_OUTPUT_LEN] = {0};
 
 	for (int i = 0; i < CNN_INPUT_LEN; i++) {
-		cnn_hw->p_dma_buffer_TX[i] = FLOAT_2_FIXED(cnn_run->input_data[i]);
+		cnn_hw->p_dma_buffer_TX[i] = float_2_fixed(cnn_run->input_data[i]);
 	}
 
 	XCnn_fc_i50_o10_Start(&cnn_hw->fc_1);
@@ -227,14 +227,14 @@ void cnn_hw_eval(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run)
 	XAxiDma_SimpleTransfer(&cnn_hw->axiDMA, (uint32_t)cnn_hw->p_dma_buffer_RX, CNN_OUTPUT_LEN * sizeof(uint32_t), XAXIDMA_DEVICE_TO_DMA);
 	while (XAxiDma_Busy(&cnn_hw->axiDMA, XAXIDMA_DEVICE_TO_DMA));
 	Xil_DCacheInvalidateRange((uint32_t) cnn_hw->p_dma_buffer_RX, CNN_OUTPUT_LEN * sizeof(uint32_t));
-	// todo: time capture may be here?
 
 	while (!XCnn_fc_i50_o10_IsDone(&cnn_hw->fc_1));
-
+	print_fixed_arr("fc_1_out:", cnn_hw->p_dma_buffer_RX);
 	for (int i = 0; i < CNN_OUTPUT_LEN; i++) {
-		pre_softmax_output[i] = FIXED_2_FLOAT(cnn_hw->p_dma_buffer_RX[i]);
+		pre_softmax_output[i] = fixed_2_float(cnn_hw->p_dma_buffer_RX[i]);
 	}
 	softmax(pre_softmax_output, cnn_hw->output_data);
+	print_float_arr("softmax:", cnn_hw->output_data);
 	capture_time(&cnn_run->tEnd);
 }
 
@@ -275,6 +275,7 @@ void cnn_hw_run_single(struct cnn_hw *cnn_hw)
 #if (PLATFORM == FPGA)
 	struct cnn_run cnn_run = {0};
 	cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
+	//print_csv_image("img:", cnn_run.input_data);
 	cnn_hw_exec(cnn_hw, &cnn_run, true);
 	cnn_run_print_result(&cnn_run);
 #else
@@ -295,7 +296,7 @@ void cnn_hw_run_all(struct cnn_hw *cnn_hw)
 	for (int i = 0; i < 10; i++) {
 		struct cnn_stat idx_stat = {0};
 		idx_stat.idx = i;
-		FILE *idx_fptr = index_file_open(i);
+		FILEO *idx_fptr = index_file_open(i);
 		if (!idx_fptr) {
 			PRINT_UI("failed to open index %d!\n\r", i);
 			continue;
@@ -310,7 +311,7 @@ void cnn_hw_run_all(struct cnn_hw *cnn_hw)
 			cnn_hw_exec(cnn_hw, &cnn_run, false);
 			cnn_stat(&idx_stat, &cnn_run, NULL);
 		}
-		fclose(idx_fptr);
+		close_file(idx_fptr);
 	}
 	cnn_stat_print_idx(&all_stat);
 	#else
