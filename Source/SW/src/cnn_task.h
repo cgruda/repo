@@ -55,11 +55,12 @@ typedef FILE FILEO;
 
 enum user_choise {
 	UC_EXIT,
-	UC_RUN_HW_SINGLE,
 	UC_RUN_SW_SINGLE,
-	UC_RUN_HW_ALL,
 	UC_RUN_SW_ALL,
-#if (PLATFORM == PC)
+#if (PLATFORM == FPGA)
+	UC_RUN_HW_SINGLE,
+	UC_RUN_HW_ALL,
+#else
 	UC_RUN_HW_SIM_SINGLE,
 	UC_RUN_HW_SIM_ALL
 #endif
@@ -110,5 +111,7 @@ void print_fixed_arr(char *text, uint32_t *data);
 void print_float_arr(char *text, float *data);
 int close_file(FILEO *fptr);
 void print_float(float fnum);
+void cnn_run_single(void (*exec)(void*, struct cnn_run*, bool), void *cnn_obj, char *str);
+void cnn_run_all(void (*exec)(void*, struct cnn_run*, bool), void *cnn_obj, char *str);
 
 #endif // _CNN_TASK_H_

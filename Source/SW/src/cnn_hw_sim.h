@@ -11,6 +11,7 @@
 #define _CNN_HW_SIM_H_
 
 #include "cnn_config.h"
+#include "cnn_task.h"
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -38,8 +39,6 @@ struct cnn_hw_sim {
 };
 
 void cnn_hw_sim_set(struct cnn_hw_sim *cnn_hw, struct cnn_config *cnn_conf);
-void cnn_hw_sim_run_single(struct cnn_hw_sim *cnn_hw);
-void cnn_hw_sim_run_all(struct cnn_hw_sim *cnn_hw);
-
+void cnn_hw_sim_exec(void *cnn_obj, struct cnn_run *cnn_run, bool verbose);
 
 #endif // _CNN_HW_SIM_H_

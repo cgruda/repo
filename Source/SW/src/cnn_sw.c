@@ -186,8 +186,10 @@ void cnn_sw_reset(struct cnn_sw *cnn_sw)
 	}
 }
 
-void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run, bool verbose)
+void cnn_sw_exec(void *cnn_obj, struct cnn_run *cnn_run, bool verbose)
 {
+	struct cnn_sw *cnn_sw = (struct cnn_sw*)cnn_obj;
+
 	if (!cnn_run->valid) {
 		return;
 	}
@@ -195,50 +197,4 @@ void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run, bool verbose)
 	cnn_sw_reset(cnn_sw);
 	cnn_sw_eval(cnn_sw, cnn_run);
 	cnn_result(cnn_sw->output_data, cnn_run);
-}
-
-void cnn_sw_run_single(struct cnn_sw *cnn_sw)
-{
-	print_header("software");
-	struct cnn_run cnn_run = {0};
-	cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
-	cnn_sw_exec(cnn_sw, &cnn_run, true);
-	cnn_run_print_result(&cnn_run);
-	print_tail();
-}
-
-void cnn_sw_run_all(struct cnn_sw *cnn_sw)
-{
-	print_header("software");
-	char csv_data_path[CNN_SIM_DATA_FILE_PATH_MAX_LEN];
-	struct cnn_stat all_stat = {0};
-	all_stat.idx = -1;
-	struct cnn_run cnn_run = {0};
-
-	for (int i = 0; i < 10; i++) {
-		struct cnn_stat idx_stat = {0};
-		idx_stat.idx = i;
-		FILEO *idx_fptr = index_file_open(i);
-		if (!idx_fptr) {
-			PRINT_UI("failed to open index %d!\n\r", i);
-			continue;
-		}
-		while (next_csv_path_get(idx_fptr, csv_data_path) == 0) {
-			if (!(idx_stat.img_cnt % 38)) {
-				PRINT_UI(".");
-			}
-			if (!*csv_data_path) {
-				cnn_stat_print_idx(&idx_stat);
-				cnn_stat(&all_stat, NULL, &idx_stat);
-				break;
-			}
-			cnn_prep_run(&cnn_run, csv_data_path, i);
-			cnn_sw_exec(cnn_sw, &cnn_run, false);
-			cnn_stat(&idx_stat, &cnn_run, NULL);
-		}
-		close_file(idx_fptr);
-	}
-	PRINT_UI("+++++++++++ summary ++++++++++");
-	cnn_stat_print_idx(&all_stat);
-	print_tail();
 }

@@ -311,16 +311,19 @@ void cnn_stat(struct cnn_stat *cnn_stat, struct cnn_run *cnn_run, struct cnn_sta
 int get_user_choice()
 {
 	int choice;
-	PRINT_UI("choose option: \r\n" \
-	       "-------------- \r\n" \
-	       "0. exit \r\n" \
-	       "1. run hw single \r\n" \
-	       "2. run sw single \r\n" \
-	       "3. run hw all \r\n" \
-	       "4. run sw all \r\n" \
-	       "5. run hw sim single \r\n" \
-	       "6. run hw sim all \r\n" \
-	       "--------------\r\n");
+	PRINT_UI("choose option: \r\n");
+	PRINT_UI("-------------- \r\n");
+	PRINT_UI("%d. exit \r\n", UC_EXIT);
+	PRINT_UI("%d. sw single \r\n", UC_RUN_SW_SINGLE);
+	PRINT_UI("%d. sw all \r\n", UC_RUN_SW_ALL);
+#if (PLATFORM == FPGA)
+	PRINT_UI("%d. hw single \r\n", UC_RUN_HW_SINGLE);
+	PRINT_UI("%d. hw all \r\n", UC_RUN_HW_ALL);
+#else
+	PRINT_UI("%d. hw sim single \r\n", UC_RUN_HW_SIM_SINGLE);
+	PRINT_UI("%d. hw sim all \r\n", UC_RUN_HW_SIM_ALL);
+#endif
+	PRINT_UI("-------------- \r\n");
 	scanf("%d", &choice);
 	return choice;
 }
@@ -470,4 +473,50 @@ void print_float_arr(char *text, float *data)
 		print_float(data[i]);
 		PRINT_UI("\r\n");
 	}
+}
+
+void cnn_run_all(void (*exec)(void*, struct cnn_run*, bool), void *cnn_obj, char *str)
+{
+	print_header(str);
+	char csv_data_path[CNN_SIM_DATA_FILE_PATH_MAX_LEN];
+	struct cnn_stat all_stat = {0};
+	all_stat.idx = -1;
+	struct cnn_run cnn_run = {0};
+
+	for (int i = 0; i < 10; i++) {
+		struct cnn_stat idx_stat = {0};
+		idx_stat.idx = i;
+		FILEO *idx_fptr = index_file_open(i);
+		if (!idx_fptr) {
+			PRINT_UI("failed to open index %d!\n\r", i);
+			continue;
+		}
+		while (next_csv_path_get(idx_fptr, csv_data_path) == 0) {
+			if (!(idx_stat.img_cnt % 38)) {
+				PRINT_UI(".");
+			}
+			if (!*csv_data_path) {
+				cnn_stat_print_idx(&idx_stat);
+				cnn_stat(&all_stat, NULL, &idx_stat);
+				break;
+			}
+			cnn_prep_run(&cnn_run, csv_data_path, i);
+			(*exec)(cnn_obj, &cnn_run, false);
+			cnn_stat(&idx_stat, &cnn_run, NULL);
+		}
+		close_file(idx_fptr);
+	}
+	PRINT_UI("+++++++++++ summary ++++++++++");
+	cnn_stat_print_idx(&all_stat);
+	print_tail();
+}
+
+void cnn_run_single(void (*exec)(void*, struct cnn_run*, bool), void *cnn_obj, char *str)
+{
+	print_header(str);
+	struct cnn_run cnn_run = {0};
+	cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
+	(*exec)(cnn_obj, &cnn_run, true);
+	cnn_run_print_result(&cnn_run);
+	print_tail();
 }
