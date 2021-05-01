@@ -28,18 +28,15 @@ import vivadoProjectGen as vivgen
 
 CONV = 0
 POOL = 1
+FC   = 2
 
 project_name = "fc_144_50_test"
 
-# layers = [ \
-#  {"type": CONV, "data_dim": 54, "op_dim": 3},\
-#  {"type": POOL, "data_dim": 52, "op_dim": 2},\
-#  {"type": CONV, "data_dim": 26, "op_dim": 3},\
-#  {"type": POOL, "data_dim": 24, "op_dim": 2},\
-# ]
-
 layers = [ \
- {"type": CONV, "data_dim": 54, "op_dim": 3}
+ {"type": CONV, "data_dim": 54, "op_dim": 3},\
+ {"type": POOL, "data_dim": 52, "op_dim": 2},\
+ {"type": CONV, "data_dim": 26, "op_dim": 3},\
+ {"type": POOL, "data_dim": 24, "op_dim": 2},\
 ]
 
 # create IPs
