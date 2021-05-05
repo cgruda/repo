@@ -20,6 +20,7 @@ import os
 
 CONV = 0
 POOL = 1
+FC   = 2
 
 repo_path = "D:\\School\\Project\\new_repo\\"
 scripts_path = repo_path + "Scripts\\"
@@ -30,9 +31,14 @@ tclscript = "hlsProjectGen.tcl"
 tclscript_path = scripts_path + "tcl\\" + tclscript
 
 def ip_name_get(type, data_dim, op_dim):
-	type_s = "conv" if type == CONV else "pool"
-	data_dim_s = "d{}x{}".format(data_dim, data_dim)
-	op_dim_s = "{}{}x{}".format("k" if type == CONV else "p", op_dim, op_dim)
+	if (type == CONV or type == POOL):
+		type_s = "conv" if type == CONV else "pool"
+		data_dim_s = "d{}x{}".format(data_dim, data_dim)
+		op_dim_s = "{}{}x{}".format("k" if type == CONV else "p", op_dim, op_dim)	
+	else: # type == FC
+		type_s = "fc"
+		data_dim_s = "i{}".format(data_dim)
+		op_dim_s = "o{}".format(op_dim)
 	ip_name = "cnn_{}_{}_{}".format(type_s, data_dim_s, op_dim_s)
 	return ip_name
 
@@ -54,6 +60,17 @@ def get_new_core_lines(orig_file, ip_name, data_dim, op_dim):
 				new_line = ip_name
 			elif (line == "cnn_pool_dXxX_pYxY"):
 				new_line = ip_name
+			elif (line == "cnn_fc_iX_oY"):
+				new_line = ip_name
+			elif (line == "#define INPUT_LEN X"):
+				new_line = "#define INPUT_LEN %d" %data_dim
+			elif (line == "#define OUTPUT_LEN Y"):
+				new_line = "#define OUTPUT_LEN %d" %op_dim
+			elif (line == "#pragma HLS ARRAY_PARTITION variable=weight dim=2 ABCDEFG"):
+				if (op_dim > 10):
+					new_line = "#pragma HLS ARRAY_PARTITION variable=weight dim=2 block factor=%d}" %(op_dim / 2)
+				else:
+					new_line = "#pragma HLS ARRAY_PARTITION variable=weight complete dim=2"
 			else:
 				new_line = line
 			new_line = new_line + "\n"
@@ -65,7 +82,12 @@ def create_new_temp_file(file_name, lines):
 		fp.writelines(lines)
 
 def prep_hls_files(type, data_dim, op_dim, ip_name):
-	type_str = "conv" if type == CONV else "pool"
+	if (type == CONV):
+		type_str = "conv"
+	elif (type == POOL):
+		type_str = "pool"
+	else:
+		type_str = "fc"
 	orig_source_path = hls_source_path + "%s//" %type_str
 	new_core_h_lines = get_new_core_lines(orig_source_path + "core.h", ip_name, data_dim, op_dim)
 	new_core_cpp_lines = get_new_core_lines(orig_source_path + "core.cpp", ip_name, data_dim, op_dim)
@@ -112,7 +134,7 @@ def hls_ip_exists(ip_name):
 	return os.path.exists(hls_path + ip_name)
 
 if __name__ == "__main__":
-	type = CONV
-	data_dim = 46
-	op_dim = 3
+	type = FC
+	data_dim = 20
+	op_dim = 5
 	create_new_hls_ip(type, data_dim, op_dim)

@@ -50,6 +50,7 @@
 								<option id="xilinx.gnu.c.link.option.ldflags.2045547108" name="Linker Flags" superClass="xilinx.gnu.c.link.option.ldflags" value=" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec" valueType="string"/>
 								<option id="xilinx.gnu.c.link.option.libs.147174128" name="Libraries (-l)" superClass="xilinx.gnu.c.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="m"/>
+									<listOptionValue builtIn="false" value="xilffs"/>
 								</option>
 								<inputType id="xilinx.gnu.linker.input.1876343410" superClass="xilinx.gnu.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

@@ -7,33 +7,17 @@
  *
  */
 
-/*
- * INCLUDES
- ******************************************************************************
- */
-
 #include "core.h"
 #include "fixed_point.h"
 #include <hls_stream.h>
 #include <ap_axi_sdata.h>
 #include <stdint.h>
 
-/*
- * DEFINES
- ******************************************************************************
- */
-
-// axi stream
 #define AXI_STREAM_KEEP 0xF
 #define AXI_STREAM_STRB 0
 #define AXI_STREAM_USER 0
 #define AXI_STREAM_DEST 0
 #define AXI_STREAM_ID   0
-
-/*
- * DEFENITIONS
- ******************************************************************************
- */
 
 inline bool padSkip(int x, int y)
 {
@@ -65,11 +49,6 @@ inline ufixp32_t singleOperation(ufixp32_t window[KERNEL_DIM][KERNEL_DIM],
 inline bool isLast(int writeCount) {
 	return (writeCount == OUTPUT_LEN);
 }
-
-/*
- * CORE
- ******************************************************************************
- */
 
 void
 cnn_conv_dXxX_kYxY

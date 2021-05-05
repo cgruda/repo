@@ -9,18 +9,8 @@
 #ifndef __FIXED_POINT_H__
 #define __FIXED_POINT_H__
 
-/*
- * INCLUDES
- ******************************************************************************
- */
-
 #include <stdint.h>
 #include <stdio.h>
-
-/*
- * FIXED POINT SYSTEM
- ******************************************************************************
- */
 
 typedef uint32_t ufixp32_t;
 
@@ -33,11 +23,6 @@ typedef uint32_t ufixp32_t;
 #define SIGN_BIT 0x80000000
 #define BIT(pos) (1 << (pos))
 #define SIGN_EQ(a, b) (!(((a) & SIGN_BIT) ^ ((b) & SIGN_BIT)))
-
-/*
- * INLINE FUNCTIONS
- ******************************************************************************
- */
 
 inline void fixed_point_print(ufixp32_t num)
 {

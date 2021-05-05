@@ -24,8 +24,8 @@
 int main()
 {
 	struct cnn_config cnn_conf = {0};
-	struct cnn_hw cnn_hw = {0};
 	struct cnn_sw cnn_sw = {0};
+	struct cnn_hw cnn_hw = {0};
 #if (PLATFORM == PC)
 	struct cnn_hw_sim cnn_hw_sim = {0};
 #endif
@@ -35,9 +35,10 @@ int main()
 		return -1;
 	}
 
-	cnn_hw_set(&cnn_hw, &cnn_conf);
 	cnn_sw_set(&cnn_sw, &cnn_conf);
-#if (PLATFORM == PC)
+#if (PLATFORM == FPGA)
+	cnn_hw_set(&cnn_hw, &cnn_conf);
+#else
 	cnn_hw_sim_set(&cnn_hw_sim, &cnn_conf);
 #endif
 
@@ -47,32 +48,30 @@ int main()
 			exit = true;
 			break;
 
-		case UC_RUN_HW_SINGLE:
-			cnn_hw_run_single(&cnn_hw);
-			break;
-
 		case UC_RUN_SW_SINGLE:
-			cnn_sw_run_single(&cnn_sw);
-			break;
-
-		case UC_RUN_HW_ALL:
-			cnn_hw_run_all(&cnn_hw);
+			cnn_run_single(cnn_sw_exec, &cnn_sw, "software");
 			break;
 
 		case UC_RUN_SW_ALL:
-			cnn_sw_run_all(&cnn_sw);
+			cnn_run_all(cnn_sw_exec, &cnn_sw, "software");
+			break;
+#if (PLATFORM == FPGA)
+		case UC_RUN_HW_SINGLE:
+			cnn_run_single(cnn_hw_exec, &cnn_hw, "hardware");
 			break;
 
-#if (PLATFORM == PC)
+		case UC_RUN_HW_ALL:
+			cnn_run_all(cnn_hw_exec, &cnn_hw, "hardware");
+			break;
+#else
 		case UC_RUN_HW_SIM_SINGLE:
-			cnn_hw_sim_run_single(&cnn_hw_sim);
+			cnn_run_single(cnn_hw_sim_exec, &cnn_hw_sim, "hardware sim");
 			break;
 
 		case UC_RUN_HW_SIM_ALL:
-			cnn_hw_sim_run_all(&cnn_hw_sim);
+			cnn_run_all(cnn_hw_sim_exec, &cnn_hw_sim, "hardware sim");
 			break;
 #endif
-
 		default:
 			PRINT_UI("invalid option!\r\n\r\n");
 			break;

@@ -203,9 +203,11 @@ void cnn_hw_fc_1_set(XCnn_fc_i50_o10 *InstancePtr, uint32_t ctrl, float *weight,
 		}
 	}
 }
+#endif // (PLATFORM == FPGA)
 
 void cnn_hw_eval(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run)
 {
+#if (PLATFORM == FPGA)
 	float pre_softmax_output[CNN_OUTPUT_LEN] = {0};
 
 	for (int i = 0; i < CNN_INPUT_LEN; i++) {
@@ -234,6 +236,7 @@ void cnn_hw_eval(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run)
 	}
 	softmax(pre_softmax_output, cnn_hw->output_data);
 	capture_time(&cnn_run->tEnd);
+#endif // (PLATFORM == FPGA)
 }
 
 void cnn_hw_reset(struct cnn_hw *cnn_hw)
@@ -243,8 +246,10 @@ void cnn_hw_reset(struct cnn_hw *cnn_hw)
 	}
 }
 
-void cnn_hw_exec(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run, bool verbose)
+void cnn_hw_exec(void *cnn_obj, struct cnn_run *cnn_run, bool verbose)
 {
+	struct cnn_hw *cnn_hw = (struct cnn_hw*)cnn_obj;
+
 	if (!cnn_run->valid) {
 		return;
 	}
@@ -253,7 +258,6 @@ void cnn_hw_exec(struct cnn_hw *cnn_hw, struct cnn_run *cnn_run, bool verbose)
 	cnn_hw_eval(cnn_hw, cnn_run);
 	cnn_result(cnn_hw->output_data, cnn_run);
 }
-#endif // (PLATFORM == FPGA)
 
 void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf)
 {
@@ -264,63 +268,5 @@ void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf)
 	cnn_hw_pool_1_set(&cnn_hw->pool_1, cnn_conf->pool_1_ctrl);
 	cnn_hw_fc_0_set(&cnn_hw->fc_0, cnn_conf->fc_0_ctrl, cnn_conf->fc_0_weight, cnn_conf->fc_0_bias);
 	cnn_hw_fc_1_set(&cnn_hw->fc_1, cnn_conf->fc_1_ctrl, cnn_conf->fc_1_weight, cnn_conf->fc_1_bias);
-#else
-	return;
 #endif
 }
-
-void cnn_hw_run_single(struct cnn_hw *cnn_hw)
-{
-	print_header("hardware");
-#if (PLATFORM == FPGA)
-	struct cnn_run cnn_run = {0};
-	cnn_prep_run(&cnn_run, DEFAULT_FILE_PATH, DEFAULT_IDX);
-	cnn_hw_exec(cnn_hw, &cnn_run, true);
-	cnn_run_print_result(&cnn_run);
-#else
-	PRINT_UI("        unsupported platform \n\r");
-#endif
-	print_tail();
-}
-
-void cnn_hw_run_all(struct cnn_hw *cnn_hw)
-{
-	print_header("hardware");
-#if (PLATFORM == FPGA)
-	char csv_data_path[CNN_SIM_DATA_FILE_PATH_MAX_LEN];
-	struct cnn_stat all_stat = {0};
-	all_stat.idx = -1;
-	struct cnn_run cnn_run = {0};
-
-	for (int i = 0; i < 10; i++) {
-		struct cnn_stat idx_stat = {0};
-		idx_stat.idx = i;
-		FILEO *idx_fptr = index_file_open(i);
-		if (!idx_fptr) {
-			PRINT_UI("failed to open index %d!\n\r", i);
-			continue;
-		}
-		while (next_csv_path_get(idx_fptr, csv_data_path) == 0) {
-			if (!(idx_stat.img_cnt % 38)) {
-				PRINT_UI(".");
-			}
-			if (!*csv_data_path) {
-				cnn_stat_print_idx(&idx_stat);
-				cnn_stat(&all_stat, NULL, &idx_stat);
-				break;
-			}
-			cnn_prep_run(&cnn_run, csv_data_path, i);
-			cnn_hw_exec(cnn_hw, &cnn_run, false);
-			cnn_stat(&idx_stat, &cnn_run, NULL);
-		}
-		close_file(idx_fptr);
-	}
-	PRINT_UI("+++++++++++ summary ++++++++++");
-	cnn_stat_print_idx(&all_stat);
-	#else
-	PRINT_UI("        unsupported platform \n\r");
-#endif
-	print_tail();
-}
-
-

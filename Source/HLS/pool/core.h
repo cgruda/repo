@@ -10,19 +10,9 @@
 #ifndef __CORE_H__
 #define __CORE_H__
 
-/*
- * INCLUDES
- ******************************************************************************
- */
-
 #include <hls_stream.h>
 #include <ap_axi_sdata.h>
 #include <stdint.h>
-
-/*
- * DEFINES
- ******************************************************************************
- */
 
 // data
 #define INPUT_COLS X
@@ -44,22 +34,13 @@
 #define MAX_POOL 0
 #define AVG_POOL 1
 
-/*
- * TYPES
- ******************************************************************************
- */
-
 typedef ap_axiu<32, 2, 5, 6> axiu32_t;
-
-/*
- * CORE
- ******************************************************************************
- */
 
 void
 cnn_pool_dXxX_pYxY
 (hls::stream<axiu32_t> &inStream,
 hls::stream<axiu32_t> &outStream,
 uint32_t ctrl);
+
 
 #endif // __CORE_H__

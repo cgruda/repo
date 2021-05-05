@@ -38,10 +38,11 @@ struct cnn_hw {
 	XCnn_fc_i144_o50 fc_0;
 	XCnn_fc_i50_o10 fc_1;
 	XAxiDma axiDMA;
-#endif
+#else
 	uint32_t *p_dma_buffer_TX;
 	uint32_t *p_dma_buffer_RX;
 	float output_data[CNN_OUTPUT_LEN];
+#endif
 };
 
 #if (PLATFORM == FPGA)

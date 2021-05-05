@@ -7,21 +7,11 @@
  *
  */
 
-/*
- * INCLUDES
- ******************************************************************************
- */
-
 #include "core.h"
 #include "fixed_point.h"
 #include <hls_stream.h>
 #include <ap_axi_sdata.h>
 #include <stdint.h>
-
-/*
- * DEFINES
- ******************************************************************************
- */
 
 int main()
 {
@@ -44,7 +34,6 @@ int main()
 	}
 	ctrl = CTRL_ACTIVATION_NONE;
 	/**********************************************************/
-
 
 	// Fill stream with input data
 	for (int i = 0; i < INPUT_ROWS; i++) {
@@ -73,10 +62,10 @@ cnn_conv_dXxX_kYxY
 		}
 	}
 
-	fixed_point_print(output[0][0]);
-	fixed_point_print(output[0][1]);
-	fixed_point_print(output[1][0]);
-	fixed_point_print(output[1][1]);
+	// fixed_point_print(output[0][0]);
+	// fixed_point_print(output[0][1]);
+	// fixed_point_print(output[1][0]);
+	// fixed_point_print(output[1][1]);
 
 	return 0;
 }

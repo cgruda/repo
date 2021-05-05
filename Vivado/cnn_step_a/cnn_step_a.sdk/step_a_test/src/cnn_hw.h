@@ -38,19 +38,17 @@ struct cnn_hw {
 	XCnn_fc_i144_o50 fc_0;
 	XCnn_fc_i50_o10 fc_1;
 	XAxiDma axiDMA;
+#endif
 	uint32_t *p_dma_buffer_TX;
 	uint32_t *p_dma_buffer_RX;
 	float output_data[CNN_OUTPUT_LEN];
-#else
-	uint32_t dummy;
-#endif
 };
 
 #if (PLATFORM == FPGA)
 int cnn_hw_init(struct cnn_hw *p_cnn_hw);
 #endif
 void cnn_hw_set(struct cnn_hw *cnn_hw, struct cnn_config *cnn_conf);
-void cnn_hw_run_single(struct cnn_hw *cnn_hw);
-void cnn_hw_run_all(struct cnn_hw *cnn_hw);
+void cnn_hw_exec(void *cnn_obj, struct cnn_run *cnn_run, bool verbose);
+
 
 #endif // _CNN_HW_H_

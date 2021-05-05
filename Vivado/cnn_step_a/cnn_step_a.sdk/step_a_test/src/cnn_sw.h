@@ -42,11 +42,7 @@ void conv(float *input, float *kernel, float *output, uint32_t ctrl);
 void fully_connected(float *input, float *weight, float *bias, float *output, uint32_t ctrl);
 void softmax(float *input, float *output);
 void cnn_sw_set(struct cnn_sw *cnn_sw, struct cnn_config *cnn_conf);
-void cnn_sw_eval(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run);
-void cnn_sw_exec(struct cnn_sw *cnn_sw, struct cnn_run *cnn_run, bool verbose);
-void cnn_sw_run_all(struct cnn_sw *cnn_sw);
-void cnn_sw_run_single(struct cnn_sw *cnn_sw);
-void softmax(float *input, float *output);
+void cnn_sw_exec(void *cnn_obj, struct cnn_run *cnn_run, bool verbose);
 
 
 #endif // _CNN_SW_H_

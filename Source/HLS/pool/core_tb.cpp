@@ -7,21 +7,11 @@
  *
  */
 
-/*
- * INCLUDES
- ******************************************************************************
- */
-
 #include "core.h"
 #include "fixed_point.h"
 #include <hls_stream.h>
 #include <ap_axi_sdata.h>
 #include <stdint.h>
-
-/*
- * DEFINES
- ******************************************************************************
- */
 
 int main()
 {
@@ -40,7 +30,6 @@ int main()
 	}
 	ctrl = MAX_POOL;
 	/**********************************************************/
-
 
 	// Fill stream with input data
 	for (int i = 0; i < INPUT_ROWS; i++) {
@@ -69,13 +58,13 @@ cnn_pool_dXxX_pYxY
 		}
 	}
 
-	for (int i = 0; i < OUTPUT_ROWS; i++) {
-		for (int j = 0; j < OUTPUT_COLS; j++) {
-			fixed_point_print(output[i][j]);
-			printf ("  ");
-		}
-		printf("\n");
-	}
+	// for (int i = 0; i < OUTPUT_ROWS; i++) {
+		// for (int j = 0; j < OUTPUT_COLS; j++) {
+			// fixed_point_print(output[i][j]);
+			// printf ("  ");
+		// }
+		// printf("\n");
+	// }
 
 	return 0;
 }

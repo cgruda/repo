@@ -10,19 +10,9 @@
 #ifndef __CORE_H__
 #define __CORE_H__
 
-/*
- * INCLUDES
- ******************************************************************************
- */
-
 #include <hls_stream.h>
 #include <ap_axi_sdata.h>
 #include <stdint.h>
-
-/*
- * DEFINES
- ******************************************************************************
- */
 
 // data
 #define INPUT_COLS X
@@ -44,17 +34,7 @@
 #define CTRL_ACTIVATION_NONE 0
 #define CTRL_ACTIVATION_RELU 1
 
-/*
- * TYPES
- ******************************************************************************
- */
-
 typedef ap_axiu<32, 2, 5, 6> axiu32_t;
-
-/*
- * CORE
- ******************************************************************************
- */
 
 void
 cnn_conv_dXxX_kYxY

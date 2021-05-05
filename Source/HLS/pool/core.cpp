@@ -7,21 +7,11 @@
  *
  */
 
-/*
- * INCLUDES
- ******************************************************************************
- */
-
 #include "core.h"
 #include "fixed_point.h"
 #include <hls_stream.h>
 #include <ap_axi_sdata.h>
 #include <stdint.h>
-
-/*
- * DEFINES
- ******************************************************************************
- */
 
 // axi stream
 #define AXI_STREAM_KEEP 0xF
@@ -30,17 +20,7 @@
 #define AXI_STREAM_DEST 0
 #define AXI_STREAM_ID   0
 
-/*
- * TYPES
- ******************************************************************************
- */
-
 typedef ap_axiu<32, 2, 5, 6> axiu32_t;
-
-/*
- * DEFENITIONS
- ******************************************************************************
- */
 
 inline bool poolSkip(int x, int y)
 {
@@ -75,11 +55,6 @@ inline ufixp32_t singleOperation(ufixp32_t window[POOL_DIM][POOL_DIM], int y, in
 inline bool isLast(int writeCount) {
 	return (writeCount == OUTPUT_LEN);
 }
-
-/*
- * CORE
- ******************************************************************************
- */
 
 void
 cnn_pool_dXxX_pYxY
