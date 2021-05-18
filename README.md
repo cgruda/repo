@@ -13,11 +13,10 @@ The project was implemented using the following programs:
 
 #### Repository structure:
 
-* Documents - project book, midterm presentation, work plan, administrative info
-* HLS - all HLS material, including source code and packaged IPs
-* Scripts - scripts used to auto generate HLS blocks and Vivado designs
-* Source - source code files used by HLS, SDK, and SW, including templates for scripts
-* Vivado - Vivado designs and SDK projects whithin each Vivado project
+* documents - work plan, midterm presentation, poster and project book
+* hw_cnn - hls source and IP blocks and vivado design
+* sw_cnn - software implementation
+* simulation - simulation data and results
 
 #### Usage
 
