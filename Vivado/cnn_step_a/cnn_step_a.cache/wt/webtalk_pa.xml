@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu Apr 22 21:48:29 2021">
+<application name="pa" timeStamp="Sat May 15 18:10:17 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="5ee31f471e1642eba9a073607653b2aa" type="ProjectID"/>
 <property name="ProjectIteration" value="4" type="ProjectIteration"/>
@@ -25,7 +25,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ProjectSettingsCmdHandler" value="1" type="JavaHandler"/>
 <property name="RegenerateRSBLayout" value="1" type="JavaHandler"/>
 <property name="RunBitgen" value="3" type="JavaHandler"/>
+<property name="RunPowerEstimation" value="1" type="JavaHandler"/>
 <property name="SaveRSBDesign" value="1" type="JavaHandler"/>
+<property name="ShowPowerEstimation" value="1" type="JavaHandler"/>
 <property name="ShowView" value="2" type="JavaHandler"/>
 <property name="UpgradeIP" value="1" type="JavaHandler"/>
 <property name="ValidateRSBDesign" value="1" type="JavaHandler"/>
@@ -34,12 +36,12 @@ This means code written to parse this file will need to be revisited each subseq
 <item name="Gui Resources Info">
 <property name="AddressTreeTablePanel_ADDRESS_TREE_TABLE" value="2" type="GuiResourceData"/>
 <property name="BaseDialog_CANCEL" value="2" type="GuiResourceData"/>
-<property name="BaseDialog_OK" value="9" type="GuiResourceData"/>
+<property name="BaseDialog_OK" value="10" type="GuiResourceData"/>
 <property name="BaseReportTab_RERUN" value="1" type="GuiResourceData"/>
 <property name="CoreTreeTablePanel_CORE_TREE_TABLE" value="6" type="GuiResourceData"/>
 <property name="ExpRunTreePanel_EXP_RUN_TREE_TABLE" value="13" type="GuiResourceData"/>
 <property name="FileSetPanel_FILE_SET_PANEL_TREE" value="4" type="GuiResourceData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="9" type="GuiResourceData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="12" type="GuiResourceData"/>
 <property name="GettingStartedView_RECENT_PROJECTS" value="1" type="GuiResourceData"/>
 <property name="IPStatusSectionPanel_UPGRADE_SELECTED" value="1" type="GuiResourceData"/>
 <property name="MIOConfigMainPanel_SWITCH_TO_BLOCK_DESIGN_PAGE" value="1" type="GuiResourceData"/>
@@ -61,15 +63,24 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PACommandNames_VALIDATE_RSB_DESIGN" value="1" type="GuiResourceData"/>
 <property name="PAViews_CODE" value="1" type="GuiResourceData"/>
 <property name="PlanAheadTab_REFRESH_IP_CATALOG" value="1" type="GuiResourceData"/>
+<property name="PowerInstTreeTablePanel_POWER_INST_TREE_TABLE" value="13" type="GuiResourceData"/>
+<property name="PowerResultTab_REPORT_NAVIGATION_TREE" value="27" type="GuiResourceData"/>
 <property name="ProjectSettingsIPPage_TABBED_PANE" value="1" type="GuiResourceData"/>
+<property name="ProjectSummaryPowerPanel_TABBED_PANE" value="4" type="GuiResourceData"/>
+<property name="ProjectSummaryTimingPanel_PROJECT_SUMMARY_TIMING_PANEL_TABBED" value="4" type="GuiResourceData"/>
+<property name="ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_PANEL_TABBED" value="2" type="GuiResourceData"/>
 <property name="RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION" value="2" type="GuiResourceData"/>
+<property name="RunGadget_RUN_GADGET_TABBED_PANE" value="3" type="GuiResourceData"/>
+<property name="SaveProjectUtils_SAVE" value="1" type="GuiResourceData"/>
 <property name="SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY" value="1" type="GuiResourceData"/>
 <property name="SystemBuilderView_ADD_IP" value="2" type="GuiResourceData"/>
+<property name="XPowerSettingsDialog_SAVE_THESE_SETTINGS_AND_RUN" value="1" type="GuiResourceData"/>
+<property name="XPowerSettingsDialog_TABBED_PANE" value="2" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="83" type="GuiMode"/>
+<property name="GuiMode" value="86" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="72" type="TclMode"/>
+<property name="TclMode" value="75" type="TclMode"/>
 </item>
 </section>
 </application>
