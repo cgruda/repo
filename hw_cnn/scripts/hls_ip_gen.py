@@ -23,11 +23,12 @@ POOL = 1
 FC   = 2
 
 repo_path = "D:\\School\\Project\\new_repo\\"
-scripts_path = repo_path + "Scripts\\"
-hls_source_path = repo_path + "Source\\HLS\\"
-hls_path = repo_path + "HLS\\"
+hw_cnn_path = repo_path + "hw_cnn\\"
+scripts_path = hw_cnn_path + "scripts\\"
+hls_path = hw_cnn_path + "hls\\"
+hls_source_path = hls_path + "src\\"
 temp_path = hls_path + "tmp\\"
-tclscript = "hlsProjectGen.tcl"
+tclscript = "hls_ip_gen.tcl"
 tclscript_path = scripts_path + "tcl\\" + tclscript
 
 def ip_name_get(type, data_dim, op_dim):
@@ -127,14 +128,14 @@ def create_new_hls_ip(type, data_dim, op_dim):
 	os.system("vivado_hls -f {}".format(tclscript))
 	os.system("rmdir /s /q " + temp_path)
 	os.system("del " + hls_path + tclscript)
-	os.system("del " + hls_path + "vivado_hls")
+	os.system("del " + hls_path + "vivado_hls.log")
 	print("created hls ip: %s" %ip_name)
 
 def hls_ip_exists(ip_name):
 	return os.path.exists(hls_path + ip_name)
 
 if __name__ == "__main__":
-	type = FC
-	data_dim = 20
-	op_dim = 5
+	type = CONV
+	data_dim = 12
+	op_dim = 3
 	create_new_hls_ip(type, data_dim, op_dim)

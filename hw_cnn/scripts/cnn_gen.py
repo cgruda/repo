@@ -20,11 +20,11 @@
 import os
 
 repo_path = "D:\\School\\Project\\new_repo\\"
-scripts_path = repo_path + "Scripts\\"
+scripts_path = repo_path + "hw_cnn\\scripts\\"
 os.system("set PYTHONPATH=%PYTHONPATH%;" + scripts_path)
 
-import hlsProjectGen as hlsgen
-import vivadoProjectGen as vivgen
+import hls_ip_gen as hlsgen
+import vivado_design_gen as vivgen
 
 CONV = 0
 POOL = 1

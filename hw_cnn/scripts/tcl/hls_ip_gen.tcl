@@ -23,25 +23,14 @@ set project_name_str "PROJECT_NAME"
 #                                            main
 #========================================================================================
 
-# create sdk application
-createapp -name $project_name -proc ps7_cortexa9_0 -app {Empty Application} -hwproject design_1_wrapper_hw_platform_0 -os standalone -lang c
-
-importsources -name $project_name -path $repo_path/Vivado/tmp/sdk
-
-importsources -name auto_test_2 -path D:/School/Project/new_repo/Vivado/tmp/sdk
-
-
-
-
-
 set project_dir $project_name
 
 open_project -reset $project_name
 set_top $project_name
-file copy -force -- $repo_path/HLS/tmp/core.cpp $project_dir/core.cpp
-file copy -force -- $repo_path/HLS/tmp/core.h $project_dir/core.h
-file copy -force -- $repo_path/HLS/tmp/core_tb.cpp $project_dir/core_tb.cpp
-file copy -force -- $repo_path/Source/HLS/common/fixed_point.h $project_dir/fixed_point.h
+file copy -force -- $repo_path/hw_cnn/hls/tmp/core.cpp $project_dir/core.cpp
+file copy -force -- $repo_path/hw_cnn/hls/tmp/core.h $project_dir/core.h
+file copy -force -- $repo_path/hw_cnn/hls/tmp/core_tb.cpp $project_dir/core_tb.cpp
+file copy -force -- $repo_path/hw_cnn/hls/src/common/fixed_point.h $project_dir/fixed_point.h
 
 add_files $project_dir/core.cpp
 add_files $project_dir/core.h

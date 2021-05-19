@@ -33,8 +33,8 @@ set project_name PROJECT_NAME
 
 # repos path vars
 set repo_path D:/School/Project/new_repo
-set vivado_path $repo_path/Vivado
-set hls_path $repo_path/HLS
+set vivado_path $repo_path/hw_cnn/vivado
+set hls_path $repo_path/hw_cnn/hls
 set project_path $vivado_path/$project_name
 
 # board vars (ZedBoard)

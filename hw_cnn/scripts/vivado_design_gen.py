@@ -25,11 +25,13 @@ run_synth = 0
 launch_sdk = 0
 keep_log = 0
 
+
 repo_path = "D:\\School\\Project\\new_repo\\"
-scripts_path = repo_path + "Scripts\\"
-tclscript = "vivadoProjectGen.tcl"
-vivado_path = repo_path + "Vivado\\"
+hw_cnn_path = repo_path + "hw_cnn\\"
+scripts_path = hw_cnn_path + "scripts\\"
+tclscript = "vivado_design_gen.tcl"
 tclscript_path = scripts_path + "tcl\\" + tclscript
+vivado_path = hw_cnn_path + "vivado\\"
 temp_path = vivado_path + "tmp\\"
 
 def ip_name_get(type, data_dim, op_dim):
