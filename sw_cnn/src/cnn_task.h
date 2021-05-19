@@ -19,7 +19,7 @@
 #endif
 
 #if (PLATFORM == PC)
-#define CNN_SIM_PATH "/home/cgruda/repo/Simulation/"
+#define CNN_SIM_PATH "/home/cgruda/repo/simulation/"
 #else
 #define TEMP_LEN 40
 #define CNN_SIM_PATH
