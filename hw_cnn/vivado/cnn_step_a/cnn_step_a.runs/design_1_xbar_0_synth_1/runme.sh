@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/School/Project/new_repo/Vivado/cnn_step_a/cnn_step_a.runs/design_1_xbar_0_synth_1'
+HD_PWD='D:/School/Project/new_repo/hw_cnn/vivado/cnn_step_a/cnn_step_a.runs/design_1_xbar_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

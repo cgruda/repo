@@ -157,13 +157,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>cnn_conv_d54x54_k3x3_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="cnn_conv_d54x54_k3x3" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_conv_d54x54_k3x3_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>ps7_0_axi_periph</spirit:instanceName>
         <spirit:componentRef spirit:library="BlockDiagram/design_1_imp" spirit:name="ps7_0_axi_periph" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         <spirit:configurableElementValues>
@@ -177,27 +170,6 @@
         <spirit:componentRef spirit:library="ip" spirit:name="proc_sys_reset" spirit:vendor="xilinx.com" spirit:version="5.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_rst_ps7_0_100M_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>cnn_pool_d52x52_p2x2_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="cnn_pool_d52x52_p2x2" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_pool_d52x52_p2x2_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>cnn_conv_d26x26_k3x3_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="cnn_conv_d26x26_k3x3" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_conv_d26x26_k3x3_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>cnn_pool_d24x24_p2x2_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="cnn_pool_d24x24_p2x2" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_pool_d24x24_p2x2_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -223,45 +195,30 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>cnn_fc_i50_o10_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="cnn_fc_i50_o10" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_fc_i50_o10_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>cnn_fc_i144_o50_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="cnn_fc_i144_o50" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_fc_i144_o50_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
+        <spirit:instanceName>cnn_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="BlockDiagram/design_1_imp" spirit:name="cnn_0" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
-        <spirit:name>processing_system7_0_M_AXI_GP0</spirit:name>
-        <spirit:activeInterface spirit:busRef="M_AXI_GP0" spirit:componentRef="processing_system7_0"/>
-        <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="ps7_0_axi_periph"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
         <spirit:name>ps7_0_axi_periph_M00_AXI</spirit:name>
         <spirit:activeInterface spirit:busRef="M00_AXI" spirit:componentRef="ps7_0_axi_periph"/>
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_conv_d54x54_k3x3_0"/>
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL2" spirit:componentRef="cnn_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>ps7_0_axi_periph_M01_AXI</spirit:name>
         <spirit:activeInterface spirit:busRef="M01_AXI" spirit:componentRef="ps7_0_axi_periph"/>
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_pool_d52x52_p2x2_0"/>
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>ps7_0_axi_periph_M02_AXI</spirit:name>
         <spirit:activeInterface spirit:busRef="M02_AXI" spirit:componentRef="ps7_0_axi_periph"/>
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_conv_d26x26_k3x3_0"/>
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL4" spirit:componentRef="cnn_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>ps7_0_axi_periph_M03_AXI</spirit:name>
         <spirit:activeInterface spirit:busRef="M03_AXI" spirit:componentRef="ps7_0_axi_periph"/>
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_pool_d24x24_p2x2_0"/>
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL1" spirit:componentRef="cnn_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axi_dma_0_M_AXI_MM2S</spirit:name>
@@ -285,48 +242,28 @@
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axi_dma_0_M_AXIS_MM2S</spirit:name>
-        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_conv_d54x54_k3x3_0"/>
+        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_0"/>
         <spirit:activeInterface spirit:busRef="M_AXIS_MM2S" spirit:componentRef="axi_dma_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>cnn_conv_d54x54_k3x3_0_outStream</spirit:name>
-        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_pool_d52x52_p2x2_0"/>
-        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_conv_d54x54_k3x3_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>cnn_pool_d52x52_p2x2_0_outStream</spirit:name>
-        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_conv_d26x26_k3x3_0"/>
-        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_pool_d52x52_p2x2_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>cnn_conv_d26x26_k3x3_0_outStream</spirit:name>
-        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_pool_d24x24_p2x2_0"/>
-        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_conv_d26x26_k3x3_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>ps7_0_axi_periph_M05_AXI</spirit:name>
         <spirit:activeInterface spirit:busRef="M05_AXI" spirit:componentRef="ps7_0_axi_periph"/>
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_fc_i144_o50_0"/>
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL3" spirit:componentRef="cnn_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>ps7_0_axi_periph_M06_AXI</spirit:name>
         <spirit:activeInterface spirit:busRef="M06_AXI" spirit:componentRef="ps7_0_axi_periph"/>
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_fc_i50_o10_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>cnn_fc_i144_o50_0_outStream</spirit:name>
-        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_fc_i144_o50_0"/>
-        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_fc_i50_o10_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>cnn_pool_d24x24_p2x2_0_outStream</spirit:name>
-        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_pool_d24x24_p2x2_0"/>
-        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_fc_i144_o50_0"/>
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL5" spirit:componentRef="cnn_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>cnn_fc_i50_o10_0_outStream</spirit:name>
-        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_fc_i50_o10_0"/>
+        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_0"/>
         <spirit:activeInterface spirit:busRef="S_AXIS_S2MM" spirit:componentRef="axi_dma_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>processing_system7_0_M_AXI_GP0</spirit:name>
+        <spirit:activeInterface spirit:busRef="M_AXI_GP0" spirit:componentRef="processing_system7_0"/>
+        <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="ps7_0_axi_periph"/>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
@@ -335,10 +272,6 @@
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK0"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="M_AXI_GP0_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="rst_ps7_0_100M" spirit:portRef="slowest_sync_clk"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_conv_d54x54_k3x3_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_pool_d52x52_p2x2_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_conv_d26x26_k3x3_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_pool_d24x24_p2x2_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="m_axi_mm2s_aclk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="S_AXI_HP0_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="s_axi_lite_aclk"/>
@@ -355,9 +288,8 @@
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M04_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S01_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M05_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_fc_i50_o10_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M06_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_fc_i144_o50_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
@@ -367,10 +299,6 @@
       <spirit:adHocConnection>
         <spirit:name>rst_ps7_0_100M_peripheral_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rst_ps7_0_100M" spirit:portRef="peripheral_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_conv_d54x54_k3x3_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_pool_d52x52_p2x2_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_conv_d26x26_k3x3_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_pool_d24x24_p2x2_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="axi_resetn"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
@@ -382,9 +310,8 @@
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M04_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S01_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M05_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_fc_i50_o10_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M06_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="cnn_fc_i144_o50_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_ps7_0_100M_interconnect_aresetn</spirit:name>
@@ -399,6 +326,248 @@
       </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="FIXED_IO/processing_system7_0_FIXED_IO">
         <spirit:activeInterface spirit:busRef="FIXED_IO" spirit:componentRef="processing_system7_0"/>
+      </spirit:hierConnection>
+    </spirit:hierConnections>
+  </spirit:design>
+
+  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram/design_1_imp</spirit:library>
+    <spirit:name>cnn_0</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:busInterfaces>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL1</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL2</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>inStream</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL3</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL4</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL5</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>outStream</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>CLK.AP_CLK</spirit:name>
+        <spirit:displayName>Clk</spirit:displayName>
+        <spirit:description>Clock</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>CLK</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>ap_clk</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.AP_RST_N</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>ap_rst_n</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:model>
+      <spirit:views>
+        <spirit:view>
+          <spirit:name>BlockDiagram</spirit:name>
+          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/design_1_imp" spirit:name="cnn_0_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        </spirit:view>
+      </spirit:views>
+      <spirit:ports>
+        <spirit:port>
+          <spirit:name>ap_clk</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>ap_rst_n</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+      </spirit:ports>
+    </spirit:model>
+  </spirit:component>
+
+  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram/design_1_imp</spirit:library>
+    <spirit:name>cnn_0_imp</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>cnn_pool_d52x52_p2x2_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="cnn_pool_d52x52_p2x2" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_pool_d52x52_p2x2_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>cnn_pool_d24x24_p2x2_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="cnn_pool_d24x24_p2x2" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_pool_d24x24_p2x2_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>cnn_conv_d54x54_k3x3_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="cnn_conv_d54x54_k3x3" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_conv_d54x54_k3x3_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>cnn_fc_i144_o50_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="cnn_fc_i144_o50" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_fc_i144_o50_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>cnn_conv_d26x26_k3x3_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="cnn_conv_d26x26_k3x3" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_conv_d26x26_k3x3_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>cnn_fc_i50_o10_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="cnn_fc_i50_o10" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_cnn_fc_i50_o10_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
+    <spirit:interconnections>
+      <spirit:interconnection>
+        <spirit:name>cnn_conv_d54x54_k3x3_0_outStream</spirit:name>
+        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_pool_d52x52_p2x2_0"/>
+        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_conv_d54x54_k3x3_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>cnn_pool_d52x52_p2x2_0_outStream</spirit:name>
+        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_conv_d26x26_k3x3_0"/>
+        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_pool_d52x52_p2x2_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>cnn_conv_d26x26_k3x3_0_outStream</spirit:name>
+        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_pool_d24x24_p2x2_0"/>
+        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_conv_d26x26_k3x3_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>cnn_pool_d24x24_p2x2_0_outStream</spirit:name>
+        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_pool_d24x24_p2x2_0"/>
+        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_fc_i144_o50_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>cnn_fc_i144_o50_0_outStream</spirit:name>
+        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_fc_i144_o50_0"/>
+        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_fc_i50_o10_0"/>
+      </spirit:interconnection>
+    </spirit:interconnections>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>processing_system7_0_FCLK_CLK0</spirit:name>
+        <spirit:externalPortReference spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_conv_d54x54_k3x3_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_conv_d26x26_k3x3_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_pool_d24x24_p2x2_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_fc_i50_o10_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_fc_i144_o50_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_pool_d52x52_p2x2_0" spirit:portRef="ap_clk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>rst_ps7_0_100M_peripheral_aresetn</spirit:name>
+        <spirit:externalPortReference spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_conv_d54x54_k3x3_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_conv_d26x26_k3x3_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_pool_d24x24_p2x2_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_fc_i50_o10_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_fc_i144_o50_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="cnn_pool_d52x52_p2x2_0" spirit:portRef="ap_rst_n"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
+    <spirit:hierConnections>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL/ps7_0_axi_periph_M01_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_pool_d52x52_p2x2_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL1/ps7_0_axi_periph_M03_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_pool_d24x24_p2x2_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL2/ps7_0_axi_periph_M00_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_conv_d54x54_k3x3_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="inStream/axi_dma_0_M_AXIS_MM2S">
+        <spirit:activeInterface spirit:busRef="inStream" spirit:componentRef="cnn_conv_d54x54_k3x3_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL3/ps7_0_axi_periph_M05_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_fc_i144_o50_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL4/ps7_0_axi_periph_M02_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_conv_d26x26_k3x3_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL5/ps7_0_axi_periph_M06_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL" spirit:componentRef="cnn_fc_i50_o10_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="outStream/cnn_fc_i50_o10_0_outStream">
+        <spirit:activeInterface spirit:busRef="outStream" spirit:componentRef="cnn_fc_i50_o10_0"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -3808,38 +3977,38 @@
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_cnn_conv_d26x26_k3x3_0_Reg</spirit:name>
-            <spirit:displayName>/cnn_conv_d26x26_k3x3_0/s_axi_CTRL/Reg</spirit:displayName>
-            <spirit:addressOffset>0x43C20000</spirit:addressOffset>
-            <spirit:range>64K</spirit:range>
-          </spirit:segment>
-          <spirit:segment>
-            <spirit:name>SEG_cnn_conv_d54x54_k3x3_0_Reg</spirit:name>
-            <spirit:displayName>/cnn_conv_d54x54_k3x3_0/s_axi_CTRL/Reg</spirit:displayName>
+            <spirit:displayName>/cnn_0/cnn_conv_d26x26_k3x3_0/s_axi_CTRL/Reg</spirit:displayName>
             <spirit:addressOffset>0x43C00000</spirit:addressOffset>
             <spirit:range>64K</spirit:range>
           </spirit:segment>
           <spirit:segment>
+            <spirit:name>SEG_cnn_conv_d54x54_k3x3_0_Reg</spirit:name>
+            <spirit:displayName>/cnn_0/cnn_conv_d54x54_k3x3_0/s_axi_CTRL/Reg</spirit:displayName>
+            <spirit:addressOffset>0x43C10000</spirit:addressOffset>
+            <spirit:range>64K</spirit:range>
+          </spirit:segment>
+          <spirit:segment>
             <spirit:name>SEG_cnn_fc_i144_o50_0_Reg</spirit:name>
-            <spirit:displayName>/cnn_fc_i144_o50_0/s_axi_CTRL/Reg</spirit:displayName>
-            <spirit:addressOffset>0x43C40000</spirit:addressOffset>
+            <spirit:displayName>/cnn_0/cnn_fc_i144_o50_0/s_axi_CTRL/Reg</spirit:displayName>
+            <spirit:addressOffset>0x43C20000</spirit:addressOffset>
             <spirit:range>64K</spirit:range>
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_cnn_fc_i50_o10_0_Reg</spirit:name>
-            <spirit:displayName>/cnn_fc_i50_o10_0/s_axi_CTRL/Reg</spirit:displayName>
-            <spirit:addressOffset>0x43C50000</spirit:addressOffset>
-            <spirit:range>64K</spirit:range>
-          </spirit:segment>
-          <spirit:segment>
-            <spirit:name>SEG_cnn_pool_d24x24_p2x2_0_Reg</spirit:name>
-            <spirit:displayName>/cnn_pool_d24x24_p2x2_0/s_axi_CTRL/Reg</spirit:displayName>
+            <spirit:displayName>/cnn_0/cnn_fc_i50_o10_0/s_axi_CTRL/Reg</spirit:displayName>
             <spirit:addressOffset>0x43C30000</spirit:addressOffset>
             <spirit:range>64K</spirit:range>
           </spirit:segment>
           <spirit:segment>
+            <spirit:name>SEG_cnn_pool_d24x24_p2x2_0_Reg</spirit:name>
+            <spirit:displayName>/cnn_0/cnn_pool_d24x24_p2x2_0/s_axi_CTRL/Reg</spirit:displayName>
+            <spirit:addressOffset>0x43C40000</spirit:addressOffset>
+            <spirit:range>64K</spirit:range>
+          </spirit:segment>
+          <spirit:segment>
             <spirit:name>SEG_cnn_pool_d52x52_p2x2_0_Reg</spirit:name>
-            <spirit:displayName>/cnn_pool_d52x52_p2x2_0/s_axi_CTRL/Reg</spirit:displayName>
-            <spirit:addressOffset>0x43C10000</spirit:addressOffset>
+            <spirit:displayName>/cnn_0/cnn_pool_d52x52_p2x2_0/s_axi_CTRL/Reg</spirit:displayName>
+            <spirit:addressOffset>0x43C50000</spirit:addressOffset>
             <spirit:range>64K</spirit:range>
           </spirit:segment>
         </spirit:segments>

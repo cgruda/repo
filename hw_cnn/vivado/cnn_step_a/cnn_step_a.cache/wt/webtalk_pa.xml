@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sat May 15 18:10:17 2021">
+<application name="pa" timeStamp="Wed May 19 21:56:53 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="5ee31f471e1642eba9a073607653b2aa" type="ProjectID"/>
 <property name="ProjectIteration" value="4" type="ProjectIteration"/>
@@ -18,31 +18,46 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Java Command Handlers">
 <property name="CustomizeRSBBlock" value="1" type="JavaHandler"/>
-<property name="EditDelete" value="1" type="JavaHandler"/>
+<property name="EditDelete" value="2" type="JavaHandler"/>
+<property name="ExpandCollapseRSBBlock" value="2" type="JavaHandler"/>
+<property name="FitSelection" value="1" type="JavaHandler"/>
 <property name="NewExportHardware" value="1" type="JavaHandler"/>
 <property name="NewLaunchHardware" value="1" type="JavaHandler"/>
-<property name="OpenBlockDesign" value="3" type="JavaHandler"/>
+<property name="OpenBlockDesign" value="4" type="JavaHandler"/>
+<property name="OpenRSBHierarchyBlock" value="1" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="1" type="JavaHandler"/>
-<property name="RegenerateRSBLayout" value="1" type="JavaHandler"/>
+<property name="RegenerateRSBLayout" value="5" type="JavaHandler"/>
+<property name="ReportTimingSummary" value="1" type="JavaHandler"/>
+<property name="ReportUtilization" value="1" type="JavaHandler"/>
 <property name="RunBitgen" value="3" type="JavaHandler"/>
-<property name="RunPowerEstimation" value="1" type="JavaHandler"/>
+<property name="RunPowerEstimation" value="3" type="JavaHandler"/>
+<property name="RunSchematic" value="2" type="JavaHandler"/>
 <property name="SaveRSBDesign" value="1" type="JavaHandler"/>
-<property name="ShowPowerEstimation" value="1" type="JavaHandler"/>
+<property name="ShowIONets" value="4" type="JavaHandler"/>
+<property name="ShowPowerEstimation" value="3" type="JavaHandler"/>
 <property name="ShowView" value="2" type="JavaHandler"/>
+<property name="ToggleAutoFitSelection" value="6" type="JavaHandler"/>
+<property name="ToggleSelectAreaMode" value="2" type="JavaHandler"/>
 <property name="UpgradeIP" value="1" type="JavaHandler"/>
 <property name="ValidateRSBDesign" value="1" type="JavaHandler"/>
-<property name="ViewTaskImplementation" value="1" type="JavaHandler"/>
+<property name="ViewTaskImplementation" value="2" type="JavaHandler"/>
+<property name="ZoomIn" value="1" type="JavaHandler"/>
+<property name="ZoomOut" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
 <property name="AddressTreeTablePanel_ADDRESS_TREE_TABLE" value="2" type="GuiResourceData"/>
 <property name="BaseDialog_CANCEL" value="2" type="GuiResourceData"/>
-<property name="BaseDialog_OK" value="10" type="GuiResourceData"/>
+<property name="BaseDialog_OK" value="17" type="GuiResourceData"/>
 <property name="BaseReportTab_RERUN" value="1" type="GuiResourceData"/>
 <property name="CoreTreeTablePanel_CORE_TREE_TABLE" value="6" type="GuiResourceData"/>
+<property name="DeviceView_CELL_DRAG_DROP_MODES" value="1" type="GuiResourceData"/>
+<property name="DeviceView_SHOW_CELL_CONNECTIONS" value="3" type="GuiResourceData"/>
 <property name="ExpRunTreePanel_EXP_RUN_TREE_TABLE" value="13" type="GuiResourceData"/>
 <property name="FileSetPanel_FILE_SET_PANEL_TREE" value="4" type="GuiResourceData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="12" type="GuiResourceData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="24" type="GuiResourceData"/>
 <property name="GettingStartedView_RECENT_PROJECTS" value="1" type="GuiResourceData"/>
+<property name="HCornerWorldViewButton_SHOW_WORLD_VIEW" value="1" type="GuiResourceData"/>
+<property name="HWorldViewOverview_HIDE_WORLD_VIEW" value="1" type="GuiResourceData"/>
 <property name="IPStatusSectionPanel_UPGRADE_SELECTED" value="1" type="GuiResourceData"/>
 <property name="MIOConfigMainPanel_SWITCH_TO_BLOCK_DESIGN_PAGE" value="1" type="GuiResourceData"/>
 <property name="MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE" value="4" type="GuiResourceData"/>
@@ -52,35 +67,60 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="MainMenuMgr_IMPORT" value="2" type="GuiResourceData"/>
 <property name="MainMenuMgr_OPEN_RECENT_FILE" value="2" type="GuiResourceData"/>
 <property name="MainMenuMgr_OPEN_RECENT_PROJECT" value="2" type="GuiResourceData"/>
+<property name="NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE" value="7" type="GuiResourceData"/>
 <property name="NewExportHardwareDialog_INCLUDE_BITSTREAM" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_AUTO_FIT_SELECTION" value="6" type="GuiResourceData"/>
+<property name="PACommandNames_COLLAPSE_ALL_RSB_BLOCK" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_EXPAND_ALL_RSB_BLOCK" value="1" type="GuiResourceData"/>
 <property name="PACommandNames_EXPORT_HARDWARE" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_FIT_SELECTION" value="1" type="GuiResourceData"/>
 <property name="PACommandNames_IP_SETTINGS" value="1" type="GuiResourceData"/>
 <property name="PACommandNames_LAUNCH_HARDWARE" value="1" type="GuiResourceData"/>
 <property name="PACommandNames_LAUNCH_RUN_NEXT_STEP" value="1" type="GuiResourceData"/>
 <property name="PACommandNames_LOG_WINDOW" value="2" type="GuiResourceData"/>
 <property name="PACommandNames_MESSAGE_WINDOW" value="2" type="GuiResourceData"/>
-<property name="PACommandNames_REGENERATE_LAYOUT" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_OPEN_HIERARCHY_BLOCK" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_REGENERATE_LAYOUT" value="5" type="GuiResourceData"/>
+<property name="PACommandNames_SELECT_AREA" value="2" type="GuiResourceData"/>
+<property name="PACommandNames_SHOW_IO_NETS" value="4" type="GuiResourceData"/>
 <property name="PACommandNames_VALIDATE_RSB_DESIGN" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_ZOOM_IN" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_ZOOM_OUT" value="1" type="GuiResourceData"/>
 <property name="PAViews_CODE" value="1" type="GuiResourceData"/>
+<property name="PAViews_DEVICE" value="1" type="GuiResourceData"/>
+<property name="PAViews_SCHEMATIC" value="2" type="GuiResourceData"/>
+<property name="PAViews_SYSTEM" value="1" type="GuiResourceData"/>
 <property name="PlanAheadTab_REFRESH_IP_CATALOG" value="1" type="GuiResourceData"/>
-<property name="PowerInstTreeTablePanel_POWER_INST_TREE_TABLE" value="13" type="GuiResourceData"/>
-<property name="PowerResultTab_REPORT_NAVIGATION_TREE" value="27" type="GuiResourceData"/>
+<property name="PowerInstTreeTablePanel_POWER_INST_TREE_TABLE" value="14" type="GuiResourceData"/>
+<property name="PowerResultTab_REPORT_NAVIGATION_TREE" value="63" type="GuiResourceData"/>
 <property name="ProjectSettingsIPPage_TABBED_PANE" value="1" type="GuiResourceData"/>
 <property name="ProjectSummaryPowerPanel_TABBED_PANE" value="4" type="GuiResourceData"/>
 <property name="ProjectSummaryTimingPanel_PROJECT_SUMMARY_TIMING_PANEL_TABBED" value="4" type="GuiResourceData"/>
 <property name="ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_PANEL_TABBED" value="2" type="GuiResourceData"/>
-<property name="RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION" value="2" type="GuiResourceData"/>
+<property name="RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION" value="3" type="GuiResourceData"/>
+<property name="ReportTimingSummaryDialog_REPORT_TIMING_SUMMARY_DIALOG_TABBED" value="3" type="GuiResourceData"/>
+<property name="ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE" value="95" type="GuiResourceData"/>
 <property name="RunGadget_RUN_GADGET_TABBED_PANE" value="3" type="GuiResourceData"/>
-<property name="SaveProjectUtils_SAVE" value="1" type="GuiResourceData"/>
+<property name="SaveProjectUtils_DONT_SAVE" value="1" type="GuiResourceData"/>
+<property name="SaveProjectUtils_SAVE" value="2" type="GuiResourceData"/>
+<property name="SelectAreaDialog_SELECT_ALL" value="1" type="GuiResourceData"/>
+<property name="SelectMenu_HIGHLIGHT" value="2" type="GuiResourceData"/>
 <property name="SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY" value="1" type="GuiResourceData"/>
+<property name="StaleRunDialog_OPEN_DESIGN" value="1" type="GuiResourceData"/>
+<property name="StaleRunDialog_YES" value="1" type="GuiResourceData"/>
+<property name="SystemBuilderMenu_CELL_NAME" value="1" type="GuiResourceData"/>
+<property name="SystemBuilderMenu_CREATE_HIERARCHY" value="1" type="GuiResourceData"/>
+<property name="SystemBuilderMenu_IP_DOCUMENTATION" value="1" type="GuiResourceData"/>
 <property name="SystemBuilderView_ADD_IP" value="2" type="GuiResourceData"/>
-<property name="XPowerSettingsDialog_SAVE_THESE_SETTINGS_AND_RUN" value="1" type="GuiResourceData"/>
+<property name="SystemBuilderView_EXPAND_COLLAPSE" value="5" type="GuiResourceData"/>
+<property name="SystemBuilderView_ORIENTATION" value="2" type="GuiResourceData"/>
+<property name="XPowerSettingsDialog_SAVE_THESE_SETTINGS_AND_RUN" value="3" type="GuiResourceData"/>
 <property name="XPowerSettingsDialog_TABBED_PANE" value="2" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="86" type="GuiMode"/>
+<property name="GuiMode" value="87" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="75" type="TclMode"/>
+<property name="TclMode" value="76" type="TclMode"/>
 </item>
 </section>
 </application>

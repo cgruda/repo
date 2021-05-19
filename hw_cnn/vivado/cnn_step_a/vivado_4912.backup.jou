@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Fri May 14 12:43:12 2021
+# Process ID: 4912
+# Current directory: D:/School/Project/new_repo/Vivado/cnn_step_a
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11340 D:\School\Project\new_repo\Vivado\cnn_step_a\cnn_step_a.xpr
+# Log file: D:/School/Project/new_repo/Vivado/cnn_step_a/vivado.log
+# Journal file: D:/School/Project/new_repo/Vivado/cnn_step_a\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/School/Project/new_repo/Vivado/cnn_step_a/cnn_step_a.xpr
+open_run synth_1 -name synth_1
+set_switching_activity -deassert_resets
+report_power -name {power_1}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="fixed_point.h" path="D:\School\Project\new_repo\hw_cnn\hls\cnn_pool_d52x52_p2x2\fixed_point.h"/>
+    <originFiles name="core.h" path="D:\School\Project\new_repo\hw_cnn\hls\cnn_pool_d52x52_p2x2\core.h"/>
+    <originFiles name="core.cpp" path="D:\School\Project\new_repo\hw_cnn\hls\cnn_pool_d52x52_p2x2\core.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="core_tb.cpp" path="D:\School\Project\new_repo\hw_cnn\hls\cnn_pool_d52x52_p2x2\core_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

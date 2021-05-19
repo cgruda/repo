@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr 21 17:46:36 2021" VIVADOVERSION="2016.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May 19 21:35:17 2021" VIVADOVERSION="2016.4">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zedboard:part0:1.0" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -1122,27 +1122,27 @@
         <PORT DIR="O" NAME="mm2s_prmry_reset_out_n" SIGIS="rst"/>
         <PORT DIR="O" LEFT="31" NAME="m_axis_mm2s_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_m_axis_mm2s_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="inStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="inStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="m_axis_mm2s_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_m_axis_mm2s_tkeep">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="inStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="inStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_mm2s_tvalid" SIGIS="undef" SIGNAME="axi_dma_0_m_axis_mm2s_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="inStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="inStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="m_axis_mm2s_tready" SIGIS="undef" SIGNAME="axi_dma_0_m_axis_mm2s_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="inStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="inStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_mm2s_tlast" SIGIS="undef" SIGNAME="axi_dma_0_m_axis_mm2s_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="inStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="inStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="m_axi_s2mm_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_m_axi_s2mm_awaddr">
@@ -1228,27 +1228,27 @@
         <PORT DIR="O" NAME="s2mm_prmry_reset_out_n" SIGIS="rst"/>
         <PORT DIR="I" LEFT="31" NAME="s_axis_s2mm_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axis_s2mm_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="outStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="outStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="3" NAME="s_axis_s2mm_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axis_s2mm_tkeep">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="outStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="outStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_axis_s2mm_tvalid" SIGIS="undef" SIGNAME="axi_dma_0_s_axis_s2mm_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="outStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="outStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s_axis_s2mm_tready" SIGIS="undef" SIGNAME="axi_dma_0_s_axis_s2mm_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="outStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="outStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_axis_s2mm_tlast" SIGIS="undef" SIGNAME="axi_dma_0_s_axis_s2mm_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="outStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="outStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="mm2s_introut" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
@@ -1424,7 +1424,7 @@
             <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_mm2s_tvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_fc_i50_o10_0_outStream" NAME="S_AXIS_S2MM" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_fc_i50_o10_0_outStream" NAME="S_AXIS_S2MM" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -1452,7 +1452,7 @@
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="processing_system7_0"/>
-        <PERIPHERAL INSTANCE="cnn_conv_d54x54_k3x3_0"/>
+        <PERIPHERAL INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0"/>
       </PERIPHERALS>
     </MODULE>
     <MODULE FULLNAME="/axi_mem_intercon" HWVERSION="2.1" INSTANCE="axi_mem_intercon" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
@@ -2236,7 +2236,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/cnn_conv_d26x26_k3x3_0" HWVERSION="1.0" INSTANCE="cnn_conv_d26x26_k3x3_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_conv_d26x26_k3x3" VLNV="xilinx.com:hls:cnn_conv_d26x26_k3x3:1.0">
+    <MODULE FULLNAME="/cnn_0/cnn_conv_d26x26_k3x3_0" HWVERSION="1.0" INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_conv_d26x26_k3x3" VLNV="xilinx.com:hls:cnn_conv_d26x26_k3x3:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_CTRL" NAME="Reg" RANGE="65536" USAGE="register">
@@ -2624,91 +2624,91 @@
         <PARAMETER NAME="latency" VALUE="725"/>
         <PARAMETER NAME="II" VALUE="x"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C20000"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C2FFFF"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C00000"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C0FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="6" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="I" LEFT="6" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WDATA">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="6" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="I" LEFT="6" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RDATA">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_AXI_rready"/>
           </CONNECTIONS>
@@ -2724,94 +2724,94 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
-        <PORT DIR="I" NAME="inStream_TVALID" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TVALID">
+        <PORT DIR="I" NAME="inStream_TVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="outStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="outStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="inStream_TREADY" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TREADY">
+        <PORT DIR="O" NAME="inStream_TREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="outStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="outStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="inStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TDATA">
+        <PORT DIR="I" LEFT="31" NAME="inStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="outStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="outStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="5" NAME="inStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TDEST">
+        <PORT DIR="I" LEFT="5" NAME="inStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TDEST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="outStream_TDEST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="outStream_TDEST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="inStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TKEEP">
+        <PORT DIR="I" LEFT="3" NAME="inStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TKEEP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="outStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="outStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="inStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TSTRB">
+        <PORT DIR="I" LEFT="3" NAME="inStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="outStream_TSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="outStream_TSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="inStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TUSER">
+        <PORT DIR="I" LEFT="1" NAME="inStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TUSER">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="outStream_TUSER"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="outStream_TUSER"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="inStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TLAST">
+        <PORT DIR="I" LEFT="0" NAME="inStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TLAST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="outStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="outStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TID">
+        <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="outStream_TID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="outStream_TID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TVALID">
+        <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="inStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="inStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="outStream_TREADY" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TREADY">
+        <PORT DIR="I" NAME="outStream_TREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="inStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="inStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="outStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TDATA">
+        <PORT DIR="O" LEFT="31" NAME="outStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="inStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="inStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="5" NAME="outStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TDEST">
+        <PORT DIR="O" LEFT="5" NAME="outStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TDEST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="inStream_TDEST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="inStream_TDEST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="outStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TKEEP">
+        <PORT DIR="O" LEFT="3" NAME="outStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TKEEP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="inStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="inStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="outStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TSTRB">
+        <PORT DIR="O" LEFT="3" NAME="outStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="inStream_TSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="inStream_TSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="outStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TUSER">
+        <PORT DIR="O" LEFT="1" NAME="outStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TUSER">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="inStream_TUSER"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="inStream_TUSER"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="outStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TLAST">
+        <PORT DIR="O" LEFT="0" NAME="outStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TLAST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="inStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="inStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="4" NAME="outStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TID">
+        <PORT DIR="O" LEFT="4" NAME="outStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="inStream_TID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="inStream_TID"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2868,7 +2868,7 @@
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_CTRL_RREADY"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_pool_d52x52_p2x2_0_outStream" NAME="inStream" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_pool_d52x52_p2x2_0_outStream" NAME="inStream" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -2894,7 +2894,7 @@
             <PORTMAP LOGICAL="TID" PHYSICAL="inStream_TID"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_conv_d26x26_k3x3_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -2922,7 +2922,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/cnn_conv_d54x54_k3x3_0" HWVERSION="1.0" INSTANCE="cnn_conv_d54x54_k3x3_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_conv_d54x54_k3x3" VLNV="xilinx.com:hls:cnn_conv_d54x54_k3x3:1.0">
+    <MODULE FULLNAME="/cnn_0/cnn_conv_d54x54_k3x3_0" HWVERSION="1.0" INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_conv_d54x54_k3x3" VLNV="xilinx.com:hls:cnn_conv_d54x54_k3x3:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_CTRL" NAME="Reg" RANGE="65536" USAGE="register">
@@ -3310,91 +3310,91 @@
         <PARAMETER NAME="latency" VALUE="2993"/>
         <PARAMETER NAME="II" VALUE="x"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C00000"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C0FFFF"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C10000"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C1FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="6" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="I" LEFT="6" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WDATA">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="6" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="I" LEFT="6" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RDATA">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_rready"/>
           </CONNECTIONS>
@@ -3439,49 +3439,49 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TVALID">
+        <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="inStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="inStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="outStream_TREADY" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TREADY">
+        <PORT DIR="I" NAME="outStream_TREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="inStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="inStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="outStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TDATA">
+        <PORT DIR="O" LEFT="31" NAME="outStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="inStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="inStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="5" NAME="outStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TDEST">
+        <PORT DIR="O" LEFT="5" NAME="outStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TDEST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="inStream_TDEST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="inStream_TDEST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="outStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TKEEP">
+        <PORT DIR="O" LEFT="3" NAME="outStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TKEEP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="inStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="inStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="outStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TSTRB">
+        <PORT DIR="O" LEFT="3" NAME="outStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="inStream_TSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="inStream_TSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="outStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TUSER">
+        <PORT DIR="O" LEFT="1" NAME="outStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TUSER">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="inStream_TUSER"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="inStream_TUSER"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="outStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TLAST">
+        <PORT DIR="O" LEFT="0" NAME="outStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TLAST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="inStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="inStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="4" NAME="outStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TID">
+        <PORT DIR="O" LEFT="4" NAME="outStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="inStream_TID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="inStream_TID"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3564,7 +3564,7 @@
             <PORTMAP LOGICAL="TID" PHYSICAL="inStream_TID"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_conv_d54x54_k3x3_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -3592,7 +3592,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/cnn_fc_i144_o50_0" HWVERSION="1.0" INSTANCE="cnn_fc_i144_o50_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_fc_i144_o50" VLNV="xilinx.com:hls:cnn_fc_i144_o50:1.0">
+    <MODULE FULLNAME="/cnn_0/cnn_fc_i144_o50_0" HWVERSION="1.0" INSTANCE="cnn_0_cnn_fc_i144_o50_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_fc_i144_o50" VLNV="xilinx.com:hls:cnn_fc_i144_o50:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_CTRL" NAME="Reg" RANGE="65536" USAGE="register">
@@ -4008,91 +4008,91 @@
         <PARAMETER NAME="latency" VALUE="456"/>
         <PARAMETER NAME="II" VALUE="x"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C40000"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C4FFFF"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C20000"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C2FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="I" LEFT="15" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_WDATA">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_WVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_WREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_BRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_BVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_BREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="I" LEFT="15" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_RDATA">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_RRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_RVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_RREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_AXI_rready"/>
           </CONNECTIONS>
@@ -4108,94 +4108,94 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
-        <PORT DIR="I" NAME="inStream_TVALID" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TVALID">
+        <PORT DIR="I" NAME="inStream_TVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="outStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="outStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="inStream_TREADY" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TREADY">
+        <PORT DIR="O" NAME="inStream_TREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="outStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="outStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="inStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TDATA">
+        <PORT DIR="I" LEFT="31" NAME="inStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="outStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="outStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="5" NAME="inStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TDEST">
+        <PORT DIR="I" LEFT="5" NAME="inStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TDEST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="outStream_TDEST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="outStream_TDEST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="inStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TKEEP">
+        <PORT DIR="I" LEFT="3" NAME="inStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TKEEP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="outStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="outStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="inStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TSTRB">
+        <PORT DIR="I" LEFT="3" NAME="inStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="outStream_TSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="outStream_TSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="inStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TUSER">
+        <PORT DIR="I" LEFT="1" NAME="inStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TUSER">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="outStream_TUSER"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="outStream_TUSER"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="inStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TLAST">
+        <PORT DIR="I" LEFT="0" NAME="inStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TLAST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="outStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="outStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TID">
+        <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="outStream_TID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="outStream_TID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TVALID">
+        <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="inStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="inStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="outStream_TREADY" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TREADY">
+        <PORT DIR="I" NAME="outStream_TREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="inStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="inStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="outStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TDATA">
+        <PORT DIR="O" LEFT="31" NAME="outStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="inStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="inStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="5" NAME="outStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TDEST">
+        <PORT DIR="O" LEFT="5" NAME="outStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TDEST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="inStream_TDEST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="inStream_TDEST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="outStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TKEEP">
+        <PORT DIR="O" LEFT="3" NAME="outStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TKEEP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="inStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="inStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="outStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TSTRB">
+        <PORT DIR="O" LEFT="3" NAME="outStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="inStream_TSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="inStream_TSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="outStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TUSER">
+        <PORT DIR="O" LEFT="1" NAME="outStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TUSER">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="inStream_TUSER"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="inStream_TUSER"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="outStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TLAST">
+        <PORT DIR="O" LEFT="0" NAME="outStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TLAST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="inStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="inStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="4" NAME="outStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TID">
+        <PORT DIR="O" LEFT="4" NAME="outStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="inStream_TID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="inStream_TID"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -4252,7 +4252,7 @@
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_CTRL_RREADY"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_pool_d24x24_p2x2_0_outStream" NAME="inStream" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_pool_d24x24_p2x2_0_outStream" NAME="inStream" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -4278,7 +4278,7 @@
             <PORTMAP LOGICAL="TID" PHYSICAL="inStream_TID"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_fc_i144_o50_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_fc_i144_o50_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -4306,7 +4306,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/cnn_fc_i50_o10_0" HWVERSION="1.0" INSTANCE="cnn_fc_i50_o10_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_fc_i50_o10" VLNV="xilinx.com:hls:cnn_fc_i50_o10:1.0">
+    <MODULE FULLNAME="/cnn_0/cnn_fc_i50_o10_0" HWVERSION="1.0" INSTANCE="cnn_0_cnn_fc_i50_o10_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_fc_i50_o10" VLNV="xilinx.com:hls:cnn_fc_i50_o10:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_CTRL" NAME="Reg" RANGE="65536" USAGE="register">
@@ -4602,91 +4602,91 @@
         <PARAMETER NAME="latency" VALUE="96"/>
         <PARAMETER NAME="II" VALUE="x"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C50000"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C5FFFF"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C30000"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C3FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="11" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="I" LEFT="11" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_WDATA">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_WVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_WREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_BRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_BVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_BREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="I" LEFT="11" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_RDATA">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_RRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_RVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_RREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_AXI_rready"/>
           </CONNECTIONS>
@@ -4702,49 +4702,49 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
-        <PORT DIR="I" NAME="inStream_TVALID" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TVALID">
+        <PORT DIR="I" NAME="inStream_TVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="outStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="outStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="inStream_TREADY" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TREADY">
+        <PORT DIR="O" NAME="inStream_TREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="outStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="outStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="inStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TDATA">
+        <PORT DIR="I" LEFT="31" NAME="inStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="outStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="outStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="5" NAME="inStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TDEST">
+        <PORT DIR="I" LEFT="5" NAME="inStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TDEST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="outStream_TDEST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="outStream_TDEST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="inStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TKEEP">
+        <PORT DIR="I" LEFT="3" NAME="inStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TKEEP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="outStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="outStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="inStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TSTRB">
+        <PORT DIR="I" LEFT="3" NAME="inStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="outStream_TSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="outStream_TSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="inStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TUSER">
+        <PORT DIR="I" LEFT="1" NAME="inStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TUSER">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="outStream_TUSER"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="outStream_TUSER"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="inStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TLAST">
+        <PORT DIR="I" LEFT="0" NAME="inStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TLAST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="outStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="outStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_outStream_TID">
+        <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_outStream_TID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="outStream_TID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="outStream_TID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="axi_dma_0_s_axis_s2mm_tvalid">
@@ -4830,7 +4830,7 @@
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_CTRL_RREADY"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_fc_i144_o50_0_outStream" NAME="inStream" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_fc_i144_o50_0_outStream" NAME="inStream" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -4856,7 +4856,7 @@
             <PORTMAP LOGICAL="TID" PHYSICAL="inStream_TID"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_fc_i50_o10_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_fc_i50_o10_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -4884,7 +4884,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/cnn_pool_d24x24_p2x2_0" HWVERSION="1.0" INSTANCE="cnn_pool_d24x24_p2x2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_pool_d24x24_p2x2" VLNV="xilinx.com:hls:cnn_pool_d24x24_p2x2:1.0">
+    <MODULE FULLNAME="/cnn_0/cnn_pool_d24x24_p2x2_0" HWVERSION="1.0" INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_pool_d24x24_p2x2" VLNV="xilinx.com:hls:cnn_pool_d24x24_p2x2:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_CTRL" NAME="Reg" RANGE="65536" USAGE="register">
@@ -5092,91 +5092,91 @@
         <PARAMETER NAME="latency" VALUE="616"/>
         <PARAMETER NAME="II" VALUE="x"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C30000"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C3FFFF"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C40000"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C4FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WDATA">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RDATA">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_AXI_rready"/>
           </CONNECTIONS>
@@ -5192,94 +5192,94 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
-        <PORT DIR="I" NAME="inStream_TVALID" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TVALID">
+        <PORT DIR="I" NAME="inStream_TVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="outStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="outStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="inStream_TREADY" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TREADY">
+        <PORT DIR="O" NAME="inStream_TREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="outStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="outStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="inStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TDATA">
+        <PORT DIR="I" LEFT="31" NAME="inStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="outStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="outStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="5" NAME="inStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TDEST">
+        <PORT DIR="I" LEFT="5" NAME="inStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TDEST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="outStream_TDEST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="outStream_TDEST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="inStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TKEEP">
+        <PORT DIR="I" LEFT="3" NAME="inStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TKEEP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="outStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="outStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="inStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TSTRB">
+        <PORT DIR="I" LEFT="3" NAME="inStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="outStream_TSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="outStream_TSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="inStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TUSER">
+        <PORT DIR="I" LEFT="1" NAME="inStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TUSER">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="outStream_TUSER"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="outStream_TUSER"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="inStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TLAST">
+        <PORT DIR="I" LEFT="0" NAME="inStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TLAST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="outStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="outStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_outStream_TID">
+        <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream_TID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="outStream_TID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="outStream_TID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TVALID">
+        <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="inStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="inStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="outStream_TREADY" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TREADY">
+        <PORT DIR="I" NAME="outStream_TREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="inStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="inStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="outStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TDATA">
+        <PORT DIR="O" LEFT="31" NAME="outStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="inStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="inStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="5" NAME="outStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TDEST">
+        <PORT DIR="O" LEFT="5" NAME="outStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TDEST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="inStream_TDEST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="inStream_TDEST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="outStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TKEEP">
+        <PORT DIR="O" LEFT="3" NAME="outStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TKEEP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="inStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="inStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="outStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TSTRB">
+        <PORT DIR="O" LEFT="3" NAME="outStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="inStream_TSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="inStream_TSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="outStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TUSER">
+        <PORT DIR="O" LEFT="1" NAME="outStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TUSER">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="inStream_TUSER"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="inStream_TUSER"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="outStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TLAST">
+        <PORT DIR="O" LEFT="0" NAME="outStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TLAST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="inStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="inStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="4" NAME="outStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_inStream_TID">
+        <PORT DIR="O" LEFT="4" NAME="outStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_inStream_TID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="inStream_TID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="inStream_TID"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -5336,7 +5336,7 @@
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_CTRL_RREADY"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_conv_d26x26_k3x3_0_outStream" NAME="inStream" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_conv_d26x26_k3x3_0_outStream" NAME="inStream" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -5362,7 +5362,7 @@
             <PORTMAP LOGICAL="TID" PHYSICAL="inStream_TID"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_pool_d24x24_p2x2_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_pool_d24x24_p2x2_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -5390,7 +5390,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/cnn_pool_d52x52_p2x2_0" HWVERSION="1.0" INSTANCE="cnn_pool_d52x52_p2x2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_pool_d52x52_p2x2" VLNV="xilinx.com:hls:cnn_pool_d52x52_p2x2:1.0">
+    <MODULE FULLNAME="/cnn_0/cnn_pool_d52x52_p2x2_0" HWVERSION="1.0" INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cnn_pool_d52x52_p2x2" VLNV="xilinx.com:hls:cnn_pool_d52x52_p2x2:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_CTRL" NAME="Reg" RANGE="65536" USAGE="register">
@@ -5598,91 +5598,91 @@
         <PARAMETER NAME="latency" VALUE="2772"/>
         <PARAMETER NAME="II" VALUE="x"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C10000"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C1FFFF"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_BASEADDR" VALUE="0x43C50000"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_HIGHADDR" VALUE="0x43C5FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_AWVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_AWREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WDATA">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_WVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_WREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_BVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_BREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="I" NAME="s_axi_CTRL_ARVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="O" NAME="s_axi_CTRL_ARREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RDATA">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RVALID">
+        <PORT DIR="O" NAME="s_axi_CTRL_RVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RREADY">
+        <PORT DIR="I" NAME="s_axi_CTRL_RREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rready"/>
           </CONNECTIONS>
@@ -5698,94 +5698,94 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
-        <PORT DIR="I" NAME="inStream_TVALID" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TVALID">
+        <PORT DIR="I" NAME="inStream_TVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="outStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="outStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="inStream_TREADY" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TREADY">
+        <PORT DIR="O" NAME="inStream_TREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="outStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="outStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="inStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TDATA">
+        <PORT DIR="I" LEFT="31" NAME="inStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="outStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="outStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="5" NAME="inStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TDEST">
+        <PORT DIR="I" LEFT="5" NAME="inStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TDEST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="outStream_TDEST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="outStream_TDEST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="inStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TKEEP">
+        <PORT DIR="I" LEFT="3" NAME="inStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TKEEP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="outStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="outStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="inStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TSTRB">
+        <PORT DIR="I" LEFT="3" NAME="inStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="outStream_TSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="outStream_TSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="inStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TUSER">
+        <PORT DIR="I" LEFT="1" NAME="inStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TUSER">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="outStream_TUSER"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="outStream_TUSER"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="inStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TLAST">
+        <PORT DIR="I" LEFT="0" NAME="inStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TLAST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="outStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="outStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_outStream_TID">
+        <PORT DIR="I" LEFT="4" NAME="inStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream_TID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="outStream_TID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="outStream_TID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TVALID">
+        <PORT DIR="O" NAME="outStream_TVALID" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="inStream_TVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="inStream_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="outStream_TREADY" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TREADY">
+        <PORT DIR="I" NAME="outStream_TREADY" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="inStream_TREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="inStream_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="outStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TDATA">
+        <PORT DIR="O" LEFT="31" NAME="outStream_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="inStream_TDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="inStream_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="5" NAME="outStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TDEST">
+        <PORT DIR="O" LEFT="5" NAME="outStream_TDEST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TDEST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="inStream_TDEST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="inStream_TDEST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="outStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TKEEP">
+        <PORT DIR="O" LEFT="3" NAME="outStream_TKEEP" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TKEEP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="inStream_TKEEP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="inStream_TKEEP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="outStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TSTRB">
+        <PORT DIR="O" LEFT="3" NAME="outStream_TSTRB" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="inStream_TSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="inStream_TSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="outStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TUSER">
+        <PORT DIR="O" LEFT="1" NAME="outStream_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TUSER">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="inStream_TUSER"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="inStream_TUSER"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="outStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TLAST">
+        <PORT DIR="O" LEFT="0" NAME="outStream_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TLAST">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="inStream_TLAST"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="inStream_TLAST"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="4" NAME="outStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_inStream_TID">
+        <PORT DIR="O" LEFT="4" NAME="outStream_TID" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_inStream_TID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="inStream_TID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="inStream_TID"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -5842,7 +5842,7 @@
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_CTRL_RREADY"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_conv_d54x54_k3x3_0_outStream" NAME="inStream" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_conv_d54x54_k3x3_0_outStream" NAME="inStream" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -5868,7 +5868,7 @@
             <PORTMAP LOGICAL="TID" PHYSICAL="inStream_TID"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cnn_pool_d52x52_p2x2_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="cnn_0_cnn_pool_d52x52_p2x2_0_outStream" NAME="outStream" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="11111111"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="6"/>
@@ -7243,10 +7243,6 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="ap_clk"/>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="ap_clk"/>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="ap_clk"/>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="m_axi_mm2s_aclk"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_aclk"/>
@@ -7263,9 +7259,13 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S01_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_ACLK"/>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_ACLK"/>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="ap_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -7502,21 +7502,21 @@
       </BUSINTERFACES>
       <MEMORYMAP>
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x40400000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x4040FFFF" INSTANCE="axi_dma_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_LITE"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C00000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C0FFFF" INSTANCE="cnn_conv_d54x54_k3x3_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C10000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C1FFFF" INSTANCE="cnn_pool_d52x52_p2x2_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C20000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C2FFFF" INSTANCE="cnn_conv_d26x26_k3x3_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C30000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C3FFFF" INSTANCE="cnn_pool_d24x24_p2x2_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C40000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C4FFFF" INSTANCE="cnn_fc_i144_o50_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C50000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C5FFFF" INSTANCE="cnn_fc_i50_o10_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C00000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C0FFFF" INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C10000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C1FFFF" INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C20000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C2FFFF" INSTANCE="cnn_0_cnn_fc_i144_o50_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C30000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C3FFFF" INSTANCE="cnn_0_cnn_fc_i50_o10_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C40000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C4FFFF" INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x43C50000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x43C5FFFF" INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL"/>
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="axi_dma_0"/>
-        <PERIPHERAL INSTANCE="cnn_conv_d54x54_k3x3_0"/>
-        <PERIPHERAL INSTANCE="cnn_pool_d52x52_p2x2_0"/>
-        <PERIPHERAL INSTANCE="cnn_conv_d26x26_k3x3_0"/>
-        <PERIPHERAL INSTANCE="cnn_pool_d24x24_p2x2_0"/>
-        <PERIPHERAL INSTANCE="cnn_fc_i144_o50_0"/>
-        <PERIPHERAL INSTANCE="cnn_fc_i50_o10_0"/>
+        <PERIPHERAL INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0"/>
+        <PERIPHERAL INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0"/>
+        <PERIPHERAL INSTANCE="cnn_0_cnn_fc_i144_o50_0"/>
+        <PERIPHERAL INSTANCE="cnn_0_cnn_fc_i50_o10_0"/>
+        <PERIPHERAL INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0"/>
+        <PERIPHERAL INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0"/>
       </PERIPHERALS>
     </MODULE>
     <MODULE FULLNAME="/ps7_0_axi_periph" HWVERSION="2.1" INSTANCE="ps7_0_axi_periph" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
@@ -7912,6 +7912,26 @@
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="M05_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M05_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" NAME="S00_AXI_arvalid" SIGIS="undef" SIGNAME="processing_system7_0_M_AXI_GP0_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARVALID"/>
@@ -8102,344 +8122,344 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_RDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_AWADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_AWADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_AWVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_AWVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_AWREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_AWREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WDATA">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_WDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_WDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_WSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_WSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WVALID">
+        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_WVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_WVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WREADY">
+        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_WREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_WREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BRESP">
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_BRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_BRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BVALID">
+        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_BVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_BVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BREADY">
+        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_BREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_BREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_ARADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_ARADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_ARVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_ARVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_ARREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_ARREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RDATA">
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_RDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_RDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RRESP">
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_RRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_RRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RVALID">
+        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_RVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_RVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RREADY">
+        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d54x54_k3x3_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_RREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="s_axi_CTRL_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_AWADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_AWADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_AWVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_AWVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_AWREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_AWREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WDATA">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_WDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_WDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_WSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_WSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WVALID">
+        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_WVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_WVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WREADY">
+        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_WREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_WREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BRESP">
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_BRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_BRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BVALID">
+        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_BVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_BVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BREADY">
+        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_BREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_BREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_ARADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_ARADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_ARVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_ARVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_ARREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_ARREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RDATA">
+        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_RDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_RDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RRESP">
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_RRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_RRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RVALID">
+        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_RVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_RVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RREADY">
+        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d52x52_p2x2_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_RREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="s_axi_CTRL_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_AWADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_AWADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_AWVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_AWVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_AWREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_AWREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WDATA">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_WDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_WDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_WSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_WSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WVALID">
+        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_WVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_WVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WREADY">
+        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_WREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_WREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BRESP">
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_BRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_BRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BVALID">
+        <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_BVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_BVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BREADY">
+        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_BREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_BREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_ARADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_ARADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_ARVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_ARVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_ARREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_ARREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RDATA">
+        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_RDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_RDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RRESP">
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_RRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_RRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RVALID">
+        <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_RVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_RVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RREADY">
+        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="cnn_0_cnn_conv_d26x26_k3x3_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_RREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="s_axi_CTRL_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_AWADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_AWADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="O" NAME="M03_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_AWVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_AWVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_awready" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="I" NAME="M03_AXI_awready" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_AWREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_AWREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WDATA">
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_WDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_WDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M03_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="O" LEFT="3" NAME="M03_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_WSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_WSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WVALID">
+        <PORT DIR="O" NAME="M03_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_WVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_WVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WREADY">
+        <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_WREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_WREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BRESP">
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_BRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_BRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BVALID">
+        <PORT DIR="I" NAME="M03_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_BVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_BVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_bready" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BREADY">
+        <PORT DIR="O" NAME="M03_AXI_bready" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_BREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_BREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_ARADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_ARADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_ARVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_ARVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_ARREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_ARREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RDATA">
+        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_RDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_RDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RRESP">
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_RRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_RRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RVALID">
+        <PORT DIR="I" NAME="M03_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_RVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_RVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_rready" SIGIS="undef" SIGNAME="cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RREADY">
+        <PORT DIR="O" NAME="M03_AXI_rready" SIGIS="undef" SIGNAME="cnn_0_cnn_pool_d24x24_p2x2_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_RREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="s_axi_CTRL_RREADY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M04_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_araddr">
@@ -8522,198 +8542,174 @@
             <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_AWADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+        <PORT DIR="O" NAME="M05_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_AWVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="I" NAME="M05_AXI_awready" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_AWADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_AWREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M05_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M05_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_AWVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_WDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_AXI_awready" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="O" LEFT="3" NAME="M05_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_AWREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_WSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_WDATA">
+        <PORT DIR="O" NAME="M05_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_WDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_WVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M05_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="I" NAME="M05_AXI_wready" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_WSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_WREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M05_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_WVALID">
+        <PORT DIR="I" LEFT="1" NAME="M05_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_WVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_BRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_AXI_wready" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_WREADY">
+        <PORT DIR="I" NAME="M05_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_WREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_BVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M05_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_BRESP">
+        <PORT DIR="O" NAME="M05_AXI_bready" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_BRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_BREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_BVALID">
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_BVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_ARADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M05_AXI_bready" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_BREADY">
+        <PORT DIR="O" NAME="M05_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_BREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_ARVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="I" NAME="M05_AXI_arready" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_ARADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_ARREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M05_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M05_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="I" LEFT="31" NAME="M05_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_ARVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_RDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_AXI_arready" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="I" LEFT="1" NAME="M05_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_ARREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_RRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M05_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_RDATA">
+        <PORT DIR="I" NAME="M05_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_RDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_RVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M05_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_RRESP">
+        <PORT DIR="O" NAME="M05_AXI_rready" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i144_o50_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_RRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="s_axi_CTRL_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_RVALID">
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_AWADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_RVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_AWADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M05_AXI_rready" SIGIS="undef" SIGNAME="cnn_fc_i144_o50_0_s_axi_CTRL_RREADY">
+        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_AWVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="s_axi_CTRL_RREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_AWVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M06_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_AWREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_AWREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M06_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_WDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_WDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_AWADDR">
+        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_WSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_AWADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_WSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M06_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_AWVALID">
+        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_WVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_AWVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_WVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_AWREADY">
+        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_WREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_AWREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_WREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_WDATA">
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_BRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_WDATA"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_BRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_WSTRB">
+        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_BVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_WSTRB"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_BVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_WVALID">
+        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_BREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_WVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_BREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_WREADY">
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_ARADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_WREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_ARADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_BRESP">
+        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_ARVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_BRESP"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_ARVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_BVALID">
+        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_ARREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_BVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_ARREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_BREADY">
+        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_RDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_BREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_RDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_ARADDR">
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_RRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_ARADDR"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_RRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M06_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_ARVALID">
+        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_RVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_ARVALID"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_RVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_ARREADY">
+        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="cnn_0_cnn_fc_i50_o10_0_s_axi_CTRL_RREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_ARREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_RDATA">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_RDATA"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_RRESP">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_RRESP"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_RVALID">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_RVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="cnn_fc_i50_o10_0_s_axi_CTRL_RREADY">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="s_axi_CTRL_RREADY"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="s_axi_CTRL_RREADY"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -8867,7 +8863,6 @@
         <BUSINTERFACE BUSNAME="ps7_0_axi_periph_M05_AXI" DATAWIDTH="32" NAME="M05_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M05_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWPROT" PHYSICAL="M05_AXI_awprot"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M05_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M05_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M05_AXI_wdata"/>
@@ -8878,7 +8873,6 @@
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M05_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M05_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M05_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARPROT" PHYSICAL="M05_AXI_arprot"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M05_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M05_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M05_AXI_rdata"/>
@@ -8890,7 +8884,6 @@
         <BUSINTERFACE BUSNAME="ps7_0_axi_periph_M06_AXI" DATAWIDTH="32" NAME="M06_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M06_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWPROT" PHYSICAL="M06_AXI_awprot"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M06_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M06_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M06_AXI_wdata"/>
@@ -8901,7 +8894,6 @@
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M06_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M06_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M06_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARPROT" PHYSICAL="M06_AXI_arprot"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M06_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M06_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M06_AXI_rdata"/>
@@ -8956,10 +8948,6 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cnn_conv_d54x54_k3x3_0" PORT="ap_rst_n"/>
-            <CONNECTION INSTANCE="cnn_pool_d52x52_p2x2_0" PORT="ap_rst_n"/>
-            <CONNECTION INSTANCE="cnn_conv_d26x26_k3x3_0" PORT="ap_rst_n"/>
-            <CONNECTION INSTANCE="cnn_pool_d24x24_p2x2_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ARESETN"/>
@@ -8971,9 +8959,13 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S01_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M05_ARESETN"/>
-            <CONNECTION INSTANCE="cnn_fc_i50_o10_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M06_ARESETN"/>
-            <CONNECTION INSTANCE="cnn_fc_i144_o50_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d54x54_k3x3_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_conv_d26x26_k3x3_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d24x24_p2x2_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i50_o10_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_fc_i144_o50_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="cnn_0_cnn_pool_d52x52_p2x2_0" PORT="ap_rst_n"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
