@@ -1,9 +1,9 @@
 
 #### About The Project
 
-=== the project is still under development ===
-
 ZedBoard FPGA based Convolutional Neural Network (CNN) accelerator.
+
+Final project for B.Sc. in EE at Tel Aviv Univerity, 2021. The project was submitted and will not be further developed.
 
 The project was implemented using the following programs:
 
@@ -27,5 +27,4 @@ global path variables, as the scripts were written for a very specific setup.
 #### Acknowledgements
 
 * [Vivado HLS Course Training](https://www.youtube.com/playlist?list=PLo7bVbJhQ6qzK6ELKCm8H_WEzzcr5YXHC)
-* []()
-* []()
+* [a-tutorial-on-non-separable-2d-convolutions-in-vivado-hls](https://basile.be/2019/03/18/a-tutorial-on-non-separable-2d-convolutions-in-vivado-hls/)
